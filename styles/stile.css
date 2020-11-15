@@ -1,0 +1,126 @@
+* {
+    padding: 0em;
+    margin: 0em;
+}
+html {
+    width: 100%;
+}
+body {
+    margin: auto;
+    background-color: rgba(241, 241, 241, 0.911);
+}
+#header{
+    color: black;
+    padding: 1.5em 0 2.0em 1.0em;
+}
+#header ul,li{
+    display: inline;
+    font-weight: bold;
+}
+#header li{
+    padding: 1em;
+}
+#contenitore{
+    padding: 1.5em 0 0 0;
+    margin: 0 auto;
+    width: 55em;
+    height: 35em;
+    position: relative;
+}
+#contengo{
+    
+    border-radius: 10px 10px 10px 10px;
+    height: 95%;
+    box-shadow: 3px 3px 5px 6px #ccc;
+}
+#left {
+    background-color: #ff4b2bc4;
+    border-radius: 10px 0px 0px 10px;
+    float: left;
+    width: 60%;
+    height: 97.3%;
+    padding: 0.5em;
+    vertical-align: middle;
+}
+#dentroLeft{
+    padding: 9em 0em 0em 4em;
+    width: 90%;
+}
+#right {
+    background-color: white;
+    border-radius: 0px 10px 10px 0px;
+    /*border-radius: 10px 0px 0px 10px;
+    box-shadow:  10px  10px 5px lightgray,
+              -10px -10px 5px lightgray,
+               10px -10px 5px lightgray,
+              -10px  10px 5px lightgray;*/
+    width: 36.35%;
+    height: 97.3%;
+    float: right;
+    padding: 0.5em;
+}
+#dentroRight{
+    padding: 0em 0em 0em 1em;
+    width: 90%;
+    height: 100%;
+}
+.textAccedi{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    padding: 0.5em 0 1em 0;
+}
+.formAccedi{
+    text-align: center;
+    padding-bottom: 1em;
+}
+.textOppure{
+    padding: 0em 0 1em 0;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+}
+.textForm{
+    padding: 1em 0 0em 0;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.input{
+    width: 95%;
+    height: 30px;
+    padding-left: 1em;
+    font-size: 1.0em;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid rgb(148, 148, 148);
+}
+.spazio{
+    padding: 1em;
+}
+.buttonAccedi{
+    background-color: #ff4b2bc4;
+    border: none;
+    border-radius: 20px 20px 20px 20px;
+    padding: 1em 3em 1em 3em;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.bottone{
+    background-color: #ffd82bc4;
+    border: none;
+    border-radius: 20px 20px 20px 20px;
+    padding: 1em 3em 1em 3em;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+#buttonRegistrati{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#footer {
+    color: black;
+    text-align: center;
+    font-size: 0.7em;
+    padding: 2em 0 2.0em 1.0em;
+    font-style: italic;
+}
