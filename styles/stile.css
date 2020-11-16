@@ -23,51 +23,51 @@ body {
 #header li{
     padding: 1em;
 }
-#contenitore{
+#contenitoreGenerale{
     padding: 1.5em 0 0 0;
     margin: 0 auto;
     width: 55em;
     height: 35em;
     position: relative;
 }
-#contengo{
-    
-    border-radius: 10px 10px 10px 10px;
+.height_login{
     height: 95%;
+}
+.round_div{
+    border-radius: 10px 10px 10px 10px;
     box-shadow: 3px 3px 5px 6px #ccc;
 }
-#left {
+.orange_left {
     background-color: #ff4b2bc4;
-    border-radius: 10px 0px 0px 10px;
-    float: left;
     width: 60%;
     height: 97.3%;
     padding: 0.5em;
-    vertical-align: middle;
+}
+.left{
+    float: left;
+}
+.left_border{
+    border-radius: 10px 0px 0px 10px
+}
+.right{
+    float: right;
+}
+.right_border{
+    border-radius: 0px 10px 10px 0px;
 }
 #dentroLeft{
     padding: 9em 0em 0em 4em;
-    width: 90%;
 }
 #dentroLeft img{
     width: 400px;
 }
-#right {
+.white_right {
     background-color: white;
-    border-radius: 0px 10px 10px 0px;
-    /*border-radius: 10px 0px 0px 10px;
-    box-shadow:  10px  10px 5px lightgray,
-              -10px -10px 5px lightgray,
-               10px -10px 5px lightgray,
-              -10px  10px 5px lightgray;*/
     width: 36.35%;
     height: 97.3%;
-    float: right;
     padding: 0.5em;
 }
 #dentroRight{
-    padding: 0em 0em 0em 1em;
-    width: 90%;
     height: 100%;
 }
 .textAccedi{
@@ -78,7 +78,7 @@ body {
 }
 .formAccedi{
     text-align: center;
-    padding-bottom: 1em;
+    padding: 0em 1em 1em 1em;
 }
 .textOppure{
     padding: 0em 0 1em 0;
