@@ -11,7 +11,10 @@ body {
 }
 #header{
     color: black;
-    padding: 1.5em 0 2.0em 1.0em;
+    padding: 1.5em 0 1.0em 1.0em;
+}
+#header img{
+    width:70px;
 }
 #header ul,li{
     display: inline;
@@ -45,6 +48,9 @@ body {
 #dentroLeft{
     padding: 9em 0em 0em 4em;
     width: 90%;
+}
+#dentroLeft img{
+    width: 400px;
 }
 #right {
     background-color: white;
