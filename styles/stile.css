@@ -31,6 +31,12 @@ SEZIONE CONTENITORE
     margin: 0 auto;
     margin-top: 6em;
 }
+
+.contenitoreCentrale p {
+    font-size: 1.5em;
+    margin-top: 2em;
+}
+
 .allwidth{
     width: 100%;
 }
@@ -38,7 +44,6 @@ SEZIONE CONTENITORE
     text-align: center;
     
 }
-
 
 .general-button{
     padding:10px;
