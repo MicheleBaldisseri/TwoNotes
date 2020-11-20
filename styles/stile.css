@@ -29,11 +29,45 @@ SEZIONE CONTENITORE
     margin: 0 auto;
     margin-top: 6em;
 }
+
 .allwidth{
     padding: 1em 0 1em 0;
     height: auto;
     display: block;
 }
+
+.general-button{
+    padding:10px;
+    margin: 10px;
+    font-size: 17px;
+}
+/*
+ABOUT US
+===================
+*/
+
+.content_aboutUs{
+    background-color: bisque;
+    margin: auto;
+    margin-top: 6em;
+    width: 80%;
+    border-radius: 20px 20px 20px 20px;
+    padding: 1em;
+    max-width: 50em;
+}
+
+.content_aboutUs p {
+    font-size: 1.5em;
+    padding: 0.5em;
+}
+
+.content_aboutUs img{
+    max-width: 30em;
+    max-height: 30em;
+    width: 80%;
+    height: 80%;
+}
+
 /*
 ===================
 SEZIONE HEADER
