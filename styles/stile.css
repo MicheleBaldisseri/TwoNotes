@@ -32,11 +32,8 @@ SEZIONE CONTENITORE
     margin-top: 6em;
 }
 .allwidth{
-    width: 100%;
-}
-#regright h2{
-    text-align: center;
-    
+    height: auto;
+    display: block;
 }
 
 
@@ -46,9 +43,11 @@ SEZIONE CONTENITORE
     font-size: 17px;
 }
 
-
-/* HEADER */
-
+/*
+===================
+SEZIONE HEADER
+===================
+*/
 #header{
     position: fixed;
     z-index: 1;
@@ -81,7 +80,11 @@ SEZIONE CONTENITORE
     text-decoration: none;
 }
 
-/* LOGIN PAGE */
+/*
+===================
+SEZIONE LOGIN PAGE
+===================
+*/
 
 .height_login{
     height: 95%;
@@ -102,10 +105,7 @@ SEZIONE LEFT
 .left{
     float: left!important;
 }
-.leftRegister{
-    width: 20%;
-    
-}
+
 .orange_left {
     background-color: #ff4b2bc4;
     width: 60%;
@@ -135,11 +135,6 @@ SEZIONE RIGHT
 */
 .right{
     float: right!important;
-}
-.rightRegister{
-    width: 70%;
-    border-left: 1px solid #ccc;
-    padding-left: 0em;
 }
 .white_right {
     background-color: white;
@@ -286,8 +281,34 @@ SEZIONE BOTTONI
     top: 30em;
     
 }
-
-/* FOOTER */
+/*
+=====================
+SEZIONE REGISTRAZIONE
+=====================
+*/
+#registrazione{
+    padding: 1em 1em 2em 1em;
+}
+#registrazione div{
+    width: 48%;
+}
+#registrazione h2{
+    text-align: center;
+    font-size: 2em;
+    padding: 1em;
+}
+.formRegistrazione{
+    padding: 2em;
+    padding-top: 0em;
+}
+.sesso{
+    height: 6em;
+}
+/*
+===================
+SEZIONE FOOTER
+===================
+*/
 
 #footer {
     color: black;
