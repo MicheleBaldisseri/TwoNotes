@@ -32,11 +32,6 @@ SEZIONE CONTENITORE
     margin-top: 6em;
 }
 
-.contenitoreCentrale p {
-    font-size: 1.5em;
-    margin-top: 2em;
-}
-
 .allwidth{
     height: auto;
     display: block;
@@ -46,6 +41,33 @@ SEZIONE CONTENITORE
     padding:10px;
     margin: 10px;
     font-size: 17px;
+}
+/*
+===================
+ABOUT US
+===================
+*/
+
+.content_aboutUs{
+    background-color: bisque;
+    margin: auto;
+    margin-top: 6em;
+    width: 80%;
+    border-radius: 20px 20px 20px 20px;
+    padding: 1em;
+    max-width: 50em;
+}
+
+.content_aboutUs p {
+    font-size: 1.5em;
+    padding: 0.5em;
+}
+
+.content_aboutUs img{
+    max-width: 30em;
+    max-height: 30em;
+    width: 80%;
+    height: 80%;
 }
 
 /*
