@@ -3,7 +3,6 @@
 SEZIONE GENERALE
 ===================
 */
-
 * {
     padding: 0em;
     margin: 0em;
@@ -27,12 +26,12 @@ SEZIONE CONTENITORE
     position: relative;
     width: 55em;
     height: 35em;
-    padding: 1em 0 1em 0;
     margin: 0 auto;
     margin-top: 6em;
 }
 
 .allwidth{
+    padding: 1em 0 1em 0;
     height: auto;
     display: block;
 }
@@ -43,7 +42,6 @@ SEZIONE CONTENITORE
     font-size: 17px;
 }
 /*
-===================
 ABOUT US
 ===================
 */
@@ -87,7 +85,6 @@ SEZIONE HEADER
     box-shadow: 3px 3px 20px 3px #ccc;
    
 }
-
 #header img{
     width:70px;
 }
@@ -106,13 +103,11 @@ SEZIONE HEADER
 #header a{
     text-decoration: none;
 }
-
 /*
 ===================
 SEZIONE LOGIN PAGE
 ===================
 */
-
 .height_login{
     height: 95%;
 }
@@ -132,26 +127,21 @@ SEZIONE LEFT
 .left{
     float: left!important;
 }
-
 .orange_left {
     background-color: #ff4b2bc4;
     width: 60%;
     height: 97.3%;
     padding: 0.5em;
 }
-
 .left-border-radius{
     border-radius: 10px 0px 0px 10px
 }
-
 .right-border-radius{
     border-radius: 0px 10px 10px 0px;
 }
-
 #dentroLeft{
     padding: 9em 0em 0em 4em;
 }
-
 #dentroLeft img{
     width: 400px;
 }
@@ -169,7 +159,6 @@ SEZIONE RIGHT
     height: 97.3%;
     padding: 0.5em;
 }
-
 #dentroRight{
     height: 100%;
 }
@@ -178,31 +167,32 @@ SEZIONE RIGHT
 SEZIONE BOTTONI
 ==================
 */
+.general-button{
+    padding:10px;
+    margin: 10px;
+    font-size: 17px;
+}
 .textAccedi{
     text-align: center;
     font-weight: bold;
     font-size: 2em;
     padding: 0.5em 0 1em 0;
 }
-
 .formAccedi{
     text-align: center;
     padding: 0em 1em 1em 1em;
 }
-
 .textOppure{
     padding: 0em 0 1em 0;
     text-align: center;
     font-weight: bold;
     font-style: italic;
 }
-
 .textForm{
     padding: 1em 0 0em 0;
     font-size: 1.3em;
     font-weight: bold;
 }
-
 .input{
     width: 95%;
     height: 30px;
@@ -211,11 +201,9 @@ SEZIONE BOTTONI
     border-radius: 5px 5px 5px 5px;
     border: 1px solid rgb(148, 148, 148);
 }
-
 .spazio{
     padding: 1em;
 }
-
 /*.buttonAccedi{
     border: none;
     border-radius: 20px 20px 20px 20px;
@@ -223,43 +211,42 @@ SEZIONE BOTTONI
     font-size: 1.3em;
     font-weight: bold;
 }*/
-
 .orange-button{
     background-color: #ff4b2bc4;
 }
-
 .yellow-button{
     background-color: #ffd82bc4;
 }
-
 .round-button{
     border: none;
     border-radius: 20px 20px 20px 20px;
     font-size: 1.3em;
     font-weight: bold;
 }
-
-#buttonRegistrati{
+.buttonRegistrati{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-/* SEARCH BAR - Home Page */
-
+.buttonRegistrati a{
+    text-decoration: none;
+    color: black;
+}
+/* 
+======================
+SEARCH BAR - Home Page 
+======================
+*/
 #search{
     height: 4em;
     padding: 1em;
 }
-
 .search-form{
     width: 80%;
 }
-
 .search-form form{
     width: 100%;
 }
-
 #search-text{
     width: 70%;
     margin: 10px;
@@ -270,8 +257,6 @@ SEZIONE BOTTONI
     border-radius: 15px;
     border: 1px;
 }
-
-
 #search-button{
     width: 20%;
     background: #005eac;
@@ -279,27 +264,25 @@ SEZIONE BOTTONI
     border-left: none;
     cursor: pointer;
 }
-
 #search-text:hover{
     box-shadow: 3px 3px 20px 3px #ccc
 }
-
 .post-container{
     margin-top: 15px;
    
 }
-
 .new-post{
     width: 20%;
 }
-
 #post-btn{
     float: right;
     background-color: whitesmoke;
 }
-
-/* PULSANTE TORNA SU */
-
+/*
+================= 
+PULSANTE TORNA SU
+=================
+*/
 #backtotop{
     position: relative;
     bottom: 0;
@@ -332,11 +315,10 @@ SEZIONE REGISTRAZIONE
     height: 6em;
 }
 /*
-===================
+==============
 SEZIONE FOOTER
-===================
+==============
 */
-
 #footer {
     color: black;
     text-align: center;
