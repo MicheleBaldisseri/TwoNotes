@@ -23,36 +23,56 @@
         </div>
     </div>
     <div class="contenitoreCentrale allwidth">
-        <div id="regleft" class="left leftRegister">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Chi siamo</a></li>
-                <li><a href="#">Contatti</a></li>
-            </ul>
-        </div>
-        <div id="regright" class="right rightRegister">
-            <h2>Compila la tua registrazione</h2>
+        <div id="registrazione" class="round_div shadow-div">
+            <h2>Registrati a TwoNotes</h2>
             <form action="#" class="formRegistrazione">
-                <label for="nome"><p class="textForm">Nome</p></label><br>
-                <input type="text" name="username" id="username" class="input">
-                <label for="cognome" ><p class="textForm">Cognome</p></label><br>
-                <input type="text" name="psw" id="psw" class="input"><br>
-                <label for="dataNascita"><p class="textForm">Data di nascita</p></label><br>
-                <input type="date" name="username" id="username" class="input">
-                <label for="email"><p class="textForm">Email</p></label><br>
-                <input type="email" name="username" id="username" class="input">
-                <label for="sesso"><p class="textForm">Sesso</p></label><br>
-                <input type="text" name="username" id="username" class="input">
-                <label for="provenienza"><p class="textForm">Provenienza</p></label><br>
-                <input type="text" name="username" id="username" class="input">
-                <label for="username"><p class="textForm">Username</p></label><br>
-                <input type="text" name="username" id="username" class="input">
-                <label for="psw"><p class="textForm">Password</p></label><br>
-                <input type="password" name="username" id="username" class="input">
+                <div class="left">
+                    <label for="nome"><p class="textForm">Nome</p></label><br>
+                    <input type="text" name="nome" id="nome" class="input" required>
+                </div>
+                <div class="right">
+                    <label for="cognome" ><p class="textForm">Cognome</p></label><br>
+                    <input type="text" name="cognome" id="cognome" class="input" required><br>
+                </div>
+                <div class="left">
+                    <label for="dataNascita"><p class="textForm">Data di nascita</p></label><br>
+                    <input type="date" name="data" id="dataNascita" class="input" required>
+                </div>
+                <div class="right">
+                    <label for="email"><p class="textForm">Email</p></label><br>
+                    <input type="email" name="email" id="email" class="input" required>
+                </div>
+                <div class="left sesso">
+                    <label for="sesso"><p class="textForm">Sesso</p></label><br>
+                    <input type="radio" id="maschio" name="gender" value="maschio" required>
+                    <label for="maschio">Maschio</label>
+                    <input type="radio" id="femmina" name="gender" value="femmina">
+                    <label for="femmina">Femmina</label>
+                    <input type="radio" id="altro" name="gender" value="altro">
+                    <label for="other">Altro</label><br>
+                </div>
+                <div class="right">
+                    <label for="provenienza"><p class="textForm">Provenienza</p></label><br>
+                    <input type="text" name="provenienza" id="provenienza" class="input" required>
+                </div>
+                <div class="left">
+                    <label for="username"><p class="textForm">Username</p></label><br>
+                    <input type="text" name="username" id="username" class="input"required>
+                </div>
+                <div class="right">
+                    <label for="psw"><p class="textForm">Password</p></label><br>
+                    <input type="password" name="psw" id="psw" class="input" required>
+                </div>
+                
+                
+                
                 <p class="spazio"></p>
                 <input type="submit" value="Registrati" class="round-button orange-button"><br>
             </form>
         </div>
+    </div>
+    <div id="footer">
+        <p>Sito creato per un progetto di tecnologie Web all'università di Padova - All right reserved.</p>
     </div>
     
 </body>
