@@ -8,9 +8,10 @@ SEZIONE GENERALE
     padding: 0em;
     margin: 0em;
 }
+
 html {
     width: 100%;
-    font-family: "Segoe UI",Arial,sans-serif;
+    font-family: Optima, sans-serif;
 }
 body {
     margin: auto;
@@ -23,11 +24,11 @@ SEZIONE CONTENITORE
 ===================
 */
 .contenitoreCentrale{
-    padding: 1em 0 1em 0;
-    margin: 0 auto;
+    position: relative;
     width: 55em;
     height: 35em;
-    position: relative;
+    padding: 1em 0 1em 0;
+    margin: 0 auto;
     margin-top: 6em;
 }
 .allwidth{
@@ -39,44 +40,54 @@ SEZIONE CONTENITORE
 }
 
 
+.general-button{
+    padding:10px;
+    margin: 10px;
+    font-size: 17px;
+}
+
+
 /* HEADER */
 
 #header{
-    color: black;
-    background-color: whitesmoke;
-    padding: 1.5em 1.0em 1.0em 1.0em;
-    box-shadow: 3px 3px 5px 6px #ccc;
     position: fixed;
     z-index: 1;
     top: 0;
     width: 100%;
+    padding: 1.5em 1.0em 1.5em 1.0em;
+    margin-bottom: 20px;
+    color: black;
+    background-color: whitesmoke;
+    box-shadow: 3px 3px 20px 3px #ccc;
+   
 }
+
 #header img{
     width:70px;
 }
+
 #header ul,li{
     display: inline;
     font-weight: bold;
     margin: 5px 5px 5px 0;
 }
+
 #header li{
     padding: 1em;
+    margin: 0.5em;
 }
 
 #header a{
     text-decoration: none;
 }
 
-/*
-==================
-SEZIONE LOGIN PAGE
-==================
-*/
+/* LOGIN PAGE */
+
 .height_login{
     height: 95%;
 }
 .shadow-div{
-    box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow: 3px 3px 20px 3px #ccc;
 }
 
 .round_div{
@@ -202,7 +213,6 @@ SEZIONE BOTTONI
 .round-button{
     border: none;
     border-radius: 20px 20px 20px 20px;
-    padding: 1em 3em 1em 3em;
     font-size: 1.3em;
     font-weight: bold;
 }
@@ -217,49 +227,66 @@ SEZIONE BOTTONI
 
 #search{
     height: 4em;
+    padding: 1em;
 }
 
-.search-bar{
+.search-form{
     width: 80%;
 }
 
-.search-bar form{
+.search-form form{
     width: 100%;
 }
 
 #search-text{
+    width: 70%;
+    margin: 10px;
     padding: 10px;
     font-size: 17px;
-    width: 70%;
     background: #f1f1f1;
     line-height: 20px;
     border-radius: 15px;
-    border: 1px ;
-   margin: 10px;
+    border: 1px;
 }
 
-.general-button{
-    padding:10px;
-    margin: 10px;
-    font-size: 17px;
-}
 
 #search-button{
-    width: 15%;
-    background: #2196F3;
+    width: 20%;
+    background: #005eac;
     color: white;
-    border: 1px solid grey;
     border-left: none;
     cursor: pointer;
 }
 
 #search-text:hover{
-    box-shadow: 3px 3px 5px 6px #ccc
+    box-shadow: 3px 3px 20px 3px #ccc
 }
 
-.post-button{
+.post-container{
+    margin-top: 15px;
    
 }
+
+.new-post{
+    width: 20%;
+}
+
+#post-btn{
+    float: right;
+    background-color: whitesmoke;
+}
+
+/* PULSANTE TORNA SU */
+
+#backtotop{
+    position: relative;
+    bottom: 0;
+    padding: 1em;
+    margin: 2em;
+    top: 30em;
+    
+}
+
 /* FOOTER */
 
 #footer {
