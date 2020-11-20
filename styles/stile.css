@@ -198,6 +198,11 @@ SEZIONE BOTTONI
     text-decoration: none;
     color: black;
 }
+#bottone{
+    width: 10%;
+    padding-left: 22em;
+    padding-top: 1em;
+}
 /* 
 ======================
 SEARCH BAR - Home Page 
@@ -263,7 +268,7 @@ SEZIONE REGISTRAZIONE
 =====================
 */
 #registrazione{
-    padding: 1em 1em 2em 1em;
+    padding: 0em 1em 0em 1em;
 }
 #registrazione div{
     width: 48%;
@@ -274,11 +279,15 @@ SEZIONE REGISTRAZIONE
     padding: 1em;
 }
 .formRegistrazione{
-    padding: 2em;
-    padding-top: 0em;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 .sesso{
     height: 6em;
+}
+input[type="radio"] {
+    width: 12%;
+    text-align: right;
 }
 /*
 ==============
