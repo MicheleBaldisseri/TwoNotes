@@ -323,6 +323,12 @@ input[type="radio"] {
     width: 12%;
     text-align: right;
 }
+label[for="username"] p{
+    padding-top: 1.5em;
+}
+label[for="maschio"], label[for="femmina"], label[for="altro"]{
+    font-size: 1.2em;
+}
 /*
 ==============
 SEZIONE FOOTER
