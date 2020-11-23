@@ -125,7 +125,7 @@ SEZIONE LEFT
 ==================
 */
 .left{
-    float: left!important;
+    float: left;
 }
 .orange_left {
     background-color: #ff4b2bc4;
@@ -151,7 +151,7 @@ SEZIONE RIGHT
 ==================
 */
 .right{
-    float: right!important;
+    float: right;
 }
 .white_right {
     background-color: white;
