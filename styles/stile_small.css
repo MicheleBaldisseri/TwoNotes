@@ -1,17 +1,29 @@
 #header{
     color: black;
 }
-#contenitore{
-    padding: 0.5em 0.5em 0 1.5em;
+.contenitoreCentrale{
+    padding: 7.5em 0.5em 0em 1.5em;
     margin: 0 auto;
-    width: 28em;
-    height: 35em;
+    width: 27em;
+    height: 33em;
     position: relative;
 }
-#left{
+.left{
     display: none;
 }
-#right{
+.right{
     width: 100%;
     border-radius: 10px 10px 10px 10px;
+}
+label[for="username"] p{
+    padding-top: 0.8em;
+}
+label[for="maschio"], label[for="femmina"], label[for="altro"]{
+    font-size: 1em;
+}
+.smallReg{
+    height: auto;
+}
+#bottone{
+    padding-left: 0em;
 }

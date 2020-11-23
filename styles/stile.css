@@ -201,9 +201,6 @@ SEZIONE BOTTONI
     border-radius: 5px 5px 5px 5px;
     border: 1px solid rgb(148, 148, 148);
 }
-.spazio{
-    padding: 1em;
-}
 /*.buttonAccedi{
     border: none;
     border-radius: 20px 20px 20px 20px;
@@ -312,6 +309,9 @@ SEZIONE REGISTRAZIONE
     font-size: 2em;
     padding: 1em;
 }
+.regleft{
+    float: left!important;
+}
 .formRegistrazione{
     padding-left: 2em;
     padding-right: 2em;
@@ -322,6 +322,12 @@ SEZIONE REGISTRAZIONE
 input[type="radio"] {
     width: 12%;
     text-align: right;
+}
+label[for="username"] p{
+    padding-top: 1.5em;
+}
+label[for="maschio"], label[for="femmina"], label[for="altro"]{
+    font-size: 1.2em;
 }
 /*
 ==============
