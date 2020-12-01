@@ -17,8 +17,8 @@
         <img src="../img/TwoNotes-4.svg"  alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
         <div class="right">
             <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="login.html">LOGIN</a></li>
+                <li><a href="../index.php">HOME</a></li>
+                <li><a href="login.php">LOGIN</a></li>
             </ul>
         </div>
     </div>

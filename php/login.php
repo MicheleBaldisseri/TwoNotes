@@ -17,8 +17,8 @@
         <img src="../img/TwoNotes-4.svg"  alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
         <div class="right">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Chi siamo</a></li>
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="aboutUs.php">Chi siamo</a></li>
                 <li><a href="#">Contatti</a></li>
             </ul>
         </div>
@@ -44,7 +44,7 @@
                     </form>
                     <p class="textOppure">Oppure</p>
                     <div class="buttonRegistrati">
-                        <a href="registrazione.html"><p class="general-button round-button yellow-button">Registrati</p></a>
+                        <a href="registrazione.php"><p class="general-button round-button yellow-button">Registrati</p></a>
                     </div>
                 </div>
             </div>

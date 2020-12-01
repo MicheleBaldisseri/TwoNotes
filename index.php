@@ -9,17 +9,17 @@
     <meta name="keywords" content="login TwoNotes"/>
     <meta name="author" content="Giulio Zanatta"/>
     <meta name="language" content="italian it"/>
-    <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" type="text/css" href="styles/stile.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
 </head>
 <body>
     <div id="header">
-        <img src="../img/TwoNotes-4.svg"  alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
+        <img src="img/TwoNotes-4.svg"  alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
         <div class="right">
             <ul>
-                <li><a href="aboutUs.html">Chi siamo</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="registrazione.html">Registrati</a></li>
+                <li><a href="php/aboutUs.php">Chi siamo</a></li>
+                <li><a href="php/login.php">Login</a></li>
+                <li><a href="php/registrazione.php">Registrati</a></li>
             </ul>
         </div>
     </div>
