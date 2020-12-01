@@ -1,0 +1,64 @@
+SET FOREIGN_KEY_CHECKS=0;
+
+DROP TABLE IF EXISTS Utenti;
+DROP TABLE IF EXISTS Post;
+DROP TABLE IF EXISTS NomeTag;
+DROP TABLE IF EXISTS Tag;
+DROP TABLE IF EXISTS Commenti;
+
+CREATE TABLE Utenti (
+       Username VARCHAR(20) PRIMARY KEY,
+       Pass_word CHAR(40) NOT NULL,
+       Nome VARCHAR(20) NOT NULL,
+       Cognome VARCHAR(20) NOT NULL,
+       DataNascita DATE NOT NULL,
+       Email VARCHAR(30) NOT NULL,
+       Sesso ENUM('M','F') NOT NULL,
+       Provenienza VARCHAR(20)
+) ENGINE=InnoDB;
+
+CREATE TABLE Post (
+       ID_post INTEGER PRIMARY KEY,
+       Titolo VARCHAR(30) NOT NULL,
+       DataOra DATETIME NOT NULL,
+       Immagine LONGBLOB,
+       Contenuto TEXT,
+       Utente VARCHAR(20) NOT NULL,
+       FOREIGN KEY (Utente) REFERENCES Utenti(Username) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE NomeTag (
+       Tipo INTEGER PRIMARY KEY,
+       Nome VARCHAR(20) NOT NULL
+) ENGINE=InnoDB;
+
+CREATE TABLE Tag (
+       ID_post INTEGER NOT NULL,
+       Tipo INTEGER NOT NULL,
+       PRIMARY KEY (ID_post,Tipo),
+       FOREIGN KEY (ID_post) REFERENCES Post(ID_post) ON DELETE CASCADE ON UPDATE CASCADE,
+       FOREIGN KEY (Tipo) REFERENCES NomeTag(Tipo) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE Commenti (
+       ID_commento INTEGER PRIMARY KEY,
+       Utente VARCHAR(20) NOT NULL,
+       DataOra DATETIME NOT NULL,
+       Contenuto TEXT NOT NULL,
+       FOREIGN KEY (Utente) REFERENCES Utenti(Username) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+DROP TRIGGER IF EXISTS trig;
+
+DELIMITER $$
+CREATE TRIGGER trig AFTER INSERT ON Post FOR EACH ROW
+BEGIN
+IF new.Contenuto IS NULL AND new.Immagine IS NULL THEN
+       SIGNAL SQLSTATE '45000'
+       SET MESSAGE_TEXT = 'Errore: Impossibile inserire un post vuoto';
+END IF;
+END;
+$$
+DELIMITER ;
+
+SET FOREIGN_KEY_CHECKS=1;
