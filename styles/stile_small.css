@@ -1,6 +1,17 @@
 #header{
     color: black;
+    height: 5%;
 }
+#header img{
+    width: 20%;
+}
+
+#header ul,li{
+    display: inline;
+    font-weight: bold;
+    margin: 5px 5px 5px 0;
+}
+
 .contenitoreCentrale{
     padding: 7.5em 0.5em 0em 1.5em;
     margin: 0 auto;
@@ -27,3 +38,4 @@ label[for="maschio"], label[for="femmina"], label[for="altro"]{
 #bottone{
     padding-left: 0em;
 }
+

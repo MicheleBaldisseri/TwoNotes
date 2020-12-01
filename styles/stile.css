@@ -42,7 +42,8 @@ SEZIONE CONTENITORE
     font-size: 17px;
 }
 /*
-ABOUT US
+===================
+SEZIONE ABOUT US
 ===================
 */
 
@@ -62,10 +63,13 @@ ABOUT US
 }
 
 .content_aboutUs img{
+    display: block;
     max-width: 30em;
     max-height: 30em;
     width: 80%;
     height: 80%;
+    margin-left: auto;
+    margin-right: auto;  
 }
 
 /*
