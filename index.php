@@ -38,6 +38,15 @@
     </div>
 
     <div class="contenitoreCentrale post-container round_div shadow-div">
+        <?php
+            require_once "includes/Manager.php";
+
+            $manager = new Manager();
+
+            $list = $manager->getPostList();
+            $manager->printPostList($list);
+
+        ?>
         <span id="backtotop" class="right">
             <a href="index.html">
                 Torna su
