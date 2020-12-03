@@ -6,12 +6,15 @@ class Manager{
     private $dbconnection;
 
     public function __construct(){
-		try {
-			$this->dbconnection = new DBConnection();
-		} catch (Exception $exc) {
-			echo "Connection Error";
-			exit();
-		}
+		$this->dbconnection = new DBConnection();
+    }
+
+    public function connect(){
+        return $this->dbconnection->connectToDatabase();
+    }
+
+    public function disconnect(){
+        return $this->dbconnection->disconnect();
     }
     
     public function getPostList(){
@@ -25,20 +28,28 @@ class Manager{
     }
 
     public function printPostList($postList){
-        foreach ($postList as $post) {
-            $this->printPost($post);
+        $string = '';
+        if(count($postList)!=0){
+            foreach ($postList as $post) {
+                $string .= $this->printPost($post);
+            }
+        }else{
+            $string = '<p>Nessun Risultato</p>';
         }
+        return $string;
+        
     }
 
     private function printPost($post){
-		echo '
+		$string ='
 				<li>
 					<a href="post.php?articleID='.$post['ID_post'].'">
 						<h3 class="articleTitle">' . stripslashes($post['Titolo']) . '</h3>
                         <p class="description">' . stripslashes($post['Contenuto']) . '</p>
                         <p class="user">' . stripslashes($post['Utente']) . '</p>
 					</a>
-				</li>';
+                </li>';
+        return $string;
 	}
 
 

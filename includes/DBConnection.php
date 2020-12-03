@@ -8,11 +8,6 @@ class DBConnection{
     private $database = "twonotes";
 	private $connectionMYSQL;
 
-	public function __construct(){
-		if (!$this->connectToDatabase())
-			throw new Exception();
-	}
-
 	public function connectToDatabase() {
 		$this->connectionMYSQL = mysqli_connect($this->host,$this->username,$this->password, $this->database );
 		if (!$this->connectionMYSQL)
