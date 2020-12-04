@@ -10,18 +10,93 @@ SEZIONE GENERALE
 
 html {
     width: 100%;
-    font-family: Optima, sans-serif;
+    background-color: #69b2ee;
 }
 body {
     margin: auto;
-    /*background-color: rgba(241, 241, 241, 0.911);*/
+    max-width: 1400px;
     background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+/*
+===================
+SEZIONE HOME
+===================
+*/
+/*Menu a sinistra*/
+#menu{
+    float: left;
+    width: 20%;
+    padding: 0.8em;
+    font-size: 1.1em;
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+#menu ul{
+    list-style-type: none;
+}
+
+#menu ul li{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;   
+    text-align: center; 
+    font-weight: bold;
+}
+
+/*barra destra dei tags*/
+#rightSidebar{
+    float: right;  
+    width: 20%;
+    padding: 0.5em;
+    height: fit-content;
+    background-color: whitesmoke;
+}
+#rightSidebar ul{
+    list-style-type: none;
+}
+#rightSidebar h2{
+    text-align: center;
+    padding: 0.5em;
+}
+#rightSidebar ul li{
+    text-align: center;
+    padding: 0.5em;
+}
+/*breadcrumb*/
+#percorso{
+    background-color: #005eac;
+}
+#percorso p{
+    padding: 0.5em;
+    font-size: 1.3em;
+    color: white;
+}
+/*colore della parola della pagina dove ci troviamo*/
+.breadcrumb-colore-parola{
+    color: rgb(226, 203, 98);
+}
+
+/*div che contiene un post*/
+.postDiv{
+    margin: auto;
+    height: fit-content;
+    padding: 0.5em;
+    max-width: 45%;
+    background-color: #005eac;
+    margin-top: 1em;
+}
+/*questa regola era solo per mettere come contenuto il logo si può poi togliere*/
+.immaginePostProva img{
+    width: 30em;
+}
+/*
 /*
 ===================
 SEZIONE CONTENITORE
 ===================
 */
+
 .contenitoreCentrale{
     position: relative;
     width: 55em;
@@ -41,6 +116,7 @@ SEZIONE CONTENITORE
     margin: 10px;
     font-size: 17px;
 }
+
 /*
 ===================
 SEZIONE ABOUT US
@@ -78,40 +154,31 @@ SEZIONE HEADER
 ===================
 */
 #header{
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    width: 100%;
-    padding: 1.5em 1.0em 1.5em 1.0em;
-    margin-bottom: 20px;
-    color: black;
+    padding: 1.0em;
+    min-height: 3em;
     background-color: whitesmoke;
     box-shadow: 3px 3px 20px 3px #ccc;
-   
+}
+#header div{
+    margin-top: 0.7em;
+    float: right;
 }
 #header img{
-    width:70px;
+    width:100px;
 }
 
-#header ul,li{
+#header ul li{
     display: inline;
     font-weight: bold;
     margin: 5px 5px 5px 0;
 }
 
-#header li{
-    padding: 1em;
-    margin: 0.5em;
-}
-
-#header a{
-    text-decoration: none;
-}
 /*
 ===================
 SEZIONE LOGIN PAGE
 ===================
 */
+
 .height_login{
     height: 95%;
 }
@@ -123,6 +190,7 @@ SEZIONE LOGIN PAGE
     border-radius: 10px 10px 10px 10px;
     
 }
+
 /*
 ==================
 SEZIONE LEFT
@@ -131,6 +199,7 @@ SEZIONE LEFT
 .left{
     float: left;
 }
+
 .orange_left {
     background-color: #ff4b2bc4;
     width: 60%;
@@ -149,6 +218,7 @@ SEZIONE LEFT
 #dentroLeft img{
     width: 400px;
 }
+
 /*
 ==================
 SEZIONE RIGHT
@@ -157,6 +227,7 @@ SEZIONE RIGHT
 .right{
     float: right;
 }
+
 .white_right {
     background-color: white;
     width: 36.35%;
@@ -166,11 +237,13 @@ SEZIONE RIGHT
 #dentroRight{
     height: 100%;
 }
+
 /*
 ==================
 SEZIONE BOTTONI
 ==================
 */
+
 .general-button{
     padding:10px;
     margin: 10px;
@@ -205,6 +278,7 @@ SEZIONE BOTTONI
     border-radius: 5px 5px 5px 5px;
     border: 1px solid rgb(148, 148, 148);
 }
+
 /*.buttonAccedi{
     border: none;
     border-radius: 20px 20px 20px 20px;
@@ -212,6 +286,7 @@ SEZIONE BOTTONI
     font-size: 1.3em;
     font-weight: bold;
 }*/
+
 .orange-button{
     background-color: #ff4b2bc4;
 }
@@ -238,14 +313,18 @@ SEZIONE BOTTONI
     padding-left: 22em;
     padding-top: 1em;
 }
+
 /* 
 ======================
 SEARCH BAR - Home Page 
 ======================
 */
 #search{
+    margin: auto;
     height: 4em;
-    padding: 1em;
+    padding: 0.5em;
+    width: 50%;
+    margin-top: 1em;
 }
 .search-form{
     width: 80%;
@@ -253,8 +332,8 @@ SEARCH BAR - Home Page
 .search-form form{
     width: 100%;
 }
-#search-text{
-    width: 70%;
+#search input[type="text"]{
+    width: 40%;
     margin: 10px;
     padding: 10px;
     font-size: 17px;
@@ -263,26 +342,24 @@ SEARCH BAR - Home Page
     border-radius: 15px;
     border: 1px;
 }
+#search input:hover{
+    box-shadow: 3px 3px 20px 3px #ccc
+}
 #search-button{
-    width: 20%;
     background: #005eac;
     color: white;
     border-left: none;
     cursor: pointer;
 }
-#search-text:hover{
-    box-shadow: 3px 3px 20px 3px #ccc
-}
+
 .post-container{
     margin-top: 15px;
    
 }
-.new-post{
-    width: 20%;
-}
 #post-btn{
     float: right;
     background-color: whitesmoke;
+    cursor: pointer;
 }
 /*
 ================= 
@@ -302,6 +379,7 @@ PULSANTE TORNA SU
 SEZIONE REGISTRAZIONE
 =====================
 */
+
 #registrazione{
     padding: 0em 1em 0em 1em;
 }
@@ -333,15 +411,18 @@ label[for="username"] p{
 label[for="maschio"], label[for="femmina"], label[for="altro"]{
     font-size: 1.2em;
 }
+
 /*
 ==============
 SEZIONE FOOTER
 ==============
 */
 #footer {
-    color: black;
+    margin-top: 1em;
+    color:white;
     text-align: center;
     font-size: 0.7em;
     padding: 2em 0 2.0em 1.0em;
     font-style: italic;
+    background-color: #005eac;
 }
