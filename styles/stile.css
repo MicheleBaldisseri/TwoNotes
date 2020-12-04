@@ -77,14 +77,15 @@ SEZIONE HOME
     color: rgb(226, 203, 98);
 }
 
-/*div che contiene un post*/
-.postDiv{
+/*li che contiene un post*/
+.postLi{
     margin: auto;
     height: fit-content;
     padding: 0.5em;
     max-width: 45%;
     background-color: #005eac;
     margin-top: 1em;
+    list-style-type: none;
 }
 /*questa regola era solo per mettere come contenuto il logo si può poi togliere*/
 .immaginePostProva img{
