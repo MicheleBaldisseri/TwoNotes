@@ -146,7 +146,36 @@ SEZIONE ABOUT US
     height: 80%;
     margin: auto;  
 }
-
+/*
+===================
+SEZIONE CONTATTI
+===================
+*/
+#sezione{
+    padding: 1.5em;
+}
+#sezione h1{
+    text-align: center;
+    font-size: 2em;
+    font-style: italic;
+    color: #1040a7;
+}
+#sezione h2{
+    margin-top: 2em;
+    font-size: 1.5em;
+}
+#sezione em{
+    font-weight: bold;
+}
+#sezione p{
+    margin-top: 1em;
+}
+#sezione img{
+    display: block;
+    margin: auto;
+    margin-top: 1.5em;
+    width: 35%;
+}
 /*
 ===================
 SEZIONE HEADER
@@ -177,10 +206,6 @@ SEZIONE HEADER
 SEZIONE LOGIN PAGE
 ===================
 */
-#contenuto{
-    margin-left: 25%;
-}
-
 .height_login{
     height: 95%;
 }
@@ -369,11 +394,7 @@ PULSANTE TORNA SU
 =================
 */
 #backtotop{
-    position: relative;
-    bottom: 0;
-    padding: 1em;
-    margin: 2em;
-    top: 30em;
+    float: right;
     
 }
 /*
