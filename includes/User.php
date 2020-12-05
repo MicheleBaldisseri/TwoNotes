@@ -58,27 +58,27 @@ class User {
     }
     
     public function getNome() {
-		return $this->username;
+		return $this->nome;
     }
 
     public function getCognome() {
-		return $this->username;
+		return $this->cognome;
     }
 
     public function getDataNascita() {
-		return $this->username;
+		return $this->dataNascita;
     }
 
     public function getEmail() {
-		return $this->username;
+		return $this->email;
     }
 
     public function getSesso() {
-		return $this->username;
+		return $this->sesso;
     }
 
     public function getProvenienza() {
-		return $this->username;
+		return $this->provenienza;
     }
     
     public function isAdmin(){
