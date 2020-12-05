@@ -19,6 +19,7 @@ class User {
     private $sesso = null;
     private $provenienza = null;
     private $admin = false;
+    private $password = null;
 
 	public function __construct($dbc) {
         $this->dbconnection = $dbc;
@@ -26,25 +27,30 @@ class User {
     
     public function recover($_username){
         
-        $this->dbconnection->connectToDatabase();
-        $query = $this->dbconnection->query("SELECT * FROM Utenti WHERE username = '$_username'");
-        $this->dbconnection->disconnect();
+      $this->dbconnection->connectToDatabase();
+      $query = $this->dbconnection->query("SELECT * FROM Utenti WHERE username = '$_username'");
+      $this->dbconnection->disconnect();
 
-		if ($query->num_rows > 0) {
-			$res = $query->fetch_assoc();
-			$this->username = $res['username'];
-            $this->nome = $res['nome'];
-            $this->cognome = $res['cognome'];
-            $this->dataNascita = $res['dataNascita'];
-            $this->email = $res['email'];
-            $this->sesso = $res['sesso'];
-            $this->provenienza = $res['provenienza'];  
-            $this->admin = $res['admin'];
-		}
+      if ($query->num_rows > 0) {
+        $res = $query->fetch_assoc();
+        $this->username = $res['username'];
+        $this->nome = $res['nome'];
+        $this->cognome = $res['cognome'];
+        $this->dataNascita = $res['dataNascita'];
+        $this->email = $res['email'];
+        $this->sesso = $res['sesso'];
+        $this->provenienza = $res['provenienza'];  
+        $this->admin = $res['admin'];
+        $this->password = $res['password'];
+
+        return true;
+      }else{
+        return false;
+      }
     }
 
-	public function isRegistered() {
-		return ($this->username!=null);
+	  public function isRegistered() {
+		  return ($this->username!=null);
     }
 
     public function getUsername() {
@@ -79,7 +85,11 @@ class User {
         return $this->admin;
     }
 
-	public function setSessionVar() {
+    public function isPasswordRight($pw){
+      return md5($pw) == $this->password;
+    }
+
+	  public function setSessionVar() {
         $_SESSION['username'] = $this->getUsername();
     }
 
