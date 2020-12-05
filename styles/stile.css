@@ -73,7 +73,7 @@ SEZIONE HOME
     color: white;
 }
 /*colore della parola della pagina dove ci troviamo*/
-.breadcrumb-colore-parola{
+#breadcrumb-colore-parola{
     color: rgb(226, 203, 98);
 }
 
@@ -99,11 +99,10 @@ SEZIONE CONTENITORE
 */
 
 .contenitoreCentrale{
-    position: relative;
+    margin-left: 25%;
     width: 55em;
     height: 35em;
-    margin: 0 auto;
-    margin-top: 6em;
+    margin-top: 1em;
 }
 
 .allwidth{
@@ -124,29 +123,28 @@ SEZIONE ABOUT US
 ===================
 */
 
-.content_aboutUs{
+#content_aboutUs{
     background-color: bisque;
-    margin: auto;
-    margin-top: 6em;
+    margin-left: 25%;
+    margin-top: 1em;
     width: 80%;
     border-radius: 20px 20px 20px 20px;
     padding: 1em;
     max-width: 50em;
 }
 
-.content_aboutUs p {
+#content_aboutUs p {
     font-size: 1.5em;
     padding: 0.5em;
 }
 
-.content_aboutUs img{
+#content_aboutUs img{
     display: block;
     max-width: 30em;
     max-height: 30em;
     width: 80%;
     height: 80%;
-    margin-left: auto;
-    margin-right: auto;  
+    margin: auto;  
 }
 
 /*
@@ -179,6 +177,9 @@ SEZIONE HEADER
 SEZIONE LOGIN PAGE
 ===================
 */
+#contenuto{
+    margin-left: 25%;
+}
 
 .height_login{
     height: 95%;

@@ -15,14 +15,20 @@
 <body>
     <div id="header">
         <img src="../img/TwoNotes-4.svg"  alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
-        <div class="right">
-            <ul>
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="aboutUs.php">Chi siamo</a></li>
-                <li><a href="#">Contatti</a></li>
-            </ul>
-        </div>
     </div>
+
+    <div id="percorso">
+        <p>Ti trovi in: <span id="breadcrumb-colore-parola" xml:lang="en">Login</span></p>
+    </div>
+
+    <div id="menu">
+        <ul>
+            <li><a xml:lang="en" href="../index.php">Home</a></li>
+            <li><a href="aboutUs.php">Chi siamo</a></li>
+            <li><a href="contatti.php">Contatti</a></li>
+        </ul>
+    </div>
+
     <div class="contenitoreCentrale">
         <div class="height_login round_div shadow-div">
             <div class="left orange_left left-border-radius">
@@ -35,14 +41,14 @@
                 <div id="dentroRight">
                     <p class="textAccedi">ACCEDI</p>
                     <form action="#" class="formAccedi">
-                        <label for="username"><p class="textForm">Username</p></label><br>
+                        <label for="username"><p class="textForm">Username</p></label>
                         <input type="text" name="username" id="username" class="input" placeholder="Username"required>
-                        <label for="psw" ><p class="textForm">Password</p></label><br>
-                        <input type="password" name="psw" id="psw" class="input" placeholder="Password" required><br>
+                        <label for="psw" ><p class="textForm">Password</p></label>
+                        <input type="password" name="psw" id="psw" class="input" placeholder="Password" required>
                         <p class="spazio"></p>
-                        <input type="submit" value="Accedi" class="general-button round-button orange-button"><br>
+                        <input type="submit" value="Accedi" class="general-button round-button orange-button">
                     </form>
-                    <p class="textOppure">Oppure</p>
+                    <p class="textOppure">oppure</p>
                     <div class="buttonRegistrati">
                         <a href="registrazione.php"><p class="general-button round-button yellow-button">Registrati</p></a>
                     </div>
@@ -51,7 +57,7 @@
         </div>
     </div>
     <div id="footer">
-        <p>Sito creato per un progetto di tecnologie Web all'università di Padova - All right reserved.</p>
+        <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>
     </div>
 </body>
 </html>
