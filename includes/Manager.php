@@ -57,7 +57,6 @@ class Manager{
         $user = new User($this->dbconnection);
         if(isset($_SESSION['username'])){
             $user->recover($_SESSION['username']);
-            $user->setSessionVar();
         }
         return $user;
     }
