@@ -11,7 +11,7 @@ if($user->getUsername()!=null){
 	$stringHeader = '
 	<div>
 		<ul>
-			<li><p>Benvenuto '. $user->getNome() .'!</p><li>
+			<li>Benvenuto '. $user->getNome() .'!<li>
 			<li><a href="php/logout.php" xml:lang="en">Logout</a></li>
 		</ul>
 	</div>';

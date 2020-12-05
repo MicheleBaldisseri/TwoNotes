@@ -115,6 +115,7 @@ SEZIONE CONTENITORE
     padding:10px;
     margin: 10px;
     font-size: 17px;
+    cursor: pointer;
 }
 
 /*
@@ -151,31 +152,60 @@ SEZIONE ABOUT US
 SEZIONE CONTATTI
 ===================
 */
-#sezione{
+.sezione{
     padding: 1.5em;
 }
-#sezione h1{
+.sezione h1{
     text-align: center;
     font-size: 2em;
     font-style: italic;
     color: #1040a7;
 }
-#sezione h2{
+.sezione h2{
     margin-top: 2em;
     font-size: 1.5em;
 }
-#sezione em{
+.sezione em{
     font-weight: bold;
 }
-#sezione p{
+.sezione p{
     margin-top: 1em;
 }
-#sezione img{
+.sezione img{
     display: block;
     margin: auto;
     margin-top: 1.5em;
     width: 35%;
 }
+/*
+===================
+SEZIONE NUOVO POST
+===================
+*/
+#newPostForm label{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+#newPostForm div{
+    margin-top: 1em;
+}
+#newPostForm p{
+    font-weight: bolder;
+    color: #1040a7;
+}
+.inputForm{
+    width: 50%;
+    padding: 12px 20px;
+    font-size: 1.3em;
+    font-style: normal;
+    border: 1px solid rgb(115, 116, 136);
+    border-radius: 4px; 
+}
+/*bottone*/
+#annulla{
+    background-color: #f0090996;
+}
+
 /*
 ===================
 SEZIONE HEADER
@@ -383,10 +413,15 @@ SEARCH BAR - Home Page
     margin-top: 15px;
    
 }
+/*bottone creazione nuovo post*/
 #post-btn{
     float: right;
     background-color: whitesmoke;
     cursor: pointer;
+}
+#post-btn a{
+    text-decoration: none;
+    color: initial;
 }
 /*
 ================= 
