@@ -53,8 +53,9 @@ CREATE TABLE Commenti (
 ) ENGINE=InnoDB;
 
 INSERT INTO Utenti VALUES
-('Lele97', 'michele2notes', 'Michele', 'Baldisseri', '1997-05-12', 'michele.baldi@gmail.com', 'M', 'San Pietro in Gu',0),
-('Active', 'matthew2notes', 'Matthew', 'Balzan', '1999-06-11', 'matt.balzan@gmail.com', 'M', 'Crocetta del Montello',1);
+('Lele97', '5ea0b00761f7a793a5a6845028c053ff', 'Michele', 'Baldisseri', '1997-05-12', 'michele.baldi@gmail.com', 'M', 'San Pietro in Gu',0),
+('Active', 'c62dc2522fba5ece9e8148d07f0759e1', 'Matthew', 'Balzan', '1999-06-11', 'matt.balzan@gmail.com', 'M', 'Crocetta del Montello',0),
+('admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin', '2000-01-01', 'admin@gmail.com', 'F', 'Cornuda',1);
 
 INSERT INTO Post VALUES
 ('1', 'Nuova canzone Timmy Trumpet', '2020-12-01 22:08:56', 'NULL', 'NULL', 'Si chiama "Paul is dead". La sto ascoltando in loop su Spotify. Che bomba! Che ne pensate?', 'Lele97'),

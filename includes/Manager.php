@@ -62,6 +62,21 @@ class Manager{
         return $user;
     }
 
+    public function login($username,$password){
+        $user = new User($this->dbconnection);
+        if($user->recover($username)){
+            if($user->isPasswordRight($password)){
+                $user->setSessionVar();
+            }else{
+                unset($_SESSION['username']);
+                $_SESSION['loginError'] = "Password errata";
+            }
+        }else{
+            unset($_SESSION['username']);
+            $_SESSION['loginError'] = "Username non esiste";
+        }
+    }
+
 }
 
 ?>
