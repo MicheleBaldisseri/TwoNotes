@@ -1,6 +1,7 @@
 <?php
 
 require_once "DBConnection.php";
+require_once "User.php";
 
 class Manager{
     private $dbconnection;
@@ -50,8 +51,16 @@ class Manager{
 					</a>
                 </li>';
         return $string;
-	}
+    }
 
+    public function setupSession(){
+        $user = new User($this->dbconnection);
+        if(isset($_SESSION['username'])){
+            $user->recover($_SESSION['username']);
+            $user->setSessionVar();
+        }
+        return $user;
+    }
 
 }
 

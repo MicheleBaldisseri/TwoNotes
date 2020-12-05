@@ -1,7 +1,11 @@
 <?php
 require_once "includes/Manager.php";
+session_start();
 
 $manager = new Manager();
+
+$user = $manager->setupSession();
+
 $res = $manager->connect();
 $paginaHTML = file_get_contents('views/index.html');
 
