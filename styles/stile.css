@@ -73,7 +73,7 @@ SEZIONE HOME
     color: white;
 }
 /*colore della parola della pagina dove ci troviamo*/
-.breadcrumb-colore-parola{
+#breadcrumb-colore-parola{
     color: rgb(226, 203, 98);
 }
 
@@ -99,11 +99,10 @@ SEZIONE CONTENITORE
 */
 
 .contenitoreCentrale{
-    position: relative;
+    margin-left: 25%;
     width: 55em;
     height: 35em;
-    margin: 0 auto;
-    margin-top: 6em;
+    margin-top: 1em;
 }
 
 .allwidth{
@@ -124,31 +123,59 @@ SEZIONE ABOUT US
 ===================
 */
 
-.content_aboutUs{
+#content_aboutUs{
     background-color: bisque;
-    margin: auto;
-    margin-top: 6em;
+    margin-left: 25%;
+    margin-top: 1em;
     width: 80%;
     border-radius: 20px 20px 20px 20px;
     padding: 1em;
     max-width: 50em;
 }
 
-.content_aboutUs p {
+#content_aboutUs p {
     font-size: 1.5em;
     padding: 0.5em;
 }
 
-.content_aboutUs img{
+#content_aboutUs img{
     display: block;
     max-width: 30em;
     max-height: 30em;
     width: 80%;
     height: 80%;
-    margin-left: auto;
-    margin-right: auto;  
+    margin: auto;  
 }
-
+/*
+===================
+SEZIONE CONTATTI
+===================
+*/
+#sezione{
+    padding: 1.5em;
+}
+#sezione h1{
+    text-align: center;
+    font-size: 2em;
+    font-style: italic;
+    color: #1040a7;
+}
+#sezione h2{
+    margin-top: 2em;
+    font-size: 1.5em;
+}
+#sezione em{
+    font-weight: bold;
+}
+#sezione p{
+    margin-top: 1em;
+}
+#sezione img{
+    display: block;
+    margin: auto;
+    margin-top: 1.5em;
+    width: 35%;
+}
 /*
 ===================
 SEZIONE HEADER
@@ -179,7 +206,6 @@ SEZIONE HEADER
 SEZIONE LOGIN PAGE
 ===================
 */
-
 .height_login{
     height: 95%;
 }
@@ -368,11 +394,13 @@ PULSANTE TORNA SU
 =================
 */
 #backtotop{
-    position: relative;
-    bottom: 0;
-    padding: 1em;
-    margin: 2em;
-    top: 30em;
+    position: fixed;
+    bottom: 70px;
+    right: 70px;
+    font-size: 15px;
+    background-color: #005eac;
+    color: white;
+    padding: 10px;
     
 }
 /*

@@ -7,58 +7,60 @@ DROP TABLE IF EXISTS Tag;
 DROP TABLE IF EXISTS Commenti;
 
 CREATE TABLE Utenti (
-       Username VARCHAR(20) PRIMARY KEY,
-       Pass_word CHAR(40) NOT NULL,
-       Nome VARCHAR(20) NOT NULL,
-       Cognome VARCHAR(20) NOT NULL,
-       DataNascita DATE NOT NULL,
-       Email VARCHAR(30) NOT NULL,
-       Sesso ENUM('M','F') NOT NULL,
-       Provenienza VARCHAR(40)
+       username VARCHAR(20) PRIMARY KEY,
+       password CHAR(40) NOT NULL,
+       nome VARCHAR(20) NOT NULL,
+       cognome VARCHAR(20) NOT NULL,
+       dataNascita DATE NOT NULL,
+       email VARCHAR(30) NOT NULL,
+       sesso ENUM('M','F') NOT NULL,
+       provenienza VARCHAR(40),
+       isAdmin BIT NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE Post (
-       ID_post INTEGER PRIMARY KEY,
-       Titolo VARCHAR(30) NOT NULL,
-       DataOra DATETIME NOT NULL,
-       Immagine LONGBLOB,
-       Contenuto TEXT,
-       Utente VARCHAR(20) NOT NULL,
-       FOREIGN KEY (Utente) REFERENCES Utenti(Username) ON DELETE CASCADE ON UPDATE CASCADE
+       postID INTEGER PRIMARY KEY,
+       titolo VARCHAR(30) NOT NULL,
+       dataOra DATETIME NOT NULL,
+       immagine LONGBLOB,
+       altImmagine TEXT,
+       contenuto TEXT,
+       utente VARCHAR(20) NOT NULL,
+       FOREIGN KEY (utente) REFERENCES Utenti(username) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
 CREATE TABLE NomeTag (
-       Tipo INTEGER PRIMARY KEY,
-       Nome VARCHAR(20) NOT NULL
+       tipo INTEGER PRIMARY KEY,
+       nome VARCHAR(20) NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE Tag (
-       ID_post INTEGER NOT NULL,
-       Tipo INTEGER NOT NULL,
-       PRIMARY KEY (ID_post,Tipo),
-       FOREIGN KEY (ID_post) REFERENCES Post(ID_post) ON DELETE CASCADE ON UPDATE CASCADE,
-       FOREIGN KEY (Tipo) REFERENCES NomeTag(Tipo) ON DELETE CASCADE ON UPDATE CASCADE
+       postID INTEGER NOT NULL,
+       tipo INTEGER NOT NULL,
+       PRIMARY KEY (postID,tipo),
+       FOREIGN KEY (postID) REFERENCES Post(postID) ON DELETE CASCADE ON UPDATE CASCADE,
+       FOREIGN KEY (tipo) REFERENCES NomeTag(tipo) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
 CREATE TABLE Commenti (
-       ID_commento INTEGER PRIMARY KEY,
-       Post INTEGER NOT NULL,
-       Utente VARCHAR(20) NOT NULL,
-       DataOra DATETIME NOT NULL,
-       Contenuto TEXT NOT NULL,
-       FOREIGN KEY (Post) REFERENCES Post(ID_post) ON DELETE NO ACTION ON UPDATE NO ACTION,
-       FOREIGN KEY (Utente) REFERENCES Utenti(Username) ON DELETE CASCADE ON UPDATE CASCADE
+       commentoID INTEGER PRIMARY KEY,
+       post INTEGER NOT NULL,
+       utente VARCHAR(20) NOT NULL,
+       uataOra DATETIME NOT NULL,
+       contenuto TEXT NOT NULL,
+       FOREIGN KEY (post) REFERENCES Post(postID) ON DELETE NO ACTION ON UPDATE NO ACTION,
+       FOREIGN KEY (utente) REFERENCES Utenti(username) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
 INSERT INTO Utenti VALUES
-('Lele97', 'michele2notes', 'Michele', 'Baldisseri', '1997-05-12', 'michele.baldi@gmail.com', 'M', 'San Pietro in Gu'),
-('Active', 'matthew2notes', 'Matthew', 'Balzan', '1999-06-11', 'matt.balzan@gmail.com', 'M', 'Crocetta del Montello');
+('Lele97', 'michele2notes', 'Michele', 'Baldisseri', '1997-05-12', 'michele.baldi@gmail.com', 'M', 'San Pietro in Gu',0),
+('Active', 'matthew2notes', 'Matthew', 'Balzan', '1999-06-11', 'matt.balzan@gmail.com', 'M', 'Crocetta del Montello',1);
 
 INSERT INTO Post VALUES
-('1', 'Nuova canzone Timmy Trumpet', '2020-12-01 22:08:56', 'NULL', 'Si chiama "Paul is dead". La sto ascoltando in loop su Spotify. Che bomba! Che ne pensate?', 'Lele97'),
-('2', 'In cerca di consigli!', '2020-12-01 14:10:56', 'NULL', 'Ultimamente ascolto molto MOTi, consigli di canzoni simili a quelle sue?', 'Lele97'),
-('3', 'Che ne pensate di Coez?', '2020-11-25 16:50:00', 'NULL', 'Ho iniziato ad apprezzare Coez, fino al mese scorso non lo consideravo... cosa pensate delle sue canzoni?', 'Active'),
-('4', 'Sviluppatori pessimi', '2020-11-12 11:15:40', 'NULL', 'Avviso tutti che su Spotify e Youtube è disponibili il mio nuovo singolo! Passate parola!', 'Active');
+('1', 'Nuova canzone Timmy Trumpet', '2020-12-01 22:08:56', 'NULL', 'NULL', 'Si chiama "Paul is dead". La sto ascoltando in loop su Spotify. Che bomba! Che ne pensate?', 'Lele97'),
+('2', 'In cerca di consigli!', '2020-12-01 14:10:56', 'NULL', 'NULL','Ultimamente ascolto molto MOTi, consigli di canzoni simili a quelle sue?', 'Lele97'),
+('3', 'Che ne pensate di Coez?', '2020-11-25 16:50:00', 'NULL', 'NULL','Ho iniziato ad apprezzare Coez, fino al mese scorso non lo consideravo... cosa pensate delle sue canzoni?', 'Active'),
+('4', 'Sviluppatori pessimi', '2020-11-12 11:15:40', 'NULL', 'NULL','Avviso tutti che su Spotify e Youtube è disponibili il mio nuovo singolo! Passate parola!', 'Active');
 
 INSERT INTO NomeTag VALUES
 ('1', 'New Artist'),

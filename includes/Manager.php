@@ -20,8 +20,8 @@ class Manager{
     
     public function getPostList(){
         $select = "  SELECT * 
-                    FROM post
-                    ORDER BY DataOra DESC";
+                    FROM Post
+                    ORDER BY dataOra DESC";
 
         $query = $this->dbconnection->query($select);
 
@@ -44,10 +44,10 @@ class Manager{
     private function printPost($post){
 		$string ='
 				<li>
-					<a href="post.php?articleID='.$post['ID_post'].'">
-						<h3 class="articleTitle">' . stripslashes($post['Titolo']) . '</h3>
-                        <p class="description">' . stripslashes($post['Contenuto']) . '</p>
-                        <p class="user">' . stripslashes($post['Utente']) . '</p>
+					<a href="post.php?articleID='.$post['postID'].'">
+						<h3 class="articleTitle">' . stripslashes($post['titolo']) . '</h3>
+                        <p class="description">' . stripslashes($post['contenuto']) . '</p>
+                        <p class="user">' . stripslashes($post['utente']) . '</p>
 					</a>
                 </li>';
         return $string;

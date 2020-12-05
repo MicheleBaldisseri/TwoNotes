@@ -17,16 +17,28 @@
 <body>
     <div id="header">
         <img src="../img/TwoNotes-4.svg"  alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
-        <div class="right">
+        <div>
             <ul>
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="#">Contatti</a></li>
-                <li><a href="login.php">Login</a></li>
+                <li><a href="login.php" xml:lang="en">Login</a></li>
+                <li>oppure</li>
+                <li><a href="registrazione.php">Registrati</a></li>
             </ul>
-        </div>          
+        </div>
     </div>
 
-    <div class="content_aboutUs">
+    <div id="percorso">
+        <p>Ti trovi in: <span id="breadcrumb-colore-parola">Chi siamo</span></p>
+    </div>
+
+    <div id="menu">
+        <ul>
+            <li><a xml:lang="en" href="../index.php">Home</a></li>
+            <li aria-current="page">Chi siamo</li>
+            <li><a href="Contatti.php">Contatti</a></li>    
+        </ul>
+    </div>
+
+    <div id="content_aboutUs">
         <p>
             <span xml:lang="en">TwoNotes</span> ha lo scopo di creare una comunità virtuale con la passione per la musica. Nessun genere è escluso: 
             è possibile filtrare la ricerca dei post mediante l’utilizzo di tags in modo da rendere l’esperienza piacevole 
@@ -44,7 +56,7 @@
         <img src="../img/people_dance.png" alt="Immagine con persone che ballano">
     </div>
     <div id="footer">
-        <p>Sito creato per un progetto di tecnologie Web all'università di Padova - All right reserved.</p>
+        <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>
     </div>
 </body>
 </html>
