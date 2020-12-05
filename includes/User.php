@@ -40,7 +40,7 @@ class User {
         $this->email = $res['email'];
         $this->sesso = $res['sesso'];
         $this->provenienza = $res['provenienza'];  
-        $this->admin = $res['admin'];
+        $this->admin = $res['isAdmin'];
         $this->password = $res['password'];
 
         return true;
