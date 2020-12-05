@@ -63,6 +63,7 @@ class Manager{
     }
 
     public function login($username,$password){
+        session_start();
         $user = new User($this->dbconnection);
         if($user->recover($username)){
             if($user->isPasswordRight($password)){
@@ -76,7 +77,6 @@ class Manager{
             $_SESSION['loginError'] = "Username non esiste";
         }
     }
-
 }
 
 ?>
