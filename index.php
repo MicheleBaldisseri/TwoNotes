@@ -1,10 +1,33 @@
 <?php
 require_once "includes/Manager.php";
-
-$manager = new Manager();
-$res = $manager->connect();
+session_start();
 $paginaHTML = file_get_contents('views/index.html');
 
+$manager = new Manager();
+$user = $manager->setupSession();
+
+$stringHeader = '';
+if($user->getUsername()!=null){
+	$stringHeader = '
+	<div>
+		<ul>
+			<li><p>Benvenuto '. $user->getNome() .'!</p><li>
+			<li><a href="php/logout.php" xml:lang="en">Logout</a></li>
+		</ul>
+	</div>';
+}else{
+	$stringHeader = '
+	<div>
+		<ul>
+			<li><a href="php/login.php" xml:lang="en">Login</a></li>
+			<li>oppure</li>
+			<li><a href="php/registrazione.php">Registrati</a></li>
+		</ul>
+	</div>';	
+}
+$paginaHTML = str_replace("<HEADERDESTRO />", $stringHeader, $paginaHTML);
+
+$res = $manager->connect();
 if($res == false){
 	die ("Errore nell'apertura del DB"); //TODO
 }else{

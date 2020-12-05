@@ -1,6 +1,7 @@
 <?php
 
 require_once "DBConnection.php";
+require_once "User.php";
 
 class Manager{
     private $dbconnection;
@@ -50,9 +51,31 @@ class Manager{
 					</a>
                 </li>';
         return $string;
-	}
+    }
 
+    public function setupSession(){
+        $user = new User($this->dbconnection);
+        if(isset($_SESSION['username'])){
+            $user->recover($_SESSION['username']);
+        }
+        return $user;
+    }
 
+    public function login($username,$password){
+        session_start();
+        $user = new User($this->dbconnection);
+        if($user->recover($username)){
+            if($user->isPasswordRight($password)){
+                $user->setSessionVar();
+            }else{
+                unset($_SESSION['username']);
+                $_SESSION['loginError'] = "Password errata";
+            }
+        }else{
+            unset($_SESSION['username']);
+            $_SESSION['loginError'] = "Username non esiste";
+        }
+    }
 }
 
 ?>
