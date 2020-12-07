@@ -10,6 +10,10 @@ class Manager{
 		$this->dbconnection = new DBConnection();
     }
 
+    public function getConnection(){
+        return $this->dbconnection;
+    }
+
     public function connect(){
         return $this->dbconnection->connectToDatabase();
     }
@@ -19,12 +23,13 @@ class Manager{
     }
     
     public function getPostList(){
+        $this->connect();
         $select = "  SELECT * 
                     FROM Post
                     ORDER BY dataOra DESC";
 
         $query = $this->dbconnection->query($select);
-
+        $this->disconnect();
         return $query->fetch_all(MYSQLI_ASSOC);
     }
 
@@ -62,7 +67,6 @@ class Manager{
     }
 
     public function login($username,$password){
-        session_start();
         $user = new User($this->dbconnection);
         if($user->recover($username)){
             if($user->isPasswordRight($password)){
@@ -75,6 +79,51 @@ class Manager{
             unset($_SESSION['username']);
             $_SESSION['loginError'] = "Username non esiste";
         }
+    }
+
+    public function register($values){
+        $errors = array();
+        $this->connect();
+        $select = "  SELECT * 
+                    FROM Utenti
+                    WHERE username = ' ".$values['username']."'";
+        $query = $this->dbconnection->query($select);
+        $this->disconnect();
+        $query->fetch_all(MYSQLI_ASSOC);
+
+        if ($query->num_rows > 0) {
+            array_push($errors, "Username gia' utilizzato");
+        }
+
+        $this->connect();
+        $select = "  SELECT * 
+                    FROM Utenti
+                    WHERE email = '".$values['email']. "'";
+        $query = $this->dbconnection->query($select);
+        $this->disconnect();
+        $query->fetch_all(MYSQLI_ASSOC);
+
+        if ($query->num_rows > 0) {
+            array_push($errors, "Email gia' utilizzata");
+        }
+
+        if(count($errors)==0){
+            $this->connect();
+            $select = "  INSERT INTO Utenti VALUES
+                ('".$values['username']."','".md5($values['password'])."',
+                '".$values['nome']."','".$values['cognome']."',
+                '".$values['dataNascita']."','".$values['email']."',
+                '".$values['sesso']."','".$values['provenienza']."',0)";
+
+            if(!$this->dbconnection->query($select)){
+                array_push($errors, "Errore nella registrazione");
+            }
+            $this->disconnect();
+
+            if(count($errors)==0)return true;
+        }
+        return false;
+
     }
 }
 

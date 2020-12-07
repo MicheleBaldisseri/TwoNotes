@@ -1,5 +1,6 @@
 <?php
 require_once '../includes/Manager.php';
+session_start();
 
 $manager = new Manager();
 if(!isset($_POST['username']) || !isset($_POST['username'])){
