@@ -49,6 +49,8 @@ else $paginaHTML = str_replace('SELECTEDF','',$paginaHTML);
 if($sesso == 'A') $paginaHTML = str_replace('SELECTEDA','checked',$paginaHTML);
 else $paginaHTML = str_replace('SELECTEDA','',$paginaHTML);
 
+unset($_SESSION['registerValues']);
+
 $paginaHTML = str_replace('ERRORIREGISTRAZIONE',$stringErrors,$paginaHTML);
 
 echo $paginaHTML;

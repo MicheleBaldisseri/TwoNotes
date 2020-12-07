@@ -2,13 +2,20 @@
     session_start();
     $paginaHTML = file_get_contents('../views/login.html');
     
+    $error = '';
     if(isset($_SESSION['loginError'])){
-        $string = '<p id="erroreLogin">'.$_SESSION['loginError'].'</p>';
-        $paginaHTML = str_replace("<ERRORELOGIN />", $string, $paginaHTML);
+        $error = '<p id="erroreLogin">'.$_SESSION['loginError'].'</p>';
         unset($_SESSION['loginError']);
-    }else{
-        $paginaHTML = str_replace("<ERRORELOGIN />", '', $paginaHTML);
     }
+    $paginaHTML = str_replace("ERRORELOGIN", $error, $paginaHTML);
+
+
+    $un = '';
+    if(isset($_SESSION['oldUsername'])){
+        $un = $_SESSION['oldUsername'];
+        unset($_SESSION['oldUsername']);
+    }
+    $paginaHTML = str_replace("VALUEUSERNAME", $un, $paginaHTML);
 
     echo $paginaHTML;
 

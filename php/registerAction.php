@@ -56,19 +56,19 @@ if(count($errors)==0){
             $manager->login($values['username'],$values['password']);
             
             header("Location: ../index.php");
-        }else{
-            header("Location: registrazione.php");
+            exit();
         }
     }else{
         $_SESSION['registerValues'] = $values;
         $_SESSION['registerErrors'] = $errors;
-        header("Location: registrazione.php");
     }
 
 }else{
     $_SESSION['registerValues'] = $values;
     $_SESSION['registerErrors'] = $errors;
-    header("Location: registrazione.php");
 }
+
+header("Location: registrazione.php");
+exit();
 
 ?>
