@@ -7,7 +7,7 @@ function checkValidDate($date)
 
 function checkFutureDate($date)
 {
-    return $date < date('Y-m-d');
+    return $date > date('Y-m-d');
 }
 
 session_start();
