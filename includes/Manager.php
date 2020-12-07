@@ -86,7 +86,7 @@ class Manager{
         $this->connect();
         $select = "  SELECT * 
                     FROM Utenti
-                    WHERE username = ' ".$values['username']."'";
+                    WHERE username = '".$values['username']."'";
         $query = $this->dbconnection->query($select);
         $this->disconnect();
         $query->fetch_all(MYSQLI_ASSOC);
@@ -98,7 +98,7 @@ class Manager{
         $this->connect();
         $select = "  SELECT * 
                     FROM Utenti
-                    WHERE email = '".$values['email']. "'";
+                    WHERE email = '".$values['email']."'";
         $query = $this->dbconnection->query($select);
         $this->disconnect();
         $query->fetch_all(MYSQLI_ASSOC);
@@ -122,6 +122,8 @@ class Manager{
 
             if(count($errors)==0)return true;
         }
+
+        $_SESSION['registerErrors'] = $errors;
         return false;
 
     }

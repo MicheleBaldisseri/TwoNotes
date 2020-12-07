@@ -7,7 +7,7 @@ function checkValidDate($date)
 
 function checkFutureDate($date)
 {
-    return $date > date('Y-m-d');
+    return $date < date('Y-m-d');
 }
 
 session_start();
@@ -70,10 +70,5 @@ if(count($errors)==0){
     $_SESSION['registerErrors'] = $errors;
     header("Location: registrazione.php");
 }
-
-
-
-
-
 
 ?>
