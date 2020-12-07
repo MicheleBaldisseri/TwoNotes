@@ -184,14 +184,14 @@ SEZIONE NUOVO POST
 */
 #newPostForm label{
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 #newPostForm div{
     margin-top: 1em;
 }
 #newPostForm p{
     font-weight: bolder;
-    color: #1040a7;
+    color: #0011ffa2;
 }
 .inputForm{
     width: 50%;
@@ -205,7 +205,10 @@ SEZIONE NUOVO POST
 #annulla{
     background-color: #f0090996;
 }
-
+#comandiMarkdown{
+    float: right;
+    width: 40%;
+}
 /*
 ===================
 SEZIONE HEADER
@@ -408,7 +411,9 @@ SEARCH BAR - Home Page
     border-left: none;
     cursor: pointer;
 }
-
+#search a{
+    background-color: whitesmoke;
+}
 .post-container{
     margin-top: 15px;
    
@@ -416,12 +421,17 @@ SEARCH BAR - Home Page
 /*bottone creazione nuovo post*/
 #post-btn{
     float: right;
-    background-color: whitesmoke;
+    background-color: rgb(218, 218, 218);
     cursor: pointer;
 }
-#post-btn a{
+.linkToButton{
     text-decoration: none;
-    color: initial;
+    font-size: 1.3em;
+    color: black;
+    font-weight: bold;
+    background-color: #ff02029c;
+    padding: 10px;
+    border-radius: 20px;
 }
 /*
 ================= 

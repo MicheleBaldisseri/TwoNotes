@@ -30,7 +30,7 @@
     </div>
 
     <div id="newPostForm" class="sezione contenitoreCentrale round_div shadow-div">
-        <p>Compila i seguenti campi per craere il tuo post.</p>
+        <p>Compila i seguenti campi per creare il tuo post.</p>
         <p>Ricorda che contenuti offensivi o che violano le regole verranno eliminati dai nostri amministratori.</p>
         <form name="creazionePost" action="???" method="POST">
             <div>
@@ -42,19 +42,28 @@
             <div>
                 <label for="myfile">Carica un'immagine:</label>
                 <div>
-                    <input type="file" id="myfile" name="myfile">
-                    <button type="submit" class="round-button general-button">Carica</button>
-                </div>             
+                    <input type="file" id="myfile" name="myfile" accept="image/gif, image/jpeg, image/png">
+                    <p>Formati consentiti: .gif /.jpeg / .png</p>
+                    <p>Dimensione massima consentita: xxx mb</p>
+                </div>          
             </div>
             <div>
                 <label for="content">Contenuto:</label> 
                 <div>
-                    <textarea class="inputForm" name="contenuto" rows="5" id="content" placeholder="Inserisci il contenuto del post..."></textarea>
+                    <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..."></textarea>
+                    <div id="comandiMarkdown">
+                        <p>Consigli utili</p>
+                        <ul>
+                            <li>Per inserire una parola in lingua inglese usare il comando .....</li>
+                            <li>Per inserire una abbreviazione usare.....</li>
+                            <li>..............</li>
+                        </ul>
+                    </div>  
                 </div>
             </div>
 
             <button type="submit" class="round-button general-button">Invia</button>
-            <button type="submit" id="annulla" class="round-button general-button">Annulla</button>
+            <a href="../index.php" class="linkToButton">Annulla</a>
         </form>
     </div>
     
