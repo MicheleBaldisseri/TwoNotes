@@ -75,22 +75,42 @@ SEZIONE HOME
 #breadcrumb-colore-parola{
     color: rgb(226, 203, 98);
 }
-
-/*li che contiene un post*/
-.postLi{
+/*lista dei post*/
+.postContent{
+    width: 50%;
+    margin-left: 7%;
+    margin-top: 2em;
+    padding: 1em;
+}
+.postContent h1{
+    font-size: 1.5em;
+    padding: 0.2em;
+    border-bottom: 2px solid rgb(131, 121, 121);
+}
+.postContent p{
+    padding: 1em;
+}
+.infoPost{
+    font-size: 0.8em;
+}
+.postContent img{
+    width: 30%;
+    display: block;
     margin: auto;
-    height: fit-content;
-    padding: 0.5em;
-    max-width: 45%;
-    background-color: #005eac;
-    margin-top: 1em;
+}
+.postContent a{
+    font-size: 1em;
+    background-color: #69b2ee;
+    padding: 6px;
+}
+.goTo{
+    float: right;
+}
+.listaPost{
     list-style-type: none;
+    margin-left: 25%;
 }
-/*questa regola era solo per mettere come contenuto il logo si può poi togliere*/
-.immaginePostProva img{
-    width: 30em;
-}
-/*
+
 /*
 ===================
 SEZIONE CONTENITORE
