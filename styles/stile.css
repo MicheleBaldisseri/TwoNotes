@@ -157,7 +157,6 @@ SEZIONE CONTATTI
 .sezione h1{
     text-align: center;
     font-size: 2em;
-    font-style: italic;
     color: #1040a7;
 }
 .sezione h2{
@@ -181,6 +180,12 @@ SEZIONE CONTATTI
 SEZIONE NUOVO POST
 ===================
 */
+#newPostForm{
+    margin-left: 25%;
+    width: 55em;
+    height: fit-content;
+    margin-top: 1em;
+}
 #newPostForm label{
     font-weight: bold;
     font-size: 1.2em;
@@ -189,9 +194,14 @@ SEZIONE NUOVO POST
     margin-top: 1em;
 }
 #newPostForm p{
+    font-size: 1.1em;
     font-weight: bolder;
     color: #0011ffa2;
 }
+#newPostForm button{
+    background-color: #005faca2;
+}
+/*text area contenuto*/
 .inputForm{
     width: 50%;
     padding: 12px 20px;
@@ -204,9 +214,10 @@ SEZIONE NUOVO POST
 #annulla{
     background-color: #f0090996;
 }
+/*lista di consigli utili*/
 #comandiMarkdown{
-    float: right;
-    width: 40%;
+    margin-left: 1em;
+    margin-bottom: 1em;
 }
 /*
 ===================
@@ -247,7 +258,6 @@ SEZIONE LOGIN PAGE
 
 .round_div{
     border-radius: 10px 10px 10px 10px;
-    
 }
 
 /*
