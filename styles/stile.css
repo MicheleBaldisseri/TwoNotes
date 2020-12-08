@@ -474,8 +474,12 @@ SEZIONE REGISTRAZIONE
     font-size: 2em;
     padding: 1em;
 }
+
+#registrazione input{
+    margin-top: 0.5em;
+}
 .regleft{
-    float: left!important;
+    float: left;
 }
 .formRegistrazione{
     padding-left: 2em;
@@ -485,14 +489,19 @@ SEZIONE REGISTRAZIONE
     height: 6em;
 }
 input[type="radio"] {
-    width: 12%;
-    text-align: right;
+    margin: 10px 20px 0px 0px;
 }
 label[for="username"] p{
     padding-top: 1.5em;
 }
-label[for="maschio"], label[for="femmina"], label[for="altro"]{
-    font-size: 1.2em;
+label[for="maschio"], 
+label[for="femmina"], 
+label[for="altro"]{
+    font-size: 1em;
+}
+
+.fieldset_signup{
+    border: 1px solid white;
 }
 
 /*

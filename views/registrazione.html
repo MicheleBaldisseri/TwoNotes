@@ -41,31 +41,42 @@
             <h2>Registrati a TwoNotes</h2>
             <form action="registerAction.php" class="formRegistrazione" method="post">
                 ERRORIREGISTRAZIONE
-                <div class="regleft">
-                    <label for="nome"><p class="textForm">Nome</p></label><br>
-                    <input type="text" name="nome" id="nome" class="input" placeholder="Nome" value="VALORENOME" required>
-                    <label for="dataNascita"><p class="textForm">Data di nascita</p></label><br>
-                    <input type="date" name="data" id="dataNascita" class="input" value="VALOREDATA" required>
-                    <label for="sesso"><p class="textForm">Sesso</p></label><br>
-                    <input type="radio" id="maschio" name="gender" value="M" class="radio" SELECTEDM required>
-                    <label for="maschio">Maschio</label>
-                    <input type="radio" id="femmina" name="gender" value="F" class="radio" SELECTEDF>
-                    <label for="femmina">Femmina</label>
-                    <input type="radio" id="altro" name="gender" value="A" class="radio" SELECTEDA>
-                    <label for="altro">Altro</label><br>
-                    <label for="username"><p class="textForm">Username</p></label><br>
-                    <input type="text" name="username" id="username" class="input" placeholder="Username" value="VALOREUSERNAME" required>
-                </div>
-                <div class="right">
-                    <label for="cognome" ><p class="textForm">Cognome</p></label><br>
-                    <input type="text" name="cognome" id="cognome" class="input" placeholder="Cognome" value="VALORECOGNOME" required><br>
-                    <label for="email"><p class="textForm">Email</p></label><br>
-                    <input type="email" name="email" id="email" class="input" placeholder="Email" value="VALOREEMAIL" required>
-                    <label for="provenienza"><p class="textForm">Provenienza</p></label><br>
-                    <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="VALOREPROVENIENZA" required>
-                    <label for="psw"><p class="textForm">Password</p></label><br>
-                    <input type="password" name="psw" id="psw" class="input" placeholder="Password" required>
-                </div>
+                <fieldset class="fieldset_signup">
+                    <!--<div class="regleft">-->
+                    
+                        <label for="nome"><p class="textForm">Nome</p></label>
+                        <input type="text" name="nome" id="nome" class="input" placeholder="Nome" value="VALORENOME" required>
+
+                        <label for="cognome" ><p class="textForm">Cognome</p></label>
+                        <input type="text" name="cognome" id="cognome" class="input" placeholder="Cognome" value="VALORECOGNOME" required>
+                        
+                        <label for="dataNascita"><p class="textForm">Data di nascita</p></label>
+                        <input type="date" name="data" id="dataNascita" class="input" value="VALOREDATA" required>
+
+                        <label for="sesso"><p class="textForm">Sesso</p></label>
+                        <label for="maschio">Maschio</label>
+                        <input type="radio" id="maschio" name="gender" value="M" class="radio" SELECTEDM required>
+                        <label for="femmina">Femmina</label>
+                        <input type="radio" id="femmina" name="gender" value="F" class="radio" SELECTEDF>
+                        <label for="altro">Altro</label>
+                        <input type="radio" id="altro" name="gender" value="A" class="radio" SELECTEDA>
+                        
+                        <label for="username"><p class="textForm">Username</p></label>
+                        <input type="text" name="username" id="username" class="input" placeholder="Username" value="VALOREUSERNAME" required>
+                    <!--</div>--> 
+                    <!--<div class="right">--> 
+                        
+                         <label for="email"><p class="textForm">Email</p></label>
+                         <input type="email" name="email" id="email" class="input" placeholder="Email" value="VALOREEMAIL" required>
+
+                         <label for="provenienza"><p class="textForm">Provenienza</p></label>
+                         <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="VALOREPROVENIENZA" required>
+                         
+                         <label for="psw"><p class="textForm">Password</p></label>
+                         <input type="password" name="psw" id="psw" class="input" placeholder="Password" required>
+                    <!--</div>--> 
+                </fieldset>
+                
                 <p id="bottone"class="buttonRegistrati">
                     <input type="submit" value="Registrati" class="general-button round-button orange-button">
                 </p>
