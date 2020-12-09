@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Two Notes</title>
+    <meta name="title" content="Two Notes"/>
+    <meta name="description" content="Sito realizzato per un progetto per il corso di Tecnologie Web per realizzare un social di musica"/>
+    <meta name="keywords" content="login TwoNotes"/>
+    <meta name="author" content="Giulio Zanatta"/>
+    <meta name="language" content="italian it"/>
+    <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
+</head>
+<body>
+    <div id="header">
+        <img src="../img/TwoNotes-4.svg"  alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
+        <HEADERDESTRO />
+    </div>
+
+    <div id="percorso">
+        <p>Ti trovi in: <span id="breadcrumb-colore-parola" xml:lang="en">Singolo Post</span></p>
+    </div>
+
+    <div id="menu">
+        <ul>
+            <li aria-current="page" xml:lang="en">Singolo Post</li>
+            <li><a href="../index.php">Home</a></li>
+            <li><a href="../php/aboutUs.php">Chi siamo</a></li>
+            <li><a href="../php/contatti.php">Contatti</a></li>
+        </ul>
+    </div>
+
+    <div id="rightSidebar">
+        <h2>Tags</h2>
+        <ul>
+            <li>Rock</li>
+            <li>Pop</li>
+            <li>EDM</li>
+            <li>ecc ecc ecc</li>
+            <li>da css questo div si allunga in base al contenuto</li>
+            <li>possiamo mettere al limite i tag in più colonne</li>
+        </ul>
+    </div>
+
+    <div>     
+        <div id="search" class="round_div shadow-div">   
+            <form>
+                <input type="text" placeholder="Inserisci contenuto da cercare...">
+                <button type="submit" id="search-button" class="round-button general-button">Cerca</button>
+                <a href="php/newPost.php" class="linkToButton">Crea Post</a>
+            </form>         
+        </div>
+            <div id="contenitore-post" class="contenitoreCentrale allWidth">
+                <div id="cover">
+                    <img src="../img/timmy.jpeg" alt=""/>
+                    <div id="user-info">
+                        <img src="../img/goofy.png" alt="Icona utente">
+                    </div>
+                    <p class="infoPost">
+                        <a href="profiloUtente" class="linkToButton">Lele97</a><br/>
+                        <a>08/12/2020 23:39</a>
+                    </p>  
+                </div>
+                <div class="">
+                    <p class="">
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+                        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, 
+                        sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    </p>
+                </div>
+                    
+
+               
+            </div>
+        <div>
+            <!--Bottone per tornare in cima alla pagina-->
+        <button id=backtotop class="round-button">Torna Su</button>
+        </div>
+    </div>
+    
+    <div id="footer">
+        <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>
+    </div>
+</body>
+</html>
