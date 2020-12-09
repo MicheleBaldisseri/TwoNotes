@@ -33,10 +33,11 @@
         <p>Compila i seguenti campi per creare il tuo post.</p>
         <p>Ricorda che contenuti offensivi o che violano le regole verranno eliminati dai nostri amministratori.</p>
         <form name="creazionePost" action="newPostAction.php" method="POST" enctype="multipart/form-data">
+        ERRORIPOST
             <div>
                 <label for="title">Titolo:</label> 
                 <div>
-                    <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." required />
+                    <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="VALORETITOLO"required />
                 </div>
             </div>
             <div>
@@ -50,7 +51,7 @@
             <div>
                 <label for="altImmagine">Descrizione Immagine:</label> 
                 <div>
-                    <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" ></textarea>
+                    <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" placeholder="Inserisci una descrizione dell'immagine...">VALOREALT</textarea>
                 </div>
             </div>
             <div>
@@ -64,7 +65,7 @@
                             <li>..............</li>
                         </ul>
                     </div>  
-                    <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..." required></textarea>
+                    <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..." required>VALORECONTENUTO</textarea>
                 </div>
             </div>
 
