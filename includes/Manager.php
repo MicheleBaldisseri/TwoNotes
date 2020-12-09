@@ -47,14 +47,19 @@ class Manager{
     }
 
     private function printPost($post){
-        $base64 = 'data:image/jpeg;base64,' . base64_encode($post['immagine']);
+        if($post['immagine']!=null){
+            $base64 = 'data:image/jpeg;base64,' . base64_encode($post['immagine']);
+        } 
 		$string =
                 '<li>
                     <div class="postContent round_div shadow-div">
                         <h1>' . stripslashes($post['titolo']) . '</h1>
-                        <p>' . $post['contenuto'] . '</p>
-                        <img src="'.$base64.'" />
-                        <p class="infoPost">Pubblicato da: 
+                        <p>' . stripslashes($post['contenuto']) . '</p>';
+                        if($post['immagine']!=null){
+                            $string .= '<img src="'.$base64.'" rc="'.stripslashes($post['altImmagine']).'"/>';
+                        }
+                        
+        $string .=      '<p class="infoPost">Pubblicato da: 
                             <a href="php/profiloUtente.php?username='. stripslashes($post['utente']) .'" class="linkToButton">' . stripslashes($post['utente']) . '</a>, 
                             08/12/2020 23:39 <a class="linkToButton goTo" href="php/postPage.php?idPost='.$post['postID'].'">Vai al post</a>
                         </p>
