@@ -624,13 +624,31 @@ SEZIONE PROFILO
 SEZIONE Modifica PROFILO
 ===================
 */
+#formModProfilo{
+    padding: 1em;
+}
+#formModProfilo h1{
+    text-align: center;
+    font-size: 2em;
+}
 #formModProfilo fieldset{
-    width: 70%;
     padding: 1em;
     margin-top: 1em;
 }
-#formModProfilo{
-    
+#formModProfilo legend{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-size: 1.3em;
+}
+#formModProfilo label{
+    font-size: 1em;
+}
+#formModProfilo input{
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+#formModProfilo button{
+    background-color: #005fac9f;
 }
 /*
 ==============

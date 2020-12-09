@@ -31,9 +31,9 @@
     </div>
 
     <div class="contenitoreCentrale allWidth smallReg">
-        <div id="registrazione" class="round_div shadow-div">
-            <h2>Modifica il tuo profilo</h2>
-            <form class="formRegistrazione" method="post">
+        <div id="formModProfilo" class="round_div shadow-div">
+            <h1>Modifica il tuo profilo</h1>
+            <form method="post">
                 <fieldset>
                     <legend>Informazioni generali</legend>
                     <label for="nome"><p class="textForm">Nome</p></label>
@@ -49,13 +49,16 @@
                     <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="VALOREPROVENIENZA" required>
 
                     <label for="sesso"><p class="textForm">Sesso</p></label>
-                    <label for="maschio">Maschio</label>
-                    <input type="radio" id="maschio" name="gender" value="M" class="radio" SELECTEDM required>
-                    <label for="femmina">Femmina</label>
-                    <input type="radio" id="femmina" name="gender" value="F" class="radio" SELECTEDF>
-                    <label for="altro">Altro</label>
-                    <input type="radio" id="altro" name="gender" value="A" class="radio" SELECTEDA>
+                    <div>
+                        <label for="maschio">Maschio</label>
+                        <input type="radio" id="maschio" name="gender" value="M" class="radio" SELECTEDM required>
+                        <label for="femmina">Femmina</label>
+                        <input type="radio" id="femmina" name="gender" value="F" class="radio" SELECTEDF>
+                        <label for="altro">Altro</label>
+                        <input type="radio" id="altro" name="gender" value="A" class="radio" SELECTEDA>
+                    </div>  
                 </fieldset>
+
                 <fieldset>
                     <legend>Account</legend>
                     <label for="email"><p class="textForm">Email</p></label>
@@ -70,14 +73,10 @@
                     <label for="conf-psw"><p class="textForm">Conferma password</p></label>
                     <input type="password" name="conf-psw" id="conf-psw" class="input" placeholder="Password" required>
                     
-                </fieldset>
-                
-                <a class="linkToButton" href="modificaProfilo.php">Salva</a>
-                <a class="linkToButton" href="profilo.php">Annulla</a>
-
-                
-                
+                </fieldset> 
             </form>
+            <button type="submit" class="round-button general-button">Salva</button>
+            <a href="profilo.php" class="linkToButton">Annulla</a>
         </div>
     </div>
     
