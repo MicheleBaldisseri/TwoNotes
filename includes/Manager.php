@@ -7,7 +7,7 @@ class Manager{
     private $dbconnection;
 
     public function __construct(){
-		$this->dbconnection = new DBConnection();
+        $this->dbconnection = new DBConnection();
     }
 
     public function getConnection(){
@@ -24,6 +24,7 @@ class Manager{
     
     public function getPostList(){
         $this->connect();
+        $this->dbconnection->query('SET NAMES utf8');
         $select = "  SELECT * 
                     FROM Post
                     ORDER BY dataOra DESC";
