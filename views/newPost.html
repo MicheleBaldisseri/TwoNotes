@@ -32,20 +32,27 @@
     <div id="newPostForm" class="sezione round_div shadow-div">
         <p>Compila i seguenti campi per creare il tuo post.</p>
         <p>Ricorda che contenuti offensivi o che violano le regole verranno eliminati dai nostri amministratori.</p>
-        <form name="creazionePost" action="???" method="POST">
+        <form name="creazionePost" action="newPostAction.php" method="POST" enctype="multipart/form-data">
+        ERRORIPOST
             <div>
                 <label for="title">Titolo:</label> 
                 <div>
-                    <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo...">
+                    <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="VALORETITOLO"required />
                 </div>
             </div>
             <div>
                 <label for="myfile">Carica un'immagine:</label>
                 <div>
-                    <input type="file" id="myfile" name="myfile" accept="image/gif, image/jpeg, image/png">
+                    <input type="file" id="myfile" name="myfile" accept="image/gif, image/jpeg, image/png" />
                     <p>Formati consentiti: .gif /.jpeg / .png</p>
                     <p>Dimensione massima consentita: xxx mb</p>
-                </div>          
+                </div>
+            </div>
+            <div>
+                <label for="altImmagine">Descrizione Immagine:</label> 
+                <div>
+                    <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" placeholder="Inserisci una descrizione dell'immagine...">VALOREALT</textarea>
+                </div>
             </div>
             <div>
                 <label for="content">Contenuto:</label> 
@@ -58,7 +65,7 @@
                             <li>..............</li>
                         </ul>
                     </div>  
-                    <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..."></textarea>
+                    <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..." required>VALORECONTENUTO</textarea>
                 </div>
             </div>
 

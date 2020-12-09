@@ -7,7 +7,7 @@ class Manager{
     private $dbconnection;
 
     public function __construct(){
-		$this->dbconnection = new DBConnection();
+        $this->dbconnection = new DBConnection();
     }
 
     public function getConnection(){
@@ -24,6 +24,7 @@ class Manager{
     
     public function getPostList(){
         $this->connect();
+        $this->dbconnection->query('SET NAMES utf8');
         $select = "  SELECT * 
                     FROM Post
                     ORDER BY dataOra DESC";
@@ -47,13 +48,23 @@ class Manager{
     }
 
     private function printPost($post){
-		$string ='
-				<li>
-					<a href="post.php?articleID='.$post['postID'].'">
-						<h3 class="articleTitle">' . stripslashes($post['titolo']) . '</h3>
-                        <p class="description">' . stripslashes($post['contenuto']) . '</p>
-                        <p class="user">' . stripslashes($post['utente']) . '</p>
-					</a>
+        if($post['immagine']!=null){
+            $base64 = 'data:image/jpeg;base64,' . base64_encode($post['immagine']);
+        } 
+		$string =
+                '<li>
+                    <div class="postContent round_div shadow-div">
+                        <h1>' . stripslashes($post['titolo']) . '</h1>
+                        <p>' . stripslashes($post['contenuto']) . '</p>';
+                        if($post['immagine']!=null){
+                            $string .= '<img src="'.$base64.'" alt="'.stripslashes($post['altImmagine']).'"/>';
+                        }
+                        
+        $string .=      '<p class="infoPost">Pubblicato da: 
+                            <a href="php/profiloUtente.php?username='. stripslashes($post['utente']) .'" class="linkToButton">' . stripslashes($post['utente']) . '</a>, 
+                            08/12/2020 23:39 <a class="linkToButton goTo" href="php/postPage.php?idPost='.$post['postID'].'">Vai al post</a>
+                        </p>
+                    </div>              
                 </li>';
         return $string;
     }
@@ -126,6 +137,21 @@ class Manager{
         $_SESSION['registerErrors'] = $errors;
         return false;
 
+    }
+
+    public function insertPost($values){
+        $this->connect();
+        $errors = array();
+        $select = "  INSERT INTO Post (titolo, dataora, immagine, altImmagine, contenuto, utente) VALUES 
+            ('".$values['titolo']."',now(), '".$values['immagine']."', '".$values['altImmagine']."', '".$values['contenuto']."', '".$values['username']."')";
+        $lastid = null;
+        if(!$this->dbconnection->query($select)){
+            array_push($errors, "Errore nell'inserimento");
+        }else{
+            $lastid = $this->dbconnection->getLastId();
+        }
+        $this->disconnect();
+        return $lastid;
     }
 }
 

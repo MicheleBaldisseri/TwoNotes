@@ -41,6 +41,10 @@ class DBConnection{
 		return mysqli_query($this->connectionMYSQL,$query);
 	}
 
+	public function getLastId(){
+		return mysqli_insert_id($this->connectionMYSQL);
+	}
+
 }
 
 ?>

@@ -27,15 +27,12 @@ if($user->getUsername()!=null){
 }
 $paginaHTML = str_replace("<HEADERDESTRO />", $stringHeader, $paginaHTML);
 
-$res = $manager->connect();
-if($res == false){
-	die ("Errore nell'apertura del DB"); //TODO
-}else{
-	$listaPost = $manager->getPostList();
-    $manager->disconnect(); 
-    $string = $manager->printPostList($listaPost);
+$listaPost = $manager->getPostList();
+$stringList = $manager->printPostList($listaPost);
 
-	echo str_replace("<LISTAPOST />", $string, $paginaHTML);
-}
+$paginaHTML = str_replace("LISTAPOST", $stringList, $paginaHTML);
+
+echo $paginaHTML;
+
 
 ?>
