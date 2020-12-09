@@ -138,7 +138,6 @@ class Manager{
         $errors = array();
         $select = "  INSERT INTO Post (titolo, dataora, immagine, altImmagine, contenuto, utente) VALUES 
             ('".$values['titolo']."',now(), '".$values['immagine']."', '".$values['altImmagine']."', '".$values['contenuto']."', '".$values['username']."')";
-            echo $select;
         $lastid = null;
         if(!$this->dbconnection->query($select)){
             array_push($errors, "Errore nell'inserimento");

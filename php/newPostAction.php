@@ -10,7 +10,7 @@ $errors = array();
 $values = array();
 
 $values['titolo'] = isset($_POST['titolo']) ? $_POST['titolo'] : null;
-$values['immagine'] = isset($_POST['myfile']) ? $_POST['myfile'] : null;
+$values['immagine'] = is_uploaded_file($_FILES['myfile']['tmp_name']) ? addslashes(file_get_contents($_FILES['myfile']['tmp_name'])) : null;
 $values['altImmagine'] = isset($_POST['altImmagine']) ? $_POST['altImmagine'] : null;
 $values['contenuto'] = isset($_POST['contenuto']) ? $_POST['contenuto'] : null;
 $values['username'] = $user->getUsername();
@@ -20,6 +20,7 @@ if(empty($values['altImmagine']) && !empty($values['immagine'])) array_push($err
 if(empty($values['contenuto'])) array_push($errors, "Compila il campo Contenuto");
 
 if(count($errors)==0){
+
     $res = $manager->insertPost($values);
 
     if($res){
