@@ -48,15 +48,7 @@ class Manager{
 
     private function printPost($post){
         $base64 = 'data:image/jpeg;base64,' . base64_encode($post['immagine']);
-		$string =/*'
-				<li>
-					<a href="post.php?articleID='.$post['postID'].'">
-						<h3 class="articleTitle">' . stripslashes($post['titolo']) . '</h3>
-                        <p class="description">' . stripslashes($post['contenuto']) . '</p>
-                        <p class="user">' . stripslashes($post['utente']) . '</p>
-					</a>
-                </li>';*/
-
+		$string =
                 '<li>
                     <div class="postContent round_div shadow-div">
                         <h1>' . stripslashes($post['titolo']) . '</h1>
@@ -139,6 +131,22 @@ class Manager{
         $_SESSION['registerErrors'] = $errors;
         return false;
 
+    }
+
+    public function insertPost($values){
+        $this->connect();
+        $errors = array();
+        $select = "  INSERT INTO Post (titolo, dataora, immagine, altImmagine, contenuto, utente) VALUES 
+            ('".$values['titolo']."',now(), '".$values['immagine']."', '".$values['altImmagine']."', '".$values['contenuto']."', '".$values['username']."')";
+            echo $select;
+        $lastid = null;
+        if(!$this->dbconnection->query($select)){
+            array_push($errors, "Errore nell'inserimento");
+        }else{
+            $lastid = $this->dbconnection->getLastId();
+        }
+        $this->disconnect();
+        return $lastid;
     }
 }
 
