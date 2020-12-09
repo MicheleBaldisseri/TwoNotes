@@ -173,9 +173,9 @@ SEZIONE CONTATTI
 ===================
 */
 .sezione{
-    margin: auto;
+    margin-left: 25%;
     padding: 1.5em;
-    width: 40%;
+    width: 60%;
     margin-top: 1em;
 }
 .sezione h1{
@@ -582,6 +582,56 @@ label[for="altro"]{
     border: 1px solid white;
 }
 
+/*
+===================
+SEZIONE PROFILO
+===================
+*/
+#profile h1{
+    color: #1040a7;
+    padding-top: 1em;
+    font-size: 2em;
+    text-align: center;
+}
+#profile div{
+    padding: 1em;
+}
+#profile h2, p{
+    display: inline;
+}
+#profile p{
+    margin-left: 1.2em;
+    font-weight: bold;
+    color: #452297;
+}
+#profile h2{
+    margin-left: 1em; 
+    font-size: 1.5em;
+    border-bottom: 3px solid rgb(160, 161, 175);
+}
+#profileSx, #profileDx{
+    float: left;
+}
+#profileDx{
+    margin-left: 6em;
+}
+#profile a{
+    float: right;
+    margin-right: 2em;
+}
+/*
+===================
+SEZIONE Modifica PROFILO
+===================
+*/
+#formModProfilo fieldset{
+    width: 70%;
+    padding: 1em;
+    margin-top: 1em;
+}
+#formModProfilo{
+    
+}
 /*
 ==============
 SEZIONE FOOTER
