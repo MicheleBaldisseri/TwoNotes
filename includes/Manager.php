@@ -57,7 +57,7 @@ class Manager{
                         <h1>' . stripslashes($post['titolo']) . '</h1>
                         <p>' . stripslashes($post['contenuto']) . '</p>';
                         if($post['immagine']!=null){
-                            $string .= '<img src="'.$base64.'" rc="'.stripslashes($post['altImmagine']).'"/>';
+                            $string .= '<img src="'.$base64.'" alt="'.stripslashes($post['altImmagine']).'"/>';
                         }
                         
         $string .=      '<p class="infoPost">Pubblicato da: 
