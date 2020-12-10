@@ -664,6 +664,7 @@ SEZIONE Modifica PROFILO
 #formModProfilo fieldset{
     padding: 1em;
     margin-top: 1em;
+    border-radius: 20px;
 }
 #formModProfilo legend{
     padding-left: 0.5em;
