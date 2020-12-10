@@ -205,17 +205,49 @@ SEZIONE SINGOLO POST
 ===================
 */
 
-/*Allineo tutti gli elementi al centro*/
-#contenitore-post{
-    text-align: center;
+#singlePost,
+#commentIns{
+	margin-left: 25%;
+    width: 55em;
+    height: fit-content;
+    margin-top: 1em;
+}
+
+#singlePost ul li{
+	list-style-type: none	
+}
+
+.inputComment{
+	margin-top:1em;
+	width: 90%;
+	padding: 12px 20px;
+    font-size: 1.3em;
+    font-style: normal;
+    border: 1px solid rgb(115, 116, 136);
+    border-radius: 4px; 
+}
+
+.singleComment {
+	margin-top: 1em;
+	padding: 1em;
+}
+
+.aComment{
+	margin-top: 1em;
+	padding: 1em;
 }
 
 #cover img{
-    width: 50%;
+    width: 40%;
     box-shadow: 3px 3px 20px 3px #ccc;
     border-radius: 10px 10px 10px 10px;
 }
 
+.littleText{
+	font-size: 13px;
+    font-style: oblique;
+}
+/*
 #cover p{
     position: relative;
     bottom: 5em;
@@ -233,7 +265,7 @@ SEZIONE SINGOLO POST
     background-color: white;
     border: 5px solid white;
     border-radius: 100px;
-}*/
+}
     
 
 #user-info img{
@@ -249,10 +281,7 @@ SEZIONE SINGOLO POST
 
 #user-info a{
     margin-top: 1em;
-}
-
-
-
+}*/
 /*
 ===================
 SEZIONE NUOVO POST
