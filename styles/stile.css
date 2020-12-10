@@ -86,21 +86,23 @@ SEZIONE HOME
     font-size: 1.5em;
     padding: 0.2em;
     border-bottom: 2px solid rgb(131, 121, 121);
-    margin-bottom: 0.5em;
 }
 .infoPost{
     font-size: 0.8em;
 }
 .postContent img{
-    padding: 1em;
     width: 30%;
     display: block;
     margin: auto;
+    padding-top: 1em;
 }
 .postContent a{
     font-size: 1em;
     background-color: #69b2ee;
     padding: 6px;
+}
+.postContent p{
+    padding-top: 1em;
 }
 .goTo{
     float: right;
