@@ -6,9 +6,19 @@ $paginaHTML = file_get_contents('../views/newPost.html');
 $manager = new Manager();
 $user = $manager->setupSession();
 
+$stringHeader = '';
 if($user->getUsername()!=null){
-    //gestire il fatto di essere in una pagina sbagliata
+	$stringHeader = '
+	<div>
+		<ul>
+			<li>Benvenuto <a href="profilo.php?username='.$user->getUsername().'">'. $user->getNome() .'</a>!<li>
+			<li><a href="logout.php" xml:lang="en">Logout</a></li>
+		</ul>
+	</div>';
+}else{
+	//gestire il fatto di essere in una pagina sbagliata	
 }
+$paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
 
 $stringErrors = '';
 if(isset($_SESSION['postErrors'])){

@@ -11,7 +11,7 @@ if($user->getUsername()!=null){
 	$stringHeader = '
 	<div>
 		<ul>
-			<li>Benvenuto '. $user->getNome() .'!<li>
+			<li>Benvenuto <a href="php/profilo.php?username='.$user->getUsername().'">'. $user->getNome() .'</a>!<li>
 			<li><a href="php/logout.php" xml:lang="en">Logout</a></li>
 		</ul>
 	</div>';
@@ -25,7 +25,7 @@ if($user->getUsername()!=null){
 		</ul>
 	</div>';	
 }
-$paginaHTML = str_replace("<HEADERDESTRO />", $stringHeader, $paginaHTML);
+$paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
 
 $listaPost = $manager->getPostList();
 $stringList = $manager->printPostList($listaPost);
