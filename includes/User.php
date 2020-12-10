@@ -78,8 +78,8 @@ class User {
         return $this->admin;
     }
 
-    public function isPasswordRight($pw){
-      return md5($pw) == $this->password;
+    public function isPasswordCorrect($password){
+      return md5($password) == $this->password;
     }
 
 	  public function setSessionVar() {

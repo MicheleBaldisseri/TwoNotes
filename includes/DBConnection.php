@@ -1,6 +1,6 @@
 <?php
 
-class DBConnection{
+class DB{
 
 	private $host = "localhost";
 	private $username = "root";
@@ -23,18 +23,6 @@ class DBConnection{
 
 	public function getConnection() {
 		return $this->connectionMYSQL;
-	}
-
-	public function getError() {
-		return $this->connectionMYSQL->errno;
-	}
-
-	public function getErrorMessage() {
-		return $this->connectionMYSQL->error;
-	}
-
-	public function affectedRows() {
-		return $this->connectionMYSQL->affected_rows;
 	}
 
 	public function query($query) {

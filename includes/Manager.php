@@ -7,7 +7,7 @@ class Manager{
     private $dbconnection;
 
     public function __construct(){
-        $this->dbconnection = new DBConnection();
+        $this->dbconnection = new DB();
     }
 
     public function getConnection(){
@@ -80,7 +80,7 @@ class Manager{
     public function login($username,$password){
         $user = new User($this->dbconnection);
         if($user->recover($username)){
-            if($user->isPasswordRight($password)){
+            if($user->isPasswordCorrect($password)){
                 $user->setSessionVar();
             }else{
                 unset($_SESSION['username']);
