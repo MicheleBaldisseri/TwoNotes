@@ -49,7 +49,7 @@ if($userProfile!=null){
 	$paginaHTML = str_replace("NOME", $userProfile->getNome(), $paginaHTML);
 	$paginaHTML = str_replace("COGNO_ME", $userProfile->getCognome(), $paginaHTML);
 	$paginaHTML = str_replace("EMAIL", $userProfile->getEmail(), $paginaHTML);
-	$paginaHTML = str_replace("DATANASCITA", $userProfile->getDataNascita(), $paginaHTML);
+	$paginaHTML = str_replace("DATANASCITA", $new_date, $paginaHTML);
 	$paginaHTML = str_replace("SESSO", $userProfile->getSesso(), $paginaHTML);
 	$paginaHTML = str_replace("USERNAME", $userProfile->getUsername(), $paginaHTML);
 	$paginaHTML = str_replace("PROVENIENZA", $userProfile->getProvenienza(), $paginaHTML);
@@ -57,6 +57,13 @@ if($userProfile!=null){
 }else{
 	//Gestire errore database
 }
+
+
+$buttonModifica = '';
+if($_GET['username'] == $user->getUsername()){
+	$buttonModifica = '<a class="linkToButton" href="modificaProfilo.php">Modifica</a>';
+}
+$paginaHTML = str_replace("LINKMODIFICA", $buttonModifica, $paginaHTML);
 
 echo $paginaHTML;
 
