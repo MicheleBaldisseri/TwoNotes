@@ -86,14 +86,13 @@ SEZIONE HOME
     font-size: 1.5em;
     padding: 0.2em;
     border-bottom: 2px solid rgb(131, 121, 121);
-}
-.postContent p{
-    padding: 1em;
+    margin-bottom: 0.5em;
 }
 .infoPost{
     font-size: 0.8em;
 }
 .postContent img{
+    padding: 1em;
     width: 30%;
     display: block;
     margin: auto;
@@ -205,8 +204,7 @@ SEZIONE SINGOLO POST
 ===================
 */
 
-#singlePost,
-#commentIns{
+#singlePost, #commentIns{
 	margin-left: 25%;
     width: 55em;
     height: fit-content;
@@ -247,41 +245,6 @@ SEZIONE SINGOLO POST
 	font-size: 13px;
     font-style: oblique;
 }
-/*
-#cover p{
-    position: relative;
-    bottom: 5em;
-}
-
-#user-info{
-    position: relative;
-    bottom: 5em;
-    margin: auto;
-}
-
-/*.circle{
-    width: 100px;
-    height: 100px;
-    background-color: white;
-    border: 5px solid white;
-    border-radius: 100px;
-}
-    
-
-#user-info img{
-    width: 100%;
-    box-shadow: none;
-    width: 90px;
-    height: 90px;
-    background-color: white;
-    border: 5px solid white;
-    border-radius: 100px;
-    z-index: 1;
-}
-
-#user-info a{
-    margin-top: 1em;
-}*/
 /*
 ===================
 SEZIONE NUOVO POST
@@ -626,7 +589,7 @@ SEZIONE PROFILO
 #profile div{
     padding: 1em;
 }
-#profile h2, p{
+#profile h2 , #profile p{
     display: inline;
 }
 #profile p{
