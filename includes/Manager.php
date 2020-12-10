@@ -153,6 +153,12 @@ class Manager{
         $this->disconnect();
         return $lastid;
     }
+
+    public function getUser($username){
+        $user = new User($this->dbconnection);
+        if($user->recover($username))return $user;
+        return null;
+    }
 }
 
 ?>
