@@ -447,7 +447,7 @@ SEZIONE BOTTONI
     font-weight: bold;
 }
 .input{
-    width: 95%;
+    width: 50%;
     height: 30px;
     padding-left: 1em;
     font-size: 1.0em;
@@ -573,42 +573,43 @@ SEZIONE REGISTRAZIONE
 #registrazione{
     padding: 0em 1em 0em 1em;
 }
-#registrazione div{
-    width: 48%;
-}
 #registrazione h2{
     text-align: center;
     font-size: 2em;
     padding: 1em;
 }
-
-#registrazione input{
-    margin-top: 0.5em;
+#registrazione h3{
+    padding: 1.3em 0 0.3em 0;
+    font-size: 1.3em;
+    font-weight: bold;
+    display: inline;
 }
-.regleft{
-    float: left;
+.labelleft{
+    text-align: right;
+    font-size: 1.4em;
+    width: 34%;
+    display:inline-block;
+    padding: 1em 0 1em 0;
+}
+.inputright{
+    width: 60%;
+    display:inline-block;
+}
+.inputsex{
+    text-align: right;
+    width: 13%;
+    display:inline-block;
+    font-size: 1.2em;
 }
 .formRegistrazione{
     padding-left: 2em;
     padding-right: 2em;
 }
-.sesso{
-    height: 6em;
-}
 input[type="radio"] {
-    margin: 10px 20px 0px 0px;
+    margin: 10px 10px 0px 0px;
 }
-label[for="username"] p{
-    padding-top: 1.5em;
-}
-label[for="maschio"], 
-label[for="femmina"], 
-label[for="altro"]{
-    font-size: 1em;
-}
-
 .fieldset_signup{
-    border: 1px solid white;
+    border: none
 }
 
 /*
