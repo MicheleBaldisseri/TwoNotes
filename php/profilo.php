@@ -8,6 +8,11 @@ $paginaHTML = file_get_contents('../views/profilo.html');
 $manager = new Manager();
 $user = $manager->setupSession();
 
+if(!isset($_GET['username'])){
+	//gestire il fatto di essere in una pagina sbagliata
+	//exit();
+}
+
 $stringHeader = '';
 if($user->getUsername()!=null){
 	$stringHeader = '
@@ -33,6 +38,25 @@ if($user->getUsername()!=null){
 	</div>';	
 }
 $paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
+
+$userProfile = $manager->getUser($_GET['username']);
+
+if($userProfile!=null){
+
+	$timestamp = strtotime($userProfile->getDataNascita());
+	$new_date = date("d/m/Y", $timestamp);
+
+	$paginaHTML = str_replace("NOME", $userProfile->getNome(), $paginaHTML);
+	$paginaHTML = str_replace("COGNO_ME", $userProfile->getCognome(), $paginaHTML);
+	$paginaHTML = str_replace("EMAIL", $userProfile->getEmail(), $paginaHTML);
+	$paginaHTML = str_replace("DATANASCITA", $userProfile->getDataNascita(), $paginaHTML);
+	$paginaHTML = str_replace("SESSO", $userProfile->getSesso(), $paginaHTML);
+	$paginaHTML = str_replace("USERNAME", $userProfile->getUsername(), $paginaHTML);
+	$paginaHTML = str_replace("PROVENIENZA", $userProfile->getProvenienza(), $paginaHTML);
+	$paginaHTML = str_replace("RUOLO", ($userProfile->isAdmin() ? 'Admin' : 'Utente'), $paginaHTML);
+}else{
+	//Gestire errore database
+}
 
 echo $paginaHTML;
 
