@@ -19,14 +19,15 @@ $db = $manager->getConnection();
 $errors = array();
 $values = array();
 
-$values['nome'] = $_POST['nome'];
-$values['cognome'] = $_POST['cognome'];
-$values['dataNascita'] = $_POST['data'];
-$values['email'] = $_POST['email'];
-$values['sesso'] = $_POST['gender'];
-$values['provenienza'] = $_POST['provenienza'];
-$values['username'] = $_POST['username'];
-$values['password'] = $_POST['psw']; 
+$values['nome'] = isset($_POST['nome']) ? $_POST['nome'] : null;
+$values['cognome'] = isset($_POST['cognome']) ? $_POST['cognome'] : null;
+$values['dataNascita'] = isset($_POST['data']) ? $_POST['data'] : null;
+$values['email'] = isset($_POST['email']) ? $_POST['email'] : null;
+$values['sesso'] = isset($_POST['gender']) ? $_POST['gender'] : null;
+$values['provenienza'] = isset($_POST['provenienza']) ? $_POST['provenienza'] : null;
+$values['username'] = isset($_POST['username']) ? $_POST['username'] : null;
+$values['password'] = isset($_POST['psw']) ? $_POST['psw'] : null; 
+$values['confermaPassword'] = isset($_POST['conf-psw']) ? $_POST['conf-psw'] : null;
 
 if(empty($values['nome'])) array_push($errors, "Compila il campo Nome");
 if(empty($values['cognome'])) array_push($errors, "Compila il campo Cognome");
@@ -36,8 +37,7 @@ if(empty($values['sesso'])) array_push($errors, "Compila il campo Sesso");
 if(empty($values['provenienza'])) array_push($errors, "Compila il campo Provenienza");
 if(empty($values['username'])) array_push($errors, "Compila il campo Username");
 if(empty($values['password'])) array_push($errors, "Compila il campo Password");
-
-
+if(empty($values['confermaPassword'])) array_push($errors, "Compila il campo Ripeti password");
 
 if(count($errors)==0){
     if(!filter_var($values['email'], FILTER_VALIDATE_EMAIL)){
@@ -50,6 +50,7 @@ if(count($errors)==0){
             array_push($errors, "Data di nascita non valida");
         }
     }
+    if($values['password']!=$values['confermaPassword'])array_push($errors, "Le password non corrispondono");
 
     if(count($errors)==0){
         if($manager->register($values)){
