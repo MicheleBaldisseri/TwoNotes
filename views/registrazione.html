@@ -41,48 +41,44 @@
             <h2>Registrati a TwoNotes</h2>
             <form action="registerAction.php" class="formRegistrazione" method="post">
                 ERRORIREGISTRAZIONE
-                <fieldset class="fieldset_signup">
-                    <!--<div class="regleft">-->
-                        <label for="nome" class="labelleft">Nome:</label>
-                        <input type="text" name="nome" id="nome" class="input" placeholder="Nome" value="VALORENOME" maxlength="20"required>
-                                            
+                <fieldset>
+                    <legend>Anagrafica</legend>
+                    <label for="nome" class="labelleft">Nome:</label>
+                    <input type="text" name="nome" id="nome" class="input" placeholder="Nome" value="VALORENOME" maxlength="20" required>
 
-                        <label for="cognome" class="labelleft">Cognome:</label>
-                        <input type="text" name="cognome" id="cognome" class="input" placeholder="Cognome" value="VALORECOGNOME" maxlength="20"required>
-                        
-                        <label for="dataNascita" class="labelleft">Data di nascita:</label>
-                        <input type="date" name="data" id="dataNascita" class="input" value="VALOREDATA" required>
+                    <label for="cognome" class="labelleft">Cognome:</label>
+                    <input type="text" name="cognome" id="cognome" class="input" placeholder="Cognome" value="VALORECOGNOME" maxlength="20" required>
+                    
+                    <label for="dataNascita" class="labelleft">Data di nascita:</label>
+                    <input type="date" name="data" id="dataNascita" class="input" value="VALOREDATA" required>
 
-                        <label for="sesso" class="labelleft">Sesso:</label>
-                        <label for="maschio" class="inputsex">Maschio</label>                        
-                        <input type="radio" id="maschio" name="gender" value="M" SELECTEDM required>
-                        <label for="femmina" class="inputsex">Femmina</label>
-                        <input type="radio" id="femmina" name="gender" value="F" SELECTEDF>
-                        <label for="altro" class="inputsex">Altro</label>
-                        <input type="radio" id="altro" name="gender" value="A" SELECTEDA>
-
-                        <label for="username" class="labelleft">Username:</label>
-                        <input type="text" name="username" id="username" class="input" placeholder="Username" value="VALOREUSERNAME" required>
-                    <!--</div>--> 
-                    <!--<div class="right">--> 
-                        
-                         <label for="email" class="labelleft">Email:</label>
-                         <input type="email" name="email" id="email" class="input" placeholder="Email" value="VALOREEMAIL" required>
-
-                         <label for="provenienza" class="labelleft">Provenienza:</label>
-                         <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="VALOREPROVENIENZA" required>
-                         
-                         <label for="psw" class="labelleft">Password:</label>
-                         <input type="password" name="psw" id="psw" class="input" placeholder="Password" required>
-                         <label for="conf-psw" class="labelleft">Conferma password:</label>
-                         <input type="password" name="conf-psw" id="conf-psw" class="input" placeholder="Conferma password" required>
-                    <!--</div>--> 
+                    <label for="sesso" class="labelleft">Sesso:</label>
+                    <label for="maschio" class="inputsex">Maschio</label>                        
+                    <input type="radio" id="maschio" name="gender" value="M" SELECTEDM required>
+                    <label for="femmina" class="inputsex">Femmina</label>
+                    <input type="radio" id="femmina" name="gender" value="F" SELECTEDF>
+                    <label for="altro" class="inputsex">Altro</label>
+                    <input type="radio" id="altro" name="gender" value="A" SELECTEDA>
+                    
+                    <label for="provenienza" class="labelleft">Provenienza:</label>
+                    <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="VALOREPROVENIENZA" required>
                 </fieldset>
-                
+                <fieldset>
+                    <legend>Dati per l'accesso</legend>
+                    <label for="username" class="labelleft">Username:</label>
+                    <input type="text" name="username" id="username" class="input" placeholder="Username" value="VALOREUSERNAME" required>
+
+                    <label for="email" class="labelleft">Email:</label>
+                    <input type="email" name="email" id="email" class="input" placeholder="Email" value="VALOREEMAIL" required>
+
+                    <label for="psw" class="labelleft">Password:</label>
+                    <input type="password" name="psw" id="psw" class="input" placeholder="Password" required>
+                    <label for="conf-psw" class="labelleft">Conferma password:</label>
+                    <input type="password" name="conf-psw" id="conf-psw" class="input" placeholder="Conferma password" required>
+                </fieldset>
                 <p id="bottone"class="buttonRegistrati">
                     <input type="submit" value="Registrati" class="general-button round-button orange-button">
                 </p>
-                <br>
             </form>
         </div>
     </div>

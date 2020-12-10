@@ -352,7 +352,7 @@ SEZIONE LEFT
     border-radius: 0px 10px 10px 0px;
 }
 #dentroLeft{
-    padding: 9em 0em 0em 4em;
+    padding: 8em 0em 0em 4em;
 }
 #dentroLeft img{
     width: 400px;
@@ -451,6 +451,7 @@ SEZIONE BOTTONI
     width: 10%;
     padding-left: 22em;
     padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 /* 
@@ -571,10 +572,6 @@ SEZIONE REGISTRAZIONE
 input[type="radio"] {
     margin: 10px 10px 0px 0px;
 }
-.fieldset_signup{
-    border: none
-}
-
 /*
 ===================
 SEZIONE PROFILO
