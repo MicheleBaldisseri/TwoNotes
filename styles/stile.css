@@ -641,6 +641,7 @@ SEZIONE Modifica PROFILO
 }
 #formModProfilo label{
     font-size: 1em;
+    font-weight: bold;
 }
 #formModProfilo input{
     margin-bottom: 0.5em;
@@ -662,4 +663,32 @@ SEZIONE FOOTER
     padding: 2em 0 2.0em 1.0em;
     font-style: italic;
     background-color: #005eac;
+}
+/*
+==============
+SEZIONE 404page
+==============
+*/
+#error404{
+    width: 60%;
+    margin-left: 20%;
+    padding: 2em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+#error404 img{
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+#error404 h1{
+    color: #613bb9;
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+#error404 p{
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
 }
