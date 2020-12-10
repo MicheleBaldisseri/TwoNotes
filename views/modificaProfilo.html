@@ -3,9 +3,9 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Two Notes</title>
-    <meta name="title" content="Two Notes"/>
-    <meta name="description" content="Sito realizzato per un progetto per il corso di Tecnologie Web per realizzare un social di musica"/>
+    <title>Modifica profilo - Two Notes</title>
+    <meta name="title" content="Modifica profilo - Two Notes"/>
+    <meta name="description" content="Pagina per la modifica del profilo"/>
     <meta name="keywords" content="login, TwoNotes"/>
     <meta name="author" content="Michele Baldisseri"/>
     <meta name="language" content="italian it"/>
@@ -25,7 +25,7 @@
         <ul>
             <li><a xml:lang="en" href="../index.php">Home</a></li>
             <li><a href="aboutUs.php">Chi siamo</a></li>
-            <li><a href="profilo.php">Profilo</a></li>
+            <!--<li><a href="profilo.php">Profilo</a></li>-->
             <li><a href="contatti.php">Contatti</a></li>
         </ul>
     </div>
@@ -44,7 +44,7 @@
                     <input type="text" name="cognome" id="cognome" class="input" placeholder="Cognome" value="VALORECOGNOME" maxlength="20"required>
                     
                     <label for="dataNascita" class="labelleft">Data di nascita:</label>
-                    <input type="date" name="data" id="dataNascita" class="input" value="VALOREDATA" required>
+                    <input type="" name="data" id="dataNascita" class="input" value="VALOREDATA" required>
 
                     <label for="sesso" class="labelleft">Sesso:</label>
                     <label for="maschio" class="inputsex">Maschio</label>                        
@@ -63,16 +63,16 @@
                     <input type="text" name="username" id="username" class="input" placeholder="Username" value="VALOREUSERNAME" required>
                     
                     <label for="email" class="labelleft">Email:</label>
-                    <input type="email" name="email" id="email" class="input" placeholder="Email" value="VALOREEMAIL" required>
+                    <input type="" name="email" id="email" class="input" placeholder="Email" value="VALOREEMAIL" required>
 
                     <label for="psw" class="labelleft">Password:</label>
                     <input type="password" name="psw" id="psw" class="input" placeholder="Password" required>
                     <label for="conf-psw" class="labelleft">Conferma password:</label>
                     <input type="password" name="conf-psw" id="conf-psw" class="input" placeholder="Conferma password" required>
                 </fieldset>
-            </form>   
-                <button type="submit" class="round-button general-button">Salva</button>
-                <a href="profilo.php" class="linkToButton">Annulla</a>           
+                <input type="submit" class="round-button general-button" value="Salva"></input>
+            </form>    
+            <a href="profilo.php" class="linkToButton alignFormButton">Annulla</a>           
         </div>
     </div>
     
