@@ -13,10 +13,15 @@ if($user->getUsername()!=null){
 	$stringHeader = '
 	<div>
 		<ul>
-			<li>Benvenuto <a href="profilo.php?username='.$user->getUsername().'">'. $user->getNome() .'</a>!<li>
-			<li><a href="logout.php" xml:lang="en">Logout</a></li>
-		</ul>
-	</div>';
+            ';
+            if($_GET['username'] == $user->getUsername()){
+                $stringHeader .= '<li>Benvenuto '. $user->getNome() .'!<li>';
+            }else{
+                $stringHeader .= '<li>Benvenuto <a href="profilo.php?username='.$user->getUsername().'">'. $user->getNome() .'</a>!<li>';
+            }
+            $stringHeader .= '<li><a href="logout.php" xml:lang="en">Logout</a></li>
+            </ul>
+        </div>';
 }else{
 	$stringHeader = '
 	<div>
