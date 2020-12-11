@@ -6,6 +6,8 @@ require_once "User.php";
 class Manager{
     private $dbconnection;
 
+    // OPERAZIONI CON DB ---------------------------------------------------------------------------
+
     public function __construct(){
         $this->dbconnection = new DB();
     }
@@ -21,6 +23,8 @@ class Manager{
     public function disconnect(){
         return $this->dbconnection->disconnect();
     }
+
+    //OPERAZIONI CON POST ---------------------------------------------------------------------------
     
     public function getPostList(){
         $this->connect();
@@ -36,7 +40,7 @@ class Manager{
 
     public function printPostList($postList){
         $string = '';
-        if(count($postList)!=0){
+        if($postList){
             foreach ($postList as $post) {
                 $string .= $this->printPost($post);
             }
@@ -69,6 +73,83 @@ class Manager{
         return $string;
     }
 
+    // OPERAZIONE INSERIMENTO POST ---------------------------------------------------------------------------
+
+    public function insertPost($values){
+        $this->connect();
+        $errors = array();
+        $select = "  INSERT INTO Post (titolo, dataora, immagine, altImmagine, contenuto, utente) VALUES 
+            ('".$values['titolo']."',now(), '".$values['immagine']."', '".$values['altImmagine']."', '".$values['contenuto']."', '".$values['username']."')";
+        $lastid = null;
+        if(!$this->dbconnection->query($select)){
+            array_push($errors, "Errore nell'inserimento");
+        }else{
+            $lastid = $this->dbconnection->getLastId();
+        }
+        $this->disconnect();
+        return $lastid;
+    }
+
+    // OPERAZIONI CON POST IN DETTAGLIO ---------------------------------------------------------------------------
+
+    public function getSinglePost($idPost){
+        $this->connect();
+        $this->dbconnection->query('SET NAMES utf8');
+        $select = "  SELECT * 
+                    FROM Post
+                    WHERE postID = '".$idPost."'";
+
+        $query = $this->dbconnection->query($select);
+        $this->disconnect();
+        $res = $query->fetch_all(MYSQLI_ASSOC);
+        return ($res[0] ? $res[0] : null);
+    }
+
+    public function printSinglePost($idPost){
+        $post = $this->getSinglePost($idPost);
+        $string = '';
+        if($post){
+            $string = '';
+        }else{
+            $string = "Non è stato trovato il post, ci scusiamo.";
+        }
+        return $string;
+    }
+
+    //OPERAZIONI CON COMMENTI ---------------------------------------------------------------------------
+
+    private function getComments($idPost){
+        $this->connect();
+        $this->dbconnection->query('SET NAMES utf8');
+        $select = "  SELECT * 
+                    FROM Commenti
+                    WHERE post = '".$idPost."'";
+
+        $query = $this->dbconnection->query($select);
+        $this->disconnect();
+        $res = $query->fetch_all(MYSQLI_ASSOC);
+        return ($res[0] ? $res[0] : null);
+    }
+
+    public function printComments($idPost){
+        $comments = $this->getComments($idPost);
+        $string = '';
+        if($comments){
+            foreach ($comments as $comment) {
+                $string .= $this->printSingleComment($comment);
+            }
+        }else{
+            $string = "Non è stato alcun commento, ci scusiamo.";
+        }
+        return $string;
+    }
+
+    private function printSingleComment($comment){
+        return '';
+    }
+
+    // OPERAZIONI CON USERS ---------------------------------------------------------------------------
+
     public function setupSession(){
         $user = new User($this->dbconnection);
         if(isset($_SESSION['username'])){
@@ -96,7 +177,7 @@ class Manager{
         $errors = array();
         $this->connect();
         $select = "  SELECT * 
-                    FROM Utenti
+                    FROM Utenti 
                     WHERE username = '".$values['username']."'";
         $query = $this->dbconnection->query($select);
         $this->disconnect();
@@ -139,26 +220,13 @@ class Manager{
 
     }
 
-    public function insertPost($values){
-        $this->connect();
-        $errors = array();
-        $select = "  INSERT INTO Post (titolo, dataora, immagine, altImmagine, contenuto, utente) VALUES 
-            ('".$values['titolo']."',now(), '".$values['immagine']."', '".$values['altImmagine']."', '".$values['contenuto']."', '".$values['username']."')";
-        $lastid = null;
-        if(!$this->dbconnection->query($select)){
-            array_push($errors, "Errore nell'inserimento");
-        }else{
-            $lastid = $this->dbconnection->getLastId();
-        }
-        $this->disconnect();
-        return $lastid;
-    }
-
     public function getUser($username){
         $user = new User($this->dbconnection);
         if($user->recover($username))return $user;
         return null;
     }
+
+    // OPERAZIONE MODIFICA PROFILO ---------------------------------------------------------------------------
 
     public function modificaProfilo($values,$oldUsername){
         $errors = array();
@@ -203,7 +271,7 @@ class Manager{
             if(count($errors)==0)return true;
         }
 
-        $_SESSION['updateErrors'] = $errors;
+        $_SESSION['modificaErrors'] = $errors;
         return false;
         
     }
