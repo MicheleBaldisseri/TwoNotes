@@ -165,7 +165,7 @@ class Manager{
         $this->connect();
         $select = "  SELECT * 
                     FROM Utenti
-                    WHERE username = '".$values['username']."' AND username != $oldUsername";
+                    WHERE username = '".$values['username']."' AND username != '".$oldUsername."';";
         $query = $this->dbconnection->query($select);
         $this->disconnect();
         $query->fetch_all(MYSQLI_ASSOC);
@@ -177,7 +177,7 @@ class Manager{
         $this->connect();
         $select = "  SELECT * 
                     FROM Utenti
-                    WHERE email = '".$values['email']."' AND username != $oldUsername";
+                    WHERE email = '".$values['email']."' AND username != '".$oldUsername."';";
         $query = $this->dbconnection->query($select);
         $this->disconnect();
         $query->fetch_all(MYSQLI_ASSOC);
@@ -187,14 +187,16 @@ class Manager{
         }
 
         if(count($errors)==0){
+            
             $this->connect();
             $update = " UPDATE Utenti
                     SET username = '".$values['username']."', nome = '".$values['nome']."', cognome = '".$values['cognome']."', email = '".$values['email']."',
                     sesso = '".$values['sesso']."', dataNascita = '".$values['dataNascita']."'";
-                    if(!empty($values['newPassword'])) $update .= ", password = '".md5($values['newPassword'])."'";
-                    "WHERE usename = $oldUsername;";
+                    if(!empty($values['newPassword'])) $update .= ", password = '".md5($values['newPassword'])."' ";
+                    $update .= "WHERE username = '".$oldUsername."';";
             if(!$this->dbconnection->query($update)){
                 array_push($errors, "Errore nella modifica");
+                echo $update;
             }
             $this->disconnect();
 

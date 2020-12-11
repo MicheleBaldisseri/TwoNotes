@@ -52,27 +52,30 @@ if(count($errors)==0){
             array_push($errors, "Data di nascita non valida");
         }
     }
-    if($values['password']!=$values['confermaPassword'])array_push($errors, "Le password non corrispondono");
+    if($values['newPassword']!=$values['confermaPassword'])array_push($errors, "Le password non corrispondono");
     if(!$user->isPasswordCorrect($values['oldPassword']))array_push($errors, "Password errata");
 
     if(count($errors)==0){
         if($manager->modificaProfilo($values,$user->getUsername())){
-            $manager->login($values['username'],$values['password']);
-            
-            header("Location: ../profilo.php?username=".$values['username']);
+            if(!empty($values['newPassword'])){
+                $manager->login($values['username'],$values['newPassword']);
+            }else{
+                $manager->login($values['username'],$values['oldPassword']);
+            } 
+            header("Location: profilo.php?username=".$values['username']);
             exit();
         }
     }else{
-        $_SESSION['registerValues'] = $values;
-        $_SESSION['registerErrors'] = $errors;
+        $_SESSION['modificaValues'] = $values;
+        $_SESSION['modificaErrors'] = $errors;
     }
 
 }else{
-    $_SESSION['registerValues'] = $values;
-    $_SESSION['registerErrors'] = $errors;
+    $_SESSION['modificaValues'] = $values;
+    $_SESSION['modificaErrors'] = $errors;
 }
 
-header("Location: registrazione.php");
+header("Location: modificaProfilo.php");
 exit();
 
 ?>
