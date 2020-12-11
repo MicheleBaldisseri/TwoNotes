@@ -22,6 +22,20 @@ if($user->getUsername()!=null){
 }
 $paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
 
+$stringErrors = '';
+if(isset($_SESSION['modificaErrors'])){
+    //mostrare errori form
+
+    $stringErrors = "<div id='registerErrors'>";
+    foreach($_SESSION['modificaErrors'] as $error){
+        $stringErrors .= "<p>".$error."</p>";
+    }
+    $stringErrors .= "</div> ";
+
+	unset($_SESSION['modificaErrors']);
+}
+$paginaHTML = str_replace('ERRORIMODIFICAPROFILO',$stringErrors,$paginaHTML);
+
 if($user->getUsername()!=null){
 
 	$paginaHTML = str_replace("VALORENOME", $user->getNome(), $paginaHTML);
