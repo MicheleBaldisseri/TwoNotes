@@ -159,6 +159,52 @@ class Manager{
         if($user->recover($username))return $user;
         return null;
     }
+
+    public function modificaProfilo($values,$oldUsername){
+        $errors = array();
+        $this->connect();
+        $select = "  SELECT * 
+                    FROM Utenti
+                    WHERE username = '".$values['username']."' AND username != $oldUsername";
+        $query = $this->dbconnection->query($select);
+        $this->disconnect();
+        $query->fetch_all(MYSQLI_ASSOC);
+
+        if ($query->num_rows > 0) {
+            array_push($errors, "Username gia' utilizzato");
+        }
+
+        $this->connect();
+        $select = "  SELECT * 
+                    FROM Utenti
+                    WHERE email = '".$values['email']."' AND username != $oldUsername";
+        $query = $this->dbconnection->query($select);
+        $this->disconnect();
+        $query->fetch_all(MYSQLI_ASSOC);
+
+        if ($query->num_rows > 0) {
+            array_push($errors, "Email gia' utilizzata");
+        }
+
+        if(count($errors)==0){
+            $this->connect();
+            $update = " UPDATE Utenti
+                    SET username = '".$values['username']."', nome = '".$values['nome']."', cognome = '".$values['cognome']."', email = '".$values['email']."',
+                    sesso = '".$values['sesso']."', dataNascita = '".$values['dataNascita']."'";
+                    if(!empty($values['newPassword'])) $update .= ", password = '".md5($values['newPassword'])."'";
+                    "WHERE usename = $oldUsername;";
+            if(!$this->dbconnection->query($update)){
+                array_push($errors, "Errore nella modifica");
+            }
+            $this->disconnect();
+
+            if(count($errors)==0)return true;
+        }
+
+        $_SESSION['updateErrors'] = $errors;
+        return false;
+        
+    }
 }
 
 ?>
