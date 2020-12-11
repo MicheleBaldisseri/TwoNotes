@@ -61,7 +61,7 @@ if($userProfile!=null){
 
 $buttonModifica = '';
 if($_GET['username'] == $user->getUsername()){
-	$buttonModifica = '<a class="linkToButton" href="modificaProfilo.php">Modifica</a>';
+	$buttonModifica = '<a class="linkToButton" id="annulla" href="modificaProfilo.php">Modifica</a>';
 }
 $paginaHTML = str_replace("LINKMODIFICA", $buttonModifica, $paginaHTML);
 
