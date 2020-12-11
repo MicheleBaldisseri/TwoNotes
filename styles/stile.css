@@ -531,36 +531,15 @@ SEARCH BAR - Home Page
 PULSANTE TORNA SU
 =================
 */
-#backtotop{
-    position: fixed;
-    bottom: 70px;
-    right: 70px;
-    font-size: 15px;
-    background-color: #005eac;
-    color: white;
-    padding: 10px;
-    
+#goToPost{
+    background-color: #613bb986;
+    margin-right: 2em;
 }
 /*
 =====================
 SEZIONE REGISTRAZIONE
 =====================
 */
-
-#registrazione{
-    padding: 0em 1em 0em 1em;
-}
-#registrazione h2{
-    text-align: center;
-    font-size: 2em;
-    padding: 1em;
-}
-#registrazione h3{
-    padding: 1.3em 0 0.3em 0;
-    font-size: 1.3em;
-    font-weight: bold;
-    display: inline;
-}
 .labelleft{
     text-align: right;
     font-size: 1.4em;
@@ -582,9 +561,11 @@ SEZIONE REGISTRAZIONE
     padding-left: 2em;
     padding-right: 2em;
 }
-
-input[type="radio"] {
+.formRegistrazione input[type="radio"] {
     margin: 10px 10px 0px 0px;
+}
+.formRegistrazione input[type="submit"] {
+    margin-left: 25em;
 }
 /*
 ===================
@@ -625,35 +606,35 @@ SEZIONE PROFILO
 }
 /*
 ===================
-SEZIONE Modifica PROFILO
+SEZIONE Modifica PROFILO - Registrazione
 ===================
 */
-#formModProfilo{
+#formBase{
     padding: 1em;
 }
-#formModProfilo h1{
+#formBase h1{
     text-align: center;
     font-size: 2em;
 }
-#formModProfilo fieldset{
+#formBase fieldset{
     padding: 1em;
     margin-top: 1em;
     border-radius: 20px;
 }
-#formModProfilo legend{
+#formBase legend{
     padding-left: 0.5em;
     padding-right: 0.5em;
     font-size: 1.3em;
 }
-#formModProfilo label{
-    font-size: 1em;
+#formBase label{
+    font-size: 1.2em;
     font-weight: bold;
 }
-#formModProfilo input{
+#formBase input{
     margin-bottom: 0.5em;
     margin-top: 0.5em;
 }
-#formModProfilo button{
+#formBase button{
     background-color: #005fac9f;
 }
 .alignFormButton, .formRegistrazione{
