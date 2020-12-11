@@ -24,7 +24,7 @@ SEZIONE HOME
 ===================
 */
 #indexContent{
-    border-left: solid 2px #452297;
+    border-left: solid 2px #504764af;
     width: 55%;
     margin-left: 22%;
 }
@@ -265,19 +265,27 @@ SEZIONE NUOVO POST
     margin-top: 1em;
 }
 #newPostForm label{
+    display: block;
     font-weight: bold;
     font-size: 1.2em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
 }
-#newPostForm div{
-    margin-top: 1em;
+#newPostForm ul{
+    padding-top: 1em;
+    margin-left: 2em;
 }
 #newPostForm p{
     font-size: 1.1em;
     font-weight: bolder;
-    color: #0011ffa2;
+    color: #000879a2;
 }
 #newPostForm input[type="submit"]{
     background-color: #005faca2;
+    margin-left: 20%;
+}
+#newPostForm form, .alignFormButton{
+    display: inline;
 }
 /*text area contenuto*/
 .inputForm{
@@ -292,11 +300,7 @@ SEZIONE NUOVO POST
 #annulla{
     background-color: #f0090996;
 }
-/*lista di consigli utili*/
-#comandiMarkdown{
-    margin-left: 1em;
-    margin-bottom: 1em;
-}
+
 /*
 ===================
 SEZIONE HEADER

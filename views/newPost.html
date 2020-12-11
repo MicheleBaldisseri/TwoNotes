@@ -31,48 +31,35 @@
     </div>
 
     <div id="newPostForm" class="sezione round_div shadow-div">
-        <p>Compila i seguenti campi per creare il tuo post.</p>
-        <p>Ricorda che contenuti offensivi o che violano le regole verranno eliminati dai nostri amministratori.</p>
-        <form name="creazionePost" action="newPostAction.php" method="POST" enctype="multipart/form-data">
-        ERRORIPOST
-            <div>
-                <label for="title">Titolo:</label> 
-                <div>
-                    <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="VALORETITOLO"required />
-                </div>
-            </div>
-            <div>
-                <label for="myfile">Carica un'immagine:</label>
-                <div>
-                    <input type="file" id="myfile" name="myfile" accept="image/gif, image/jpeg, image/png" />
-                    <p>Formati consentiti: .gif /.jpeg / .png</p>
-                    <p>Dimensione massima consentita: xxx mb</p>
-                </div>
-            </div>
-            <div>
-                <label for="altImmagine">Descrizione Immagine:</label> 
-                <div>
-                    <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" placeholder="Inserisci una descrizione dell'immagine...">VALOREALT</textarea>
-                </div>
-            </div>
-            <div>
-                <label for="content">Contenuto:</label> 
-                <div>
-                    <div id="comandiMarkdown">
-                        <p>Consigli utili:</p>
-                        <ul>
-                            <li>Per inserire una parola in lingua inglese usare il comando .....</li>
-                            <li>Per inserire una abbreviazione usare.....</li>
-                            <li>..............</li>
-                        </ul>
-                    </div>  
-                    <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..." required>VALORECONTENUTO</textarea>
-                </div>
-            </div>
+        <p>Compila i seguenti campi per creare il tuo post. Ricorda che contenuti 
+            offensivi o che violano le regole verranno eliminati dai nostri amministratori.
+        </p>
+        <p>I formati consentiti per le foto sono .gif /.jpeg / .png mentre la dimensione massima è xxx.mb   
+            Consigli utili:</p>       
+        <ul>
+            <li>Per inserire una parola in lingua inglese usare il comando .....</li>
+            <li>Per inserire una abbreviazione usare.....</li>
+            <li>..............</li>
+        </ul>
 
-            <input type="submit" class="round-button general-button" value="Invia"/>
-            <a href="../index.php" class="linkToButton">Annulla</a>
+        <form name="creazionePost" action="newPostAction.php" method="POST">
+        ERRORIPOST
+            <label for="title">Titolo:</label>  
+            <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="VALORETITOLO"required />
+                
+            <label for="myfile">Carica un'immagine:</label>     
+            <input type="file" id="myfile" name="myfile" accept="image/gif, image/jpeg, image/png" />
+                    
+            <label for="altImmagine">Descrizione Immagine:</label>      
+            <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" placeholder="Inserisci una descrizione dell'immagine...">VALOREALT</textarea>
+                
+            <label for="content">Contenuto:</label>   
+            <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post...">VALORECONTENUTO</textarea>   
+        
+            <input type="submit" class="round-button general-button" value="Invia"/> 
         </form>
+
+        <a href="../index.php" class="linkToButton alignFormButton">Annulla</a>     
     </div>
     
     <div id="footer">
