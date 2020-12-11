@@ -23,22 +23,26 @@ body {
 SEZIONE HOME
 ===================
 */
+#indexContent{
+    border-left: solid 2px #504764af;
+    width: 55%;
+    margin-left: 22%;
+}
 /*Menu a sinistra*/
 #menu{
     float: left;
     width: 20%;
     padding: 0.8em;
     font-size: 1.1em;
-    background-color: whitesmoke;
 }
 
 #menu ul{
     list-style-type: none;
 }
 
-#menu ul li{
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;   
+#menu li{
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;   
     text-align: center; 
     font-weight: bold;
 }
@@ -49,16 +53,19 @@ SEZIONE HOME
     width: 20%;
     padding: 0.5em;
     height: fit-content;
-    background-color: whitesmoke;
+    background-color: #69b2ee5d;
+    margin-right: 2em;
+    margin-top: 2em;
 }
 #rightSidebar ul{
     list-style-type: none;
+    columns: 2;
 }
 #rightSidebar h2{
     text-align: center;
     padding: 0.5em;
 }
-#rightSidebar ul li{
+#rightSidebar li{
     text-align: center;
     padding: 0.5em;
 }
@@ -77,8 +84,8 @@ SEZIONE HOME
 }
 /*lista dei post*/
 .postContent{
-    width: 50%;
-    margin-left: 7%;
+    width: 86%;
+    margin-left: 4%;
     margin-top: 2em;
     padding: 1em;
 }
@@ -109,7 +116,6 @@ SEZIONE HOME
 }
 .listaPost{
     list-style-type: none;
-    margin-left: 25%;
 }
 
 /*
@@ -146,7 +152,7 @@ SEZIONE ABOUT US
 */
 
 #content_aboutUs{
-    background-color: rgb(148, 207, 235);
+    background-color: #69b2ee5d;
     margin-left: 25%;
     margin-top: 1em;
     width: 70%;
@@ -259,19 +265,27 @@ SEZIONE NUOVO POST
     margin-top: 1em;
 }
 #newPostForm label{
+    display: block;
     font-weight: bold;
     font-size: 1.2em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
 }
-#newPostForm div{
-    margin-top: 1em;
+#newPostForm ul{
+    padding-top: 1em;
+    margin-left: 2em;
 }
 #newPostForm p{
     font-size: 1.1em;
     font-weight: bolder;
-    color: #0011ffa2;
+    color: #000879a2;
 }
 #newPostForm input[type="submit"]{
     background-color: #005faca2;
+    margin-left: 20%;
+}
+#newPostForm form, .alignFormButton{
+    display: inline;
 }
 /*text area contenuto*/
 .inputForm{
@@ -286,11 +300,7 @@ SEZIONE NUOVO POST
 #annulla{
     background-color: #f0090996;
 }
-/*lista di consigli utili*/
-#comandiMarkdown{
-    margin-left: 1em;
-    margin-bottom: 1em;
-}
+
 /*
 ===================
 SEZIONE HEADER
@@ -300,7 +310,7 @@ SEZIONE HEADER
     padding: 1.0em;
     min-height: 3em;
     background-color: whitesmoke;
-    box-shadow: 3px 3px 20px 3px #ccc;
+    /*box-shadow: 3px 3px 20px 3px #ccc;*/
 }
 #header div{
     margin-top: 0.7em;
@@ -473,7 +483,7 @@ SEARCH BAR - Home Page
     margin: auto;
     height: 4em;
     padding: 0.5em;
-    width: 40%;
+    width: 72%;
     margin-top: 1em;
 }
 .search-form{
@@ -531,36 +541,15 @@ SEARCH BAR - Home Page
 PULSANTE TORNA SU
 =================
 */
-#backtotop{
-    position: fixed;
-    bottom: 70px;
-    right: 70px;
-    font-size: 15px;
-    background-color: #005eac;
-    color: white;
-    padding: 10px;
-    
+#goToPost{
+    background-color: #613bb986;
+    margin-right: 2em;
 }
 /*
 =====================
 SEZIONE REGISTRAZIONE
 =====================
 */
-
-#registrazione{
-    padding: 0em 1em 0em 1em;
-}
-#registrazione h2{
-    text-align: center;
-    font-size: 2em;
-    padding: 1em;
-}
-#registrazione h3{
-    padding: 1.3em 0 0.3em 0;
-    font-size: 1.3em;
-    font-weight: bold;
-    display: inline;
-}
 .labelleft{
     text-align: right;
     font-size: 1.4em;
@@ -582,9 +571,11 @@ SEZIONE REGISTRAZIONE
     padding-left: 2em;
     padding-right: 2em;
 }
-
-input[type="radio"] {
+.formRegistrazione input[type="radio"] {
     margin: 10px 10px 0px 0px;
+}
+.formRegistrazione input[type="submit"] {
+    margin-left: 25em;
 }
 /*
 ===================
@@ -625,35 +616,35 @@ SEZIONE PROFILO
 }
 /*
 ===================
-SEZIONE Modifica PROFILO
+SEZIONE Modifica PROFILO - Registrazione
 ===================
 */
-#formModProfilo{
+#formBase{
     padding: 1em;
 }
-#formModProfilo h1{
+#formBase h1{
     text-align: center;
     font-size: 2em;
 }
-#formModProfilo fieldset{
+#formBase fieldset{
     padding: 1em;
     margin-top: 1em;
     border-radius: 20px;
 }
-#formModProfilo legend{
+#formBase legend{
     padding-left: 0.5em;
     padding-right: 0.5em;
     font-size: 1.3em;
 }
-#formModProfilo label{
-    font-size: 1em;
+#formBase label{
+    font-size: 1.2em;
     font-weight: bold;
 }
-#formModProfilo input{
+#formBase input{
     margin-bottom: 0.5em;
     margin-top: 0.5em;
 }
-#formModProfilo button{
+#formBase button{
     background-color: #005fac9f;
 }
 .alignFormButton, .formRegistrazione{
