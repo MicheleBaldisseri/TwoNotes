@@ -602,7 +602,7 @@ SEZIONE PROFILO
 #profile h2{
     margin-left: 1em; 
     font-size: 1.5em;
-    border-bottom: 3px solid rgb(160, 161, 175);
+    /*border-bottom: 3px solid rgb(160, 161, 175);*/
 }
 #profileSx, #profileDx{
     float: left;
