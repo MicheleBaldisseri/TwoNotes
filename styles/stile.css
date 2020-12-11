@@ -212,46 +212,22 @@ SEZIONE SINGOLO POST
 ===================
 */
 
-#singlePost, #commentIns{
-	margin-left: 25%;
-    width: 55em;
-    height: fit-content;
-    margin-top: 1em;
+#singlePost a{
+    background-color: #69b2ee;
+    font-size: 1em;
 }
-
 #singlePost ul li{
 	list-style-type: none	
 }
 
-.inputComment{
-	margin-top:1em;
-	width: 90%;
-	padding: 12px 20px;
-    font-size: 1.3em;
-    font-style: normal;
-    border: 1px solid rgb(115, 116, 136);
-    border-radius: 4px; 
+#postTextarea{
+    width: 95%;
+    margin-top: 1em;
 }
 
 .singleComment {
 	margin-top: 1em;
 	padding: 1em;
-}
-
-.aComment{
-	margin-top: 1em;
-	padding: 1em;
-}
-
-#cover img{
-    width: 40%;
-    box-shadow: 3px 3px 20px 3px #ccc;
-    border-radius: 10px 10px 10px 10px;
-}
-
-.littleText{
-	font-size: 13px;
-    font-style: oblique;
 }
 /*
 ===================
@@ -525,11 +501,10 @@ SEARCH BAR - Home Page
     cursor: pointer;
 }
 .linkToButton{
-    text-decoration: none;
     font-size: 1.3em;
     color: black;
     font-weight: bold;
-    background-color: #ff02029c;
+    /*background-color: #ff02029c;*/
     padding: 10px;
     border-radius: 20px;
 }
@@ -656,7 +631,7 @@ SEZIONE FOOTER
 ==============
 */
 #footer {
-    margin-top: 1em;
+    margin-top: 2em;
     color:white;
     text-align: center;
     font-size: 0.7em;

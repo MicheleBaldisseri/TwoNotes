@@ -55,6 +55,10 @@ class Manager{
         if($post['immagine']!=null){
             $base64 = 'data:image/jpeg;base64,' . base64_encode($post['immagine']);
         } 
+
+        $timestamp = strtotime($post['dataOra']);
+	    $new_date = date("d/m/Y H:i:s", $timestamp);
+
 		$string =
                 '<li>
                     <div class="postContent round_div shadow-div">
@@ -65,8 +69,8 @@ class Manager{
                         }
                         
         $string .=      '<p class="infoPost">Pubblicato da: 
-                            <a href="php/profilo.php?username='. stripslashes($post['utente']) .'" class="linkToButton">' . stripslashes($post['utente']) . '</a>, 
-                            08/12/2020 23:39
+                            <a href="php/profilo.php?username='. stripslashes($post['utente']) .'" class="linkToButton">' . stripslashes($post['utente']) . '</a>  
+                            '.$new_date.'
                             <a class="linkToButton goTo" href="#percorso">Torna su</a> 
                             <a id="goToPost" class="linkToButton goTo" href="php/postPage.php?idPost='.$post['postID'].'">Vai al post</a>
                         </p>
@@ -109,9 +113,26 @@ class Manager{
 
     public function printSinglePost($idPost){
         $post = $this->getSinglePost($idPost);
+
         $string = '';
         if($post){
-            $string = '';
+            if($post['immagine']!=null){
+                $base64 = 'data:image/jpeg;base64,' . base64_encode($post['immagine']);
+            }
+
+            $timestamp = strtotime($post['dataOra']);
+	        $new_date = date("d/m/Y H:i:s", $timestamp);
+
+            $string = '<h1>'.$post['titolo'].'</h1>
+            <p>'.$post['contenuto'].'</p>';
+            if($post['immagine']!=null){
+                $string .= '<img src="'.$base64.'" alt="'.stripslashes($post['altImmagine']).'"/>';
+            }    
+            $string .= '<p class="infoPost">
+                Pubblicato da: 
+                <a href="profilo.php?username='.$post['utente'].'" class="linkToButton">'.$post['utente'].'</a> 
+                '.$new_date.'
+            </p>';
         }else{
             $string = "Non è stato trovato il post, ci scusiamo.";
         }
@@ -125,12 +146,12 @@ class Manager{
         $this->dbconnection->query('SET NAMES utf8');
         $select = "  SELECT * 
                     FROM Commenti
-                    WHERE post = '".$idPost."'";
+                    WHERE post = '".$idPost."' 
+                    ORDER BY dataOra DESC";
 
         $query = $this->dbconnection->query($select);
         $this->disconnect();
-        $res = $query->fetch_all(MYSQLI_ASSOC);
-        return ($res[0] ? $res[0] : null);
+        return $query->fetch_all(MYSQLI_ASSOC);
     }
 
     public function printComments($idPost){
@@ -141,13 +162,21 @@ class Manager{
                 $string .= $this->printSingleComment($comment);
             }
         }else{
-            $string = "Non è stato alcun commento, ci scusiamo.";
+            $string = "Non ci sono commenti!";
         }
         return $string;
     }
 
     private function printSingleComment($comment){
-        return '';
+        $timestamp = strtotime($comment['dataOra']);
+	    $new_date = date("d/m/Y H:i:s", $timestamp);
+
+        return '<li>
+            <div class="singleComment shadow-div round_div">
+                <p class="infoPost"><a href="profilo.php?username='.$comment['utente'].'" class="linkToButton">'.$comment['utente'].'</a> '.$new_date.'</p>
+                <p>'.$comment['contenuto'].'</p>                             
+            </div>
+        </li>';
     }
 
     // OPERAZIONI CON USERS ---------------------------------------------------------------------------

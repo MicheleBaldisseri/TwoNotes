@@ -42,10 +42,10 @@
             <li>..............</li>
         </ul>
 
-        <form name="creazionePost" action="newPostAction.php" method="POST">
+        <form name="creazionePost" action="newPostAction.php" method="POST" enctype="multipart/form-data">
         ERRORIPOST
             <label for="title">Titolo:</label>  
-            <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="VALORETITOLO"required />
+            <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="VALORETITOLO" required />
                 
             <label for="myfile">Carica un'immagine:</label>     
             <input type="file" id="myfile" name="myfile" accept="image/gif, image/jpeg, image/png" />
@@ -59,7 +59,7 @@
             <input type="submit" class="round-button general-button" value="Invia"/> 
         </form>
 
-        <a href="../index.php" class="linkToButton alignFormButton">Annulla</a>     
+        <a href="../index.php" id="annulla" class="linkToButton alignFormButton">Annulla</a>     
     </div>
     
     <div id="footer">
