@@ -23,22 +23,26 @@ body {
 SEZIONE HOME
 ===================
 */
+#indexContent{
+    border-left: solid 2px #452297;
+    width: 55%;
+    margin-left: 22%;
+}
 /*Menu a sinistra*/
 #menu{
     float: left;
     width: 20%;
     padding: 0.8em;
     font-size: 1.1em;
-    background-color: whitesmoke;
 }
 
 #menu ul{
     list-style-type: none;
 }
 
-#menu ul li{
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;   
+#menu li{
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;   
     text-align: center; 
     font-weight: bold;
 }
@@ -49,16 +53,19 @@ SEZIONE HOME
     width: 20%;
     padding: 0.5em;
     height: fit-content;
-    background-color: whitesmoke;
+    background-color: #69b2ee5d;
+    margin-right: 2em;
+    margin-top: 2em;
 }
 #rightSidebar ul{
     list-style-type: none;
+    columns: 2;
 }
 #rightSidebar h2{
     text-align: center;
     padding: 0.5em;
 }
-#rightSidebar ul li{
+#rightSidebar li{
     text-align: center;
     padding: 0.5em;
 }
@@ -77,8 +84,8 @@ SEZIONE HOME
 }
 /*lista dei post*/
 .postContent{
-    width: 50%;
-    margin-left: 7%;
+    width: 75%;
+    margin-left: 10%;
     margin-top: 2em;
     padding: 1em;
 }
@@ -109,7 +116,6 @@ SEZIONE HOME
 }
 .listaPost{
     list-style-type: none;
-    margin-left: 25%;
 }
 
 /*
@@ -146,7 +152,7 @@ SEZIONE ABOUT US
 */
 
 #content_aboutUs{
-    background-color: rgb(148, 207, 235);
+    background-color: #69b2ee5d;
     margin-left: 25%;
     margin-top: 1em;
     width: 70%;
@@ -473,7 +479,7 @@ SEARCH BAR - Home Page
     margin: auto;
     height: 4em;
     padding: 0.5em;
-    width: 40%;
+    width: 72%;
     margin-top: 1em;
 }
 .search-form{
