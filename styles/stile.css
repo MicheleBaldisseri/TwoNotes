@@ -306,7 +306,7 @@ SEZIONE HEADER
     padding: 1.0em;
     min-height: 3em;
     background-color: whitesmoke;
-    box-shadow: 3px 3px 20px 3px #ccc;
+    /*box-shadow: 3px 3px 20px 3px #ccc;*/
 }
 #header div{
     margin-top: 0.7em;
