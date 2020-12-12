@@ -126,7 +126,6 @@ SEZIONE CONTENITORE
 ===================
 */
 .contenitoreCentrale{
-    margin: auto;
     width: 55em;
     height: 35em;
     margin-top: 1em;
@@ -284,9 +283,9 @@ SEZIONE HEADER
 SEZIONE LOGIN PAGE
 ===================
 */
-.height_login{
+/*.height_login{
     height: 95%;
-}
+}*/
 .shadow-div{
     box-shadow: 3px 3px 20px 3px #ccc;
 }
@@ -316,7 +315,7 @@ SEZIONE LEFT
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     background-color: #ff4b2bc4;
-    width: 60%;
+    width: 55%;
     height: 97.3%;
     padding: 0.5em;
 }
@@ -327,11 +326,12 @@ SEZIONE LEFT
     border-radius: 0px 10px 10px 0px;
 }*/
 #dentroLeft{
-    padding: 8em 0em 0em 4em;
+    padding: 8em 4em 8em 4em;
+    text-align: center;
 }
-#dentroLeft img{
+/*#dentroLeft img{
     width: 400px;
-}
+}*/
 
 /*
 ==================
@@ -346,12 +346,11 @@ SEZIONE RIGHT
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: white;
-    width: 36.35%;
-    height: 97.3%;
+    width: 40%;
     padding: 0.5em;
 }
 #dentroRight{
-    height: 100%;
+    text-align:center;
 }
 
 /*
@@ -368,13 +367,12 @@ SEZIONE BOTTONI
     font-size: 17px;
 }
 .textAccedi{
-    text-align: center;
     font-weight: bold;
     font-size: 2em;
     padding: 0.5em 0 1em 0;
 }
 .formAccedi{
-    text-align: center;
+   
     padding: 0em 1em 1em 1em;
 }
 .textOppure{
