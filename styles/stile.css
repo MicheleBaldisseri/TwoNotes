@@ -82,7 +82,7 @@ SEZIONE HOME
     color: rgb(226, 203, 98);
 }*/
 
-/*lista dei post*/
+/* Lista dei post*/
 .postContent{
     width: 86%;
     margin-left: 4%;
@@ -317,17 +317,19 @@ SEZIONE LEFT
 }
 
 .orange_left {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     background-color: #ff4b2bc4;
     width: 60%;
     height: 97.3%;
     padding: 0.5em;
 }
-.left-border-radius{
+/*.left-border-radius{
     border-radius: 10px 0px 0px 10px
-}
-.right-border-radius{
+}*/
+/*.right-border-radius{
     border-radius: 0px 10px 10px 0px;
-}
+}*/
 #dentroLeft{
     padding: 8em 0em 0em 4em;
 }
@@ -345,6 +347,8 @@ SEZIONE RIGHT
 }
 
 .white_right {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     background-color: white;
     width: 36.35%;
     height: 97.3%;
