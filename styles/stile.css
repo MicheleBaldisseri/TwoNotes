@@ -172,7 +172,6 @@ SEZIONE CONTATTI
     padding: 1.5em;
     width: 60%;
     margin-top: 1em;
-    min-height: 25em;
 }
 .sezione h1{
     text-align: center;
@@ -203,9 +202,6 @@ SEZIONE SINGOLO POST
 #singlePost a{
     background-color: #69b2ee;
     font-size: 1em;
-}
-#singlePost ul li{
-	list-style-type: none	
 }
 #postTextarea{
     width: 95%;
@@ -478,8 +474,7 @@ SEARCH BAR - Home Page
     background-color: whitesmoke;
 }
 .post-container{
-    margin-top: 15px;
-   
+    margin-top: 15px; 
 }
 /*bottone creazione nuovo post*/
 #post-btn{
@@ -545,6 +540,9 @@ SEZIONE REGISTRAZIONE
 SEZIONE PROFILO
 ===================
 */
+#profile{
+    min-height: 21em;
+}
 #profile h2 , #profile p{
     display: inline;
     font-size: 1.3em;
