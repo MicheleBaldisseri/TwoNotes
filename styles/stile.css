@@ -293,6 +293,7 @@ SEZIONE LOGIN PAGE
 .round_div{
     border-radius: 10px 10px 10px 10px;
 }
+/*
 .input_login{
     width: 90%;
     height: 30px;
@@ -301,7 +302,10 @@ SEZIONE LOGIN PAGE
     border-radius: 5px 5px 5px 5px;
     border: 1px solid rgb(148, 148, 148);
 }
-
+*/
+.textAlignCenter{
+    text-align: center;
+}
 /*
 ==================
 SEZIONE LEFT
@@ -310,7 +314,7 @@ SEZIONE LEFT
 .left{
     float: left;
 }
-
+/*
 .orange_left {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -319,20 +323,33 @@ SEZIONE LEFT
     height: 97.3%;
     padding: 0.5em;
 }
+*/
 /*.left-border-radius{
     border-radius: 10px 0px 0px 10px
 }*/
 /*.right-border-radius{
     border-radius: 0px 10px 10px 0px;
 }*/
+/*
 #dentroLeft{
     padding: 8em 4em 8em 4em;
     text-align: center;
 }
+*/
 /*#dentroLeft img{
     width: 400px;
 }*/
-
+#dentroLeft{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #ff4b2bc4;
+    width: 55%;
+    height: 97.3%;
+    padding: 0.5em;
+}
+#dentroLeft h1{
+    padding: 2em;
+}
 /*
 ==================
 SEZIONE RIGHT
@@ -341,7 +358,6 @@ SEZIONE RIGHT
 .right{
     float: right;
 }
-
 .white_right {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -349,10 +365,26 @@ SEZIONE RIGHT
     width: 40%;
     padding: 0.5em;
 }
+.white_right h2{
+    padding: 1em;
+    margin-bottom: 0.8em;
+}
+.white_right input[type="text"],
+.white_right input[type="password"]{
+    width: 80%;
+    padding: 1em;
+    margin: 1em;
+}
+#formLogin label{
+    font-weight: bold;
+    font-size: 1em;
+    padding: 1em;
+}
+/*
 #dentroRight{
     text-align:center;
 }
-
+*/
 /*
 ==================
 SEZIONE BOTTONI
@@ -366,26 +398,34 @@ SEZIONE BOTTONI
     margin: 10px;
     font-size: 17px;
 }
+/*
 .textAccedi{
     font-weight: bold;
     font-size: 2em;
     padding: 0.5em 0 1em 0;
 }
+*/
+/*
 .formAccedi{
    
     padding: 0em 1em 1em 1em;
 }
+*/
+/*
 .textOppure{
     padding: 0em 0 1em 0;
     text-align: center;
     font-weight: bold;
     font-style: italic;
 }
+*/
+/*
 .textForm{
     padding: 1em 0 1em 0;
     font-size: 1.3em;
     font-weight: bold;
 }
+*/
 .input{
     width: 50%;
     height: 30px;
@@ -415,6 +455,7 @@ SEZIONE BOTTONI
     font-size: 1.3em;
     font-weight: bold;
 }
+/*
 .buttonRegistrati{
     display: flex;
     justify-content: center;
@@ -424,6 +465,7 @@ SEZIONE BOTTONI
     text-decoration: none;
     color: black;
 }
+*/
 #bottone{
     width: 10%;
     padding-left: 22em;

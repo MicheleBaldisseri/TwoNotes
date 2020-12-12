@@ -29,30 +29,26 @@
         </ul>
     </div>
 
-    <div class="contenitoreCentrale round_div shadow-div">
-            <div class="left orange_left">
-                <div id="dentroLeft">
-                    <h1>Benvenuto nel social musicale</h1><br>
-                    <img src="../img/TwoNotes-4.svg" alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
-                </div>
+    <div class="contenitoreCentrale round_div shadow-div textAlignCenter">
+            <div id="dentroLeft" class="left">            
+                <h1>Benvenuto nel social musicale</h1>
+                <img src="../img/TwoNotes-4.svg" alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
             </div>
-            <div  class="right white_right">
-                <div id="dentroRight">
-                    <p class="textAccedi">ACCEDI</p>
-                    ERRORELOGIN
-                    <form action="loginAction.php" class="formAccedi" method="post">
-                        <label for="username"><p class="textForm" xml:lang="en">Username</p></label>
-                        <input type="text" name="username" id="username" class="input_login" placeholder="Username" value="VALUEUSERNAME" required/>
-                        <label for="psw" ><p class="textForm" xml:lang="en">Password</p></label>
-                        <input type="password" name="psw" id="psw" class="input_login" placeholder="Password" required/>
-                        <p class="spazio"></p>
-                        <input type="submit" value="Accedi" class="general-button round-button orange-button"/>
-                    </form>
-                    <p class="textOppure">oppure</p>
-                    <div class="buttonRegistrati">
-                        <a href="registrazione.php" class="general-button round-button yellow-button">Registrati</a>
-                    </div>
-                </div>
+            <div class="right white_right">              
+                <h2>ACCEDI</h2>
+                ERRORELOGIN
+                <form id="formLogin" action="loginAction.php" method="post">
+                    <label for="username" xml:lang="en">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Username" value="VALUEUSERNAME" required/>
+                    
+                    <label for="psw" xml:lang="en">Password</label>
+                    <input type="password" name="psw" id="psw" placeholder="Password" required/>
+                    
+                    <input type="submit" class="round-button general-button orange-button" value="Accedi"/>
+                </form>
+                
+                <h2>OPPURE</h2>
+                <a href="registrazione.php" class="general-button round-button yellow-button">Registrati</a>
             </div>
     </div>
     <div id="footer">
