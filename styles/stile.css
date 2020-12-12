@@ -74,10 +74,14 @@ SEZIONE HOME
     font-size: 1.3em;
     color: white;
 }
-/* Colore della parola della pagina dove ci troviamo */
-#breadcrumb-colore-parola{
+#percorso span{
     color: rgb(226, 203, 98);
 }
+/*Colore della parola della pagina dove ci troviamo*/
+/*#breadcrumb-colore-parola{
+    color: rgb(226, 203, 98);
+}*/
+
 /*lista dei post*/
 .postContent{
     width: 86%;
