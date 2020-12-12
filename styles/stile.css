@@ -57,8 +57,7 @@ SEZIONE HOME
     margin-right: 2em;
     margin-top: 2em;
 }
-#rightSidebar ul{
-    list-style-type: none;
+.doubleColumns{
     columns: 2;
 }
 #rightSidebar h2{
@@ -111,10 +110,12 @@ SEZIONE HOME
 .postContent p{
     padding-top: 1em;
 }
+/*
 .goTo{
     float: right;
 }
-.listaPost{
+*/
+.listaSenzaPunti{
     list-style-type: none;
 }
 
@@ -123,7 +124,6 @@ SEZIONE HOME
 SEZIONE CONTENITORE
 ===================
 */
-
 .contenitoreCentrale{
     margin: auto;
     width: 55em;
@@ -131,41 +131,28 @@ SEZIONE CONTENITORE
     margin-top: 1em;
     margin-left: 25%;
 }
-
 .allWidth{
     padding: 1em 0 1em 0;
     height: auto;
     display: block;
 }
-
 .general-button{
     padding:10px;
     margin: 10px;
     font-size: 17px;
     cursor: pointer;
 }
-
 /*
 ===================
 SEZIONE ABOUT US
 ===================
 */
-
 #content_aboutUs{
-    background-color: #69b2ee5d;
-    margin-left: 25%;
-    margin-top: 1em;
-    width: 70%;
-    border-radius: 20px 20px 20px 20px;
-    padding: 1em;
     text-align: center;
 }
-
 #content_aboutUs p {
-    font-size: 1.5em;
-    padding: 0.5em;
+    font-size: 1.2em;
 }
-
 #content_aboutUs img{
     display: block;
     max-width: 30em;
@@ -184,6 +171,7 @@ SEZIONE CONTATTI
     padding: 1.5em;
     width: 60%;
     margin-top: 1em;
+    min-height: 25em;
 }
 .sezione h1{
     text-align: center;
@@ -211,7 +199,6 @@ SEZIONE CONTATTI
 SEZIONE SINGOLO POST
 ===================
 */
-
 #singlePost a{
     background-color: #69b2ee;
     font-size: 1em;
@@ -219,12 +206,10 @@ SEZIONE SINGOLO POST
 #singlePost ul li{
 	list-style-type: none	
 }
-
 #postTextarea{
     width: 95%;
     margin-top: 1em;
 }
-
 .singleComment {
 	margin-top: 1em;
 	padding: 1em;
@@ -272,11 +257,6 @@ SEZIONE NUOVO POST
     border: 1px solid rgb(115, 116, 136);
     border-radius: 4px; 
 }
-/*bottone*/
-#annulla{
-    background-color: #f0090996;
-}
-
 /*
 ===================
 SEZIONE HEADER
@@ -378,7 +358,9 @@ SEZIONE RIGHT
 SEZIONE BOTTONI
 ==================
 */
-
+#annulla{
+    background-color: #f0090996;
+}
 .general-button{
     padding:10px;
     margin: 10px;
@@ -518,7 +500,8 @@ PULSANTE TORNA SU
 */
 #goToPost{
     background-color: #613bb986;
-    margin-right: 2em;
+    margin-left: 25%;
+    margin-right: 5%;
 }
 /*
 =====================
@@ -557,37 +540,23 @@ SEZIONE REGISTRAZIONE
 SEZIONE PROFILO
 ===================
 */
-#profile h1{
-    color: #1040a7;
-    padding-top: 1em;
-    font-size: 2em;
-    text-align: center;
-}
-#profile div{
-    padding: 1em;
-}
 #profile h2 , #profile p{
     display: inline;
+    font-size: 1.3em;
 }
 #profile p{
     margin-left: 1.2em;
-    font-weight: bold;
     color: #452297;
 }
-#profile h2{
-    margin-left: 1em; 
-    font-size: 1.5em;
-    /*border-bottom: 3px solid rgb(160, 161, 175);*/
-}
-#profileSx, #profileDx{
-    float: left;
-}
-#profileDx{
-    margin-left: 6em;
+#profile h1{
+    margin-bottom: 1em;
 }
 #profile a{
     float: right;
     margin-right: 2em;
+}
+#profile li{
+    margin-bottom: 2em;
 }
 /*
 ===================
