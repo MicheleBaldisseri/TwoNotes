@@ -9,7 +9,6 @@ SEZIONE GENERALE
 }
 html {
     width: 100%;
-    height: 100%;
     background-color: #69b2ee;
 }
 body {
@@ -24,7 +23,7 @@ SEZIONE HOME
 ===================
 */
 #indexContent{
-    border-left: solid 2px #504764af;
+    /*border-left: solid 2px #504764af;*/
     width: 55%;
     margin-left: 22%;
 }
@@ -125,9 +124,25 @@ SEZIONE HOME
 SEZIONE CONTENITORE
 ===================
 */
+.right{
+    float: right;
+}
+.left{
+    float: left;
+}
+.textAlignCenter{
+    text-align: center;
+}
+.shadow-div{
+    box-shadow: 3px 3px 20px 3px #ccc;
+}
+
+.round_div{
+    border-radius: 10px 10px 10px 10px;
+}
 .contenitoreCentrale{
-    width: 55em;
-    height: 35em;
+    width: 65%;
+    height: 60%;
     margin-top: 1em;
     margin-left: 25%;
 }
@@ -284,16 +299,39 @@ SEZIONE HEADER
 SEZIONE LOGIN PAGE
 ===================
 */
+#loginDiv{
+    padding: 0;
+}
+#loginDiv h2{
+    margin: 2%;
+}
+#loginUp{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #ff4b2bc4;
+    padding: 4%;
+}
+#loginDown input[type="text"],
+#loginDown input[type="password"]{
+    display: block;
+    width: 30%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 35%;
+}
+#loginForm label{
+    font-weight: bold;
+}
+#loginForm, #or{
+    display: inline;
+}
+#or, .yellow-button{
+    display: inline;
+}
 /*.height_login{
     height: 95%;
 }*/
-.shadow-div{
-    box-shadow: 3px 3px 20px 3px #ccc;
-}
 
-.round_div{
-    border-radius: 10px 10px 10px 10px;
-}
 /*
 .input_login{
     width: 90%;
@@ -304,17 +342,13 @@ SEZIONE LOGIN PAGE
     border: 1px solid rgb(148, 148, 148);
 }
 */
-.textAlignCenter{
-    text-align: center;
-}
+
 /*
 ==================
 SEZIONE LEFT
 ==================
 */
-.left{
-    float: left;
-}
+
 /*
 .orange_left {
     border-top-left-radius: 10px;
@@ -356,9 +390,7 @@ SEZIONE LEFT
 SEZIONE RIGHT
 ==================
 */
-.right{
-    float: right;
-}
+
 .white_right {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -494,7 +526,7 @@ SEARCH BAR - Home Page
 }
 #search input[type="text"]{
     width: 50%;
-    margin: 10px;
+    margin: 1%;
     padding: 10px;
     font-size: 17px;
     background: #f1f1f1;
@@ -508,7 +540,6 @@ SEARCH BAR - Home Page
 #search-button{
     background: #005eac;
     color: white;
-    border-left: none;
     cursor: pointer;
 }
 #search a{
