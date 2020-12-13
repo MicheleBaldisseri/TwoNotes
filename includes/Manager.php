@@ -179,6 +179,22 @@ class Manager{
         </li>';
     }
 
+    public function insertComment($values){
+        $res = true;
+        $this->connect();
+        $errors = array();
+        $select = "  INSERT INTO Commenti (post,utente,dataOra,contenuto) VALUES 
+            ('".$values['idPost']."','".$values['username']."', now(), '".$values['contenuto']."')";
+
+        if(!$this->dbconnection->query($select)){
+            array_push($errors, "Errore nell'inserimento");
+            $res = false;
+        }
+        $this->disconnect();
+        return $res;
+    }
+
+
     // OPERAZIONI CON USERS ---------------------------------------------------------------------------
 
     public function setupSession(){
