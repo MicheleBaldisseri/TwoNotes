@@ -32,10 +32,32 @@ $paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
 if(isset($_GET['idPost'])){
 	$paginaHTML = str_replace("DETTAGLIOPOST", $manager->printSinglePost($_GET['idPost']), $paginaHTML);
 	$paginaHTML = str_replace("LISTACOMMENTI", $manager->printComments($_GET['idPost']), $paginaHTML);
+	$paginaHTML = str_replace("ID_POST", $_GET['idPost'], $paginaHTML);
 }else{
 	//gestire il fatto che non si dovrebbe essere qui
 	//exit();
 }
+
+$stringErrors = '';
+if(isset($_SESSION['commentErrors'])){
+//mostrare errori form
+
+    $stringErrors = "<div id='commentErrors'>";
+    foreach($_SESSION['commentErrors'] as $error){
+        $stringErrors .= "<p>".$error."</p>";
+    }
+    $stringErrors .= "</div> ";
+
+    unset($_SESSION['commentErrors']);
+
+    $paginaHTML = str_replace('VALORETCOMMENTO',$_SESSION['commentValues']['contenuto'],$paginaHTML);
+}else{
+    $paginaHTML = str_replace('VALORECOMMENTO','',$paginaHTML);
+}
+
+unset($_SESSION['registerValues']);
+
+$paginaHTML = str_replace('ERROREINSERIMENTOCOMMENTO',$stringErrors,$paginaHTML);
 
 echo $paginaHTML;
 
