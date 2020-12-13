@@ -38,6 +38,27 @@ if(isset($_GET['idPost'])){
 	//exit();
 }
 
+$stringErrors = '';
+if(isset($_SESSION['commentErrors'])){
+//mostrare errori form
+
+    $stringErrors = "<div id='commentErrors'>";
+    foreach($_SESSION['commentErrors'] as $error){
+        $stringErrors .= "<p>".$error."</p>";
+    }
+    $stringErrors .= "</div> ";
+
+    unset($_SESSION['commentErrors']);
+
+    $paginaHTML = str_replace('VALORETCOMMENTO',$_SESSION['commentValues']['contenuto'],$paginaHTML);
+}else{
+    $paginaHTML = str_replace('VALORECOMMENTO','',$paginaHTML);
+}
+
+unset($_SESSION['registerValues']);
+
+$paginaHTML = str_replace('ERROREINSERIMENTOCOMMENTO',$stringErrors,$paginaHTML);
+
 echo $paginaHTML;
 
 ?>

@@ -37,7 +37,7 @@ if(count($errors)==0){
 
 }else{
     $_SESSION['commentValues'] = $values;
-    $_SESSION['commentValues'] = $errors;
+    $_SESSION['commentErrors'] = $errors;
 }
 
 header("Location: postPage.php?idPost=".$_GET['idPost']);
