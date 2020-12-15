@@ -1,0 +1,20 @@
+#menu{
+    float: none;
+    width: 100%;
+}
+
+#indexContent{
+    width: 100%;
+    margin: auto;
+}
+#search{
+    width: 90%;
+}
+#search input[type="text"]{
+    width: 40%;
+}
+
+.sezione{
+    width: 90%;
+    margin: auto;
+}
