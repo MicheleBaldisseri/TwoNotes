@@ -21,7 +21,7 @@ class User {
     public function recover($_username){
         
       $this->dbconnection->connectToDatabase();
-      $query = $this->dbconnection->query("SELECT * FROM Utenti WHERE username = '$_username'");
+      $query = $this->dbconnection->query("SELECT * FROM utenti WHERE username = '$_username'");
       $this->dbconnection->disconnect();
 
       if ($query->num_rows > 0) {
