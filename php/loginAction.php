@@ -13,7 +13,7 @@ if(!isset($_POST['username']) || !isset($_POST['psw'])){
         $_SESSION['oldUsername']=$_POST['username'];
         exit();
     } else {
-        header('Location: ../index.php');
+        header('Location: index.php');
         exit();
     }
 }

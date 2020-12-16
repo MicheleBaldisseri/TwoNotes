@@ -56,7 +56,7 @@ if(count($errors)==0){
         if($manager->register($values)){
             $manager->login($values['username'],$values['password']);
             
-            header("Location: ../index.php");
+            header("Location: index.php");
             exit();
         }
     }else{
