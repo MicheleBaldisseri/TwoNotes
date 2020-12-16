@@ -26,16 +26,19 @@ class Manager{
 
     //OPERAZIONI CON POST ---------------------------------------------------------------------------
     
-    public function getPostList(){
+    public function getPostList($search = null){
         $this->connect();
         $this->dbconnection->query('SET NAMES utf8');
         $select = "  SELECT * 
-                    FROM Post
-                    ORDER BY dataOra DESC";
+                    FROM Post";
+
+        if($search != null) $select .= " WHERE titolo COLLATE UTF8_GENERAL_CI LIKE '%".$search."%'";
+                    
+        $select .= " ORDER BY dataOra DESC";
 
         $query = $this->dbconnection->query($select);
         $this->disconnect();
-        return $query->fetch_all(MYSQLI_ASSOC);
+        return $query ? $query->fetch_all(MYSQLI_ASSOC) : null;
     }
 
     public function printPostList($postList){
