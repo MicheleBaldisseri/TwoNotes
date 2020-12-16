@@ -11,7 +11,7 @@ if($user->getUsername()!=null){
 	$stringHeader = '
 	<div>
 		<ul>
-			<li>Benvenuto <a href="profilo.php?username='.$user->getUsername().'">'. $user->getNome() .'</a>!<li>
+			<li>Benvenuto <a href="profilo.php?username='.stripslashes($user->getUsername()).'">'. stripslashes($user->getNome()) .'</a>!<li>
 			<li><a href="logout.php" xml:lang="en">Logout</a></li>
 		</ul>
 	</div>';
@@ -32,9 +32,9 @@ if(isset($_SESSION['postErrors'])){
 
     unset($_SESSION['postErrors']);
 
-    $paginaHTML = str_replace('VALORETITOLO',$_SESSION['postValues']['titolo'],$paginaHTML);
-    $paginaHTML = str_replace('VALOREALT',$_SESSION['postValues']['altImmagine'],$paginaHTML);
-    $paginaHTML = str_replace('VALORECONTENUTO',$_SESSION['postValues']['contenuto'],$paginaHTML);
+    $paginaHTML = str_replace('VALORETITOLO',stripslashes($_SESSION['postValues']['titolo']),$paginaHTML);
+    $paginaHTML = str_replace('VALOREALT',stripslashes($_SESSION['postValues']['altImmagine']),$paginaHTML);
+    $paginaHTML = str_replace('VALORECONTENUTO',stripslashes($_SESSION['postValues']['contenuto']),$paginaHTML);
 }else{
     $paginaHTML = str_replace('VALORETITOLO','',$paginaHTML);
     $paginaHTML = str_replace('VALOREALT','',$paginaHTML);

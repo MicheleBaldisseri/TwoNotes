@@ -126,14 +126,14 @@ class Manager{
             $timestamp = strtotime($post['dataOra']);
 	        $new_date = date("d/m/Y H:i:s", $timestamp);
 
-            $string = '<h1>'.$post['titolo'].'</h1>
-            <p>'.$post['contenuto'].'</p>';
+            $string = '<h1>'.stripslashes($post['titolo']).'</h1>
+            <p>'.stripslashes($post['contenuto']).'</p>';
             if($post['immagine']!=null){
                 $string .= '<img src="'.$base64.'" alt="'.stripslashes($post['altImmagine']).'"/>';
             }    
             $string .= '<p class="infoPost">
                 Pubblicato da: 
-                <a href="profilo.php?username='.$post['utente'].'" class="linkToButton">'.$post['utente'].'</a> 
+                <a href="profilo.php?username='.stripslashes($post['utente']).'" class="linkToButton">'.stripslashes($post['utente']).'</a> 
                 '.$new_date.'
             </p>';
         }else{
@@ -176,8 +176,9 @@ class Manager{
 
         return '<li>
             <div class="singleComment shadow-div round_div">
-                <p class="infoPost"><a href="profilo.php?username='.$comment['utente'].'" class="linkToButton">'.$comment['utente'].'</a> '.$new_date.'</p>
-                <p>'.$comment['contenuto'].'</p>                             
+                <p class="infoPost"><a href="profilo.php?username='.stripslashes($comment['utente']).'" class="linkToButton">'.stripslashes($comment['utente'])
+                .'</a> '.$new_date.'</p>
+                <p>'.stripslashes($comment['contenuto']).'</p>                             
             </div>
         </li>';
     }

@@ -19,10 +19,10 @@ if($user->getUsername()!=null){
 	<div>
 		<ul>
             ';
-            if($_GET['username'] == $user->getUsername()){
-                $stringHeader .= '<li>Benvenuto '. $user->getNome() .'!<li>';
+            if($_GET['username'] == stripslashes($user->getUsername())){
+                $stringHeader .= '<li>Benvenuto '. stripslashes($user->getNome()) .'!<li>';
             }else{
-                $stringHeader .= '<li>Benvenuto <a href="profilo.php?username='.$user->getUsername().'">'. $user->getNome() .'</a>!<li>';
+                $stringHeader .= '<li>Benvenuto <a href="profilo.php?username='.stripslashes($user->getUsername()).'">'. stripslashes($user->getNome()) .'</a>!<li>';
             }
             $stringHeader .= '<li><a href="logout.php" xml:lang="en">Logout</a></li>
             </ul>
@@ -46,13 +46,13 @@ if($userProfile!=null){
 	$timestamp = strtotime($userProfile->getDataNascita());
 	$new_date = date("d/m/Y", $timestamp);
 
-	$paginaHTML = str_replace("NOME", $userProfile->getNome(), $paginaHTML);
-	$paginaHTML = str_replace("COGNO_ME", $userProfile->getCognome(), $paginaHTML);
-	$paginaHTML = str_replace("EMAIL", $userProfile->getEmail(), $paginaHTML);
+	$paginaHTML = str_replace("NOME", stripslashes($userProfile->getNome()), $paginaHTML);
+	$paginaHTML = str_replace("COGNO_ME", stripslashes($userProfile->getCognome()), $paginaHTML);
+	$paginaHTML = str_replace("EMAIL", stripslashes($userProfile->getEmail()), $paginaHTML);
 	$paginaHTML = str_replace("DATANASCITA", $new_date, $paginaHTML);
 	$paginaHTML = str_replace("SESSO", $userProfile->getSesso(), $paginaHTML);
-	$paginaHTML = str_replace("USERNAME", $userProfile->getUsername(), $paginaHTML);
-	$paginaHTML = str_replace("PROVENIENZA", $userProfile->getProvenienza(), $paginaHTML);
+	$paginaHTML = str_replace("USERNAME", stripslashes($userProfile->getUsername()), $paginaHTML);
+	$paginaHTML = str_replace("PROVENIENZA", stripslashes($userProfile->getProvenienza()), $paginaHTML);
 	$paginaHTML = str_replace("RUOLO", ($userProfile->isAdmin() ? 'Admin' : 'Utente'), $paginaHTML);
 }else{
 	//Gestire errore database
@@ -60,7 +60,7 @@ if($userProfile!=null){
 
 
 $buttonModifica = '';
-if($_GET['username'] == $user->getUsername()){
+if($_GET['username'] == stripslashes($user->getUsername())){
 	$buttonModifica = '<a class="linkToButton" id="annulla" href="modificaProfilo.php">Modifica</a>';
 }
 $paginaHTML = str_replace("LINKMODIFICA", $buttonModifica, $paginaHTML);

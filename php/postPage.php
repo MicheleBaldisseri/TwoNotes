@@ -49,7 +49,7 @@ if(isset($_SESSION['commentErrors'])){
 
     unset($_SESSION['commentErrors']);
 
-    $paginaHTML = str_replace('VALORECOMMENTO',$_SESSION['commentValues']['contenuto'],$paginaHTML);
+    $paginaHTML = str_replace('VALORECOMMENTO',stripslashes($_SESSION['commentValues']['contenuto']),$paginaHTML);
 }else{
     $paginaHTML = str_replace('VALORECOMMENTO','',$paginaHTML);
 }
