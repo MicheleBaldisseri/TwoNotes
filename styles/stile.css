@@ -79,7 +79,7 @@ SEZIONE HOME
 
 /* Lista dei post*/
 .postContent{
-    width: 86%;
+    width: 85%;
     margin: auto;
     margin-top: 2em;
     padding: 1em;
@@ -94,23 +94,26 @@ SEZIONE HOME
     font-size: 0.8em;
 }
 .postContent img{
-    width: 30%;
+    width: 50%;
     display: block;
     margin: auto;
-    padding-top: 1em;
+}
+.noWrap{
+    white-space: nowrap;
 }
 .postContent a{
-    font-size: 1em;
+    font-size: 0.9em;
     background-color: #69b2ee;
     padding: 0.6em;
 }
 .postContent p{
     margin-top: 1em;
+    margin-bottom: 1.2em;
 }
 #goToPost{
-    background-color: #613bb986;
-    margin-left: 25%;
-    margin-right: 5%;
+    background-color: #613bb986;  
+    margin-right: 6%;
+    margin-left: 30%;
 }
 #searchResults{
     font-size: 1.5em;

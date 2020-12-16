@@ -71,9 +71,9 @@ class Manager{
         $string .=      '<p class="infoPost">Pubblicato da: 
                             <a href="php/profilo.php?username='. stripslashes($post['utente']) .'" class="linkToButton">' . stripslashes($post['utente']) . '</a>  
                             '.$new_date.'
-                            <a id="goToPost" class="linkToButton" href="php/postPage.php?idPost='.$post['postID'].'">Vai al post</a>
-                            <a class="linkToButton" href="#percorso">Torna su</a> 
                         </p>
+                        <a id="goToPost" class="linkToButton" href="php/postPage.php?idPost='.$post['postID'].'">Vai al post</a>
+                        <a class="linkToButton" href="#percorso">Torna su</a> 
                     </div>              
                 </li>';
         return $string;

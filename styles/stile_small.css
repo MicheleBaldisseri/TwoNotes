@@ -1,3 +1,9 @@
+html, body {
+    overflow-x: hidden;
+  }
+body {
+    position: relative
+}
 #menu{
     float: none;
     width: 100%;
@@ -13,8 +19,17 @@
 #search input[type="text"]{
     width: 40%;
 }
-
+#goToPost{
+    margin-left: 25%;
+}
 .sezione{
     width: 90%;
     margin: auto;
+}
+.contenitoreCentrale{
+    margin: auto;
+    width: 95%;
+}
+.doubleColumns{
+    columns: 1;
 }
