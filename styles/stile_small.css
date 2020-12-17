@@ -89,3 +89,16 @@ body {
 #annulla{
     display: inline;
 }
+/*
+==============
+  Modifica profilo - Registrazione
+==============
+*/
+.inputsex{
+    display: block;
+    text-align: center;
+    margin-left: 10%;
+}
+#formBase input[type="radio"]{
+    margin-top: 0.8em;  
+}

@@ -123,6 +123,10 @@ SEZIONE HOME
     margin-top: 1em;
     color: #1040a7;
 }
+
+#searchResults{
+    text-align: center;
+}
 /*
 ===================
     GENERALI
@@ -166,6 +170,9 @@ SEZIONE CONTENITORE
     height: 60%;
     margin-top: 1em;
     margin-left: 25%;
+}
+.contenitoreCentrale h1{
+    color: #1040a7;
 }
 .allWidth{
     padding: 1em 0 1em 0;
@@ -593,17 +600,21 @@ SEZIONE REGISTRAZIONE
     width: 34%;
     display:inline-block;
     padding: 1em 0 1em 0;
+    color: #005eac;
 }
 .inputright{
     width: 60%;
-    display:inline-block;
 }
+
 .inputsex{
+    /*
     text-align: right;
     width: 13%;
     display:inline-block;
-    font-size: 1.2em;
+    font-size: 1.2em;*/
+    margin-left: 5%;
 }
+
 .formRegistrazione{
     padding-left: 2em;
     padding-right: 2em;
@@ -741,4 +752,27 @@ responsive search bar
     .contenitoreCentrale{
         width: 72%;
     }
+
+    .doubleColumns{
+        columns: 1;
+    }
+
+    #profile{
+        height: 35em;
+    }
+    #profile a{
+        margin-right: 35%;
+    }
+    
+    .inputsex{
+        display: block;
+        text-align: center;
+        margin-left: 0;
+    }
+        
+    #formBase input[type="radio"]{
+        display: block;
+        margin-left: 50%;   
+    }
+    
   }
