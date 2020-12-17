@@ -84,6 +84,7 @@ SEZIONE HOME
     margin-top: 2em;
     padding: 1em;
     overflow-wrap: break-word;
+    text-align: center;
 }
 .postContent h1{
     font-size: 1.5em;
@@ -102,6 +103,7 @@ SEZIONE HOME
     white-space: nowrap;
 }
 .postContent a{
+    width: 2em;
     font-size: 0.9em;
     background-color: #69b2ee;
     padding: 0.6em;
@@ -109,11 +111,11 @@ SEZIONE HOME
 .postContent p{
     margin-top: 1em;
     margin-bottom: 1.2em;
+    text-align: start;
 }
 #goToPost{
     background-color: #613bb986;  
     margin-right: 6%;
-    margin-left: 30%;
 }
 #searchResults{
     font-size: 1.5em;
@@ -714,3 +716,18 @@ SEZIONE 404page
     margin-top: 1em;
     margin-bottom: 1.5em;
 }
+/*
+==============
+responsive search bar
+==============
+*/
+@media only screen and (max-width: 1350px) {
+    #search{
+        text-align: center;
+        height: fit-content;
+    }
+
+    #search input[type="text"]{
+      width: 90%;
+    }
+  }

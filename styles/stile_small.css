@@ -19,9 +19,6 @@ body {
 #search input[type="text"]{
     width: 40%;
 }
-#goToPost{
-    margin-left: 25%;
-}
 .sezione{
     width: 90%;
     margin: auto;
