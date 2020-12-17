@@ -64,7 +64,7 @@ class Manager{
 
 		$string =
                 '<li>
-                    <div class="postContent round_div shadow-div">
+                    <div class="postContent round_div shadow-div textAlignCenter">
                         <h1>' . stripslashes($post['titolo']) . '</h1>
                         <p>' . stripslashes($post['contenuto']) . '</p>';
                         if($post['immagine']!=null){

@@ -84,7 +84,7 @@ SEZIONE HOME
     margin-top: 2em;
     padding: 1em;
     overflow-wrap: break-word;
-    text-align: center;
+
 }
 .postContent h1{
     font-size: 1.5em;
@@ -165,7 +165,7 @@ SEZIONE CONTENITORE
     width: 65%;
     height: 60%;
     margin-top: 1em;
-    margin-left: 30%;
+    margin-left: 25%;
 }
 .allWidth{
     padding: 1em 0 1em 0;
@@ -255,12 +255,14 @@ SEZIONE SINGOLO POST
 SEZIONE NUOVO POST
 ===================
 */
+/*
 #newPostForm{
     margin-left: 25%;
     width: 55em;
     height: fit-content;
     margin-top: 1em;
 }
+*/
 #newPostForm label{
     display: block;
     font-weight: bold;
@@ -281,9 +283,11 @@ SEZIONE NUOVO POST
     background-color: #005faca2;
     margin-left: 20%;
 }
-#newPostForm form{
+
+#newPostForm form, #annulla{
     display: inline;
 }
+
 /*text area contenuto*/
 .inputForm{
     width: 50%;
@@ -606,10 +610,11 @@ SEZIONE REGISTRAZIONE
 }
 .formRegistrazione input[type="radio"] {
     margin: 10px 10px 0px 0px;
-}
+}/*
 .formRegistrazione input[type="submit"] {
     margin-left: 25em;
 }
+*/
 /*
 ===================
 SEZIONE PROFILO
@@ -669,11 +674,13 @@ SEZIONE Modifica PROFILO - Registrazione
 #formBase button{
     background-color: #005fac9f;
 }
+
 .alignFormButton, 
 .formRegistrazione,
 #search form{
     display: inline;
 }
+
 /*
 ==============
 SEZIONE FOOTER
@@ -729,5 +736,9 @@ responsive search bar
 
     #search input[type="text"]{
       width: 90%;
+    }
+
+    .contenitoreCentrale{
+        width: 72%;
     }
   }

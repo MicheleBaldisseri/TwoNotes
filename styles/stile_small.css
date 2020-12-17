@@ -4,6 +4,11 @@ html, body {
 body {
     position: relative
 }
+/*
+==============
+    Home
+==============
+*/
 #menu{
     float: none;
     width: 100%;
@@ -19,8 +24,13 @@ body {
 #search input[type="text"]{
     width: 40%;
 }
+/*
+==============
+    Generale
+==============
+*/
 .sezione{
-    width: 90%;
+    width: 85%;
     margin: auto;
 }
 .contenitoreCentrale{
@@ -29,4 +39,53 @@ body {
 }
 .doubleColumns{
     columns: 1;
+}
+/*
+==============
+    Singolo Post
+==============
+*/
+
+#singlePost{
+    margin-bottom: 1em;
+}
+/*
+==============
+    Singolo Post
+==============
+*/
+#newPostForm p{
+    text-align: center;
+}
+
+.inputForm{
+    width: 90%;
+}
+/*
+==============
+  Registrazione
+==============
+*/
+
+#formBase{
+    text-align: center;
+}
+#formBase input{
+    margin: auto;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#formBase label{
+    text-align: center;
+    width: 80%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#formBase input[type="submit"]{
+    margin-top: 1em;
+}
+#formBase input[type="submit"],
+#annulla{
+    display: inline;
 }
