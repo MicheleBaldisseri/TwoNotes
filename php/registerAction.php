@@ -19,15 +19,15 @@ $db = $manager->getConnection();
 $errors = array();
 $values = array();
 
-$values['nome'] = isset($_POST['nome']) ? $_POST['nome'] : null;
-$values['cognome'] = isset($_POST['cognome']) ? $_POST['cognome'] : null;
-$values['dataNascita'] = isset($_POST['data']) ? $_POST['data'] : null;
-$values['email'] = isset($_POST['email']) ? $_POST['email'] : null;
-$values['sesso'] = isset($_POST['gender']) ? $_POST['gender'] : null;
-$values['provenienza'] = isset($_POST['provenienza']) ? $_POST['provenienza'] : null;
-$values['username'] = isset($_POST['username']) ? $_POST['username'] : null;
-$values['password'] = isset($_POST['psw']) ? $_POST['psw'] : null; 
-$values['confermaPassword'] = isset($_POST['conf-psw']) ? $_POST['conf-psw'] : null;
+$values['nome'] = isset($_POST['nome']) ? addslashes($_POST['nome']) : null;
+$values['cognome'] = isset($_POST['cognome']) ? addslashes($_POST['cognome']) : null;
+$values['dataNascita'] = isset($_POST['data']) ? addslashes($_POST['data']) : null;
+$values['email'] = isset($_POST['email']) ? addslashes($_POST['email']) : null;
+$values['sesso'] = isset($_POST['gender']) ? addslashes($_POST['gender']) : null;
+$values['provenienza'] = isset($_POST['provenienza']) ? addslashes($_POST['provenienza']) : null;
+$values['username'] = isset($_POST['username']) ? addslashes($_POST['username']) : null;
+$values['password'] = isset($_POST['psw']) ? addslashes($_POST['psw']) : null; 
+$values['confermaPassword'] = isset($_POST['conf-psw']) ? addslashes($_POST['conf-psw']) : null;
 
 if(empty($values['nome'])) array_push($errors, "Compila il campo Nome");
 if(empty($values['cognome'])) array_push($errors, "Compila il campo Cognome");
@@ -56,7 +56,7 @@ if(count($errors)==0){
         if($manager->register($values)){
             $manager->login($values['username'],$values['password']);
             
-            header("Location: ../index.php");
+            header("Location: index.php");
             exit();
         }
     }else{

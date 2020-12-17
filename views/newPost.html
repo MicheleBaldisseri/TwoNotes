@@ -24,7 +24,7 @@
 
     <div id="menu">
         <ul class="listaSenzaPunti">
-            <li><a xml:lang="en" href="../index.php">Home</a></li>
+            <li><a xml:lang="en" href="index.php">Home</a></li>
             <li><a href="aboutUs.php">Chi siamo</a></li>
             <li><a href="contatti.php">Contatti</a></li>
         </ul>
@@ -45,7 +45,7 @@
         <form name="creazionePost" action="newPostAction.php" method="POST" enctype="multipart/form-data">
         ERRORIPOST
             <label for="title">Titolo:</label>  
-            <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="VALORETITOLO" required />
+            <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="VALORETITOLO" required="required" />
                 
             <label for="myfile">Carica un'immagine:</label>     
             <input type="file" id="myfile" name="myfile" accept="image/gif, image/jpeg, image/png" />
@@ -54,12 +54,12 @@
             <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" placeholder="Inserisci una descrizione dell'immagine...">VALOREALT</textarea>
                 
             <label for="content">Contenuto:</label>   
-            <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post...">VALORECONTENUTO</textarea>   
+            <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..." required="required">VALORECONTENUTO</textarea>   
         
             <input type="submit" class="round-button general-button" value="Invia"/> 
         </form>
 
-        <a href="../index.php" id="annulla" class="linkToButton alignFormButton">Annulla</a>     
+        <a href="index.php" id="annulla" class="linkToButton alignFormButton">Annulla</a>     
     </div>
     
     <div id="footer">

@@ -40,7 +40,6 @@ if(isset($_GET['idPost'])){
 
 $stringErrors = '';
 if(isset($_SESSION['commentErrors'])){
-//mostrare errori form
 
     $stringErrors = "<div id='commentErrors'>";
     foreach($_SESSION['commentErrors'] as $error){
@@ -50,12 +49,12 @@ if(isset($_SESSION['commentErrors'])){
 
     unset($_SESSION['commentErrors']);
 
-    $paginaHTML = str_replace('VALORETCOMMENTO',$_SESSION['commentValues']['contenuto'],$paginaHTML);
+    $paginaHTML = str_replace('VALORECOMMENTO',stripslashes($_SESSION['commentValues']['contenuto']),$paginaHTML);
 }else{
     $paginaHTML = str_replace('VALORECOMMENTO','',$paginaHTML);
 }
 
-unset($_SESSION['registerValues']);
+unset($_SESSION['commentValues']);
 
 $paginaHTML = str_replace('ERROREINSERIMENTOCOMMENTO',$stringErrors,$paginaHTML);
 

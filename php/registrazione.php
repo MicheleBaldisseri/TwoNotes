@@ -22,12 +22,12 @@ if(isset($_SESSION['registerErrors'])){
 
     unset($_SESSION['registerErrors']);
 
-    $paginaHTML = str_replace('VALORENOME',$_SESSION['registerValues']['nome'],$paginaHTML);
-    $paginaHTML = str_replace('VALORECOGNOME',$_SESSION['registerValues']['cognome'],$paginaHTML);
-    $paginaHTML = str_replace('VALOREEMAIL',$_SESSION['registerValues']['email'],$paginaHTML);
-    $paginaHTML = str_replace('VALOREPROVENIENZA',$_SESSION['registerValues']['provenienza'],$paginaHTML);
-    $paginaHTML = str_replace('VALOREUSERNAME',$_SESSION['registerValues']['username'],$paginaHTML);
-    $paginaHTML = str_replace('VALOREDATA',$_SESSION['registerValues']['dataNascita'],$paginaHTML);
+    $paginaHTML = str_replace('VALORENOME',stripslashes($_SESSION['registerValues']['nome']),$paginaHTML);
+    $paginaHTML = str_replace('VALORECOGNOME',stripslashes($_SESSION['registerValues']['cognome']),$paginaHTML);
+    $paginaHTML = str_replace('VALOREEMAIL',stripslashes($_SESSION['registerValues']['email']),$paginaHTML);
+    $paginaHTML = str_replace('VALOREPROVENIENZA',stripslashes($_SESSION['registerValues']['provenienza']),$paginaHTML);
+    $paginaHTML = str_replace('VALOREUSERNAME',stripslashes($_SESSION['registerValues']['username']),$paginaHTML);
+    $paginaHTML = str_replace('VALOREDATA',stripslashes($_SESSION['registerValues']['dataNascita']),$paginaHTML);
 
 }else{
 

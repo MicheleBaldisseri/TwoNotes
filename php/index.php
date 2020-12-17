@@ -1,9 +1,7 @@
 <?php
-
 require_once "../includes/Manager.php";
 session_start();
-
-$paginaHTML = file_get_contents('../views/contatti.html');
+$paginaHTML = file_get_contents('../views/index.html');
 
 $manager = new Manager();
 $user = $manager->setupSession();
@@ -28,6 +26,11 @@ if($user->getUsername()!=null){
 	</div>';	
 }
 $paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
+
+$listaPost = $manager->getPostList();
+$stringList = $manager->printPostList($listaPost);
+
+$paginaHTML = str_replace("LISTAPOST", $stringList, $paginaHTML);
 
 echo $paginaHTML;
 

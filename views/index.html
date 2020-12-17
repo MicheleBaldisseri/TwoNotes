@@ -9,12 +9,12 @@
     <meta name="keywords" content="TwoNotes, post, music"/>
     <meta name="author" content="Giulio Zanatta"/>
     <meta name="language" content="italian it"/>
-    <link rel="stylesheet" type="text/css" href="styles/stile.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
 </head>
 <body>
     <div id="header">
-        <img src="img/TwoNotes-4.svg"  alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
+        <img src="../img/TwoNotes-4.svg"  alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
         HEADERDESTRO
     </div>
 
@@ -25,18 +25,26 @@
     <div id="menu">
         <ul class="listaSenzaPunti">
             <li aria-current="page" xml:lang="en">Home</li>
-            <li><a href="php/aboutUs.php">Chi siamo</a></li>
-            <li><a href="php/contatti.php">Contatti</a></li>
+            <li><a href="aboutUs.php">Chi siamo</a></li>
+            <li><a href="contatti.php">Contatti</a></li>
         </ul>
     </div>
 
     <div id="indexContent">     
         <div id="search" class="round_div shadow-div">   
+<<<<<<< HEAD
             <form method="post">
                 <input name="contenutoRicerca" type="text" placeholder="Cerca..."/>
                 <input type="submit" id="search-button" class="round-button general-button" value="Cerca"/>           
             </form>     
             <a href="php/newPost.php" class="linkToButton alignFormButton noWrap">Crea Post</a>    
+=======
+            <form method="get" action="ricercaPost.php">
+                <input name="contenutoRicerca" type="text" placeholder="Inserisci post da cercare..."/>
+                <input type="submit" id="search-button" class="round-button general-button" value="Cerca"/>           
+            </form>     
+            <a href="newPost.php" class="linkToButton alignFormButton">Crea Post</a>    
+>>>>>>> php
         </div>
       
         <ul class="listaSenzaPunti">

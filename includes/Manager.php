@@ -26,16 +26,19 @@ class Manager{
 
     //OPERAZIONI CON POST ---------------------------------------------------------------------------
     
-    public function getPostList(){
+    public function getPostList($search = null){
         $this->connect();
         $this->dbconnection->query('SET NAMES utf8');
         $select = "  SELECT * 
-                    FROM Post
-                    ORDER BY dataOra DESC";
+                    FROM post";
+
+        if($search != null) $select .= " WHERE titolo COLLATE UTF8_GENERAL_CI LIKE '%".$search."%'";
+                    
+        $select .= " ORDER BY dataOra DESC";
 
         $query = $this->dbconnection->query($select);
         $this->disconnect();
-        return $query->fetch_all(MYSQLI_ASSOC);
+        return $query ? $query->fetch_all(MYSQLI_ASSOC) : null;
     }
 
     public function printPostList($postList){
@@ -69,10 +72,10 @@ class Manager{
                         }
                         
         $string .=      '<p class="infoPost">Pubblicato da: 
-                            <a href="php/profilo.php?username='. stripslashes($post['utente']) .'" class="linkToButton">' . stripslashes($post['utente']) . '</a>  
+                            <a href="profilo.php?username='. stripslashes($post['utente']) .'" class="linkToButton">' . stripslashes($post['utente']) . '</a>  
                             '.$new_date.'
                         </p>
-                        <a id="goToPost" class="linkToButton" href="php/postPage.php?idPost='.$post['postID'].'">Vai al post</a>
+                        <a id="goToPost" class="linkToButton" href="postPage.php?idPost='.$post['postID'].'">Vai al post</a>
                         <a class="linkToButton" href="#percorso">Torna su</a> 
                     </div>              
                 </li>';
@@ -84,7 +87,7 @@ class Manager{
     public function insertPost($values){
         $this->connect();
         $errors = array();
-        $select = "  INSERT INTO Post (titolo, dataora, immagine, altImmagine, contenuto, utente) VALUES 
+        $select = "  INSERT INTO post (titolo, dataora, immagine, altImmagine, contenuto, utente) VALUES 
             ('".$values['titolo']."',now(), '".$values['immagine']."', '".$values['altImmagine']."', '".$values['contenuto']."', '".$values['username']."')";
         $lastid = null;
         if(!$this->dbconnection->query($select)){
@@ -102,7 +105,7 @@ class Manager{
         $this->connect();
         $this->dbconnection->query('SET NAMES utf8');
         $select = "  SELECT * 
-                    FROM Post
+                    FROM post
                     WHERE postID = '".$idPost."'";
 
         $query = $this->dbconnection->query($select);
@@ -123,14 +126,14 @@ class Manager{
             $timestamp = strtotime($post['dataOra']);
 	        $new_date = date("d/m/Y H:i:s", $timestamp);
 
-            $string = '<h1>'.$post['titolo'].'</h1>
-            <p>'.$post['contenuto'].'</p>';
+            $string = '<h1>'.stripslashes($post['titolo']).'</h1>
+            <p>'.stripslashes($post['contenuto']).'</p>';
             if($post['immagine']!=null){
                 $string .= '<img src="'.$base64.'" alt="'.stripslashes($post['altImmagine']).'"/>';
             }    
             $string .= '<p class="infoPost">
                 Pubblicato da: 
-                <a href="profilo.php?username='.$post['utente'].'" class="linkToButton">'.$post['utente'].'</a> 
+                <a href="profilo.php?username='.stripslashes($post['utente']).'" class="linkToButton">'.stripslashes($post['utente']).'</a> 
                 '.$new_date.'
             </p>';
         }else{
@@ -145,7 +148,7 @@ class Manager{
         $this->connect();
         $this->dbconnection->query('SET NAMES utf8');
         $select = "  SELECT * 
-                    FROM Commenti
+                    FROM commenti
                     WHERE post = '".$idPost."' 
                     ORDER BY dataOra DESC";
 
@@ -173,8 +176,9 @@ class Manager{
 
         return '<li>
             <div class="singleComment shadow-div round_div">
-                <p class="infoPost"><a href="profilo.php?username='.$comment['utente'].'" class="linkToButton">'.$comment['utente'].'</a> '.$new_date.'</p>
-                <p>'.$comment['contenuto'].'</p>                             
+                <p class="infoPost"><a href="profilo.php?username='.stripslashes($comment['utente']).'" class="linkToButton">'.stripslashes($comment['utente'])
+                .'</a> '.$new_date.'</p>
+                <p>'.stripslashes($comment['contenuto']).'</p>                             
             </div>
         </li>';
     }
@@ -224,7 +228,7 @@ class Manager{
         $errors = array();
         $this->connect();
         $select = "  SELECT * 
-                    FROM Utenti 
+                    FROM utenti 
                     WHERE username = '".$values['username']."'";
         $query = $this->dbconnection->query($select);
         $this->disconnect();
@@ -236,7 +240,7 @@ class Manager{
 
         $this->connect();
         $select = "  SELECT * 
-                    FROM Utenti
+                    FROM utenti
                     WHERE email = '".$values['email']."'";
         $query = $this->dbconnection->query($select);
         $this->disconnect();
@@ -248,7 +252,7 @@ class Manager{
 
         if(count($errors)==0){
             $this->connect();
-            $select = "  INSERT INTO Utenti VALUES
+            $select = "  INSERT INTO utenti VALUES
                 ('".$values['username']."','".md5($values['password'])."',
                 '".$values['nome']."','".$values['cognome']."',
                 '".$values['dataNascita']."','".$values['email']."',
@@ -279,7 +283,7 @@ class Manager{
         $errors = array();
         $this->connect();
         $select = "  SELECT * 
-                    FROM Utenti
+                    FROM utenti
                     WHERE username = '".$values['username']."' AND username != '".$oldUsername."';";
         $query = $this->dbconnection->query($select);
         $this->disconnect();
@@ -291,7 +295,7 @@ class Manager{
 
         $this->connect();
         $select = "  SELECT * 
-                    FROM Utenti
+                    FROM utenti
                     WHERE email = '".$values['email']."' AND username != '".$oldUsername."';";
         $query = $this->dbconnection->query($select);
         $this->disconnect();
@@ -304,7 +308,7 @@ class Manager{
         if(count($errors)==0){
             
             $this->connect();
-            $update = " UPDATE Utenti
+            $update = " UPDATE utenti
                     SET username = '".$values['username']."', nome = '".$values['nome']."', cognome = '".$values['cognome']."', email = '".$values['email']."',
                     sesso = '".$values['sesso']."', dataNascita = '".$values['dataNascita']."'";
                     if(!empty($values['newPassword'])) $update .= ", password = '".md5($values['newPassword'])."' ";

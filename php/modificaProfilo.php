@@ -38,12 +38,12 @@ $paginaHTML = str_replace('ERRORIMODIFICAPROFILO',$stringErrors,$paginaHTML);
 
 if($user->getUsername()!=null){
 
-	$paginaHTML = str_replace("VALORENOME", $user->getNome(), $paginaHTML);
-	$paginaHTML = str_replace("VALORECOGNOME", $user->getCognome(), $paginaHTML);
-	$paginaHTML = str_replace("VALOREEMAIL", $user->getEmail(), $paginaHTML);
-	$paginaHTML = str_replace("VALOREDATA", $user->getDataNascita(), $paginaHTML);
-	$paginaHTML = str_replace("VALOREUSERNAME", $user->getUsername(), $paginaHTML);
-	$paginaHTML = str_replace("VALOREPROVENIENZA", $user->getProvenienza(), $paginaHTML);
+	$paginaHTML = str_replace("VALORENOME", stripslashes($user->getNome()), $paginaHTML);
+	$paginaHTML = str_replace("VALORECOGNOME", stripslashes($user->getCognome()), $paginaHTML);
+	$paginaHTML = str_replace("VALOREEMAIL", stripslashes($user->getEmail()), $paginaHTML);
+	$paginaHTML = str_replace("VALOREDATA", stripslashes($user->getDataNascita()), $paginaHTML);
+	$paginaHTML = str_replace("VALOREUSERNAME", stripslashes($user->getUsername()), $paginaHTML);
+	$paginaHTML = str_replace("VALOREPROVENIENZA", stripslashes($user->getProvenienza()), $paginaHTML);
 
 	$sesso = $user->getSesso();
 	if($sesso == 'M') $paginaHTML = str_replace('SELECTEDM','checked',$paginaHTML);
