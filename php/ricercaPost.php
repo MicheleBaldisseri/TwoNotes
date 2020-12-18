@@ -27,14 +27,19 @@ if($user->getUsername()!=null){
 }
 $paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
 
-if(isset($_GET['contenutoRicerca']) || empty($_GET['contenutoRicerca'])){
+if(isset($_GET['contenutoRicerca']) && empty($_GET['contenutoRicerca'])){
     header('Location: index.php');
     exit();
 }
 
 $paginaHTML = str_replace("GETRICERCA", $_GET['contenutoRicerca'], $paginaHTML);
 
-$listaPost = $manager->getPostList($_GET['contenutoRicerca']);
+$listaPost;
+if(isset($_GET['page'])){
+	$listaPost = $manager->getPostList($_GET['page'],$_GET['contenutoRicerca']);
+}else{
+	$listaPost = $manager->getPostList(1,$_GET['contenutoRicerca']);
+}
 $stringList = $manager->printPostList($listaPost);
 
 $paginaHTML = str_replace("LISTAPOST", $stringList, $paginaHTML);
