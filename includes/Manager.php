@@ -83,6 +83,38 @@ class Manager{
         return $string;
     }
 
+    public function getTotalPageCount($search = null){
+        $this->connect();
+        $this->dbconnection->query('SET NAMES utf8');
+        $select = "  SELECT CEILING(COUNT(*)/6) as totalePagine
+                    FROM post";
+
+        if($search != null) $select .= " WHERE titolo COLLATE UTF8_GENERAL_CI LIKE '%".$search."%' OR contenuto COLLATE UTF8_GENERAL_CI LIKE '%".$search."%'";
+
+        $query = $this->dbconnection->query($select);
+        $this->disconnect();
+        return $query ? $query->fetch_all(MYSQLI_ASSOC)[0]['totalePagine'] : null;
+    }
+
+    public function printNavigazione($currentPage,$pageTotalCount){
+        $navigazione = '<ul class="listaSenzaPunti navigazione">';
+        if($currentPage > 1) {
+            $navigazione .= "<li><a href='index.php?page=".($currentPage-1)."'> ← Pagina precedente</a></li>";
+        }else{
+	        $navigazione .= "<li> ← Pagina precedente </li>";
+        }
+
+        $navigazione .= "<li> ".$currentPage."/".$pageTotalCount." </li>";
+
+        if($currentPage < $pageTotalCount) {
+            $navigazione .= "<li><a href='index.php?page=".($currentPage+1)."'> Pagina successiva → </a></li>";
+        }else{
+	        $navigazione .= "<li> Pagina successiva → </li>";
+        }
+        $navigazione .= '</ul>';
+        return $navigazione;
+    }
+
     // OPERAZIONE INSERIMENTO POST ---------------------------------------------------------------------------
 
     public function insertPost($values){

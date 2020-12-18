@@ -186,6 +186,15 @@ SEZIONE CONTENITORE
     cursor: pointer;
     text-decoration: underline;
 }
+.navigazione{
+    margin-top: 1.5em;
+    text-align: center;
+}
+
+.navigazione li{
+    display: inline;
+    padding: 1em;
+}
 /*
 ===================
 SEZIONE ABOUT US

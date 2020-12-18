@@ -27,13 +27,16 @@ if($user->getUsername()!=null){
 }
 $paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
 
-$listaPost;
-if(isset($_GET['page'])){
-	$listaPost = $manager->getPostList($_GET['page']);
-}else{
-	$listaPost = $manager->getPostList(1);
-}
 
+$currentPage = 1;
+if(isset($_GET['page'])) $currentPage = $_GET['page'];
+
+$pageTotalCount = $manager->getTotalPageCount();
+$navigazione = $manager->printNavigazione($currentPage,$pageTotalCount);
+
+$paginaHTML = str_replace("NAVIGAZIONE", $navigazione, $paginaHTML);
+
+$listaPost = $manager->getPostList($currentPage);
 $stringList = $manager->printPostList($listaPost);
 
 $paginaHTML = str_replace("LISTAPOST", $stringList, $paginaHTML);
