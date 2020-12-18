@@ -115,6 +115,25 @@ class Manager{
         return $navigazione;
     }
 
+    public function printNavigazioneRicerca($currentPage,$pageTotalCount,$search){
+        $navigazione = '<ul class="listaSenzaPunti navigazione">';
+        if($currentPage > 1) {
+            $navigazione .= "<li><a href='ricercaPost.php?page=".($currentPage-1)."&contenutoRicerca=".$search."'> ← Pagina precedente</a></li>";
+        }else{
+	        $navigazione .= "<li> ← Pagina precedente </li>";
+        }
+
+        $navigazione .= "<li> ".$currentPage."/".$pageTotalCount." </li>";
+
+        if($currentPage < $pageTotalCount) {
+            $navigazione .= "<li><a href='ricercaPost.php?page=".($currentPage+1)."&contenutoRicerca=".$search."'> Pagina successiva → </a></li>";
+        }else{
+	        $navigazione .= "<li> Pagina successiva → </li>";
+        }
+        $navigazione .= '</ul>';
+        return $navigazione;
+    }
+
     // OPERAZIONE INSERIMENTO POST ---------------------------------------------------------------------------
 
     public function insertPost($values){

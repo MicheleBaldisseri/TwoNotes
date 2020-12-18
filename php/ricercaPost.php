@@ -34,12 +34,15 @@ if(isset($_GET['contenutoRicerca']) && empty($_GET['contenutoRicerca'])){
 
 $paginaHTML = str_replace("GETRICERCA", $_GET['contenutoRicerca'], $paginaHTML);
 
-$listaPost;
-if(isset($_GET['page'])){
-	$listaPost = $manager->getPostList($_GET['page'],$_GET['contenutoRicerca']);
-}else{
-	$listaPost = $manager->getPostList(1,$_GET['contenutoRicerca']);
-}
+$currentPage = 1;
+if(isset($_GET['page'])) $currentPage = $_GET['page'];
+
+$pageTotalCount = $manager->getTotalPageCount($_GET['contenutoRicerca']);
+$navigazione = $manager->printNavigazioneRicerca($currentPage,$pageTotalCount,$_GET['contenutoRicerca']);
+
+$paginaHTML = str_replace("NAVIGAZIONE", $navigazione, $paginaHTML);
+
+$listaPost = $manager->getPostList($currentPage,$_GET['contenutoRicerca']);
 $stringList = $manager->printPostList($listaPost);
 
 $paginaHTML = str_replace("LISTAPOST", $stringList, $paginaHTML);
