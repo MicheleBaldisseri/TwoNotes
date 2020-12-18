@@ -27,7 +27,7 @@ if($user->getUsername()!=null){
 }
 $paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
 
-if(empty($_GET['contenutoRicerca'])){
+if(isset($_GET['contenutoRicerca']) || empty($_GET['contenutoRicerca'])){
     header('Location: index.php');
     exit();
 }

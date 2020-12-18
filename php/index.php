@@ -27,7 +27,13 @@ if($user->getUsername()!=null){
 }
 $paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
 
-$listaPost = $manager->getPostList();
+$listaPost;
+if(isset($_GET['page'])){
+	$listaPost = $manager->getPostList($_GET['page']);
+}else{
+	$listaPost = $manager->getPostList(1);
+}
+
 $stringList = $manager->printPostList($listaPost);
 
 $paginaHTML = str_replace("LISTAPOST", $stringList, $paginaHTML);

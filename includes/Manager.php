@@ -26,7 +26,7 @@ class Manager{
 
     //OPERAZIONI CON POST ---------------------------------------------------------------------------
     
-    public function getPostList($search = null){
+    public function getPostList($page, $search = null){
         $this->connect();
         $this->dbconnection->query('SET NAMES utf8');
         $select = "  SELECT * 
@@ -34,7 +34,8 @@ class Manager{
 
         if($search != null) $select .= " WHERE titolo COLLATE UTF8_GENERAL_CI LIKE '%".$search."%' OR contenuto COLLATE UTF8_GENERAL_CI LIKE '%".$search."%'";
                     
-        $select .= " ORDER BY dataOra DESC";
+        $select .= " ORDER BY dataOra DESC
+                    LIMIT 6 OFFSET ".($page-1)*6;
 
         $query = $this->dbconnection->query($select);
         $this->disconnect();
