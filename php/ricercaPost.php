@@ -38,6 +38,7 @@ $currentPage = 1;
 if(isset($_GET['page'])) $currentPage = $_GET['page'];
 
 $pageTotalCount = $manager->getTotalPageCount($_GET['contenutoRicerca']);
+if($currentPage>$pageTotalCount)$currentPage=$pageTotalCount;
 $navigazione = $manager->printNavigazioneRicerca($currentPage,$pageTotalCount,$_GET['contenutoRicerca']);
 
 $paginaHTML = str_replace("NAVIGAZIONE", $navigazione, $paginaHTML);

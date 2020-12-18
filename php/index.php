@@ -32,6 +32,7 @@ $currentPage = 1;
 if(isset($_GET['page'])) $currentPage = $_GET['page'];
 
 $pageTotalCount = $manager->getTotalPageCount();
+if($currentPage>$pageTotalCount)$currentPage=$pageTotalCount;
 $navigazione = $manager->printNavigazione($currentPage,$pageTotalCount);
 
 $paginaHTML = str_replace("NAVIGAZIONE", $navigazione, $paginaHTML);
