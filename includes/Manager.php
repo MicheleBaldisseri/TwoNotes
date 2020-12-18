@@ -32,7 +32,7 @@ class Manager{
         $select = "  SELECT * 
                     FROM post";
 
-        if($search != null) $select .= " WHERE titolo COLLATE UTF8_GENERAL_CI LIKE '%".$search."%'";
+        if($search != null) $select .= " WHERE titolo COLLATE UTF8_GENERAL_CI LIKE '%".$search."%' OR contenuto COLLATE UTF8_GENERAL_CI LIKE '%".$search."%'";
                     
         $select .= " ORDER BY dataOra DESC";
 
