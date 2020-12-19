@@ -271,6 +271,25 @@ SEZIONE SINGOLO POST
 	margin-top: 1em;
     padding: 1em;
 }
+#newComment p{
+    margin-top: 0em;
+    font-size: 1.1em;
+    font-weight: bolder;
+    color: #000879a2;
+}
+#newComment ul{
+    padding-top: 1em;
+    margin-left: 2em;
+}
+#newComment li{
+    margin-bottom: 0.5em;
+}
+#newComment {
+    padding-bottom: 0;
+}
+#newComment label{
+    font-weight: bold;
+}
 /*
 ===================
 SEZIONE NUOVO POST
