@@ -9,7 +9,7 @@ $user = $manager->setupSession();
 $errors = array();
 $values = array();
 
-$values['contenuto'] = isset($_POST['contenuto']) ? addslashes($_POST['contenuto']) : null;
+$values['contenuto'] = isset($_POST['contenuto']) ? strip_tags(addslashes($_POST['contenuto'])) : null;
 $values['idPost'] = isset($_GET['idPost']) ? addslashes($_GET['idPost']) : null;
 $values['username'] = addslashes($user->getUsername());
 
@@ -21,7 +21,9 @@ if(empty($values['username'])){
     //gestione posizione non voluta
 }
 
-
+$res = $manager->transformString($values['contenuto']);
+if(!$res) array_push($errors, "Errore con il contenuto del post, controlla i tag di aiuto inseriti");
+else $values['contenuto'] = $res;
 
 if(count($errors)==0){
     $res = $manager->insertComment($values);
