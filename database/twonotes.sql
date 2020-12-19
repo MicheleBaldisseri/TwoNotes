@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 19, 2020 at 08:03 PM
+-- Generation Time: Dec 19, 2020 at 11:04 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `commenti` (
   PRIMARY KEY (`commentoID`),
   KEY `post` (`post`),
   KEY `utente` (`utente`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `commenti`
@@ -45,7 +45,8 @@ CREATE TABLE IF NOT EXISTS `commenti` (
 
 INSERT INTO `commenti` (`commentoID`, `post`, `utente`, `dataOra`, `contenuto`) VALUES
 (12, 17, 'admin', '2020-12-19 20:58:37', 'test è'),
-(13, 17, 'admin', '2020-12-19 20:58:43', 'test ù');
+(13, 17, 'admin', '2020-12-19 20:58:43', 'test ù'),
+(14, 24, 'admin', '2020-12-19 23:29:31', 'test <abbr title=\"test\"> test </abbr>');
 
 -- --------------------------------------------------------
 
@@ -64,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   `utente` varchar(20) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`postID`),
   KEY `utente` (`utente`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `post`
@@ -77,7 +78,10 @@ INSERT INTO `post` (`postID`, `titolo`, `dataOra`, `immagine`, `altImmagine`, `c
 (17, 'Nuova canzone Timmy Trumpet ', '2020-12-19 20:50:32', '1608407432darlin_gabe-the-dog-fb.jpg', 'Cane felice', 'Si chiama \"Paul is dead\". La sto ascoltando in loop su Spotify. Che bomba! Che ne pensate?', 'Active'),
 (18, 'afè', '2020-12-19 20:56:29', '', '', 'asdfè', 'admin'),
 (19, 'test', '2020-12-19 20:56:45', '', '', 'test', 'admin'),
-(20, 'test 2', '2020-12-19 20:56:59', '', '', 'test 2', 'admin');
+(20, 'test 2', '2020-12-19 20:56:59', '', '', 'test 2', 'admin'),
+(22, 'test tags', '2020-12-19 22:53:39', '', '', '<span xml:lang=\"en\"> hello there </span>\r\n<abbr title=\"Fabbrica Italiana Automobili Torino\"> FIAT </abbr>', 'admin'),
+(23, 'asdf', '2020-12-19 23:10:40', '', '', 'asdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff asdfasdfsa', 'admin'),
+(24, 'afsdf', '2020-12-19 23:11:31', '', '', 'fasdfasdfasdfkalshfkjahslfkdhfalskdhflaksjdfhlkashdflkashdflkahdfjkjhalskdfhalskdfhalksdfhlaksjfhlaskdfha12312321asflksh fksahflkajshdlfkasdhfkasldfkjah', 'admin');
 
 --
 -- Triggers `post`
