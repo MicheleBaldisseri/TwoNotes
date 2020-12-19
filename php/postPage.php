@@ -21,8 +21,7 @@ if($user->getUsername()!=null){
 	$stringHeader = '
 	<div>
 		<ul>
-			<li><a href="login.php" xml:lang="en">Login</a></li>
-			<li>oppure</li>
+			<li><a href="login.php" xml:lang="en">Login</a> oppure</li>
 			<li><a href="registrazione.php">Registrati</a></li>
 		</ul>
 	</div>';	

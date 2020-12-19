@@ -1,29 +1,37 @@
-html, body {
-    overflow-x: hidden;
-  }
-body {
-    position: relative
-}
 /*
 ==============
     Home
 ==============
 */
+#header ul li{
+    display: block;
+    text-align: center;
+}
+#header div{
+    margin-top: 0;
+}
+
 #menu{
     float: none;
     width: 100%;
+    padding: 0;
+    margin-bottom: 1em;
+}
+
+#menu li{
+    padding: 0;
+    margin-top: 1.2em;
 }
 
 #indexContent{
     width: 100%;
     margin: auto;
 }
+
 #search{
     width: 90%;
 }
-#search input[type="text"]{
-    width: 40%;
-}
+
 /*
 ==============
     Generale
@@ -32,6 +40,9 @@ body {
 .sezione{
     width: 85%;
     margin: auto;
+}
+.sezione h1{
+    font-size: 1.8em;
 }
 .contenitoreCentrale{
     margin: auto;
@@ -47,11 +58,16 @@ body {
 */
 
 #singlePost{
+    width: 85%;
     margin-bottom: 1em;
 }
+#singlePost img{
+    width: 50%;
+}
+
 /*
 ==============
-    Singolo Post
+    Nuovo Post
 ==============
 */
 #newPostForm p{
@@ -59,6 +75,7 @@ body {
 }
 
 .inputForm{
+    padding: 0em;
     width: 90%;
 }
 /*
@@ -72,6 +89,7 @@ body {
 }
 #formBase input{
     margin: auto;
+    width: 80%;
     display: block;
     margin-top: 0;
     margin-bottom: 0;
@@ -84,6 +102,7 @@ body {
 }
 #formBase input[type="submit"]{
     margin-top: 1em;
+    width: 40%;
 }
 #formBase input[type="submit"],
 #annulla{
@@ -101,4 +120,29 @@ body {
 }
 #formBase input[type="radio"]{
     margin-top: 0.8em;  
+}
+/*
+==============
+  Profilo
+==============
+*/
+
+#profile{
+    text-align: center;
+    height: 100%;
+}
+#profile li{
+    margin: 0.8em 0 0.8em 0;
+}
+#profile h1{
+    margin-bottom: 0;
+}
+#profile h2,#profile p{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+#profile a{
+    float: none;
+    margin: auto;
 }
