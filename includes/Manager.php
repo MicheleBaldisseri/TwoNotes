@@ -56,9 +56,6 @@ class Manager{
     }
 
     private function printPost($post){
-        if($post['immagine']!=null){
-            $base64 = 'data:image/jpeg;base64,' . base64_encode($post['immagine']);
-        } 
 
         $timestamp = strtotime($post['dataOra']);
 	    $new_date = date("d/m/Y H:i:s", $timestamp);
@@ -69,7 +66,7 @@ class Manager{
                         <h1>' . stripslashes($post['titolo']) . '</h1>
                         <p>' . stripslashes($post['contenuto']) . '</p>';
                         if($post['immagine']!=null){
-                            $string .= '<img src="'.$base64.'" alt="'.stripslashes($post['altImmagine']).'"/>';
+                            $string .= '<img src="../upload/'.stripslashes($post['immagine']).'" alt="'.stripslashes($post['altImmagine']).'"/>';
                         }
                         
         $string .=      '<p class="infoPost">Pubblicato da: 
@@ -138,6 +135,7 @@ class Manager{
 
     public function insertPost($values){
         $this->connect();
+        $this->dbconnection->query('SET NAMES utf8');
         $errors = array();
         $select = "  INSERT INTO post (titolo, dataora, immagine, altImmagine, contenuto, utente) VALUES 
             ('".$values['titolo']."',now(), '".$values['immagine']."', '".$values['altImmagine']."', '".$values['contenuto']."', '".$values['username']."')";
@@ -171,9 +169,6 @@ class Manager{
 
         $string = '';
         if($post){
-            if($post['immagine']!=null){
-                $base64 = 'data:image/jpeg;base64,' . base64_encode($post['immagine']);
-            }
 
             $timestamp = strtotime($post['dataOra']);
 	        $new_date = date("d/m/Y H:i:s", $timestamp);
@@ -181,7 +176,7 @@ class Manager{
             $string = '<h1>'.stripslashes($post['titolo']).'</h1>
             <p>'.stripslashes($post['contenuto']).'</p>';
             if($post['immagine']!=null){
-                $string .= '<img src="'.$base64.'" alt="'.stripslashes($post['altImmagine']).'"/>';
+                $string .= '<img src="../upload/'.stripslashes($post['immagine']).'" alt="'.stripslashes($post['altImmagine']).'"/>';
             }    
             $string .= '<p class="infoPost">
                 Pubblicato da: 
@@ -238,6 +233,7 @@ class Manager{
     public function insertComment($values){
         $res = true;
         $this->connect();
+        $this->dbconnection->query('SET NAMES utf8');
         $errors = array();
         $select = "  INSERT INTO Commenti (post,utente,dataOra,contenuto) VALUES 
             ('".$values['idPost']."','".$values['username']."', now(), '".$values['contenuto']."')";
@@ -279,6 +275,7 @@ class Manager{
     public function register($values){
         $errors = array();
         $this->connect();
+        $this->dbconnection->query('SET NAMES utf8');
         $select = "  SELECT * 
                     FROM utenti 
                     WHERE username = '".$values['username']."'";
@@ -304,6 +301,7 @@ class Manager{
 
         if(count($errors)==0){
             $this->connect();
+            $this->dbconnection->query('SET NAMES utf8');
             $select = "  INSERT INTO utenti VALUES
                 ('".$values['username']."','".md5($values['password'])."',
                 '".$values['nome']."','".$values['cognome']."',
@@ -334,6 +332,7 @@ class Manager{
     public function modificaProfilo($values,$oldUsername){
         $errors = array();
         $this->connect();
+        $this->dbconnection->query('SET NAMES utf8');
         $select = "  SELECT * 
                     FROM utenti
                     WHERE username = '".$values['username']."' AND username != '".$oldUsername."';";
@@ -360,6 +359,7 @@ class Manager{
         if(count($errors)==0){
             
             $this->connect();
+            $this->dbconnection->query('SET NAMES utf8');
             $update = " UPDATE utenti
                     SET username = '".$values['username']."', nome = '".$values['nome']."', cognome = '".$values['cognome']."', email = '".$values['email']."',
                     sesso = '".$values['sesso']."', dataNascita = '".$values['dataNascita']."'";
