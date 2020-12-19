@@ -113,6 +113,11 @@ SEZIONE HOME
     margin-bottom: 1.2em;
     text-align: start;
 }
+
+.contenutoPost{
+    white-space: pre-wrap;
+}
+
 #goToPost{
     background-color: #613bb986;  
     margin-right: 6%;

@@ -19,6 +19,13 @@ if(empty($values['titolo'])) array_push($errors, "Compila il campo Titolo");
 if(empty($values['altImmagine']) && !empty($values['immagine'])) array_push($errors, "Compila il campo Alt Immagine");
 if(empty($values['contenuto'])) array_push($errors, "Compila il campo Contenuto");
 
+
+$res = $manager->transformString($values['contenuto']);
+
+if(!$res) array_push($errors, "Errore con il contenuto del post, controlla i tag di aiuto inseriti");
+else $values['contenuto'] = $res;
+
+
 if(count($errors)==0){
 
     if(!empty($values['immagine'])){
@@ -28,8 +35,7 @@ if(count($errors)==0){
         move_uploaded_file($_FILES["myfile"]["tmp_name"],$path);
         $values['immagine'] = $rnd.$values['immagine'];
     }
-        
-
+    
     $res = $manager->insertPost($values);
 
     if($res){

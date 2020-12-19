@@ -64,7 +64,7 @@ class Manager{
                 '<li>
                     <div class="postContent round_div shadow-div textAlignCenter">
                         <h1>' . stripslashes($post['titolo']) . '</h1>
-                        <p>' . stripslashes($post['contenuto']) . '</p>';
+                        <p class="contenutoPost">' . stripslashes($post['contenuto']) . '</p>';
                         if($post['immagine']!=null){
                             $string .= '<img src="../upload/'.stripslashes($post['immagine']).'" alt="'.stripslashes($post['altImmagine']).'"/>';
                         }
@@ -174,7 +174,7 @@ class Manager{
 	        $new_date = date("d/m/Y H:i:s", $timestamp);
 
             $string = '<h1>'.stripslashes($post['titolo']).'</h1>
-            <p>'.stripslashes($post['contenuto']).'</p>';
+            <p class="contenutoPost">'.stripslashes($post['contenuto']).'</p>';
             if($post['immagine']!=null){
                 $string .= '<img src="../upload/'.stripslashes($post['immagine']).'" alt="'.stripslashes($post['altImmagine']).'"/>';
             }    
@@ -377,6 +377,18 @@ class Manager{
         $_SESSION['modificaErrors'] = $errors;
         return false;
         
+    }
+
+    public function transformString($string){
+        if(substr_count($string,'[en]')!=substr_count($string,'[/en]')) return false;
+        if(substr_count($string,'[/abbr]')!=preg_match_all('/\[abbr=([^\]]+)]/',$string)) return false;
+
+        $string = str_replace('[en]','<span xml:lang="en">',$string);
+        $string = str_replace('[/en]','</span>',$string);
+        $string = str_replace('[/abbr]','</abbr>',$string);
+        $string = preg_replace('/\[abbr=([^\]]+)]/','<abbr title="\1">',$string);
+
+        return $string;
     }
 }
 
