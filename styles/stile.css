@@ -171,12 +171,12 @@ SEZIONE CONTENITORE
 ===================
 */
 .contenitoreCentrale{
-    width: 65%;
-    height: 60%;
+    width: 70%;
+    height: 35em;
     margin-top: 1em;
     margin-left: 25%;
 }
-.contenitoreCentrale h1{
+.contenitoreCentrale h1,h2{
     color: #1040a7;
 }
 .allWidth{
@@ -367,7 +367,7 @@ SEZIONE HEADER
 SEZIONE LOGIN PAGE
 ===================
 */
-#loginDiv{
+/*#loginDiv{
     padding: 0;
 }
 #loginDiv h2{
@@ -395,7 +395,7 @@ SEZIONE LOGIN PAGE
 }
 #or, .yellow-button{
     display: inline;
-}
+}*/
 /*.height_login{
     height: 95%;
 }*/
@@ -433,57 +433,58 @@ SEZIONE LEFT
 /*.right-border-radius{
     border-radius: 0px 10px 10px 0px;
 }*/
-/*
+
 #dentroLeft{
     padding: 8em 4em 8em 4em;
     text-align: center;
 }
-*/
-/*#dentroLeft img{
-    width: 400px;
-}*/
-/*
+
+#dentroLeft img{
+    width: 80%;
+}
+
 #dentroLeft{
     border-top-left-radius: 0.5em;
     border-bottom-left-radius: 0.5em;
-    background-color: #ff4b2bc4;
-    width: 55%;
+    /*background-color: #ff4b2bc4;*/
+    width: 50%;
     height: 97.3%;
     padding: 0.5em;
 }
 #dentroLeft h1{
     padding: 2em;
 }
-*/
+
 /*
 ==================
 SEZIONE RIGHT
 ==================
 */
-/*
-.white_right {
+#dentroRight{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: white;
     width: 40%;
     padding: 0.5em;
+    margin-right: 0.5em;
 }
-.white_right h2{
+#dentroRight h2{
     padding: 1em;
     margin-bottom: 0.8em;
 }
-.white_right input[type="text"],
-.white_right input[type="password"]{
+#dentroRight input[type="text"],
+#dentroRight     input[type="password"]{
     width: 80%;
     padding: 1em;
     margin: 1em;
+    margin-left: 0em;
+    margin-right: 0em;
 }
 #formLogin label{
     font-weight: bold;
     font-size: 1em;
     padding: 1em;
 }
-*/
 /*
 #dentroRight{
     text-align:center;

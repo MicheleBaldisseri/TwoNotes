@@ -146,3 +146,43 @@
     float: none;
     margin: auto;
 }
+/*
+==============
+  Login
+==============
+*/
+.contenitoreCentrale{
+    height: 50em;
+}
+#dentroLeft{
+    width: 96.5%;
+    height: auto;
+    display: inline;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0em;
+    border-top-right-radius: 0.5em;
+}
+#dentroLeft h1{
+    padding: 1em 0em 1em 0em;
+    font-size: 1.5em;
+}
+#dentroLeft img{
+    width: 60%;
+}
+#dentroRight{
+    width: 95%;
+    margin-right: 0em;
+    height: auto;
+    margin-left: 0%;
+    padding-top: 1em;
+    border-top-right-radius: 0em;
+    border-bottom-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+}
+#dentroRight h2{
+    font-size: 1.9em;
+    padding: 0.5em 0em 0.5em 0em;
+}
+#formLogin label{
+    font-size: 1.5em;
+}
