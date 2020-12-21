@@ -111,7 +111,12 @@
     margin-left: 10%;
 }
 #formBase input[type="radio"]{
-    margin-top: 0.8em;  
+    margin-top: 0.8em;
+    margin-top: 0em;
+    margin-bottom: 1.3em;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 }
 /*
 ==============
