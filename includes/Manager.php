@@ -161,7 +161,7 @@ class Manager{
         $query = $this->dbconnection->query($select);
         $this->disconnect();
         $res = $query->fetch_all(MYSQLI_ASSOC);
-        return ($res[0] ? $res[0] : null);
+        return ($res ? $res[0] : null);
     }
 
     public function printSinglePost($idPost){

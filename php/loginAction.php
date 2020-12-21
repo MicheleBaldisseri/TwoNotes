@@ -4,7 +4,7 @@ session_start();
 
 $manager = new Manager();
 if(!isset($_POST['username']) || !isset($_POST['psw'])){
-    header("Location: login.php");
+    header("Location: errorPage.php");
     exit();
 }else{
     $manager->login(addslashes($_POST['username']),addslashes($_POST['psw']));

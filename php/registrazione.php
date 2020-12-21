@@ -13,7 +13,6 @@ if($user->getUsername()!=null){
 
 $stringErrors = '';
 if(isset($_SESSION['registerErrors'])){
-    //mostrare errori form
 
     $stringErrors = "<div id='registerErrors'>";
     foreach($_SESSION['registerErrors'] as $error){

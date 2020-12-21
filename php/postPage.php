@@ -28,7 +28,27 @@ if($user->getUsername()!=null){
 }
 $paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
 
+$inserisciCommento = '<div id="newComment" class="sezione round_div shadow-div">
+ERROREINSERIMENTOCOMMENTO
+<p>Consigli utili per i commenti:</p>
+	<ul>
+		<li>Per inserire una parola in lingua inglese usare il comando: [en] &#60;testo in inglese&#62; [/en]</li>
+		<li>Per inserire una abbreviazione usare: [abbr=&#60;abbreviazione estesa&#62;] &#60;abbreviazione&#62; [/abbr]</li>
+		<li>Inserire i precedenti consigli senza i simboli &#60; e &#62;</li>
+	</ul>
+	<form action="inserimentoCommento.php?idPost=ID_POST" method="post">
+		<label for="postTextarea">Inserisci qui il tuo commento:</label> 
+		<textarea id="postTextarea" class="inputForm" name="contenuto" rows="5" cols="10" placeholder="Inserisci qui il tuo commento..." required="required" value="VALORECOMMENTO"></textarea>
+		<input type="submit" class="round-button general-button" value="Invia"></input>
+	</form>
+</div>';
+
+
+
 if(isset($_GET['idPost'])){
+	if($user->getUsername()!=null) $paginaHTML = str_replace("INSERIMENTOCOMMENTO", $inserisciCommento, $paginaHTML);
+	else $paginaHTML = str_replace("INSERIMENTOCOMMENTO", '', $paginaHTML);
+
 	$paginaHTML = str_replace("DETTAGLIOPOST", $manager->printSinglePost($_GET['idPost']), $paginaHTML);
 	$paginaHTML = str_replace("LISTACOMMENTI", $manager->printComments($_GET['idPost']), $paginaHTML);
 	$paginaHTML = str_replace("ID_POST", $_GET['idPost'], $paginaHTML);
@@ -36,6 +56,7 @@ if(isset($_GET['idPost'])){
 	header("Location: errorPage.php");
     exit();	
 }
+
 
 $stringErrors = '';
 if(isset($_SESSION['commentErrors'])){
