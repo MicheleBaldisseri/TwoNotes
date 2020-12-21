@@ -6,6 +6,11 @@ require_once '../includes/Manager.php';
 $manager = new Manager();
 $user = $manager->setupSession();
 
+if($user->getUsername()==null){
+	header("Location: errorPage.php");
+    exit();	
+}
+
 $errors = array();
 $values = array();
 

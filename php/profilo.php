@@ -9,8 +9,8 @@ $manager = new Manager();
 $user = $manager->setupSession();
 
 if(!isset($_GET['username'])){
-	//gestire il fatto di essere in una pagina sbagliata
-	//exit();
+	header("Location: errorPage.php");
+    exit();	
 }
 
 $stringHeader = '';

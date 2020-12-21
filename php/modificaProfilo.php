@@ -18,7 +18,8 @@ if($user->getUsername()!=null){
 		</ul>
 	</div>';
 }else{
-	//gestire il fatto di essere in una pagina sbagliata	
+	header("Location: errorPage.php");
+    exit();	
 }
 $paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
 

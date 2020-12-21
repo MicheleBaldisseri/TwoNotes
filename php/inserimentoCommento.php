@@ -15,10 +15,12 @@ $values['username'] = addslashes($user->getUsername());
 
 if(empty($values['contenuto'])) array_push($errors, "Compila il campo contenuto");
 if(empty($values['idPost'])){
-    //gestione posizione non voluta
+    header("Location: errorPage.php");
+    exit();
 }
 if(empty($values['username'])){
-    //gestione posizione non voluta
+    header("Location: errorPage.php");
+    exit();
 }
 
 $res = $manager->transformString($values['contenuto']);

@@ -7,7 +7,8 @@ $manager = new Manager();
 $user = $manager->setupSession();
 
 if($user->getUsername()!=null){
-    //gestire il fatto di essere in una pagina sbagliata
+    header("Location: index.php");
+    exit();	
 }
 
 $stringErrors = '';

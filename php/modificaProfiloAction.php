@@ -17,6 +17,11 @@ $manager = new Manager();
 $db = $manager->getConnection();
 $user = $manager->setupSession();
 
+if($user->getUsername()==null){
+	header("Location: errorPage.php");
+    exit();	
+}
+
 $errors = array();
 $values = array();
 

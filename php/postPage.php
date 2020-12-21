@@ -33,8 +33,8 @@ if(isset($_GET['idPost'])){
 	$paginaHTML = str_replace("LISTACOMMENTI", $manager->printComments($_GET['idPost']), $paginaHTML);
 	$paginaHTML = str_replace("ID_POST", $_GET['idPost'], $paginaHTML);
 }else{
-	//gestire il fatto che non si dovrebbe essere qui
-	//exit();
+	header("Location: errorPage.php");
+    exit();	
 }
 
 $stringErrors = '';
