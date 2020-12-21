@@ -681,6 +681,15 @@ SEZIONE 404page
 }
 /*
 ==============
+SEZIONE 404page
+==============
+*/
+#error404 #stopSign{
+    width: 30%;
+    margin-bottom: 1em;
+}
+/*
+==============
 responsive search bar
 ==============
 */

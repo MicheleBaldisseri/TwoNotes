@@ -16,7 +16,9 @@ if($user->getUsername()!=null){
 		</ul>
 	</div>';
 }else{
-	//gestire il fatto di essere in una pagina sbagliata	
+	unset($_SESSION['loginError']);
+    $_SESSION['loginError'] = "Devi loggarti prima di scrivere un nuovo post!";
+	header("Location: login.php");	
 }
 $paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
 
