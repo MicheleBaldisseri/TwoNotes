@@ -1,4 +1,5 @@
 <?php
+    require_once "../includes/Manager.php";
     session_start();
     $paginaHTML = file_get_contents('../views/login.html');
 
