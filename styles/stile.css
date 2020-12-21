@@ -191,6 +191,7 @@ SEZIONE CONTENITORE
     font-size: 1em;
     cursor: pointer;
     text-decoration: underline;
+    min-width: min-content;
 }
 .navigazione{
     margin-top: 1.5em;
