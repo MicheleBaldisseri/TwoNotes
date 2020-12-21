@@ -29,51 +29,22 @@
             <li><a href="contatti.php">Contatti</a></li>
         </ul>
     </div>
-    <!-- 
-    <div id="loginDiv" class="sezione round_div shadow-div textAlignCenter">
-        <div id="loginUp">            
-            <h1>Benvenuto nel social musicale</h1>
-            <img src="../img/TwoNotes-4.svg" alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
-        </div>
-        <div id="loginDown">              
+    <div class="contenitoreCentrale round_div shadow-div login">
+        <h1>Benvenuto nel social musicale</h1>
+        <img src="../img/TwoNotes-4.svg" alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
+        ERRORELOGIN
+        <form id="formLogin" action="loginAction.php" method="post">
             <h2>ACCEDI</h2>
-            ERRORELOGIN
-            <form id="loginForm" action="loginAction.php" method="post">
-                <label for="username" xml:lang="en">Username</label>
-                <input type="text" name="username" id="username" class="input" placeholder="Username" value="VALUEUSERNAME" required="required"/>
-                
-                <label for="psw" xml:lang="en">Password</label>
-                <input type="password" name="psw" id="psw" class="input" placeholder="Password" required="required"/>
-                
-                <input type="submit" class="round-button general-button orange-button" value="Accedi"/>
-            </form>
+            <label for="username" xml:lang="en">Username</label>
+            <input type="text" name="username" id="username" class="input" placeholder="Username" value="VALUEUSERNAME" required/>
             
-            <h2 id="or">oppure</h2>
-            <a href="registrazione.php" class="general-button round-button yellow-button">Registrati</a>
-        </div>
-    </div>
--->
-    <div class="contenitoreCentrale round_div shadow-div textAlignCenter">
-            <div id="dentroLeft" class="left">            
-                <h1>Benvenuto nel social musicale</h1>
-                <img src="../img/TwoNotes-4.svg" alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
-            </div>
-            <div id="dentroRight" class="right">              
-                <h2>ACCEDI</h2>
-                ERRORELOGIN
-                <form id="formLogin" action="loginAction.php" method="post">
-                    <label for="username" xml:lang="en">Username</label>
-                    <input type="text" name="username" id="username" class="input" placeholder="Username" value="VALUEUSERNAME" required/>
-                    
-                    <label for="psw" xml:lang="en">Password</label>
-                    <input type="password" name="psw" id="psw" class="input" placeholder="Password" required/>
-                    
-                    <input type="submit" class="round-button general-button orange-button" value="Accedi"/>
-                </form>
-                
-                <h2>OPPURE</h2>
-                <a href="registrazione.php" class="general-button round-button yellow-button">Registrati</a>
-            </div>
+            <label for="psw" xml:lang="en">Password</label>
+            <input type="password" name="psw" id="psw" class="input" placeholder="Password" required/>
+            
+            <input type="submit" class="round-button general-button orange-button" value="Accedi"/>
+            <h2>OPPURE</h2>
+            <input type="button" onclick="location.href='registrazione.php'" class="general-button round-button yellow-button" value="Registrati"></button>
+        </form>
     </div>
     <div id="footer">
         <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>

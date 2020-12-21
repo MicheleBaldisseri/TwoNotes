@@ -10,28 +10,23 @@
 #header div{
     margin-top: 0;
 }
-
 #menu{
     float: none;
     width: 100%;
     padding: 0;
     margin-bottom: 1em;
 }
-
 #menu li{
     padding: 0;
     margin-top: 1.2em;
 }
-
 #indexContent{
     width: 100%;
     margin: auto;
 }
-
 #search{
     width: 90%;
 }
-
 /*
 ==============
     Generale
@@ -46,7 +41,7 @@
 }
 .contenitoreCentrale{
     margin: auto;
-    width: 95%;
+    width: 85%;
 }
 .doubleColumns{
     columns: 1;
@@ -56,7 +51,6 @@
     Singolo Post
 ==============
 */
-
 #singlePost{
     width: 85%;
     margin-bottom: 1em;
@@ -64,7 +58,6 @@
 #singlePost img{
     width: 50%;
 }
-
 /*
 ==============
     Nuovo Post
@@ -83,7 +76,6 @@
   Registrazione
 ==============
 */
-
 #formBase{
     text-align: center;
 }
@@ -126,7 +118,6 @@
   Profilo
 ==============
 */
-
 #profile{
     text-align: center;
     height: 100%;
@@ -151,38 +142,31 @@
   Login
 ==============
 */
-.contenitoreCentrale{
-    height: 50em;
-}
-#dentroLeft{
-    width: 96.5%;
-    height: auto;
-    display: inline;
-    border-top-left-radius: 0.5em;
-    border-bottom-left-radius: 0em;
-    border-top-right-radius: 0.5em;
-}
-#dentroLeft h1{
-    padding: 1em 0em 1em 0em;
-    font-size: 1.5em;
-}
-#dentroLeft img{
-    width: 60%;
-}
-#dentroRight{
-    width: 95%;
-    margin-right: 0em;
-    height: auto;
+.login h1{
+    float: unset;
+    padding: 0em;
+    width: 100%;
+    margin-top: 0%;
     margin-left: 0%;
-    padding-top: 1em;
-    border-top-right-radius: 0em;
-    border-bottom-right-radius: 0.5em;
-    border-bottom-left-radius: 0.5em;
+    text-align: center;
 }
-#dentroRight h2{
-    font-size: 1.9em;
-    padding: 0.5em 0em 0.5em 0em;
+.login img{
+    float: unset;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 4%;
 }
-#formLogin label{
-    font-size: 1.5em;
+.login h2{
+    padding: 1em 0 1.5em 0;
+}
+.login form{
+    width: 100%;
+    margin-left: 0%;
+    padding-top: 2em;
+}
+.login input[type="text"],
+.login input[type="password"]{
+    width: 88%;
+    margin-bottom: 5%;
+    margin-top: 5%;
 }
