@@ -33,8 +33,8 @@
         <h1>Benvenuto nel social musicale</h1>
         <img src="../img/TwoNotes-4.svg" alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
         ERRORELOGIN
+        <h2>ACCEDI</h2>
         <form id="formLogin" action="loginAction.php" method="post">
-            <h2>ACCEDI</h2>
             <label for="username" xml:lang="en">Username</label>
             <input type="text" name="username" id="username" class="input" placeholder="Username" value="VALUEUSERNAME" required/>
             
@@ -42,9 +42,10 @@
             <input type="password" name="psw" id="psw" class="input" placeholder="Password" required/>
             
             <input type="submit" class="round-button general-button orange-button" value="Accedi"/>
-            <h2>OPPURE</h2>
-            <input type="button" onclick="location.href='registrazione.php'" class="general-button round-button yellow-button" value="Registrati"></button>
         </form>
+        <h2>NON HAI UN ACCOUNT?</h2>
+        <a href="registrazione.php" id="button_register" class="general-button round-button yellow-button">Registrati</a>
+        
     </div>
     <div id="footer">
         <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>

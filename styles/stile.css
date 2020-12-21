@@ -394,7 +394,6 @@ SEZIONE LOGIN PAGE
 .login form{
     width: 45%;
     margin-left: 55%;
-    padding-top: 2em;
 }
 .login input[type="text"],
 .login input[type="password"]{
@@ -406,7 +405,7 @@ SEZIONE LOGIN PAGE
     margin-bottom: 5%;
     margin-top: 5%;
 }
-.login input[type="submit"], .login input[type="button"]{
+.login input[type="submit"]{
     display: block;
     margin-right: auto;
     margin-left: auto;
@@ -415,7 +414,6 @@ SEZIONE LOGIN PAGE
 }
 .login button{
     display: block;
-    width: auto;
     margin-right: auto;
     margin-left: auto;
     margin-top: 0%;
@@ -450,6 +448,14 @@ SEZIONE BOTTONI
     font-size: 1.0em;
     border-radius: 0.3em 0.3em 0.3em 0.3em;
     border: 0.1em solid rgb(148, 148, 148);
+}
+#button_register{
+    text-align: center;
+    display: block;
+    margin-right: 13%;
+    margin-left: 68%;
+    max-width: 35%;
+    min-width: fit-content;
 }
 
 /*.buttonAccedi{
