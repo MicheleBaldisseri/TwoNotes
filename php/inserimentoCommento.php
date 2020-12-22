@@ -35,6 +35,7 @@ if(count($errors)==0){
         $_SESSION['successInsert'] = true;
         exit();
     }else{
+        array_push($errors, "Errore di inserimento del commento");
         $_SESSION['commentValues'] = $values;
         $_SESSION['commentErrors'] = $errors;
     }
