@@ -16,7 +16,7 @@
 <body>
     <div id="header">
         <img src="../img/TwoNotes-4.svg"  alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
-        HEADERDESTRO
+        <HEADERDESTRO/>
     </div>
 
     <div id="percorso">
@@ -35,17 +35,17 @@
         <div id="formBase" class="round_div shadow-div">
             <h1>Modifica il tuo profilo</h1>
             <form action="modificaProfiloAction.php" class="formRegistrazione" method="post">
-                ERRORIMODIFICAPROFILO
+                <ERRORIMODIFICAPROFILO/>
                 <fieldset>
                     <legend>Informazioni generali</legend>
                     <label for="nome" class="labelleft">Nome:</label>
-                    <input type="text" name="nome" id="nome" class="input" placeholder="Nome" value="VALORENOME" maxlength="20" required="required">
+                    <input type="text" name="nome" id="nome" class="input" placeholder="Nome" value="<VALORENOME/>" maxlength="20" required="required">
                                         
                     <label for="cognome" class="labelleft">Cognome:</label>
-                    <input type="text" name="cognome" id="cognome" class="input" placeholder="Cognome" value="VALORECOGNOME" maxlength="20" required="required">
+                    <input type="text" name="cognome" id="cognome" class="input" placeholder="Cognome" value="<VALORECOGNOME/>" maxlength="20" required="required">
                     
                     <label for="dataNascita" class="labelleft">Data di nascita:</label>
-                    <input type="date" name="data" id="dataNascita" class="input" value="VALOREDATA" required="required">
+                    <input type="date" name="data" id="dataNascita" class="input" value="<VALOREDATA/>" required="required">
 
                     <label for="sesso" class="labelleft">Sesso:</label>
                     <label for="maschio" class="inputsex">Maschio</label>                        
@@ -56,15 +56,15 @@
                     <input type="radio" id="altro" name="gender" value="A" SELECTEDA>
 
                     <label for="provenienza" class="labelleft">Provenienza:</label>
-                    <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="VALOREPROVENIENZA" required="required">
+                    <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="<VALOREPROVENIENZA/>" required="required">
                 </fieldset>
                 <fieldset>
                     <legend>Account</legend>
                     <label for="username" class="labelleft">Username:</label>
-                    <input type="text" name="username" id="username" class="input" placeholder="Username" value="VALOREUSERNAME" required="required">
+                    <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALOREUSERNAME/>" required="required">
                     
                     <label for="email" class="labelleft">Email:</label>
-                    <input type="email" name="email" id="email" class="input" placeholder="Email" value="VALOREEMAIL" required="required">
+                    <input type="email" name="email" id="email" class="input" placeholder="Email" value="<VALOREEMAIL/>" required="required">
 
                     <label for="oldpsw" class="labelleft">Vecchia password:</label>
                     <input type="password" name="oldpsw" id="oldpsw" class="input" placeholder="Vecchia password" required="required">
@@ -75,7 +75,7 @@
                 </fieldset>
                 <input type="submit" class="round-button general-button" value="Salva"/>
             </form>    
-            <a href="profilo.php?username=VALOREUSERNAME" id="annulla" class="linkToButton alignFormButton">Annulla</a>           
+            <a href="profilo.php?username=<VALOREUSERNAME/>" id="annulla" class="linkToButton alignFormButton">Annulla</a>           
         </div>
     </div>
     

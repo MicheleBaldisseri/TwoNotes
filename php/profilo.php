@@ -36,7 +36,7 @@ if($user->getUsername()!=null){
 		</ul>
 	</div>';	
 }
-$paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
+$paginaHTML = str_replace("<HEADERDESTRO/>", $stringHeader, $paginaHTML);
 
 $userProfile = $manager->getUser($_GET['username']);
 
@@ -45,14 +45,14 @@ if($userProfile!=null){
 	$timestamp = strtotime($userProfile->getDataNascita());
 	$new_date = date("d/m/Y", $timestamp);
 
-	$paginaHTML = str_replace("NOME", stripslashes($userProfile->getNome()), $paginaHTML);
-	$paginaHTML = str_replace("COGNO_ME", stripslashes($userProfile->getCognome()), $paginaHTML);
-	$paginaHTML = str_replace("EMAIL", stripslashes($userProfile->getEmail()), $paginaHTML);
-	$paginaHTML = str_replace("DATANASCITA", $new_date, $paginaHTML);
-	$paginaHTML = str_replace("SESSO", $userProfile->getSesso(), $paginaHTML);
-	$paginaHTML = str_replace("USERNAME", stripslashes($userProfile->getUsername()), $paginaHTML);
-	$paginaHTML = str_replace("PROVENIENZA", stripslashes($userProfile->getProvenienza()), $paginaHTML);
-	$paginaHTML = str_replace("RUOLO", ($userProfile->isAdmin() ? 'Admin' : 'Utente'), $paginaHTML);
+	$paginaHTML = str_replace("<NOME/>", stripslashes($userProfile->getNome()), $paginaHTML);
+	$paginaHTML = str_replace("<COGNOME/>", stripslashes($userProfile->getCognome()), $paginaHTML);
+	$paginaHTML = str_replace("<EMAIL/>", stripslashes($userProfile->getEmail()), $paginaHTML);
+	$paginaHTML = str_replace("<DATANASCITA/>", $new_date, $paginaHTML);
+	$paginaHTML = str_replace("<SESSO/>", $userProfile->getSesso(), $paginaHTML);
+	$paginaHTML = str_replace("<USERNAME/>", stripslashes($userProfile->getUsername()), $paginaHTML);
+	$paginaHTML = str_replace("<PROVENIENZA/>", stripslashes($userProfile->getProvenienza()), $paginaHTML);
+	$paginaHTML = str_replace("<RUOLO/>", ($userProfile->isAdmin() ? 'Admin' : 'Utente'), $paginaHTML);
 }else{
 	//Gestire errore database
 }
@@ -62,7 +62,7 @@ $buttonModifica = '';
 if($_GET['username'] == stripslashes($user->getUsername())){
 	$buttonModifica = '<a class="linkToButton" id="annulla" href="modificaProfilo.php">Modifica</a>';
 }
-$paginaHTML = str_replace("LINKMODIFICA", $buttonModifica, $paginaHTML);
+$paginaHTML = str_replace("<LINKMODIFICA/>", $buttonModifica, $paginaHTML);
 
 echo $paginaHTML;
 

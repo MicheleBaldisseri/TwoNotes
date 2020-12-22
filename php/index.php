@@ -24,7 +24,7 @@ if($user->getUsername()!=null){
 		</ul>
 	</div>';	
 }
-$paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
+$paginaHTML = str_replace("<HEADERDESTRO/>", $stringHeader, $paginaHTML);
 
 
 $currentPage = 1;
@@ -34,12 +34,12 @@ $pageTotalCount = $manager->getTotalPageCount();
 if($currentPage>$pageTotalCount)$currentPage=$pageTotalCount;
 $navigazione = $manager->printNavigazione($currentPage,$pageTotalCount);
 
-$paginaHTML = str_replace("NAVIGAZIONE", $navigazione, $paginaHTML);
+$paginaHTML = str_replace("<NAVIGAZIONE/>", $navigazione, $paginaHTML);
 
 $listaPost = $manager->getPostList($currentPage);
 $stringList = $manager->printPostList($listaPost);
 
-$paginaHTML = str_replace("LISTAPOST", $stringList, $paginaHTML);
+$paginaHTML = str_replace("<LISTAPOST/>", $stringList, $paginaHTML);
 
 echo $paginaHTML;
 

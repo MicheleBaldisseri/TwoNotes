@@ -16,7 +16,7 @@
 <body>
     <div id="header">
         <img src="../img/TwoNotes-4.svg"  alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
-        HEADERDESTRO
+        <HEADERDESTRO/>
     </div>
 
     <div id="percorso">
@@ -44,18 +44,18 @@
         </ul>
 
         <form name="creazionePost" action="newPostAction.php" method="POST" enctype="multipart/form-data">
-        ERRORIPOST
+        <ERRORIPOST/>
             <label for="title">Titolo:</label>  
-            <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="VALORETITOLO" required="required" />
+            <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="<VALORETITOLO/>" required="required" />
                 
             <label for="myfile">Carica un'immagine:</label>     
             <input type="file" id="myfile" name="myfile" accept="image/gif, image/jpeg, image/png" />
                     
             <label for="altImmagine">Descrizione Immagine:</label>      
-            <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" placeholder="Inserisci una descrizione dell'immagine...">VALOREALT</textarea>
+            <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" placeholder="Inserisci una descrizione dell'immagine..."><VALOREALT/></textarea>
                 
             <label for="content">Contenuto:</label>   
-            <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..." required="required">VALORECONTENUTO</textarea>   
+            <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..." required="required"><VALORECONTENUTO/></textarea>   
         
             <input type="submit" class="round-button general-button" value="Invia"/> 
         </form>

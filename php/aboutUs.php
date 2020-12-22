@@ -26,7 +26,7 @@ if($user->getUsername()!=null){
 		</ul>
 	</div>';	
 }
-$paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
+$paginaHTML = str_replace("<HEADERDESTRO/>", $stringHeader, $paginaHTML);
 
 echo $paginaHTML;
 

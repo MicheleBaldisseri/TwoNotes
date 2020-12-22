@@ -24,14 +24,14 @@ if($user->getUsername()!=null){
 		</ul>
 	</div>';	
 }
-$paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
+$paginaHTML = str_replace("<HEADERDESTRO/>", $stringHeader, $paginaHTML);
 
 if(isset($_GET['contenutoRicerca']) && empty($_GET['contenutoRicerca'])){
     header('Location: index.php');
     exit();
 }
 
-$paginaHTML = str_replace("GETRICERCA", $_GET['contenutoRicerca'], $paginaHTML);
+$paginaHTML = str_replace("<GETRICERCA/>", $_GET['contenutoRicerca'], $paginaHTML);
 
 $currentPage = 1;
 if(isset($_GET['page'])) $currentPage = $_GET['page'];
@@ -40,12 +40,12 @@ $pageTotalCount = $manager->getTotalPageCount($_GET['contenutoRicerca']);
 if($currentPage>$pageTotalCount)$currentPage=$pageTotalCount;
 $navigazione = $manager->printNavigazioneRicerca($currentPage,$pageTotalCount,$_GET['contenutoRicerca']);
 
-$paginaHTML = str_replace("NAVIGAZIONE", $navigazione, $paginaHTML);
+$paginaHTML = str_replace("<NAVIGAZIONE/>", $navigazione, $paginaHTML);
 
 $listaPost = $manager->getPostList($currentPage,$_GET['contenutoRicerca']);
 $stringList = $manager->printPostList($listaPost);
 
-$paginaHTML = str_replace("LISTAPOST", $stringList, $paginaHTML);
+$paginaHTML = str_replace("<LISTAPOST/>", $stringList, $paginaHTML);
 
 echo $paginaHTML;
 

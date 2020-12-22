@@ -16,7 +16,7 @@
         $error = '<p id="erroreLogin">'.$_SESSION['loginError'].'</p>';
         unset($_SESSION['loginError']);
     }
-    $paginaHTML = str_replace("ERRORELOGIN", $error, $paginaHTML);
+    $paginaHTML = str_replace("<ERRORELOGIN/>", $error, $paginaHTML);
 
 
     $un = '';
@@ -24,7 +24,7 @@
         $un = $_SESSION['oldUsername'];
         unset($_SESSION['oldUsername']);
     }
-    $paginaHTML = str_replace("VALUEUSERNAME", $un, $paginaHTML);
+    $paginaHTML = str_replace("<VALUEUSERNAME/>", $un, $paginaHTML);
 
     echo $paginaHTML;
 

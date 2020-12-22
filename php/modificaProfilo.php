@@ -21,7 +21,7 @@ if($user->getUsername()!=null){
 	header("Location: errorPage.php");
     exit();	
 }
-$paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
+$paginaHTML = str_replace("<HEADERDESTRO/>", $stringHeader, $paginaHTML);
 
 $stringErrors = '';
 if(isset($_SESSION['modificaErrors'])){
@@ -35,25 +35,25 @@ if(isset($_SESSION['modificaErrors'])){
 
 	unset($_SESSION['modificaErrors']);
 }
-$paginaHTML = str_replace('ERRORIMODIFICAPROFILO',$stringErrors,$paginaHTML);
+$paginaHTML = str_replace('<ERRORIMODIFICAPROFILO/>',$stringErrors,$paginaHTML);
 
 if($user->getUsername()!=null){
 
-	$paginaHTML = str_replace("VALORENOME", stripslashes($user->getNome()), $paginaHTML);
-	$paginaHTML = str_replace("VALORECOGNOME", stripslashes($user->getCognome()), $paginaHTML);
-	$paginaHTML = str_replace("VALOREEMAIL", stripslashes($user->getEmail()), $paginaHTML);
-	$paginaHTML = str_replace("VALOREDATA", stripslashes($user->getDataNascita()), $paginaHTML);
-	$paginaHTML = str_replace("VALOREUSERNAME", stripslashes($user->getUsername()), $paginaHTML);
-	$paginaHTML = str_replace("VALOREPROVENIENZA", stripslashes($user->getProvenienza()), $paginaHTML);
+	$paginaHTML = str_replace("<VALORENOME/>", stripslashes($user->getNome()), $paginaHTML);
+	$paginaHTML = str_replace("<VALORECOGNOME/>", stripslashes($user->getCognome()), $paginaHTML);
+	$paginaHTML = str_replace("<VALOREEMAIL/>", stripslashes($user->getEmail()), $paginaHTML);
+	$paginaHTML = str_replace("<VALOREDATA/>", stripslashes($user->getDataNascita()), $paginaHTML);
+	$paginaHTML = str_replace("<VALOREUSERNAME/>", stripslashes($user->getUsername()), $paginaHTML);
+	$paginaHTML = str_replace("<VALOREPROVENIENZA/>", stripslashes($user->getProvenienza()), $paginaHTML);
 
 	$sesso = $user->getSesso();
-	if($sesso == 'M') $paginaHTML = str_replace('SELECTEDM','checked',$paginaHTML);
+	if($sesso == 'M') $paginaHTML = str_replace('SELECTEDM','checked="checked"',$paginaHTML);
 	else $paginaHTML = str_replace('SELECTEDM','',$paginaHTML);
 
-	if($sesso == 'F') $paginaHTML = str_replace('SELECTEDF','checked',$paginaHTML);
+	if($sesso == 'F') $paginaHTML = str_replace('SELECTEDF','checked="checked"',$paginaHTML);
 	else $paginaHTML = str_replace('SELECTEDF','',$paginaHTML);
 
-	if($sesso == 'A') $paginaHTML = str_replace('SELECTEDA','checked',$paginaHTML);
+	if($sesso == 'A') $paginaHTML = str_replace('SELECTEDA','checked="checked"',$paginaHTML);
 	else $paginaHTML = str_replace('SELECTEDA','',$paginaHTML);
 	
 }else{

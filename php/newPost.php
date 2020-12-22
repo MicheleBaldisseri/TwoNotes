@@ -21,7 +21,7 @@ if($user->getUsername()!=null){
     header("Location: login.php");
     exit();	
 }
-$paginaHTML = str_replace("HEADERDESTRO", $stringHeader, $paginaHTML);
+$paginaHTML = str_replace("<HEADERDESTRO/>", $stringHeader, $paginaHTML);
 
 $stringErrors = '';
 if(isset($_SESSION['postErrors'])){
@@ -34,18 +34,18 @@ if(isset($_SESSION['postErrors'])){
 
     unset($_SESSION['postErrors']);
 
-    $paginaHTML = str_replace('VALORETITOLO',stripslashes($_SESSION['postValues']['titolo']),$paginaHTML);
-    $paginaHTML = str_replace('VALOREALT',stripslashes($_SESSION['postValues']['altImmagine']),$paginaHTML);
-    $paginaHTML = str_replace('VALORECONTENUTO',stripslashes($_SESSION['postValues']['contenuto']),$paginaHTML);
+    $paginaHTML = str_replace('<VALORETITOLO/>',stripslashes($_SESSION['postValues']['titolo']),$paginaHTML);
+    $paginaHTML = str_replace('<VALOREALT/>',stripslashes($_SESSION['postValues']['altImmagine']),$paginaHTML);
+    $paginaHTML = str_replace('<VALORECONTENUTO/>',stripslashes($_SESSION['postValues']['contenuto']),$paginaHTML);
 }else{
-    $paginaHTML = str_replace('VALORETITOLO','',$paginaHTML);
-    $paginaHTML = str_replace('VALOREALT','',$paginaHTML);
-    $paginaHTML = str_replace('VALORECONTENUTO','',$paginaHTML);
+    $paginaHTML = str_replace('<VALORETITOLO/>','',$paginaHTML);
+    $paginaHTML = str_replace('<VALOREALT/>','',$paginaHTML);
+    $paginaHTML = str_replace('<VALORECONTENUTO/>','',$paginaHTML);
 }
 
 unset($_SESSION['registerValues']);
 
-$paginaHTML = str_replace('ERRORIPOST',$stringErrors,$paginaHTML);
+$paginaHTML = str_replace('<ERRORIPOST/>',$stringErrors,$paginaHTML);
 
 echo $paginaHTML;
 
