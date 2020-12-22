@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 19, 2020 at 11:04 PM
+-- Generation Time: Dec 22, 2020 at 05:44 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `commenti` (
   PRIMARY KEY (`commentoID`),
   KEY `post` (`post`),
   KEY `utente` (`utente`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `commenti`
@@ -46,7 +46,8 @@ CREATE TABLE IF NOT EXISTS `commenti` (
 INSERT INTO `commenti` (`commentoID`, `post`, `utente`, `dataOra`, `contenuto`) VALUES
 (12, 17, 'admin', '2020-12-19 20:58:37', 'test è'),
 (13, 17, 'admin', '2020-12-19 20:58:43', 'test ù'),
-(14, 24, 'admin', '2020-12-19 23:29:31', 'test <abbr title=\"test\"> test </abbr>');
+(14, 24, 'admin', '2020-12-19 23:29:31', 'test <abbr title=\"test\"> test </abbr>'),
+(16, 24, 'admin', '2020-12-21 23:39:35', 'test');
 
 -- --------------------------------------------------------
 
@@ -72,10 +73,10 @@ CREATE TABLE IF NOT EXISTS `post` (
 --
 
 INSERT INTO `post` (`postID`, `titolo`, `dataOra`, `immagine`, `altImmagine`, `contenuto`, `utente`) VALUES
-(14, 'Sviluppatori pessimi', '2020-12-19 20:47:14', '1608407234Eepg1TsXoAAuTKf.jpg', 'Uomo che si fa domande leggendo un foglio', 'Avviso tutti che su Spotify e Youtube è disponibili il mio nuovo singolo! Passate parola!', 'Active'),
-(15, 'Che ne pensate di Coez?', '2020-12-19 20:48:48', '1608407328fatRat.jpg', 'Ratto gigante', 'Ho iniziato ad apprezzare Coez, fino al mese scorso non lo consideravo... cosa pensate delle sue canzoni?', 'Lele97'),
-(16, 'In cerca di consigli!', '2020-12-19 20:49:13', '', '', 'Ultimamente ascolto molto MOTi, consigli di canzoni simili a quelle sue?', 'Lele97'),
-(17, 'Nuova canzone Timmy Trumpet ', '2020-12-19 20:50:32', '1608407432darlin_gabe-the-dog-fb.jpg', 'Cane felice', 'Si chiama \"Paul is dead\". La sto ascoltando in loop su Spotify. Che bomba! Che ne pensate?', 'Active'),
+(14, 'Sviluppatori pessimi', '2020-12-19 20:47:14', '1608407234Eepg1TsXoAAuTKf.jpg', 'Uomo che si fa domande leggendo un foglio', 'Avviso tutti che su Spotify e Youtube è disponibili il mio nuovo singolo! Passate parola!', 'user2'),
+(15, 'Che ne pensate di Coez?', '2020-12-19 20:48:48', '1608407328fatRat.jpg', 'Ratto gigante', 'Ho iniziato ad apprezzare Coez, fino al mese scorso non lo consideravo... cosa pensate delle sue canzoni?', 'user'),
+(16, 'In cerca di consigli!', '2020-12-19 20:49:13', '', '', 'Ultimamente ascolto molto MOTi, consigli di canzoni simili a quelle sue?', 'user'),
+(17, 'Nuova canzone Timmy Trumpet ', '2020-12-19 20:50:32', '1608407432darlin_gabe-the-dog-fb.jpg', 'Cane felice', 'Si chiama \"Paul is dead\". La sto ascoltando in loop su Spotify. Che bomba! Che ne pensate?', 'user2'),
 (18, 'afè', '2020-12-19 20:56:29', '', '', 'asdfè', 'admin'),
 (19, 'test', '2020-12-19 20:56:45', '', '', 'test', 'admin'),
 (20, 'test 2', '2020-12-19 20:56:59', '', '', 'test 2', 'admin'),
@@ -122,10 +123,9 @@ CREATE TABLE IF NOT EXISTS `utenti` (
 --
 
 INSERT INTO `utenti` (`username`, `password`, `nome`, `cognome`, `dataNascita`, `email`, `sesso`, `provenienza`, `isAdmin`) VALUES
-('Active', 'c62dc2522fba5ece9e8148d07f0759e1', 'Matthew', 'Balzan', '1999-06-11', 'matt.balzan@gmail.com', 'M', 'Crocetta del Montello', b'0'),
-('Lele97', '5ea0b00761f7a793a5a6845028c053ff', 'Michele', 'Baldisseri', '1997-05-12', 'michele.baldi@gmail.com', 'M', 'San Pietro in Gu', b'0'),
 ('admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin', '1999-12-02', 'admin@gmail.com', 'A', 'Cornuda', b'1'),
-('asdf', '202cb962ac59075b964b07152d234b70', 'asdfas', 'asdfa', '2020-08-14', 'asdfa@gmail.com', 'M', 'asdfa', b'0');
+('user', 'ee11cbb19052e40b07aac0ca060c23ee', 'Michele', 'Baldisseri', '1997-05-12', 'michele.baldi@gmail.com', 'M', 'San Pietro in Gu', b'0'),
+('user2', '7e58d63b60197ceb55a1c487989a3720', 'Matthew', 'Balzan', '1999-06-11', 'matt.balzan@gmail.com', 'M', 'Crocetta del Montello', b'0');
 
 --
 -- Constraints for dumped tables
