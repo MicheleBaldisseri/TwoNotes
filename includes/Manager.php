@@ -73,7 +73,7 @@ class Manager{
                             <a href="profilo.php?username='. stripslashes($post['utente']) .'" class="linkToButton">' . stripslashes($post['utente']) . '</a>  
                             '.$new_date.'
                         </p>
-                        <a id="goToPost" class="linkToButton" href="postPage.php?idPost='.$post['postID'].'">Vai al post</a>
+                        <a class="goToPost linkToButton" href="postPage.php?idPost='.$post['postID'].'">Vai al post</a>
                         <a class="linkToButton" href="#percorso">Torna su</a> 
                     </div>              
                 </li>';
