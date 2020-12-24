@@ -49,7 +49,7 @@ if(isset($_GET['idPost'])){
 	if($user->getUsername()!=null) $paginaHTML = str_replace("<INSERIMENTOCOMMENTO/>", $inserisciCommento, $paginaHTML);
 	else $paginaHTML = str_replace("<INSERIMENTOCOMMENTO/>", '', $paginaHTML);
 
-	$paginaHTML = str_replace("<DETTAGLIOPOST/>", $manager->printSinglePost($_GET['idPost']), $paginaHTML);
+	$paginaHTML = str_replace("<DETTAGLIOPOST/>", $manager->printSinglePost($_GET['idPost'],$user), $paginaHTML);
 	$paginaHTML = str_replace("<LISTACOMMENTI/>", $manager->printComments($_GET['idPost']), $paginaHTML);
 	$paginaHTML = str_replace("<ID_POST/>", $_GET['idPost'], $paginaHTML);
 }else{

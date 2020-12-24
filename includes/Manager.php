@@ -164,7 +164,7 @@ class Manager{
         return ($res ? $res[0] : null);
     }
 
-    public function printSinglePost($idPost){
+    public function printSinglePost($idPost,$user){
         $post = $this->getSinglePost($idPost);
 
         $string = '';
@@ -183,6 +183,9 @@ class Manager{
                 <a href="profilo.php?username='.stripslashes($post['utente']).'" class="linkToButton">'.stripslashes($post['utente']).'</a> 
                 il '.$new_date.'
             </p>';
+
+            if($user->isAdmin()) $string .= '<a href="deletePost.php">Elimina il post</a>';
+            
         }else{
             $string = "Non è stato trovato il post, ci scusiamo.";
         }
