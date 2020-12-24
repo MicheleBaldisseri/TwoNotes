@@ -199,7 +199,7 @@ SEZIONE CONTENITORE
     /*margin: 0.6em;*/
     /*font-size: 1em;*/
     cursor: pointer;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
     /*min-width: min-content;*/
 }
 .navigazione{
@@ -271,7 +271,7 @@ SEZIONE SINGOLO POST
     overflow-wrap: break-word;
 }
 #singlePost a{
-    background-color: #69b2ee;
+    /*background-color: #69b2ee;*/
     font-size: 1em;
 }
 #postTextarea{
@@ -300,6 +300,11 @@ SEZIONE SINGOLO POST
 }
 #newComment label{
     font-weight: bold;
+}
+#needLogin{
+    font-weight: bold;
+    color: #a32929;
+    margin-top: 1.5em;
 }
 /*
 ===================
@@ -331,13 +336,13 @@ SEZIONE NUOVO POST
     color: #000879a2;
 }
 #newPostForm input[type="submit"]{
-    background-color: #005faca2;
     margin-left: 20%;
 }
 
 #newPostForm form, #annulla{
     display: inline;
 }
+
 
 /*text area contenuto*/
 .inputForm{
@@ -381,9 +386,10 @@ SEZIONE LOGIN PAGE
     padding: 1em;
     padding-bottom: 2em;
 }
+
 .login h1{
     float: left;
-    padding: 5em 0 1em 0;
+    padding: 3em 0 1em 0;
     width: 55%;
     text-align: center;
 }
@@ -392,6 +398,7 @@ SEZIONE LOGIN PAGE
     width: 50%;
     margin-top: 5%;
     margin-left: 4%;
+    height: 100%;
 }
 .login h2{
     text-align: center;
@@ -407,7 +414,7 @@ SEZIONE LOGIN PAGE
 .login input[type="text"],
 .login input[type="password"]{
     width: 75%;
-    padding: 1em;
+    padding: 0.6em;
     display: block;
     margin-right: auto;
     margin-left: auto;
@@ -421,6 +428,10 @@ SEZIONE LOGIN PAGE
     width: 35%;
     min-width: fit-content;
 }
+.login a{
+    margin-bottom: 2em;
+}
+/*
 .login button{
     display: block;
     margin-right: auto;
@@ -429,6 +440,7 @@ SEZIONE LOGIN PAGE
     margin-bottom: 0%;
     width: 35%;
 }
+*/
 #formLogin label{
     display: block;
     margin-right: auto;
@@ -442,13 +454,12 @@ SEZIONE LOGIN PAGE
 SEZIONE BOTTONI
 ==================
 */
-#annulla{
-    background-color: #f0090996;
-}
 .general-button{
     padding: 0.6em;
     margin: 0.6em;
     font-size: 1em;
+    background-color: #005facaf;
+    color: #f1f1f1;
 }
 .input{
     width: 50%;
@@ -477,10 +488,14 @@ SEZIONE BOTTONI
 
 .orange-button{
     background-color: #ff4b2bc4;
+    color: black;
 }
+/*
 .yellow-button{
     background-color: #ffd82bc4;
+    color: black;
 }
+*/
 .round-button{
     border: none;
     border-radius: 1.25em 1.25em 1.25em 1.25em;
@@ -527,11 +542,6 @@ SEARCH BAR - Home Page
 }
 #search input:hover{
     box-shadow: 0.2em 0.2em 0.2em 0.2em #ccc
-}
-#search-button{
-    background: #005facaf;
-    color: white;
-    cursor: pointer;
 }
 
 #search a{
@@ -603,7 +613,6 @@ SEZIONE PROFILO
 }
 #profile p{
     margin-left: 1.2em;
-    color: #452297;
 }
 #profile h1{
     margin-bottom: 1em;
@@ -745,6 +754,5 @@ responsive search bar
     #formBase input[type="radio"]{
         display: block;
         margin-left: 50%;   
-    }
-    
+    }       
   }

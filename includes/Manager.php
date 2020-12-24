@@ -69,9 +69,9 @@ class Manager{
                             $string .= '<img src="../upload/'.stripslashes($post['immagine']).'" alt="'.stripslashes($post['altImmagine']).'"/>';
                         }
                         
-        $string .=      '<p class="infoPost">Pubblicato da: 
+        $string .=      '<p class="infoPost">Pubblicato da 
                             <a href="profilo.php?username='. stripslashes($post['utente']) .'" class="linkToButton">' . stripslashes($post['utente']) . '</a>  
-                            '.$new_date.'
+                            il '.$new_date.'
                         </p>
                         <a class="goToPost linkToButton" href="postPage.php?idPost='.$post['postID'].'">Vai al post</a>
                         <a class="linkToButton" href="#percorso">Torna su</a> 
@@ -179,9 +179,9 @@ class Manager{
                 $string .= '<img src="../upload/'.stripslashes($post['immagine']).'" alt="'.stripslashes($post['altImmagine']).'"/>';
             }    
             $string .= '<p class="infoPost">
-                Pubblicato da: 
+                Pubblicato da 
                 <a href="profilo.php?username='.stripslashes($post['utente']).'" class="linkToButton">'.stripslashes($post['utente']).'</a> 
-                '.$new_date.'
+                il '.$new_date.'
             </p>';
         }else{
             $string = "Non è stato trovato il post, ci scusiamo.";

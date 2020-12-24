@@ -60,7 +60,7 @@ if($userProfile!=null){
 
 $buttonModifica = '';
 if($_GET['username'] == stripslashes($user->getUsername())){
-	$buttonModifica = '<a class="linkToButton" id="annulla" href="modificaProfilo.php">Modifica</a>';
+	$buttonModifica = '<a href="modificaProfilo.php">Modifica</a>';
 }
 $paginaHTML = str_replace("<LINKMODIFICA/>", $buttonModifica, $paginaHTML);
 

@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
+    <script type="text/javascript" src="../js/checkLogin.js"></script>
 </head>
 <body>
     <div id="header">
@@ -33,18 +34,26 @@
         <h1>Benvenuto nel social musicale</h1>
         <img src="../img/TwoNotes-4.svg" alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
         <h2>ACCEDI</h2>
+
         <ERRORELOGIN/>
-        <form id="formLogin" action="loginAction.php" method="post">
+
+        <form id="formLogin" action="loginAction.php" method="post" onsubmit="return validateForm();">
             <label for="username" xml:lang="en">Username</label>
-            <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALUEUSERNAME/>" required="required"/>
+            <span>
+                <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALUEUSERNAME/>" required="required"/>
+            </span>
             
             <label for="psw" xml:lang="en">Password</label>
-            <input type="password" name="psw" id="psw" class="input" placeholder="Password" required="required"/>
+
+            <span>
+                <input type="password" name="psw" id="psw" class="input" placeholder="Password" required="required"/>
+            </span>
             
             <input type="submit" class="round-button general-button orange-button" value="Accedi"/>
         </form>
+
         <h2>NON HAI UN ACCOUNT?</h2>
-        <a href="registrazione.php" id="button_register" class="general-button round-button yellow-button">Registrati</a>
+        <a href="registrazione.php" id="button_register">Registrati</a>
         
     </div>
     <div id="footer">
