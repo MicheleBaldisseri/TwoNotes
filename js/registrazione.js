@@ -1,12 +1,12 @@
 var dettagli_form = {
 
-    "nome": [ /^[A-Za-z]{2,20}$/, "Questo campo non può contenere numeri o caratteri speciali"],
-    "cognome": [/^[A-Z]'?[(a-z)(A-Z)(àèìòù)]{2,20}$/, "Questo campo non può contenere numeri o caratteri speciali"],
-    //"data": "Sei troppo giovane, non credi?",
-    "provenienza": [/^[\w]{8,20}$/, "Questo campo non può contenere numeri o caratteri speciali fino a 20 caratteri"],
-    "username": [/^[\w]{2,20}$/, "Questo campo può contenere numeri, lettere e caratteri speciali fino a 20 caratteri"],
+    "nome": [ /^(([a-zA-Z(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/, "Sono ammesse solo lettere fino a 20 caratteri"],
+    "cognome": [ /^(([a-zA-Z(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/, "Sono ammesse solo lettere fino a 20 caratteri"],
+    "dataNascita": "Sei troppo giovane, non credi?",
+    "provenienza": [/^(([a-zA-Z(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/, "Sono ammesse solo lettere fino a 20 caratteri"],
+    "username": [/^[\.A-Za-z0-9_-]{2,20}$/, "Sono ammesssi numeri e lettere fino a 20 caratteri"],
     "email": [/^([\w\-\+\.]+)\@([\w\-\+\.]+)\.([\w\-\+\.]+)$/, "Formato e-mail inserito non valido"],
-    "psw": [/^[\w]{8,20}$/, "La password deve essere almeno di 8 caratteri e può contenere lettere, numeri e caratteri speciali fino ad un massimo di 20"],
+    "psw": [/^[A-Za-z0-9#-&_-]{5,20}$/, "Sono ammesssi numeri, lettere e i simboli #,$,%,& da 5 a 20 caratteri"],
     "conf-psw": "Le password non corrispondono"
 }
 
@@ -15,7 +15,7 @@ function mostraErrore(input) {
     var elemento = document.createElement("strong");
     elemento.className = "erroriForm"; //classe degli errori
    
-    if(input.id == "conf-psw" || input.id == "data") //conferma password
+    if(input.id == "conf-psw" || input.id == "dataNascita") //conferma password
         elemento.appendChild(document.createTextNode(dettagli_form[input.id]));    
     else //tutti gli altri casi
         elemento.appendChild(document.createTextNode(dettagli_form[input.id][1])); 
@@ -29,14 +29,22 @@ function validateCampo(input){
     var text = input.value;
 
     if(input.id == "conf-psw"){ //check corrispondenza password
-        if(text != document.getElementById("psw").value)
+        if(text != document.getElementById("psw").value){
             mostraErrore(input);
+            return false;
+        }else{
+            return true;
+        }
     }
-    /*
-    else if(input.id == "data"){ //età minima per l'iscrizione
+    else if(input.id == "dataNascita"){ //età minima per l'iscrizione
+        dataInserita=new Date(text);
+        if((Date.now() - dataInserita) / (31557600000) < 14) {
             mostraErrore(input);
+            return false
+        }else{
+            return true;
+        }
     }
-    */
     else{
         var regex= dettagli_form[input.id][0];
         if(text.search(regex) != 0) {
