@@ -9,9 +9,10 @@
     <meta name="keywords" content="login, TwoNotes"/>
     <meta name="author" content="Michele Baldisseri"/>
     <meta name="language" content="italian it"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
+    <script type="text/javascript" src="../js/registrazione.js"></script>
 </head>
 <body>
     <div id="header">
@@ -33,18 +34,24 @@
 
     <div id="formBase" class="contenitoreCentrale allWidth round_div shadow-div smallReg">
             <h1>Modifica il tuo profilo</h1>
-            <form action="modificaProfiloAction.php" class="formRegistrazione" method="post">
+            <form action="modificaProfiloAction.php" class="formRegistrazione" method="post" onsubmit="return validateForm();">
                 <ERRORIMODIFICAPROFILO/>
                 <fieldset>
                     <legend>Informazioni generali</legend>
                     <label for="nome" class="labelleft">Nome:</label>
-                    <input type="text" name="nome" id="nome" class="input" placeholder="Nome" value="<VALORENOME/>" maxlength="20" required="required">
-                                        
+                    <span>
+                        <input type="text" name="nome" id="nome" class="input" placeholder="Nome" value="<VALORENOME/>" maxlength="20" required="required">
+                    </span>
+
                     <label for="cognome" class="labelleft">Cognome:</label>
-                    <input type="text" name="cognome" id="cognome" class="input" placeholder="Cognome" value="<VALORECOGNOME/>" maxlength="20" required="required">
-                    
+                    <span>
+                        <input type="text" name="cognome" id="cognome" class="input" placeholder="Cognome" value="<VALORECOGNOME/>" maxlength="20" required="required">
+                    </span>
+                                        
                     <label for="dataNascita" class="labelleft">Data di nascita:</label>
-                    <input type="date" name="data" id="dataNascita" class="input" value="<VALOREDATA/>" required="required">
+                    <span>
+                        <input type="date" name="data" id="dataNascita" class="input" value="<VALOREDATA/>" required="required">
+                    </span>
 
                     <label for="sesso" class="labelleft">Sesso:</label>
                     <label for="maschio" class="inputsex">Maschio</label>                        
@@ -55,22 +62,36 @@
                     <input type="radio" id="altro" name="gender" value="A" SELECTEDA>
 
                     <label for="provenienza" class="labelleft">Provenienza:</label>
-                    <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="<VALOREPROVENIENZA/>" required="required">
+                    <span>
+                        <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="<VALOREPROVENIENZA/>" required="required">
+                    </span>
                 </fieldset>
                 <fieldset>
                     <legend>Account</legend>
+
                     <label for="username" class="labelleft">Username:</label>
-                    <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALOREUSERNAME/>" required="required">
+                    <span>
+                        <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALOREUSERNAME/>" required="required">
+                    </span>
                     
                     <label for="email" class="labelleft">Email:</label>
-                    <input type="email" name="email" id="email" class="input" placeholder="Email" value="<VALOREEMAIL/>" required="required">
+                    <span>
+                        <input type="email" name="email" id="email" class="input" placeholder="Email" value="<VALOREEMAIL/>" required="required">
+                    </span>
 
                     <label for="oldpsw" class="labelleft">Vecchia password:</label>
                     <input type="password" name="oldpsw" id="oldpsw" class="input" placeholder="Vecchia password" required="required">
-                    <label for="newpsw" class="labelleft">Nuova password:</label>
-                    <input type="password" name="newpsw" id="newpsw" class="input" placeholder="Nuova password" >
+
+                    <!--vecchio id = newpsw-->
+                    <label for="psw" class="labelleft">Nuova password:</label>
+                    <span>
+                        <input type="password" name="psw" id="psw" class="input" placeholder="Nuova password" >
+                    </span>
+
                     <label for="conf-psw" class="labelleft">Conferma nuova password:</label>
-                    <input type="password" name="conf-psw" id="conf-psw" class="input" placeholder="Conferma nuova password" >
+                    <span>
+                        <input type="password" name="conf-psw" id="conf-psw" class="input" placeholder="Conferma nuova password" >
+                    </span>
                 </fieldset>
                 <input type="submit" class="round-button general-button" value="Salva"/>
             </form>    

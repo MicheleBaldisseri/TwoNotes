@@ -1,7 +1,7 @@
 var dettagli_form = {
 
-    "username": [ /[a-zA-Z\ \']{2,20}$/, "Username inserito non valido"],
-    "psw": [/^[A-Za-z0-9]{5,20}/, "Password inserita non valida"]
+    "username": [ /^[\.A-Za-z0-9_-]{2,20}$/, "Username inserito non valido"],
+    "psw": [/^[A-Za-z0-9#-&_-]{5,20}$/, "Password inserita non valida"]
 }
 
 function mostraErrore(input) {
