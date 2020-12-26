@@ -431,6 +431,14 @@ SEZIONE LOGIN PAGE
 .login a{
     margin-bottom: 2em;
 }
+
+.erroriLogin{
+    color: #a32929;
+}
+.erroriForm{
+    color: #a32929;
+}
+
 /*
 .login button{
     display: block;
@@ -654,6 +662,7 @@ SEZIONE Modifica PROFILO - Registrazione
     margin-bottom: 0.5em;
     margin-top: 0.5em;
 }
+
 #formBase button{
     background-color: #005fac9f;
 }

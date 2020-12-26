@@ -9,9 +9,10 @@
     <meta name="keywords" content="registrazione, TwoNotes"/>
     <meta name="author" content="Stefano Dal Poz"/>
     <meta name="language" content="italian it"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
+    <script type="text/javascript" src="../js/registrazione.js"></script>
 </head>
 <body>
     <div id="header">
@@ -30,44 +31,60 @@
         </ul>
     </div>
 
-    <div id="formBase" class="contenitoreCentrale allWidth round_div shadow-div">
+    <div id="formBase" class="contenitoreCentrale allWidth round_div shadow-div" onsubmit="return validateForm();">
             <h1>Registrati a TwoNotes</h1>
             <form action="registerAction.php" class="formRegistrazione" method="post">
                 <ERRORIREGISTRAZIONE/>
                 <fieldset>
                     <legend>Anagrafica</legend>
                     <label for="nome" class="labelleft">Nome:</label>
-                    <input type="text" name="nome" id="nome" class="input" placeholder="Nome" value="<VALORENOME/>" maxlength="20" required="required">
-
+                    <span>
+                        <input type="text" name="nome" id="nome" class="input" placeholder="Nome" value="<VALORENOME/>" maxlength="20" required="required">
+                    </span>
                     <label for="cognome" class="labelleft">Cognome:</label>
-                    <input type="text" name="cognome" id="cognome" class="input" placeholder="Cognome" value="<VALORECOGNOME/>" maxlength="20" required="required"/>
-                    
+                    <span>
+                        <input type="text" name="cognome" id="cognome" class="input" placeholder="Cognome" value="<VALORECOGNOME/>" maxlength="20" required="required"/>
+                    </span>
+
                     <label for="dataNascita" class="labelleft">Data di nascita:</label>
-                    <input type="date" name="data" id="dataNascita" class="input" value="<VALOREDATA/>" required="required"/>
+                    <span>
+                        <input type="date" name="data" id="dataNascita" class="input" value="<VALOREDATA/>" required="required"/>
+                    </span>
 
                     <label for="sesso" class="labelleft">Sesso:</label>
                     <label for="maschio" class="inputsex">Maschio</label>                        
-                    <input type="radio" id="maschio" name="gender" value="M" SELECTEDM required="required"/>
+                    <input type="radio" id="maschio" name="gender" value="M" SELECTEDM required="required" checked/>
                     <label for="femmina" class="inputsex">Femmina</label>
                     <input type="radio" id="femmina" name="gender" value="F" SELECTEDF/>
                     <label for="altro" class="inputsex">Altro</label>
                     <input type="radio" id="altro" name="gender" value="A" SELECTEDA/>
                     
                     <label for="provenienza" class="labelleft">Provenienza:</label>
-                    <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="<VALOREPROVENIENZA/>" required="required"/>
+                    <span>
+                        <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="<VALOREPROVENIENZA/>" required="required"/>
+                    </span>
                 </fieldset>
                 <fieldset>
                     <legend>Dati per l'accesso</legend>
                     <label for="username" class="labelleft" xml:lang="en">Username:</label>
-                    <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALOREUSERNAME/>" required="required"/>
+                    <span>
+                        <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALOREUSERNAME/>" required="required"/>
+                    </span>
 
                     <label for="email" class="labelleft" xml:lang="en">Email:</label>
-                    <input type="email" name="email" id="email" class="input" placeholder="Email" value="<VALOREEMAIL/>" required="required"/>
+                    <span>
+                        <input type="email" name="email" id="email" class="input" placeholder="Email" value="<VALOREEMAIL/>" required="required"/>
+                    </span>
 
                     <label for="psw" class="labelleft" xml:lang="en">Password:</label>
-                    <input type="password" name="psw" id="psw" class="input" placeholder="Password" required="required"/>
+                    <span>
+                        <input type="password" name="psw" id="psw" class="input" placeholder="Password" required="required"/>
+                    </span>
+
                     <label for="conf-psw" class="labelleft">Conferma <span xml:lang="en">password</span>:</label>
-                    <input type="password" name="conf-psw" id="conf-psw" class="input" placeholder="Conferma password" required="required"/>
+                    <span>
+                        <input type="password" name="conf-psw" id="conf-psw" class="input" placeholder="Conferma password" required="required"/>
+                    </span>
                 </fieldset>
                 <input type="submit" class="general-button round-button orange-button" value="Registrati"/>
             </form>
