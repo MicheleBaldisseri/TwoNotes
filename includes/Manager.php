@@ -184,12 +184,23 @@ class Manager{
                 il '.$new_date.'
             </p>';
 
-            if($user->isAdmin()) $string .= '<a href="deletePost.php">Elimina il post</a>';
+            if($user->isAdmin()) $string .= '<a href="deletePost.php?id='.$post['postID'].'">Elimina il post</a>';
             
         }else{
             $string = "Non è stato trovato il post, ci scusiamo.";
         }
         return $string;
+    }
+
+    public function deletePost($id){
+        $this->connect();
+        $this->dbconnection->query('SET NAMES utf8');
+        $delete = "  DELETE FROM post WHERE postID = '$id' ";
+
+        $query = $this->dbconnection->query($delete);
+        $this->disconnect();
+        echo $delete;
+        return $query;
     }
 
     //OPERAZIONI CON COMMENTI ---------------------------------------------------------------------------
