@@ -64,6 +64,12 @@ if($_GET['username'] == stripslashes($user->getUsername())){
 }
 $paginaHTML = str_replace("<LINKMODIFICA/>", $buttonModifica, $paginaHTML);
 
+$buttonDelete = '';
+if($user->isAdmin()){
+	$buttonDelete = '<a href="deleteUser.php?user='.stripslashes($userProfile->getUsername()).'">Elimina il profilo</a>';
+}
+$paginaHTML = str_replace("<LINKELIMINA/>", $buttonDelete, $paginaHTML);
+
 echo $paginaHTML;
 
 ?>

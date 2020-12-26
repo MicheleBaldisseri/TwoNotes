@@ -199,7 +199,6 @@ class Manager{
 
         $query = $this->dbconnection->query($delete);
         $this->disconnect();
-        echo $delete;
         return $query;
     }
 
@@ -271,7 +270,6 @@ class Manager{
 
         $query = $this->dbconnection->query($delete);
         $this->disconnect();
-        echo $delete;
         return $query;
     }
 
@@ -354,6 +352,16 @@ class Manager{
         $user = new User($this->dbconnection);
         if($user->recover($username))return $user;
         return null;
+    }
+
+    public function deleteUser($user){
+        $this->connect();
+        $this->dbconnection->query('SET NAMES utf8');
+        $delete = "  DELETE FROM utenti WHERE username = '$user' ";
+
+        $query = $this->dbconnection->query($delete);
+        $this->disconnect();
+        return $query;
     }
 
     // OPERAZIONE MODIFICA PROFILO ---------------------------------------------------------------------------
