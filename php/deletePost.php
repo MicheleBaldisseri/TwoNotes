@@ -11,7 +11,6 @@ if(!$user->isAdmin() || !isset($_GET['id'])){
     exit();
 }
 
-
 $res = $manager->deletePost($_GET['id']);
 
 if($res){

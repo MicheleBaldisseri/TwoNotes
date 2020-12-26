@@ -50,7 +50,7 @@ if(isset($_GET['idPost'])){
 	else $paginaHTML = str_replace("<INSERIMENTOCOMMENTO/>", '', $paginaHTML);
 
 	$paginaHTML = str_replace("<DETTAGLIOPOST/>", $manager->printSinglePost($_GET['idPost'],$user), $paginaHTML);
-	$paginaHTML = str_replace("<LISTACOMMENTI/>", $manager->printComments($_GET['idPost']), $paginaHTML);
+	$paginaHTML = str_replace("<LISTACOMMENTI/>", $manager->printComments($_GET['idPost'],$user), $paginaHTML);
 	$paginaHTML = str_replace("<ID_POST/>", $_GET['idPost'], $paginaHTML);
 }else{
 	header("Location: errorPage.php");

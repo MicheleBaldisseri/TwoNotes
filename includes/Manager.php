@@ -218,12 +218,12 @@ class Manager{
         return $query->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function printComments($idPost){
+    public function printComments($idPost,$user){
         $comments = $this->getComments($idPost);
         $string = '';
         if($comments){
             foreach ($comments as $comment) {
-                $string .= $this->printSingleComment($comment);
+                $string .= $this->printSingleComment($comment,$user);
             }
         }else{
             $string = "Non ci sono commenti!";
@@ -231,17 +231,21 @@ class Manager{
         return $string;
     }
 
-    private function printSingleComment($comment){
+    private function printSingleComment($comment,$user){
         $timestamp = strtotime($comment['dataOra']);
 	    $new_date = date("d/m/Y H:i:s", $timestamp);
 
-        return '<li>
+        $string = '<li>
             <div class="singleComment shadow-div round_div">
                 <p class="infoPost"><a href="profilo.php?username='.stripslashes($comment['utente']).'" class="linkToButton">'.stripslashes($comment['utente'])
                 .'</a> '.$new_date.'</p>
-                <p>'.stripslashes($comment['contenuto']).'</p>                             
-            </div>
+                <p>'.stripslashes($comment['contenuto']).'</p>';
+
+                if($user->isAdmin()) $string .= '<a href="deleteComment.php?id='.$comment['commentoID'].'&idPost='.$comment['post'].'">Elimina il commento</a>';                         
+           $string .= ' </div>
         </li>';
+
+        return $string;
     }
 
     public function insertComment($values){
@@ -258,6 +262,17 @@ class Manager{
         }
         $this->disconnect();
         return $res;
+    }
+
+    public function deleteComment($id){
+        $this->connect();
+        $this->dbconnection->query('SET NAMES utf8');
+        $delete = "  DELETE FROM commenti WHERE commentoID = '$id' ";
+
+        $query = $this->dbconnection->query($delete);
+        $this->disconnect();
+        echo $delete;
+        return $query;
     }
 
 
