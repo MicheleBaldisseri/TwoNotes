@@ -9,6 +9,7 @@ $manager = new Manager();
 $user = $manager->setupSession();
 
 $stringHeader = '';
+$messaggioAutenticazione = '';
 if($user->getUsername()!=null){
 	$stringHeader = '
 	<div>
@@ -18,6 +19,7 @@ if($user->getUsername()!=null){
 		</ul>
 	</div>';
 }else{
+	$messaggioAutenticazione = '<p id="needLogin">Effettua l\'autenticazione per inserire un commento.</p>'; 
 	$stringHeader = '
 	<div>
 		<ul>
@@ -27,6 +29,7 @@ if($user->getUsername()!=null){
 	</div>';	
 }
 $paginaHTML = str_replace("<HEADERDESTRO/>", $stringHeader, $paginaHTML);
+$paginaHTML = str_replace("<MESSAGGIOAUTENTICAZIONE/>", $messaggioAutenticazione, $paginaHTML);
 
 $inserisciCommento = '<div id="newComment" class="sezione round_div shadow-div">
 <ERROREINSERIMENTOCOMMENTO/>
