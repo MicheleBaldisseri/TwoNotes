@@ -24,6 +24,10 @@
     </div>
 
     <div id="menu">
+        <a href="#search-input" class="screenReaderOnly">Vai alla barra di ricerca</a>
+        <a href="#create-post" class="screenReaderOnly">Vai a creazione post</a>
+        <a href="#listaPost" class="screenReaderOnly">Vai al contenuto</a>
+        
         <ul class="listaSenzaPunti">
             <li xml:lang="en">Home</li>
             <li><a href="aboutUs.php">Chi siamo</a></li>
@@ -34,15 +38,15 @@
     <div id="indexContent">     
         <div id="search" class="round_div shadow-div">   
             <form method="get" action="ricercaPost.php">
-                <input name="contenutoRicerca" type="text" placeholder="Cerca..."/>
+                <input name="contenutoRicerca" type="text" id="search-input" placeholder="Cerca..."/>
                 <input type="submit" id="search-button" class="round-button general-button" value="Cerca"/>           
             </form>     
-            <a href="newPost.php" class="alignFormButton noWrap">Crea Post</a>    
+            <a href="newPost.php" id="create-post" class="alignFormButton noWrap">Crea Post</a>    
         </div>
 
         <NAVIGAZIONE/>
       
-        <ul class="listaSenzaPunti">
+        <ul id="listaPost" class="listaSenzaPunti">
             <LISTAPOST/>
         </ul>
 

@@ -23,6 +23,20 @@ textarea{
 a{
     font-weight: bold;
 }
+
+.screenReaderOnly{
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+.screenReaderOnly:focus{
+    height: auto;
+    position: static;
+    width: auto;
+}
 /*
 ===================
 SEZIONE HOME
