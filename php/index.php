@@ -26,6 +26,14 @@ if($user->getUsername()!=null){
 }
 $paginaHTML = str_replace("<HEADERDESTRO/>", $stringHeader, $paginaHTML);
 
+$success = '';
+if(isset($_SESSION['success'])){
+	$success = '<div id="success_div" class="round_div shadow-div">'.$_SESSION['success'].'</div>';
+	unset($_SESSION['success']);
+}
+$paginaHTML = str_replace("<SUCCESS/>", $success, $paginaHTML);
+
+
 
 $currentPage = 1;
 if(isset($_GET['page'])) $currentPage = $_GET['page'];

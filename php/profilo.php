@@ -38,6 +38,13 @@ if($user->getUsername()!=null){
 }
 $paginaHTML = str_replace("<HEADERDESTRO/>", $stringHeader, $paginaHTML);
 
+$success = '';
+if(isset($_SESSION['success'])){
+	$success = '<div id="success_div" class="round_div shadow-div">'.$_SESSION['success'].'</div>';
+	unset($_SESSION['success']);
+}
+$paginaHTML = str_replace("<SUCCESS/>", $success, $paginaHTML);
+
 $userProfile = $manager->getUser($_GET['username']);
 
 if($userProfile!=null){
@@ -56,6 +63,7 @@ if($userProfile!=null){
 }else{
 	//Gestire errore database
 }
+
 
 
 $buttonModifica = '';

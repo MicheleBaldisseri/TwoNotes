@@ -31,6 +31,13 @@ if($user->getUsername()!=null){
 $paginaHTML = str_replace("<HEADERDESTRO/>", $stringHeader, $paginaHTML);
 $paginaHTML = str_replace("<MESSAGGIOAUTENTICAZIONE/>", $messaggioAutenticazione, $paginaHTML);
 
+$success = '';
+if(isset($_SESSION['success'])){
+	$success = '<div id="success_div" class="round_div shadow-div">'.$_SESSION['success'].'</div>';
+	unset($_SESSION['success']);
+}
+$paginaHTML = str_replace("<SUCCESS/>", $success, $paginaHTML);
+
 $inserisciCommento = '<div id="newComment" class="sezione round_div shadow-div">
 <ERROREINSERIMENTOCOMMENTO/>
 <p>Consigli utili per i commenti:</p>
