@@ -47,7 +47,7 @@ if(count($errors)==0){
 
     if($res){
         header("Location: postPage.php?idPost=".stripslashes($res));
-        $_SESSION['successInsert'] = true;
+        $_SESSION['success'] = "Post inserito con successo!";
         exit();
     }else{
         $_SESSION['postValues'] = $values;

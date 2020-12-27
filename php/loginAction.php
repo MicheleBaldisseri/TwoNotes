@@ -14,6 +14,7 @@ if(!isset($_POST['username']) || !isset($_POST['psw'])){
         $_SESSION['oldUsername']=$_POST['username'];
         exit();
     } else {
+        $_SESSION['success'] = "Login avvenuto con successo!";
         header('Location: index.php');
         exit();
     }

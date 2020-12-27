@@ -67,6 +67,7 @@ if(count($errors)==0){
             }else{
                 $manager->login($values['username'],$values['oldPassword']);
             } 
+            $_SESSION['success'] = "Profilo modificato con successo!";
             header("Location: profilo.php?username=".stripslashes($values['username']));
             exit();
         }

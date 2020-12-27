@@ -32,7 +32,7 @@ if(count($errors)==0){
 
     if($res){
         header("Location: postPage.php?idPost=".$_GET['idPost']);
-        $_SESSION['successInsert'] = true;
+        $_SESSION['success'] = "Commento inserito con successo!";
         exit();
     }else{
         array_push($errors, "Errore di inserimento del commento");

@@ -56,7 +56,8 @@ if(count($errors)==0){
         if($manager->register($values)){
             $manager->login($values['username'],$values['password']);
             
-            header("Location: index.php");
+            $_SESSION['success'] = "Registrazione avvenuta con successo!";
+            header("Location: profilo.php?username=".$values['username']);
             exit();
         }
     }else{
