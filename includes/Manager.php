@@ -311,7 +311,7 @@ class Manager{
         $query->fetch_all(MYSQLI_ASSOC);
 
         if ($query->num_rows > 0) {
-            array_push($errors, "Username gia' utilizzato");
+            array_push($errors, '<a href="#username">Username già utilizzato</a>');
         }
 
         $this->connect();
@@ -323,7 +323,7 @@ class Manager{
         $query->fetch_all(MYSQLI_ASSOC);
 
         if ($query->num_rows > 0) {
-            array_push($errors, "Email gia' utilizzata");
+            array_push($errors, '<a href="#email">Email già utilizzata</a>');
         }
 
         if(count($errors)==0){
