@@ -23,6 +23,21 @@ textarea{
 a{
     font-weight: bold;
 }
+
+.screenReaderOnly{
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+.screenReaderOnly:focus{
+    height: auto;
+    position: static;
+    width: auto;
+    margin-left: 2em;
+}
 /*
 ===================
 SEZIONE HOME
@@ -98,7 +113,7 @@ SEZIONE HOME
     border-bottom: 0.2em solid rgb(131, 121, 121);
 }
 .infoPost{
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .postContent img{
     width: 50%;
@@ -339,10 +354,6 @@ SEZIONE NUOVO POST
     margin-left: 20%;
 }
 
-#newPostForm form, #annulla{
-    display: inline;
-}
-
 
 /*text area contenuto*/
 .inputForm{
@@ -389,7 +400,7 @@ SEZIONE LOGIN PAGE
 
 .login h1{
     float: left;
-    padding: 3em 0 1em 0;
+    padding: 4em 0 1em 0;
     width: 55%;
     text-align: center;
 }
@@ -418,7 +429,7 @@ SEZIONE LOGIN PAGE
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
     margin-top: 5%;
 }
 .login input[type="submit"]{
@@ -432,13 +443,19 @@ SEZIONE LOGIN PAGE
     margin-bottom: 2em;
 }
 
-.erroriLogin{
-    color: #a32929;
+.errori{
+    width: 60%;
+    padding: 0.3em;
+    background-color: #a32929;
+    color: white;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1em;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
 }
-.erroriForm{
-    color: #a32929;
-}
-
 /*
 .login button{
     display: block;
@@ -667,7 +684,6 @@ SEZIONE Modifica PROFILO - Registrazione
     background-color: #005fac9f;
 }
 
-.alignFormButton, 
 .formRegistrazione,
 #search form{
     display: inline;

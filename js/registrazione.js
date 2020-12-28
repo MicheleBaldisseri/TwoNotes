@@ -13,7 +13,7 @@ var dettagli_form = {
 function mostraErrore(input) {
 
     var elemento = document.createElement("strong");
-    elemento.className = "erroriForm"; //classe degli errori
+    elemento.className = "errori"; //classe degli errori
    
     if(input.id == "conf-psw" || input.id == "dataNascita") //conferma password
         elemento.appendChild(document.createTextNode(dettagli_form[input.id]));    

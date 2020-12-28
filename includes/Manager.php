@@ -70,11 +70,11 @@ class Manager{
                         }
                         
         $string .=      '<p class="infoPost">Pubblicato da 
-                            <a href="profilo.php?username='. stripslashes($post['utente']) .'" class="linkToButton">' . stripslashes($post['utente']) . '</a>  
+                            <a href="profilo.php?username='. stripslashes($post['utente']) .'">' . stripslashes($post['utente']) . '</a>  
                             il '.$new_date.'
                         </p>
-                        <a class="goToPost linkToButton" href="postPage.php?idPost='.$post['postID'].'">Vai al post</a>
-                        <a class="linkToButton" href="#percorso">Torna su</a> 
+                        <a class="goToPost" href="postPage.php?idPost='.$post['postID'].'">Vai al post</a>
+                        <a href="#percorso">Torna su</a> 
                     </div>              
                 </li>';
         return $string;
@@ -236,7 +236,7 @@ class Manager{
 
         $string = '<li>
             <div class="singleComment shadow-div round_div">
-                <p class="infoPost"><a href="profilo.php?username='.stripslashes($comment['utente']).'" class="linkToButton">'.stripslashes($comment['utente'])
+                <p class="infoPost"><a href="profilo.php?username='.stripslashes($comment['utente']).'">'.stripslashes($comment['utente'])
                 .'</a> '.$new_date.'</p>
                 <p>'.stripslashes($comment['contenuto']).'</p>';
 
