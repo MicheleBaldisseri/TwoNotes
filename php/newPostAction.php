@@ -20,16 +20,16 @@ $values['altImmagine'] = isset($_POST['altImmagine']) ? strip_tags(addslashes($_
 $values['contenuto'] = isset($_POST['contenuto']) ? strip_tags(addslashes($_POST['contenuto'])) : null;
 $values['username'] = $user->getUsername();
 
-if(empty($values['titolo'])) array_push($errors, "Compila il campo Titolo");
-if(empty($values['altImmagine']) && !empty($values['immagine'])) array_push($errors, "Compila il campo Alt Immagine");
-if(empty($values['contenuto'])) array_push($errors, "Compila il campo Contenuto");
+if(empty($values['titolo'])) array_push($errors, '<a href="#titolo">Compila il campo Titolo</a>');
+if(empty($values['altImmagine']) && !empty($values['immagine'])) array_push($errors, '<a href="#altImmagine">Compila il campo Alt Immagine</a>');
+if(empty($values['contenuto'])) array_push($errors, '<a href="#contenuto">Compila il campo Contenuto</a>');
 
 $res = $manager->transformString($values['titolo']);
-if(!$res) array_push($errors, "Errore con il titolo del post, controlla i tag di aiuto inseriti");
+if(!$res) array_push($errors, '<a href="#titolo">Errore con il titolo del post, controlla i tag di aiuto inseriti</a>');
 else $values['titolo'] = $res;
 
 $res = $manager->transformString($values['contenuto']);
-if(!$res) array_push($errors, "Errore con il contenuto del post, controlla i tag di aiuto inseriti");
+if(!$res) array_push($errors, '<a href="#contenuto">Errore con il contenuto del post, controlla i tag di aiuto inseriti</a>');
 else $values['contenuto'] = $res;
 
 
