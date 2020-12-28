@@ -443,8 +443,8 @@ SEZIONE LOGIN PAGE
     margin-bottom: 2em;
 }
 
-.erroriLogin{
-    width: 75%;
+.errori{
+    width: 60%;
     padding: 0.3em;
     background-color: #a32929;
     color: white;
@@ -453,24 +453,9 @@ SEZIONE LOGIN PAGE
     margin-left: auto;
     margin-bottom: 1em;
     text-align: center;
-    font-size: 16px;
+    font-size: 1em;
     border-radius: 0.3em 0.3em 0.3em 0.3em;
 }
-
-.erroriForm{
-    width: 45%;
-    padding: 0.3em;
-    background-color: #a32929;
-    color: white;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 1em;
-    text-align: center;
-    font-size: 16px;
-    border-radius: 0.3em 0.3em 0.3em 0.3em;
-}
-
 /*
 .login button{
     display: block;
