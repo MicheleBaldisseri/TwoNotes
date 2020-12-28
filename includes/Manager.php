@@ -291,11 +291,11 @@ class Manager{
                 $user->setSessionVar();
             }else{
                 unset($_SESSION['username']);
-                $_SESSION['loginError'] = "Password errata";
+                $_SESSION['loginError'] = '<a href="#psw">Password errata</a>';
             }
         }else{
             unset($_SESSION['username']);
-            $_SESSION['loginError'] = "Username non esiste";
+            $_SESSION['loginError'] = '<a href="#username">Username non esistente</a>';
         }
     }
 
