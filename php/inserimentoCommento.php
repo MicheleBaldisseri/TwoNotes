@@ -13,7 +13,7 @@ $values['contenuto'] = isset($_POST['contenuto']) ? strip_tags(addslashes($_POST
 $values['idPost'] = isset($_GET['idPost']) ? addslashes($_GET['idPost']) : null;
 $values['username'] = addslashes($user->getUsername());
 
-if(empty($values['contenuto'])) array_push($errors, "Compila il campo contenuto");
+if(empty($values['contenuto'])) array_push($errors, '<a href="#postTextarea">Compila il campo del commento</a>');
 if(empty($values['idPost'])){
     header("Location: errorPage.php");
     exit();
@@ -24,7 +24,7 @@ if(empty($values['username'])){
 }
 
 $res = $manager->transformString($values['contenuto']);
-if(!$res) array_push($errors, "Errore con il contenuto del post, controlla i tag di aiuto inseriti");
+if(!$res) array_push($errors, '<a href="#postTextarea">Errore con il contenuto del commento, controlla i tag di aiuto inseriti</a>');
 else $values['contenuto'] = $res;
 
 if(count($errors)==0){
