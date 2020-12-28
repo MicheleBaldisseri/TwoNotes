@@ -429,7 +429,7 @@ SEZIONE LOGIN PAGE
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
     margin-top: 5%;
 }
 .login input[type="submit"]{
@@ -444,10 +444,31 @@ SEZIONE LOGIN PAGE
 }
 
 .erroriLogin{
-    color: #a32929;
+    width: 75%;
+    padding: 0.3em;
+    background-color: #a32929;
+    color: white;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1em;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
 }
+
 .erroriForm{
-    color: #a32929;
+    width: 45%;
+    padding: 0.3em;
+    background-color: #a32929;
+    color: white;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1em;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
 }
 
 /*
