@@ -9,7 +9,7 @@
     <meta name="keywords" content="login, TwoNotes"/>
     <meta name="author" content="Stefano Dal Poz"/>
     <meta name="language" content="italian it"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
     <script type="text/javascript" src="../js/checkLogin.js"></script>
@@ -24,6 +24,9 @@
     </div>
 
     <div id="menu">
+        <a href="#formLogin" class="screenReaderOnly">Accedi al tuo account</a>
+        <a href="#button_register" class="screenReaderOnly">Registrati</a>
+
         <ul class="listaSenzaPunti">
             <li><a xml:lang="en" href="index.php">Home</a></li>
             <li><a href="aboutUs.php">Chi siamo</a></li>
@@ -32,7 +35,7 @@
     </div>
     <div class="contenitoreCentrale round_div shadow-div login">
         <h1>Benvenuto nel social musicale</h1>
-        <img src="../img/TwoNotes-4.svg" alt="Logo Two Notes caratterizzato dalla scritta Two Notes Unita da due note musicali sulla lettera o"/>
+        <img src="../img/TwoNotes-4.svg" alt=""/>
         <h2>ACCEDI</h2>
 
         <ERRORELOGIN/>
@@ -54,6 +57,7 @@
         <h2>NON HAI UN ACCOUNT?</h2>
         <a href="registrazione.php" id="button_register">Registrati</a>
         
+        <a href="#menu" class="screenReaderOnly">Vai al menù</a>
     </div>
     <div id="footer">
         <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>

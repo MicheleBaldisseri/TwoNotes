@@ -36,6 +36,7 @@ a{
     height: auto;
     position: static;
     width: auto;
+    margin-left: 2em;
 }
 /*
 ===================
@@ -112,7 +113,7 @@ SEZIONE HOME
     border-bottom: 0.2em solid rgb(131, 121, 121);
 }
 .infoPost{
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .postContent img{
     width: 50%;
@@ -353,10 +354,6 @@ SEZIONE NUOVO POST
     margin-left: 20%;
 }
 
-#newPostForm form, #annulla{
-    display: inline;
-}
-
 
 /*text area contenuto*/
 .inputForm{
@@ -403,7 +400,7 @@ SEZIONE LOGIN PAGE
 
 .login h1{
     float: left;
-    padding: 3em 0 1em 0;
+    padding: 4em 0 1em 0;
     width: 55%;
     text-align: center;
 }
@@ -681,7 +678,6 @@ SEZIONE Modifica PROFILO - Registrazione
     background-color: #005fac9f;
 }
 
-.alignFormButton, 
 .formRegistrazione,
 #search form{
     display: inline;

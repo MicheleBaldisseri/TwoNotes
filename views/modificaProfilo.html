@@ -25,6 +25,8 @@
     </div>
 
     <div id="menu">
+        <a href="#formBase" class="screenReaderOnly">Vai alla modifica</a>
+
         <ul class="listaSenzaPunti">
             <li><a xml:lang="en" href="index.php">Home</a></li>
             <li><a href="aboutUs.php">Chi siamo</a></li>
@@ -82,7 +84,6 @@
                     <label for="oldpsw" class="labelleft">Vecchia password:</label>
                     <input type="password" name="oldpsw" id="oldpsw" class="input" placeholder="Vecchia password" required="required">
 
-                    <!--vecchio id = newpsw-->
                     <label for="psw" class="labelleft">Nuova password:</label>
                     <span>
                         <input type="password" name="psw" id="psw" class="input" placeholder="Nuova password" >
@@ -96,6 +97,8 @@
                 <input type="submit" class="round-button general-button" value="Salva"/>
             </form>    
             <a href="profilo.php?username=<VALOREUSERNAME/>" class="alignFormButton">Annulla</a>
+
+            <a href="#menu" class="screenReaderOnly">Vai al menù</a>
     </div>
     
     <div id="footer">
