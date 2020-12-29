@@ -1,5 +1,12 @@
 <?php
 
+$supported_image = array(
+    'gif',
+    'jpg',
+    'jpeg',
+    'png'
+);
+
 session_start();
 require_once '../includes/Manager.php';
 
@@ -37,6 +44,9 @@ if(!empty($values['immagine'])){
     $size = filesize($file_tmp);
 
     if($size>500*1024) array_push($errors, '<a href="#myfile">Immagine troppo grande! Inserisci un immagine minore di 500 KB</a>');
+
+    $ext = strtolower(pathinfo($values['immagine'], PATHINFO_EXTENSION));
+    if (!in_array($ext, $supported_image)) array_push($errors, '<a href="#myfile">Estensione immagine non valida</a>');
 }
 
 
