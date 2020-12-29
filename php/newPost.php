@@ -16,10 +16,12 @@ if($user->getUsername()!=null){
 		</ul>
 	</div>';
 }else{
-	unset($_SESSION['loginError']);
-    $_SESSION['loginError'] = "Devi loggarti prima di scrivere un nuovo post!";
+    unset($_SESSION['loginError']);
+    $error = array();
+    array_push($errors,"Devi loggarti prima di scrivere un nuovo post!");
+    $_SESSION['loginError'] = $errors;
     header("Location: login.php");
-    exit();	
+    exit();
 }
 $paginaHTML = str_replace("<HEADERDESTRO/>", $stringHeader, $paginaHTML);
 

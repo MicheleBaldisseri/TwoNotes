@@ -13,6 +13,7 @@ if(!$user->isAdmin() || !isset($_GET['id'])){
 
 $res = $manager->deletePost($_GET['id']);
 
+
 if($res){
     header("Location: index.php");
     $_SESSION['success'] = "Post eliminato con successo!";

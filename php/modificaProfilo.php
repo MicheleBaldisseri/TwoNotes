@@ -57,7 +57,8 @@ if($user->getUsername()!=null){
 	else $paginaHTML = str_replace('SELECTEDA','',$paginaHTML);
 	
 }else{
-	//Gestire errore database
+	header("Location: errorPage.php");
+	exit();	
 }
 
 echo $paginaHTML;
