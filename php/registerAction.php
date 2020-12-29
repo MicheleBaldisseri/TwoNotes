@@ -56,6 +56,19 @@ if(count($errors)==0){
     }
     if($values['password']!=$values['confermaPassword'])array_push($errors, '<a href="#conf-psw">Le password non corrispondono</a>');
 
+    if (!preg_match("/^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/", $values['nome'])) 
+        array_push($errors, '<a href="#nome">Per il campo Nome sono ammesse solo lettere, da 2 a 20 caratteri</a>');
+    if (!preg_match("/^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/", $values['cognome'])) 
+        array_push($errors, '<a href="#cognome">Per il campo Cognome sono ammesse solo lettere, da 2 a 20 caratteri</a>');
+    if (!preg_match("/^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/", $values['provenienza'])) 
+        array_push($errors, '<a href="#provenienza">Per il campo Provenienza sono ammesse solo lettere, da 2 a 20 caratteri</a>');
+    if (!preg_match("/^[\.\w]{2,20}$/", $values['username'])) 
+        array_push($errors, '<a href="#username">Per il campo Username sono ammessi numeri e lettere, da 2 a 20 caratteri</a>');
+    if (!preg_match("/[\S]{2,32}@[\w]{2,32}((?:\.[\w]+)+)?(\.(it|com|edu|gov|org|net|info)){1}/", $values['email'])) 
+        array_push($errors, '<a href="#email">Formato e-mail inserito non valido</a>');
+    if (!preg_match("/^[\w(#$%&=!)]{4,20}$/", $values['password'])) 
+        array_push($errors, '<a href="#psw">Sono ammessi numeri, lettere e i simboli #,$,%,&,=,! da 5 a 20 caratteri</a>');
+
     if(count($errors)==0){
         if($manager->register($values)){
             $manager->login($values['username'],$values['password']);

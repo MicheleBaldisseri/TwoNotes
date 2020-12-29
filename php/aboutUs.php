@@ -24,7 +24,7 @@ if($user->getUsername()!=null){
 			<li><a href="login.php" xml:lang="en">Login</a> oppure</li>
 			<li><a href="registrazione.php">Registrati</a></li>
 		</ul>
-	</div>';	
+	</div>';
 }
 $paginaHTML = str_replace("<HEADERDESTRO/>", $stringHeader, $paginaHTML);
 
