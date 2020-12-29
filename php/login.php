@@ -10,13 +10,20 @@
         header("Location: index.php");
         exit();	
     }
-    
-    $error = '';
+
+    $stringErrors = '';
     if(isset($_SESSION['loginError'])){
-        $error = '<p id="erroreLogin">'.$_SESSION['loginError'].'</p>';
+
+        $stringErrors = "<ul id='loginErrors'>";
+        foreach($_SESSION['loginError'] as $err){
+            $stringErrors .= "<li>".$err."</li>";
+        }
+        $stringErrors .= "</ul>";
+
         unset($_SESSION['loginError']);
     }
-    $paginaHTML = str_replace("<ERRORELOGIN/>", $error, $paginaHTML);
+    
+    $paginaHTML = str_replace("<ERRORELOGIN/>", $stringErrors, $paginaHTML);
 
 
     $un = '';

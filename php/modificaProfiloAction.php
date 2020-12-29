@@ -51,7 +51,7 @@ if(empty($values['confermaPassword']) && !empty($values['newPassword'])) array_p
 
 if(count($errors)==0){
     if(!filter_var($values['email'], FILTER_VALIDATE_EMAIL)){
-        array_push($errors, '<a href="#email">Email non valida</a>');
+        array_push($errors, '<a href="#email">Formato e-mail inserito non valido</a>');
     }
     if(!checkValidDate($values['dataNascita'])){
         array_push($errors, '<a href="#dataNascita">Formato della data di nascita non valida. Formato corretto: gg/mm/yyyy</a>');
@@ -69,8 +69,8 @@ if(count($errors)==0){
         array_push($errors, '<a href="#cognome">Per il campo Cognome sono ammesse solo lettere, da 2 a 20 caratteri</a>');
     if (!preg_match("/^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/", $values['provenienza'])) 
         array_push($errors, '<a href="#provenienza">Per il campo Provenienza sono ammesse solo lettere, da 2 a 20 caratteri</a>');
-    if (!preg_match("/^[\.\w]{2,20}$/", $values['username'])) 
-        array_push($errors, '<a href="#username">Per il campo Username sono ammessi numeri e lettere, da 2 a 20 caratteri</a>');
+    if (!preg_match("/^[\.\w-]{2,20}$/", $values['username'])) 
+        array_push($errors, '<a href="#username">Per il campo Username sono ammessi numeri, lettere e i simboli . e - , da 2 a 20 caratteri</a>');
     if (!preg_match("/[\S]{2,32}@[\w]{2,32}((?:\.[\w]+)+)?(\.(it|com|edu|gov|org|net|info)){1}/", $values['email'])) 
         array_push($errors, '<a href="#email">Formato e-mail inserito non valido</a>');
     if ($values['newPassword']!=null && !preg_match("/^[\w(#$%&=!)]{4,20}$/", $values['newPassword'])) 

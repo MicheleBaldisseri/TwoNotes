@@ -286,16 +286,20 @@ class Manager{
 
     public function login($username,$password){
         $user = new User($this->dbconnection);
+        $errors = array();
+
         if($user->recover($username)){
             if($user->isPasswordCorrect($password)){
                 $user->setSessionVar();
             }else{
                 unset($_SESSION['username']);
-                $_SESSION['loginError'] = '<a href="#psw">Password errata</a>';
+                array_push($errors, '<a href="#psw">Password errata</a>');
+                $_SESSION['loginError'] = $errors;
             }
         }else{
             unset($_SESSION['username']);
-            $_SESSION['loginError'] = '<a href="#username">Username non esistente</a>';
+            array_push($errors, '<a href="#username">Username non esistente</a>');
+            $_SESSION['loginError'] = $errors;
         }
     }
 
