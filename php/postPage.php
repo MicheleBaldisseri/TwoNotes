@@ -71,11 +71,11 @@ if(isset($_GET['idPost'])){
 $stringErrors = '';
 if(isset($_SESSION['commentErrors'])){
 
-    $stringErrors = "<div id='commentErrors'>";
+    $stringErrors = "<ul id='phpErrors'>";
     foreach($_SESSION['commentErrors'] as $error){
-        $stringErrors .= "<p>".$error."</p>";
+        $stringErrors .= "<li>".$error."</li>";
     }
-    $stringErrors .= "</div> ";
+    $stringErrors .= "</ul> ";
 
     unset($_SESSION['commentErrors']);
 

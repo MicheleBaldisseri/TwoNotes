@@ -14,11 +14,11 @@ if($user->getUsername()!=null){
 $stringErrors = '';
 if(isset($_SESSION['registerErrors'])){
 
-    $stringErrors = "<div id='registerErrors'>";
+    $stringErrors = "<ul id='phpErrors'>";
     foreach($_SESSION['registerErrors'] as $error){
-        $stringErrors .= "<p>".$error."</p>";
+        $stringErrors .= "<li>".$error."</li>";
     }
-    $stringErrors .= "</div> ";
+    $stringErrors .= "</ul> ";
 
     unset($_SESSION['registerErrors']);
 

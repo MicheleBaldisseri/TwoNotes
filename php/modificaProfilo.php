@@ -27,11 +27,11 @@ $stringErrors = '';
 if(isset($_SESSION['modificaErrors'])){
     //mostrare errori form
 
-    $stringErrors = "<div id='registerErrors'>";
+    $stringErrors = "<ul id='phpErrors'>";
     foreach($_SESSION['modificaErrors'] as $error){
-        $stringErrors .= "<p>".$error."</p>";
+        $stringErrors .= "<li>".$error."</li>";
     }
-    $stringErrors .= "</div> ";
+    $stringErrors .= "</ul> ";
 
 	unset($_SESSION['modificaErrors']);
 }
