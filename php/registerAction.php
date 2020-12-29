@@ -67,7 +67,7 @@ if(count($errors)==0){
     if (!preg_match("/[\S]{2,32}@[\w]{2,32}((?:\.[\w]+)+)?(\.(it|com|edu|gov|org|net|info)){1}/", $values['email'])) 
         array_push($errors, '<a href="#email">Formato e-mail inserito non valido</a>');
     if (!preg_match("/^[\w(#$%&=!)]{4,20}$/", $values['password'])) 
-        array_push($errors, '<a href="#psw">Sono ammessi numeri, lettere e i simboli #,$,%,&,=,! da 5 a 20 caratteri</a>');
+        array_push($errors, '<a href="#psw">Per il campo Password sono ammessi numeri, lettere e i simboli #,$,%,&,=,! da 5 a 20 caratteri</a>');
 
     if(count($errors)==0){
         if($manager->register($values)){
