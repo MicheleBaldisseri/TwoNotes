@@ -32,6 +32,13 @@ $res = $manager->transformString($values['contenuto']);
 if(!$res) array_push($errors, '<a href="#contenuto">Errore con il contenuto del post, controlla i tag di aiuto inseriti</a>');
 else $values['contenuto'] = $res;
 
+if(!empty($values['immagine'])){
+    $file_tmp = $_FILES['myfile']['tmp_name'];
+    $size = filesize($file_tmp);
+
+    if($size>500*1024) array_push($errors, '<a href="#myfile">Immagine troppo grande! Inserisci un immagine minore di 500 KB</a>');
+}
+
 
 if(count($errors)==0){
 
