@@ -202,6 +202,18 @@ class Manager{
         return $query;
     }
 
+    public function recoverPostImage($id){
+        $this->connect();
+        $this->dbconnection->query('SET NAMES utf8');
+        $select = "  SELECT immagine
+                    FROM post
+                    WHERE postID = '".$id."'";
+        $query = $this->dbconnection->query($select);
+        $this->disconnect();
+        $res = $query->fetch_all(MYSQLI_ASSOC);
+        return ($res ? $res[0] : null);
+    }
+
     //OPERAZIONI CON COMMENTI ---------------------------------------------------------------------------
 
     private function getComments($idPost){
