@@ -506,7 +506,7 @@ SEZIONE PROFILO
     margin-left: 1.2em;
 }
 #profile h1{
-    margin-bottom: 1em;
+    margin: 0.5em 0em 1em 0em;
 }
 #profile a{
     float: right;
@@ -619,10 +619,12 @@ SEZIONE 404page
     margin: 1em auto auto auto;
 }
 #success_div p{
+    display: block;
     padding: 0.8em;
     color: #128a40;
     font-weight: bold;
     font-size: 1em;
+    margin: 0em;
 }
 .errori{
     color: #a32929;
