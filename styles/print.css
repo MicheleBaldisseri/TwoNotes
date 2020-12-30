@@ -15,10 +15,12 @@ h2{
     font-size: 1em;
     margin: 0.5em 0 0.5em 0;
 }
+::placeholder{
+    color: transparent;
+}
 p, input[type="submit"]{
     margin: 0.5em 0 0.5em 0;
 }
-
 #menu, #header, .adminLink, .screenReaderOnly{
     display: none;
 }
@@ -84,7 +86,7 @@ ABOUT US
 }
 /*
 ==============
-ABOUT US
+CONTATTI
 ==============
 */
 #content img{
@@ -93,6 +95,14 @@ ABOUT US
 #content em{
     white-space: nowrap;
     font-weight: bold;
+}
+/*
+==============
+PROFILO
+==============
+*/
+.sezione a{
+    display: none;
 }
 /*
 ==============

@@ -23,7 +23,6 @@ textarea{
 a{
     font-weight: bold;
 }
-
 .screenReaderOnly{
     position: absolute;
     left: -10000px;
