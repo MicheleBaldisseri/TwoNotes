@@ -69,5 +69,32 @@ SINGLE POST
 #newComment{
     display: none;
 }
-
-
+/*
+==============
+LOGIN
+==============
+*/
+.contenitoreCentrale img{
+    display: none;
+}
+/*
+==============
+REGISTRAZIONE
+==============
+*/
+/*
+#formBase fieldset{
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 1.25em;
+}
+#formBase input[type="submit"]{
+    margin: 1em;
+}
+.labelleft{
+    text-align: right;
+    font-size: 1.4em;
+    width: 34%;
+    display:inline-block;
+    padding: 1em 0 1em 0;
+}*/
