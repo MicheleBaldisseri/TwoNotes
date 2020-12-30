@@ -1,0 +1,73 @@
+*{
+	padding: 0em;
+    margin: 0em;
+    color: black;
+}
+html{
+	font-family: Georgia, "Times New Roman", serif; 
+	margin: auto;
+}
+h1{
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+}
+h2{
+    font-size: 1em;
+    margin: 0.5em 0 0.5em 0;
+}
+p{
+    margin: 0.5em 0 0.5em 0;
+}
+#header img{
+    width: 15%;
+    margin: 1em 0 1em 0;
+}
+#menu, #header ul, .adminLink, .screenReaderOnly{
+    display: none;
+}
+#percorso{
+    border-top: 0.1em solid black;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 0.5em;
+}
+#breadcrumb-colore-parola{
+    font-weight: bold;
+}
+#footer{
+    border-top: 0.1em solid black;
+    border-bottom: 0.1em solid black;
+}
+/*
+==============
+INDEX
+==============
+*/
+#search, .printHide, .goToPost{
+    display: none;
+}
+#listaPost li{
+    border-top: 0.1em dotted black;
+}
+.postContent img{
+    width: 20%;
+}
+.navigazione{
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+.navigazione li{
+    display: inline;
+}
+/*
+==============
+SINGLE POST
+==============
+*/
+#singlePost img{
+    width: 20%;
+}
+#newComment{
+    display: none;
+}
+
+

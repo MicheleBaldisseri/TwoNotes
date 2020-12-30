@@ -44,7 +44,6 @@ SEZIONE HOME
 ===================
 */
 #indexContent{
-    /*border-left: solid 2px #504764af;*/
     width: 55%;
     margin-left: 30%;
 }
@@ -61,26 +60,6 @@ SEZIONE HOME
     text-align: center; 
     font-weight: bold;
 }
-/* Barra destra dei tags */
-/*
-#rightSidebar{
-    float: right;  
-    width: 20%;
-    padding: 0.5em;
-    height: fit-content;
-    background-color: #69b2ee5d;
-    margin-right: 2em;
-    margin-top: 2em;
-}
-#rightSidebar h2{
-    text-align: center;
-    padding: 0.5em;
-}
-#rightSidebar li{
-    text-align: center;
-    padding: 0.5em;
-}
-*/
 /* Breadcrumb */
 #percorso{
     background-color: #005eac;
@@ -91,13 +70,8 @@ SEZIONE HOME
     color: white;
 }
 #percorso span{
-    color: rgb(226, 203, 98);
+    color: rgb(255, 226, 98);
 }
-/*Colore della parola della pagina dove ci troviamo*/
-/*#breadcrumb-colore-parola{
-    color: rgb(226, 203, 98);
-}*/
-
 /* Lista dei post*/
 .postContent{
     width: 85%;
@@ -105,7 +79,6 @@ SEZIONE HOME
     margin-top: 2em;
     padding: 1em;
     overflow-wrap: break-word;
-
 }
 .postContent h1{
     font-size: 1.5em;
@@ -126,7 +99,6 @@ SEZIONE HOME
 .postContent a{
     width: 2em;
     font-size: 0.9em;
-   /* background-color: #69b2ee;*/
     padding: 0.6em;
 }
 .postContent p{
@@ -134,11 +106,9 @@ SEZIONE HOME
     margin-bottom: 1.2em;
     text-align: start;
 }
-
 .contenutoPost{
     white-space: pre-wrap;
 }
-
 .goToPost{
     margin-right: 6%;
 }
@@ -148,7 +118,6 @@ SEZIONE HOME
     margin-top: 1em;
     color: #1040a7;
 }
-
 #searchResults{
     text-align: center;
 }
@@ -156,17 +125,6 @@ SEZIONE HOME
 ===================
     GENERALI
 ===================
-*/
-/*
-.linkToButton{
-    font-size: 1.3em;
-    
-    color: black;
-    font-weight: bold;
-    padding: 0.5em;
-    border-radius: 1em;
-    
-}
 */
 .listaSenzaPunti{
     list-style-type: none;
@@ -210,18 +168,12 @@ SEZIONE CONTENITORE
     display: block;
 }
 .general-button{
-    /*padding: 0.5em;*/
-    /*margin: 0.6em;*/
-    /*font-size: 1em;*/
     cursor: pointer;
-    /*text-decoration: underline;*/
-    /*min-width: min-content;*/
 }
 .navigazione{
     margin-top: 1.5em;
     text-align: center;
 }
-
 .navigazione li{
     display: inline;
     padding: 1em;
@@ -286,7 +238,6 @@ SEZIONE SINGOLO POST
     overflow-wrap: break-word;
 }
 #singlePost a{
-    /*background-color: #69b2ee;*/
     font-size: 1em;
 }
 #postTextarea{
@@ -326,14 +277,6 @@ SEZIONE SINGOLO POST
 SEZIONE NUOVO POST
 ===================
 */
-/*
-#newPostForm{
-    margin-left: 25%;
-    width: 55em;
-    height: fit-content;
-    margin-top: 1em;
-}
-*/
 #newPostForm label{
     display: block;
     font-weight: bold;
@@ -353,8 +296,6 @@ SEZIONE NUOVO POST
 #newPostForm input[type="submit"]{
     margin-left: 20%;
 }
-
-
 /*text area contenuto*/
 .inputForm{
     width: 50%;
@@ -373,7 +314,6 @@ SEZIONE HEADER
     padding: 1.0em;
     min-height: 3em;
     background-color: whitesmoke;
-    /*box-shadow: 3px 3px 20px 3px #ccc;*/
 }
 #header div{
     margin-top: 0.7em;
@@ -442,30 +382,6 @@ SEZIONE LOGIN PAGE
 .login a{
     margin-bottom: 2em;
 }
-
-.errori{
-    width: 60%;
-    padding: 0.3em;
-    background-color: #a32929;
-    color: white;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 1em;
-    text-align: center;
-    font-size: 1em;
-    border-radius: 0.3em 0.3em 0.3em 0.3em;
-}
-/*
-.login button{
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 0%;
-    margin-bottom: 0%;
-    width: 35%;
-}
-*/
 #formLogin label{
     display: block;
     margin-right: auto;
@@ -502,25 +418,10 @@ SEZIONE BOTTONI
     max-width: 35%;
     min-width: fit-content;
 }
-
-/*.buttonAccedi{
-    border: none;
-    border-radius: 20px 20px 20px 20px;
-    padding: 1em 3em 1em 3em;
-    font-size: 1.3em;
-    font-weight: bold;
-}*/
-
 .orange-button{
     background-color: #ff4b2bc4;
     color: black;
 }
-/*
-.yellow-button{
-    background-color: #ffd82bc4;
-    color: black;
-}
-*/
 .round-button{
     border: none;
     border-radius: 1.25em 1.25em 1.25em 1.25em;
@@ -546,15 +447,6 @@ SEARCH BAR - Home Page
     width: 72%;
     margin-top: 1em;
 }
-/*
-.search-form{
-    width: 80%;
-}
-.search-form form{
-    width: 100%;
-}
-*/
-
 #search input[type="text"]{
     width: 50%;
     margin: 1%;
@@ -568,25 +460,9 @@ SEARCH BAR - Home Page
 #search input:hover{
     box-shadow: 0.2em 0.2em 0.2em 0.2em #ccc
 }
-
 #search a{
     margin-left: 2em;
 }
-
-/*
-.post-container{
-    margin-top: 0.9em; 
-}
-*/
-/*bottone creazione nuovo post
-#post-btn{
-    
-    float: right;
-    background-color: rgb(218, 218, 218);
-    cursor: pointer;
-    margin-left: 1em;
-}
-*/
 /*
 =====================
 SEZIONE REGISTRAZIONE
@@ -603,27 +479,16 @@ SEZIONE REGISTRAZIONE
 .inputright{
     width: 60%;
 }
-
 .inputsex{
-    /*
-    text-align: right;
-    width: 13%;
-    display:inline-block;
-    font-size: 1.2em;*/
     margin-left: 5%;
 }
-
 .formRegistrazione{
     padding-left: 2em;
     padding-right: 2em;
 }
 .formRegistrazione input[type="radio"] {
     margin: 0.6em 0.6em 0em 0em;
-}/*
-.formRegistrazione input[type="submit"] {
-    margin-left: 25em;
 }
-*/
 /*
 ===================
 SEZIONE PROFILO
@@ -688,7 +553,6 @@ SEZIONE Modifica PROFILO - Registrazione
 #search form{
     display: inline;
 }
-
 /*
 ==============
 SEZIONE FOOTER
@@ -742,7 +606,36 @@ SEZIONE 404page
 }
 /*
 ==============
-responsive search bar
+ ERRORI - SUCCESSO - ADMIN
+==============
+*/
+.adminLink{
+    margin-top: 1em;
+}
+#success_div{
+    text-align: center;
+    width: fit-content;
+    margin: 1em auto auto auto;
+    color: #128a40;
+    font-weight: bold;
+    font-size: 1em;
+}
+.errori{
+    color: #a32929;
+    display: block;
+    text-align: center;
+    font-size: 1em;
+}
+#phpErrors {
+    margin: 0em 0em 1em 0em;
+    text-align: center;
+}
+#phpErrors a{
+    color: #a32929;
+}
+/*
+==============
+  RESPONNSIVE
 ==============
 */
 @media only screen and (max-width: 1350px) {
@@ -781,3 +674,4 @@ responsive search bar
         margin-left: 50%;   
     }       
   }
+

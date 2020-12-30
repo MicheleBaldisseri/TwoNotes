@@ -74,7 +74,7 @@ class Manager{
                             il '.$new_date.'
                         </p>
                         <a class="goToPost" href="postPage.php?idPost='.$post['postID'].'">Vai al post</a>
-                        <a href="#percorso">Torna su</a> 
+                        <a class="printHide" href="#percorso">Torna su</a> 
                     </div>              
                 </li>';
         return $string;
@@ -180,11 +180,11 @@ class Manager{
             }    
             $string .= '<p class="infoPost">
                 Pubblicato da 
-                <a href="profilo.php?username='.stripslashes($post['utente']).'" class="linkToButton">'.stripslashes($post['utente']).'</a> 
+                <a href="profilo.php?username='.stripslashes($post['utente']).'">'.stripslashes($post['utente']).'</a> 
                 il '.$new_date.'
             </p>';
 
-            if($user->isAdmin()) $string .= '<a href="deletePost.php?id='.$post['postID'].'">Elimina il post</a>';
+            if($user->isAdmin()) $string .= '<a class="adminLink" href="deletePost.php?id='.$post['postID'].'">Elimina il post</a>';
             
         }else{
             $string = "Non è stato trovato il post, ci scusiamo.";
@@ -252,7 +252,7 @@ class Manager{
                 .'</a> '.$new_date.'</p>
                 <p>'.stripslashes($comment['contenuto']).'</p>';
 
-                if($user->isAdmin()) $string .= '<a href="deleteComment.php?id='.$comment['commentoID'].'&idPost='.$comment['post'].'">Elimina il commento</a>';                         
+                if($user->isAdmin()) $string .= '<a class="adminLink" href="deleteComment.php?id='.$comment['commentoID'].'&idPost='.$comment['post'].'">Elimina il commento</a>';                         
            $string .= ' </div>
         </li>';
 

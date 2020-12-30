@@ -14,7 +14,7 @@
     $stringErrors = '';
     if(isset($_SESSION['loginError'])){
 
-        $stringErrors = "<ul id='phpErrors'>";
+        $stringErrors = "<ul id='phpErrors' class='listaSenzaPunti'>";
         foreach($_SESSION['loginError'] as $err){
             $stringErrors .= "<li>".$err."</li>";
         }
