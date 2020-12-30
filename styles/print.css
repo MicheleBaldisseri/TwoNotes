@@ -15,14 +15,11 @@ h2{
     font-size: 1em;
     margin: 0.5em 0 0.5em 0;
 }
-p{
+p, input[type="submit"]{
     margin: 0.5em 0 0.5em 0;
 }
-#header img{
-    width: 15%;
-    margin: 1em 0 1em 0;
-}
-#menu, #header ul, .adminLink, .screenReaderOnly{
+
+#menu, #header, .adminLink, .screenReaderOnly{
     display: none;
 }
 #percorso{
@@ -79,22 +76,55 @@ LOGIN
 }
 /*
 ==============
+ABOUT US
+==============
+*/
+#content_aboutUs img{
+    display: none;
+}
+/*
+==============
+ABOUT US
+==============
+*/
+#content img{
+    display: none;
+}
+#content em{
+    white-space: nowrap;
+    font-weight: bold;
+}
+/*
+==============
+NEW POST
+==============
+*/
+#newPostForm label,#newPostForm input{
+    display: block;
+    margin: 0.5em 0 0.5em 0;
+}
+#newPostForm textarea{
+    width: 40%;
+    resize: none;
+}
+#newPostForm a{
+    display: none;
+}
+/*
+==============
 REGISTRAZIONE
 ==============
 */
-/*
-#formBase fieldset{
-    padding: 1em;
-    margin-top: 1em;
-    border-radius: 1.25em;
+#formBase a{
+    display: none;
 }
-#formBase input[type="submit"]{
-    margin: 1em;
+#formBase label{
+    display: block;
+    margin: 0.5em 0 0.5em 0;
 }
-.labelleft{
-    text-align: right;
-    font-size: 1.4em;
-    width: 34%;
-    display:inline-block;
-    padding: 1em 0 1em 0;
-}*/
+#formBase fieldset, #formBase legend{
+    padding: 0 0.6em 0.6em 0.6em;
+}
+#formBase legend{
+    margin: 0;
+}

@@ -618,6 +618,9 @@ SEZIONE 404page
     text-align: center;
     width: fit-content;
     margin: 1em auto auto auto;
+}
+#success_div p{
+    padding: 0.8em;
     color: #128a40;
     font-weight: bold;
     font-size: 1em;

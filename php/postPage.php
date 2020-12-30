@@ -33,7 +33,7 @@ $paginaHTML = str_replace("<MESSAGGIOAUTENTICAZIONE/>", $messaggioAutenticazione
 
 $success = '';
 if(isset($_SESSION['success'])){
-	$success = '<div id="success_div" class="round_div shadow-div">'.$_SESSION['success'].'</div>';
+	$success = '<div id="success_div" class="round_div shadow-div"><p>'.$_SESSION['success'].'</p></div>';
 	unset($_SESSION['success']);
 }
 $paginaHTML = str_replace("<SUCCESS/>", $success, $paginaHTML);
