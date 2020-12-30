@@ -71,7 +71,7 @@ if(isset($_GET['idPost'])){
 $stringErrors = '';
 if(isset($_SESSION['commentErrors'])){
 
-    $stringErrors = "<ul id='phpErrors'>";
+    $stringErrors = "<ul id='phpErrors' class='listaSenzaPunti'>";
     foreach($_SESSION['commentErrors'] as $error){
         $stringErrors .= "<li>".$error."</li>";
     }

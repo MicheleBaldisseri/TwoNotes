@@ -28,7 +28,7 @@ $paginaHTML = str_replace("<HEADERDESTRO/>", $stringHeader, $paginaHTML);
 $stringErrors = '';
 if(isset($_SESSION['postErrors'])){
 
-    $stringErrors = "<ul id='phpErrors'>";
+    $stringErrors = "<ul id='phpErrors' class='listaSenzaPunti'>";
     foreach($_SESSION['postErrors'] as $error){
         $stringErrors .= "<li>".$error."</li>";
     }

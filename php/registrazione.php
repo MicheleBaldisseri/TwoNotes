@@ -14,7 +14,7 @@ if($user->getUsername()!=null){
 $stringErrors = '';
 if(isset($_SESSION['registerErrors'])){
 
-    $stringErrors = "<ul id='phpErrors'>";
+    $stringErrors = "<ul id='phpErrors' class='listaSenzaPunti'>";
     foreach($_SESSION['registerErrors'] as $error){
         $stringErrors .= "<li>".$error."</li>";
     }
