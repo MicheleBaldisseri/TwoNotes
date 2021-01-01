@@ -213,8 +213,8 @@ SEZIONE CONTATTI
     color: #1040a7;
 }
 .sezione h2{
-    margin-top: 2em;
-    font-size: 1.5em;
+    margin-top: 1.2em;
+    font-size: 1.3em;
 }
 .sezione em{
     font-weight: bold;
@@ -509,7 +509,6 @@ SEZIONE PROFILO
     margin: 0.5em 0em 1em 0em;
 }
 #profile a{
-    float: right;
     margin-right: 2em;
 }
 #profile li{
@@ -564,9 +563,15 @@ SEZIONE FOOTER
     color:white;
     text-align: center;
     font-size: 0.7em;
-    padding: 2em 0 2.0em 1.0em;
+    padding: 1.8em 0 1.8em 0;
     font-style: italic;
     background-color: #005eac;
+}
+#imgValidCode{
+    float: left;
+}
+#imgValidCSS{
+    float: right;
 }
 /*
 ==============
@@ -611,12 +616,13 @@ SEZIONE 404page
 ==============
 */
 .adminLink{
+    display: block;
     margin-top: 1em;
 }
 #success_div{
     text-align: center;
     width: fit-content;
-    margin: 1em auto auto auto;
+    margin: 1em auto 1em auto;
 }
 #success_div p{
     display: block;
@@ -631,10 +637,13 @@ SEZIONE 404page
     display: block;
     text-align: center;
     font-size: 1em;
+    font-weight: bold;
 }
 #phpErrors {
     margin: 0em 0em 1em 0em;
     text-align: center;
+    color: #a32929;
+    font-weight: bold;
 }
 #phpErrors a{
     color: #a32929;
@@ -647,34 +656,21 @@ SEZIONE 404page
 @media only screen and (max-width: 1350px) {
     #search{
         text-align: center;
-        /*height: fit-content;*/
     }
-
     #search input[type="text"]{
       width: 90%;
     }
-
     .contenitoreCentrale{
         width: 70%;
     }
-
     .doubleColumns{
         columns: 1;
     }
-
-    #profile{
-        height: 35em;
-    }
-    #profile a{
-        margin-right: 35%;
-    }
-    
     .inputsex{
         display: block;
         text-align: center;
         margin-left: 0;
-    }
-        
+    }  
     #formBase input[type="radio"]{
         display: block;
         margin-left: 50%;   

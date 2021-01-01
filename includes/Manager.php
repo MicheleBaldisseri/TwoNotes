@@ -237,7 +237,7 @@ class Manager{
                 $string .= $this->printSingleComment($comment,$user);
             }
         }else{
-            $string = "Non ci sono commenti!";
+            $string = '<p class="errori">Non ci sono commenti!</p>';
         }
         return $string;
     }
