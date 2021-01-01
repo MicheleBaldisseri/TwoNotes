@@ -94,6 +94,7 @@ class Manager{
     }
 
     public function printNavigazione($currentPage,$pageTotalCount){
+        if($pageTotalCount==1) return '';
         $navigazione = '<ul class="listaSenzaPunti navigazione">';
         if($currentPage > 1) {
             $navigazione .= "<li><a href='index.php?page=".($currentPage-1)."'> ← Pagina precedente</a></li>";
@@ -113,6 +114,7 @@ class Manager{
     }
 
     public function printNavigazioneRicerca($currentPage,$pageTotalCount,$search){
+        if($pageTotalCount==1) return '';
         $navigazione = '<ul class="listaSenzaPunti navigazione">';
         if($currentPage > 1) {
             $navigazione .= "<li><a href='ricercaPost.php?page=".($currentPage-1)."&contenutoRicerca=".$search."'> ← Pagina precedente</a></li>";
@@ -216,21 +218,23 @@ class Manager{
 
     //OPERAZIONI CON COMMENTI ---------------------------------------------------------------------------
 
-    private function getComments($idPost){
+    private function getComments($idPost,$page){
         $this->connect();
         $this->dbconnection->query('SET NAMES utf8');
         $select = "  SELECT * 
                     FROM commenti
                     WHERE post = '".$idPost."' 
-                    ORDER BY dataOra DESC";
+                    ORDER BY dataOra DESC
+                    LIMIT 6 OFFSET ".($page-1)*6;
 
         $query = $this->dbconnection->query($select);
         $this->disconnect();
-        return $query->fetch_all(MYSQLI_ASSOC);
+        $res = $query->fetch_all(MYSQLI_ASSOC);
+        return ($res ? $res : null);
     }
 
-    public function printComments($idPost,$user){
-        $comments = $this->getComments($idPost);
+    public function printComments($idPost,$user,$page){
+        $comments = $this->getComments($idPost,$page);
         $string = '';
         if($comments){
             foreach ($comments as $comment) {
@@ -283,6 +287,38 @@ class Manager{
         $query = $this->dbconnection->query($delete);
         $this->disconnect();
         return $query;
+    }
+
+    public function getTotalPageCommentCount($post){
+        $this->connect();
+        $this->dbconnection->query('SET NAMES utf8');
+        $select = "  SELECT CEILING(COUNT(*)/6) as totalePagine
+                    FROM commenti
+                    WHERE post='$post'";
+
+        $query = $this->dbconnection->query($select);
+        $this->disconnect();
+        return $query ? $query->fetch_all(MYSQLI_ASSOC)[0]['totalePagine'] : null;
+    }
+
+    public function printNavigazioneCommenti($currentPage,$pageTotalCount,$post){
+        if($pageTotalCount<1) return '';
+        $navigazione = '<ul class="listaSenzaPunti navigazione">';
+        if($currentPage > 1) {
+            $navigazione .= "<li><a href='postPage.php?page=".($currentPage-1)."&idPost=".$post."'> ← Pagina precedente</a></li>";
+        }else{
+	        $navigazione .= "<li> ← Pagina precedente </li>";
+        }
+
+        $navigazione .= "<li> ".$currentPage."/".$pageTotalCount." </li>";
+
+        if($currentPage < $pageTotalCount) {
+            $navigazione .= "<li><a href='postPage.php?page=".($currentPage+1)."&idPost=".$post."'> Pagina successiva → </a></li>";
+        }else{
+	        $navigazione .= "<li> Pagina successiva → </li>";
+        }
+        $navigazione .= '</ul>';
+        return $navigazione;
     }
 
 

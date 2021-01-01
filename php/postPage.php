@@ -56,11 +56,21 @@ $inserisciCommento = '<div id="newComment" class="sezione round_div shadow-div">
 
 
 if(isset($_GET['idPost'])){
+
+	$currentPage = 1;
+	if(isset($_GET['page'])) $currentPage = $_GET['page'];
+
+	$pageTotalCount = $manager->getTotalPageCommentCount($_GET['idPost']);
+	if($currentPage>$pageTotalCount && $pageTotalCount!=0)$currentPage=$pageTotalCount;
+	$navigazione = $manager->printNavigazioneCommenti($currentPage,$pageTotalCount,$_GET['idPost']);
+
+	$paginaHTML = str_replace("<NAVIGAZIONE/>", $navigazione, $paginaHTML);
+
 	if($user->getUsername()!=null) $paginaHTML = str_replace("<INSERIMENTOCOMMENTO/>", $inserisciCommento, $paginaHTML);
 	else $paginaHTML = str_replace("<INSERIMENTOCOMMENTO/>", '', $paginaHTML);
 
 	$paginaHTML = str_replace("<DETTAGLIOPOST/>", $manager->printSinglePost($_GET['idPost'],$user), $paginaHTML);
-	$paginaHTML = str_replace("<LISTACOMMENTI/>", $manager->printComments($_GET['idPost'],$user), $paginaHTML);
+	$paginaHTML = str_replace("<LISTACOMMENTI/>", $manager->printComments($_GET['idPost'],$user,$currentPage), $paginaHTML);
 	$paginaHTML = str_replace("<ID_POST/>", $_GET['idPost'], $paginaHTML);
 }else{
 	header("Location: errorPage.php");
