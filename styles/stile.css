@@ -293,11 +293,22 @@ SEZIONE NUOVO POST
     color: #000879a2;
 }
 #newPostForm input[type="submit"]{
-    margin-left: 20%;
+    margin-right: 5%;
+    float: right;
 }
+
+#newPostForm{
+    overflow: hidden;
+}
+
+#annulla{
+    float: left;
+    margin-top: 1em;
+}
+
 /*text area contenuto*/
 .inputForm{
-    width: 50%;
+    width: 90%;
     padding: 0.75em 1.25em;
     font-size: 1.3em;
     font-style: normal;
@@ -563,15 +574,21 @@ SEZIONE FOOTER
     color:white;
     text-align: center;
     font-size: 0.7em;
-    padding: 1.8em 0 1.8em 0;
+    padding: 1em 0 0.7em 0;
     font-style: italic;
     background-color: #005eac;
 }
 #imgValidCode{
     float: left;
+    margin-left: 1em;
 }
 #imgValidCSS{
     float: right;
+    margin-right: 0.6em;
+}
+
+#footer p{
+    margin: 1em 0em 1em 0em;
 }
 /*
 ==============
@@ -617,7 +634,8 @@ SEZIONE 404page
 */
 .adminLink{
     display: block;
-    margin-top: 1em;
+    float: right;
+    margin-top: -1em;
 }
 #success_div{
     text-align: center;
