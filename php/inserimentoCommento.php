@@ -24,7 +24,7 @@ if(empty($values['username'])){
 }
 
 $res = $manager->transformString($values['contenuto']);
-if(!$res) array_push($errors, '<a href="#postTextarea">Errore con il contenuto del commento, controlla i tag di aiuto inseriti</a>');
+if(!$res) array_push($errors, '<a href="#postTextarea">Errore con il contenuto del commento, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
 else $values['contenuto'] = $res;
 
 if(count($errors)==0){

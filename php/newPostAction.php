@@ -32,11 +32,11 @@ if(empty($values['altImmagine']) && !empty($values['immagine'])) array_push($err
 if(empty($values['contenuto'])) array_push($errors, '<a href="#contenuto">Compila il campo Contenuto</a>');
 
 $res = $manager->transformString($values['titolo']);
-if(!$res) array_push($errors, '<a href="#titolo">Errore con il titolo del post, controlla i tag di aiuto inseriti</a>');
+if(!$res) array_push($errors, '<a href="#titolo">Errore con il titolo del <span xml:lang="en">post</span>, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
 else $values['titolo'] = $res;
 
 $res = $manager->transformString($values['contenuto']);
-if(!$res) array_push($errors, '<a href="#contenuto">Errore con il contenuto del post, controlla i tag di aiuto inseriti</a>');
+if(!$res) array_push($errors, '<a href="#contenuto">Errore con il contenuto del <span xml:lang="en">post</span>, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
 else $values['contenuto'] = $res;
 
 if(!empty($values['immagine'])){
@@ -64,7 +64,7 @@ if(count($errors)==0){
 
     if($res){
         header("Location: postPage.php?idPost=".stripslashes($res));
-        $_SESSION['success'] = "Post inserito con successo!";
+        $_SESSION['success'] = '<span xml:lang="en">Post</span>Post inserito con successo!';
         exit();
     }else{
         $_SESSION['postValues'] = $values;

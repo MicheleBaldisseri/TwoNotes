@@ -1,7 +1,7 @@
 var dettagli_form = {
 
-    "username": [ /^[\.\w-]{2,20}$/, "Username inserito non valido"],
-    "psw": [/^[\w(#$%&=!)]{4,20}$/, "Password inserita non valida"]
+    "username": [ /^[\.\w-]{2,20}$/, '<span xml:lang="en">Username</span> inserito non valido'],
+    "psw": [/^[\w(#$%&=!)]{4,20}$/, '<span xml:lang="en">Password</span> inserita non valida']
 }
 
 function mostraErrore(input) {

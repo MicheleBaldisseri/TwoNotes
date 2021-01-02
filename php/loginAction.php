@@ -12,9 +12,9 @@ if(!isset($_POST['username']) || !isset($_POST['psw'])){
     $errors = array();
 
     if (!preg_match("/^[\.\w-]{2,20}$/", $_POST['username'])) 
-        array_push($errors, '<a href="#username">Username inserito non valido</a>');
+        array_push($errors, '<a href="#username"><span xml:lang="en">Username</span> inserito non valido</a>');
     if (!preg_match("/^[\w(#$%&=!)]{4,20}$/", $_POST['psw'])) 
-        array_push($errors, '<a href="#psw">Password inserita non valida</a>');
+        array_push($errors, '<a href="#psw"><span xml:lang="en">Password</span> inserita non valida</a>');
 
     if(count($errors)!=0){
         header('Location: login.php');
@@ -30,7 +30,7 @@ if(!isset($_POST['username']) || !isset($_POST['psw'])){
         $_SESSION['oldUsername']=$_POST['username'];
         exit();
     } else {
-        $_SESSION['success'] = "Login avvenuto con successo!";
+        $_SESSION['success'] = '<span xml:lang="en">Login</span> avvenuto con successo!';
         header('Location: index.php');
         exit();
     }

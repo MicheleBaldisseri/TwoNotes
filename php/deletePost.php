@@ -16,11 +16,11 @@ $res = $manager->deletePost($_GET['id']);
 
 if($res){
     header("Location: index.php");
-    $_SESSION['success'] = "Post eliminato con successo!";
+    $_SESSION['success'] = '<span xml:lang="en">Post</span> eliminato con successo!';
     if($imageName)unlink('../upload/'.$imageName);
 
 }else{
-    $_SESSION['errore'] = "Errore con il database";
+    $_SESSION['errore'] = 'Errore con il <span xml:lang="en">database</span>';
     header("Location: postPage.php?idPost=".$_GET['id']);
 }
 

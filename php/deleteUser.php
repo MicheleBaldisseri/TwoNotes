@@ -17,7 +17,7 @@ if($res){
     header("Location: index.php");
     $_SESSION['success'] = "Utente eliminato con successo!";
 }else{
-    $_SESSION['errore'] = "Errore con il database";
+    $_SESSION['errore'] = 'Errore con il <span xml:lang="en">database</span>';
     header("Location: profilo.php?username=".$_GET['user']);
 }
 

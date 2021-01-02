@@ -73,7 +73,7 @@ class Manager{
                             <a href="profilo.php?username='. stripslashes($post['utente']) .'">' . stripslashes($post['utente']) . '</a>  
                             il '.$new_date.'
                         </p>
-                        <a class="goToPost" href="postPage.php?idPost='.$post['postID'].'">Vai al post</a>
+                        <a class="goToPost" href="postPage.php?idPost='.$post['postID'].'">Vai al <span xml:lang="en">post</span></a>
                         <a class="printHide" href="#percorso">Torna su</a> 
                     </div>              
                 </li>';
@@ -186,10 +186,10 @@ class Manager{
                 il '.$new_date.'
             </p>';
 
-            if($user->isAdmin()) $string .= '<a class="adminLink" href="deletePost.php?id='.$post['postID'].'">Elimina il post</a>';
+            if($user->isAdmin()) $string .= '<a class="adminLink" href="deletePost.php?id='.$post['postID'].'">Elimina il <span xml:lang="en">post</span></a>';
             
         }else{
-            $string = "Non è stato trovato il post, ci scusiamo.";
+            $string = 'Non è stato trovato il <span xml:lang="en">post</span>, ci scusiamo.';
         }
         return $string;
     }
@@ -302,7 +302,7 @@ class Manager{
     }
 
     public function printNavigazioneCommenti($currentPage,$pageTotalCount,$post){
-        if($pageTotalCount<1) return '';
+        if($pageTotalCount<=1) return '';
         $navigazione = '<ul class="listaSenzaPunti navigazione">';
         if($currentPage > 1) {
             $navigazione .= "<li><a href='postPage.php?page=".($currentPage-1)."&idPost=".$post."'> ← Pagina precedente</a></li>";
@@ -341,12 +341,12 @@ class Manager{
                 $user->setSessionVar();
             }else{
                 unset($_SESSION['username']);
-                array_push($errors, '<a href="#psw">Password errata</a>');
+                array_push($errors, '<a href="#psw"><span xml:lang="en">Password</span> errata</a>');
                 $_SESSION['loginError'] = $errors;
             }
         }else{
             unset($_SESSION['username']);
-            array_push($errors, '<a href="#username">Username non esistente</a>');
+            array_push($errors, '<a href="#username"><span xml:lang="en">Username</span> non esistente</a>');
             $_SESSION['loginError'] = $errors;
         }
     }
@@ -363,7 +363,7 @@ class Manager{
         $query->fetch_all(MYSQLI_ASSOC);
 
         if ($query->num_rows > 0) {
-            array_push($errors, '<a href="#username">Username già utilizzato</a>');
+            array_push($errors, '<a href="#username"><span xml:lang="en">Username</span> già utilizzato</a>');
         }
 
         $this->connect();
@@ -375,7 +375,7 @@ class Manager{
         $query->fetch_all(MYSQLI_ASSOC);
 
         if ($query->num_rows > 0) {
-            array_push($errors, '<a href="#email">Email già utilizzata</a>');
+            array_push($errors, '<a href="#email"><span xml:lang="en">Email</span> già utilizzata</a>');
         }
 
         if(count($errors)==0){
@@ -430,7 +430,7 @@ class Manager{
         $query->fetch_all(MYSQLI_ASSOC);
 
         if ($query->num_rows > 0) {
-            array_push($errors, '<a href="#username">Username già utilizzato</a>');
+            array_push($errors, '<a href="#username"><span xml:lang="en">Username</span> già utilizzato</a>');
         }
 
         $this->connect();
@@ -442,7 +442,7 @@ class Manager{
         $query->fetch_all(MYSQLI_ASSOC);
 
         if ($query->num_rows > 0) {
-            array_push($errors, '<a href="#email">Email già utilizzata</a>');
+            array_push($errors, '<a href="#email"><span xml:lang="en">Email</span> già utilizzata</a>');
         }
 
         if(count($errors)==0){

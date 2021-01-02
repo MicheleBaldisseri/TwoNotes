@@ -18,7 +18,7 @@ if($user->getUsername()!=null){
 }else{
     unset($_SESSION['loginError']);
     $errors = array();
-    array_push($errors,"Devi loggarti prima di scrivere un nuovo post!");
+    array_push($errors,'Devi autenticarti prima di scrivere un nuovo <span xml:lang="en">post</span>!');
     $_SESSION['loginError'] = $errors;
     header("Location: login.php");
     exit();
