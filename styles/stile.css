@@ -192,7 +192,7 @@ SEZIONE ABOUT US
     display: block;
     max-width: 30em;
     max-height: 30em;
-    width: 80%;
+    width: 70%;
     height: 80%;
     margin: auto;  
 }
@@ -210,7 +210,7 @@ SEZIONE CONTATTI
 .sezione h1{
     text-align: center;
     font-size: 2em;
-    color: #1040a7;
+    color: #09501a;
 }
 .sezione h2{
     margin-top: 1.2em;

@@ -28,6 +28,12 @@
     width: 90%;
 }
 
+#footer img{
+    margin: 1em 0em 0em 0.2em;
+}
+.postContent{
+    margin-top: 1em;
+}
 .navigazione{
     font-size: 12px;
 }
@@ -41,7 +47,7 @@
     margin: auto;
 }
 .sezione h1{
-    font-size: 1.8em;
+    font-size: 1.7em;
 }
 .contenitoreCentrale{
     margin: auto;
@@ -49,6 +55,9 @@
 }
 .doubleColumns{
     columns: 1;
+}
+#content img{
+    display: none;
 }
 /*
 ==============
@@ -145,7 +154,7 @@
     margin: 0.8em 0 0.8em 0;
 }
 #profile h1{
-    margin-bottom: 0;
+    margin: 0;
 }
 #profile h2,#profile p{
     display: block;
@@ -161,11 +170,7 @@
     padding-bottom: 1.5em;
 }
 .login h1{
-    float: none;
-    width: 100%;
-    padding: 0.2em 0 0.2em 0;
-    text-align: center;
-    font-size: 1.5em;
+    display: none;
 }
 .login img{
     display: none;
