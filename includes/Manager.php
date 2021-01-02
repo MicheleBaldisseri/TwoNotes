@@ -268,7 +268,7 @@ class Manager{
         $this->connect();
         $this->dbconnection->query('SET NAMES utf8');
         $errors = array();
-        $select = "  INSERT INTO Commenti (post,utente,dataOra,contenuto) VALUES 
+        $select = "  INSERT INTO commenti (post,utente,dataOra,contenuto) VALUES 
             ('".$values['idPost']."','".$values['username']."', now(), '".$values['contenuto']."')";
 
         if(!$this->dbconnection->query($select)){
