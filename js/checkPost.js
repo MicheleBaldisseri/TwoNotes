@@ -2,8 +2,8 @@ var dettagli_form = {
 
     "title": [/^[\w\s(#$%&=!)]{2,20}$/, "Sono ammesssi numeri, lettere e i simboli #,$,%,&,=,! da 2 a 20 caratteri"],
     "myfile": "Immagine con dimensione troppo grande e/o in un formato non consentito",
-    "altImmagine": [/^[(a-z)(A-Z)(àèìòù)\s]{5,75}$/, "Aggiungere una descrizione. Sono ammesse solo lettere da 5 fino a 75 caratteri"],
-    "content": [/^[\w\s\[\]\/(<>#$%&=!€)]{5,1000}$/, "Sono ammesssi numeri, lettere e i simboli #,$,%,&,=,! e minimo 5 caratteri"],
+    "altImmagine": [/^[(a-z)(A-Z)(àèìòù)\s]{5,75}$/, "Aggiungere una descrizione solo se caricata un'immagine, da 5 fino a 75 caratteri (solo lettere)"],
+    "content": [/^[\s\S]{5,1000}$/, "Sono ammesssi da 5 a 1000 caratteri"],
 }
 
 function mostraErrore(input) {
@@ -11,9 +11,9 @@ function mostraErrore(input) {
     var elemento = document.createElement("strong");
     elemento.className = "errori"; //classe degli errori
        
-    if(input.id == "myfile"){ //immagine non valida
+    if(input.id == "myfile") //immagine non valida
         elemento.appendChild(document.createTextNode(dettagli_form[input.id]));    
-    }else //tutti gli altri casi
+    else //tutti gli altri casi
         elemento.appendChild(document.createTextNode(dettagli_form[input.id][1])); 
 
     var p = input.parentNode; //span 
@@ -69,7 +69,14 @@ function validateCampo(input){
                 return true;
             }
         }
-        else return true;
+        else{
+            if(document.getElementById("altImmagine").value == "")
+                return true;
+            else{
+                mostraErrore(input);
+                return false;
+            } 
+        }
     }
     else if(text.search(regex) != 0) {  //titolo e contenuto
         //-1 se non l'ha trovata altrimenti ritorna la posizione dove inizia
