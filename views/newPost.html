@@ -40,7 +40,7 @@
         <p>Compila i seguenti campi per creare il tuo <span xml:lang="en">post</span>. Ricorda che contenuti 
             offensivi o che violano le regole verranno eliminati dai nostri amministratori.
         </p>
-        <p>I formati consentiti per le foto sono .gif /.jpeg /.png/.jpg mentre la dimensione massima è 500 KB.</p>       
+        <p>I formati consentiti per le foto sono .gif /.jpeg /.png/.jpg mentre la dimensione massima è 500 KB. Solo inserendo un'immagine si potrà aggiurgene una descrizione.</p>       
         <p>Consigli utili per titolo e contenuto:</p>
         <ul>
             <li>Per inserire una parola in lingua inglese usare il comando: [en] &#60;testo in inglese&#62; [/en]</li>
@@ -48,21 +48,29 @@
             <li>Inserire i precedenti consigli senza i simboli &#60; e &#62;</li>
         </ul>
 
-        <form name="creazionePost" action="newPostAction.php" method="POST" enctype="multipart/form-data">
+        <form name="creazionePost" action="newPostAction.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm();">
         <ERRORIPOST/>
             <label for="title">Titolo:</label>  
-            <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="<VALORETITOLO/>" required="required" />
+            <span>
+                <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="<VALORETITOLO/>" required="required" />
+            </span>
                 
             <label for="myfile">Carica un'immagine:</label>     
-            <input type="file" id="myfile" name="myfile" accept="image/gif, image/jpeg, image/png" />
+            <span>
+                <input type="file" id="myfile" name="myfile" accept="image/gif, image/jpeg, image/jpg, image/png"/>
+            </span>
                     
             <label for="altImmagine">Descrizione Immagine:</label>      
-            <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" placeholder="Inserisci una descrizione dell'immagine..."><VALOREALT/></textarea>
+            <span>
+                <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" placeholder="Carica un'immagine per inserire la descrizione..." ><VALOREALT/></textarea>
+            </span>
                 
             <label for="content">Contenuto:</label>   
-            <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..." required="required"><VALORECONTENUTO/></textarea>   
+            <span>
+                <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..." required="required"><VALORECONTENUTO/></textarea>   
+            </span>
         
-            <input type="submit" class="round-button general-button" value="Invia"/> 
+            <input type="submit" id="submit-btn" class="round-button general-button" value="Invia"/> 
         </form>
 
         <a href="index.php" id="annulla">Annulla</a>   
