@@ -11,9 +11,9 @@ function mostraErrore(input) {
     var elemento = document.createElement("strong");
     elemento.className = "errori"; //classe degli errori
        
-    if(input == "myfile") //immagine non valida
+    if(input.id == "myfile"){ //immagine non valida
         elemento.appendChild(document.createTextNode(dettagli_form[input.id]));    
-    else //tutti gli altri casi
+    }else //tutti gli altri casi
         elemento.appendChild(document.createTextNode(dettagli_form[input.id][1])); 
 
     var p = input.parentNode; //span 
