@@ -491,6 +491,7 @@ SEZIONE REGISTRAZIONE
 .formRegistrazione{
     padding-left: 2em;
     padding-right: 2em;
+    display: inline;
 }
 
 .formRegistrazione input[type="radio"] {
@@ -556,10 +557,6 @@ SEZIONE Modifica PROFILO - Registrazione
     background-color: #005fac9f;
 }
 
-.formRegistrazione,
-#search form{
-    display: inline;
-}
 
 /*
 ==============
