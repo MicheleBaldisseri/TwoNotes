@@ -49,7 +49,7 @@ $inserisciCommento = '<div id="newComment" class="sezione round_div shadow-div">
 	<form action="inserimentoCommento.php?idPost=<ID_POST/>" method="post" onsubmit="return validateForm();">
 		<label for="postTextarea">Inserisci qui il tuo commento:</label> 
 		<span>
-			<textarea id="postTextarea" class="inputForm" name="contenuto" rows="5" cols="10" placeholder="Inserisci qui il tuo commento..." required="required" value="<VALORECOMMENTO/>"></textarea>
+			<textarea id="postTextarea" class="inputForm" name="contenuto" rows="5" cols="10" placeholder="Inserisci qui il tuo commento..." required="required"><VALORECOMMENTO/></textarea>
 		</span>
 		<input type="submit" class="round-button general-button" value="Invia"></input>
 	</form>

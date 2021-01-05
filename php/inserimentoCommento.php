@@ -27,6 +27,9 @@ $res = $manager->transformString($values['contenuto']);
 if(!$res) array_push($errors, '<a href="#postTextarea">Errore con il contenuto del commento, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
 else $values['contenuto'] = $res;
 
+if (!preg_match("/^[\s\S]{1,500}$/", $values['contenuto'])) 
+        array_push($errors, '<a href="#postTextarea">Nel commento sono ammessi da 1 a 500 caratteri </a>');
+
 if(count($errors)==0){
     $res = $manager->insertComment($values);
 

@@ -27,16 +27,17 @@ $values['altImmagine'] = isset($_POST['altImmagine']) ? strip_tags(addslashes($_
 $values['contenuto'] = isset($_POST['contenuto']) ? strip_tags(addslashes($_POST['contenuto'])) : null;
 $values['username'] = $user->getUsername();
 
-if(empty($values['titolo'])) array_push($errors, '<a href="#titolo">Compila il campo Titolo</a>');
-if(empty($values['altImmagine']) && !empty($values['immagine'])) array_push($errors, '<a href="#altImmagine">Compila il campo Alt Immagine</a>');
-if(empty($values['contenuto'])) array_push($errors, '<a href="#contenuto">Compila il campo Contenuto</a>');
+if(empty($values['titolo'])) array_push($errors, '<a href="#title">Compila il campo Titolo</a>');
+if(empty($values['altImmagine']) && !empty($values['immagine'])) array_push($errors, '<a href="#altImmagine">Compila il campo Descrizione Immagine</a>');
+if(!empty($values['altImmagine']) && empty($values['immagine'])) array_push($errors, '<a href="#altImmagine">Compila il campo Descrizione Immagine solo se un\'immagine è caricata</a>');
+if(empty($values['contenuto'])) array_push($errors, '<a href="#content">Compila il campo Contenuto</a>');
 
 $res = $manager->transformString($values['titolo']);
-if(!$res) array_push($errors, '<a href="#titolo">Errore con il titolo del <span xml:lang="en">post</span>, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
+if(!$res) array_push($errors, '<a href="#title">Errore con il titolo del <span xml:lang="en">post</span>, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
 else $values['titolo'] = $res;
 
 $res = $manager->transformString($values['contenuto']);
-if(!$res) array_push($errors, '<a href="#contenuto">Errore con il contenuto del <span xml:lang="en">post</span>, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
+if(!$res) array_push($errors, '<a href="#content">Errore con il contenuto del <span xml:lang="en">post</span>, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
 else $values['contenuto'] = $res;
 
 if(!empty($values['immagine'])){
@@ -48,6 +49,13 @@ if(!empty($values['immagine'])){
     $ext = strtolower(pathinfo($values['immagine'], PATHINFO_EXTENSION));
     if (!in_array($ext, $supported_image)) array_push($errors, '<a href="#myfile">Estensione immagine non valida</a>');
 }
+
+if (!preg_match("/^[\s\S]{2,30}$/", $values['titolo'])) 
+        array_push($errors, '<a href="#title">Nel titolo sono ammessi da 2 a 30 caratteri</a>');
+if (!preg_match("/^[(a-z)(A-Z)(àèìòù)\s]{5,75}$/", $values['altImmagine'])) 
+        array_push($errors, '<a href="#altImmagine">Nella descrizione dell\'immagine sono ammessi da 5 fino a 75 caratteri (solo lettere)</a>');
+if (!preg_match("/^[\s\S]{5,1000}$/", $values['contenuto'])) 
+        array_push($errors, '<a href="#content">Nel contenuto sono ammessi da 5 a 1000 caratteri</a>');
 
 
 if(count($errors)==0){

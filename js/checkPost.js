@@ -1,9 +1,9 @@
 var dettagli_form = {
 
-    "title": [/^[\w\s(#$%&=!)]{2,20}$/, "Sono ammesssi numeri, lettere e i simboli #,$,%,&,=,! da 2 a 20 caratteri"],
+    "title": [/^[\s\S]{2,30}$/, "Sono ammessi da 2 a 30 caratteri"],
     "myfile": "Immagine con dimensione troppo grande e/o in un formato non consentito",
     "altImmagine": [/^[(a-z)(A-Z)(àèìòù)\s]{5,75}$/, "Aggiungere una descrizione solo se caricata un'immagine, da 5 fino a 75 caratteri (solo lettere)"],
-    "content": [/^[\s\S]{5,1000}$/, "Sono ammesssi da 5 a 1000 caratteri"],
+    "content": [/^[\s\S]{5,1000}$/, "Sono ammessi da 5 a 1000 caratteri"],
 }
 
 function mostraErrore(input) {

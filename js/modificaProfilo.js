@@ -4,10 +4,10 @@ var dettagli_form = {
     "cognome": [ /^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/, "Sono ammesse solo lettere fino a 20 caratteri"],
     "dataNascita": "Sei troppo giovane, non credi?",
     "provenienza": [/^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/, "Sono ammesse solo lettere fino a 20 caratteri"],
-    "username": [/^[\.\w-]{2,20}$/, "Sono ammesssi numeri e lettere fino a 20 caratteri"],
+    "username": [/^[\.\w-]{2,20}$/, "Sono ammessi numeri e lettere fino a 20 caratteri"],
     "email": [/[\S]{2,32}@[\w]{2,32}((?:\.[\w]+)+)?(\.(it|com|edu|gov|org|net|info)){1}/, 'Formato <span xml:lang="en">email</span> inserito non valido'],
-    "oldpsw": [/^[\w(#$%&=!)]{4,20}$/, "Sono ammesssi numeri, lettere e i simboli #,$,%,&,=,! da 5 a 20 caratteri"],
-    "newpsw": [/^[\w(#$%&=!)]{4,20}$/, "Sono ammesssi numeri, lettere e i simboli #,$,%,&,=,! da 5 a 20 caratteri"],
+    "oldpsw": [/^[\w(#$%&=!)]{4,20}$/, "Sono ammessi numeri, lettere e i simboli #,$,%,&,=,! da 5 a 20 caratteri"],
+    "newpsw": [/^[\w(#$%&=!)]{4,20}$/, "Sono ammessi numeri, lettere e i simboli #,$,%,&,=,! da 5 a 20 caratteri"],
     "conf-psw": 'Le <span xml:lang="en">password</span> non corrispondono'
 }
 
