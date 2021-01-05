@@ -42,6 +42,12 @@
     Generale
 ==============
 */
+.screenReaderOnly:focus{
+    display: block;
+    margin: 0.5em 0em 0.5em 0.5em;
+    margin-top: 1em;
+    width: 12em;
+}
 .sezione{
     width: 85%;
     margin: auto;
@@ -128,19 +134,11 @@
   Modifica profilo - Registrazione
 ==============
 */
-.inputsex{
-    display: block;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 #formBase input[type="radio"]{
-    margin-top: 0em;
-    margin-bottom: 0.8em;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
+    margin-top: 1em;
 }
+
 /*
 ==============
   Profilo

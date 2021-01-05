@@ -1,104 +1,115 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Registrazione - TwoNotes</title>
-    <meta name="title" content="Registrazione - TwoNotes"/>
-    <meta name="description" content="Pagina di registrazione al sito TwoNotes"/>
-    <meta name="keywords" content="registrazione, TwoNotes"/>
-    <meta name="author" content="Stefano Dal Poz"/>
-    <meta name="language" content="italian it"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../styles/print.css" media="print"/>
-    <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
-    <script type="text/javascript" src="../js/registrazione.js"></script>
-</head>
-<body>
-    <div id="header">
-        <img src="../img/TwoNotes-4.svg"  alt="Logo TwoNotes con due note musicali che collegano le lettere o"/>
-    </div>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Registrazione - TwoNotes</title>
+        <meta name="title" content="Registrazione - TwoNotes"/>
+        <meta name="description" content="Pagina di registrazione al sito TwoNotes"/>
+        <meta name="keywords" content="registrazione, TwoNotes"/>
+        <meta name="author" content="Stefano Dal Poz"/>
+        <meta name="language" content="italian it"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="../styles/print.css" media="print"/>
+        <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
+        <script type="text/javascript" src="../js/registrazione.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <a href="#formBase" class="screenReaderOnly">Vai al contenuto</a>
+            <img src="../img/TwoNotes-4.svg"  alt="Logo TwoNotes con due note musicali che collegano le lettere o"/>
+        </div>
 
-    <div id="percorso">
-        <p>Ti trovi in: <span id="breadcrumb-colore-parola">Registrazione</span></p>
-    </div>
+        <div id="percorso">
+            <p>Ti trovi in: <span id="breadcrumb-colore-parola">Registrazione</span></p>
+        </div>
 
-    <div id="menu">
-        <a href="#formBase" class="screenReaderOnly">Vai alla registrazione</a>
+        <div id="menu">
+            <a href="#formBase" class="screenReaderOnly">Vai alla registrazione</a>
 
-        <ul class="listaSenzaPunti">
-            <li><a xml:lang="en" href="index.php">Home</a></li>
-            <li><a href="aboutUs.php">Chi siamo</a></li>
-            <li><a href="contatti.php">Contatti</a></li>
-        </ul>
-    </div>
+            <ul class="listaSenzaPunti">
+                <li><a xml:lang="en" href="index.php">Home</a></li>
+                <li><a href="aboutUs.php">Chi siamo</a></li>
+                <li><a href="contatti.php">Contatti</a></li>
+            </ul>
+        </div>
 
-    <div id="formBase" class="contenitoreCentrale allWidth round_div shadow-div" onsubmit="return validateForm();">
-            <h1>Registrati a <span xml:lang="en">TwoNotes</span></h1>
-            <form action="registerAction.php" class="formRegistrazione" method="post">
-                <ERRORIREGISTRAZIONE/>
-                <fieldset>
-                    <legend>Anagrafica</legend>
-                    <label for="nome" class="labelleft">Nome:</label>
-                    <span>
-                        <input type="text" name="nome" id="nome" class="input" placeholder="Nome" value="<VALORENOME/>" maxlength="20" required="required">
-                    </span>
-                    <label for="cognome" class="labelleft">Cognome:</label>
-                    <span>
-                        <input type="text" name="cognome" id="cognome" class="input" placeholder="Cognome" value="<VALORECOGNOME/>" maxlength="20" required="required"/>
-                    </span>
+        <div id="formBase" class="contenitoreCentrale allWidth round_div shadow-div">
+                <h1>Registrati a <span xml:lang="en">TwoNotes</span></h1>
+                <form action="registerAction.php" class="formRegistrazione" method="post" onsubmit="return validateForm();">
+                    <ERRORIREGISTRAZIONE/>
+                    <fieldset>
+                        <legend>Anagrafica</legend>
+                        <label for="nome" class="labelleft">Nome:</label>
+                        <span>
+                            <input type="text" name="nome" id="nome" class="input" placeholder="Nome" value="<VALORENOME/>" maxlength="20" required="required"/>
+                        </span>
+                        <label for="cognome" class="labelleft">Cognome:</label>
+                        <span>
+                            <input type="text" name="cognome" id="cognome" class="input" placeholder="Cognome" value="<VALORECOGNOME/>" maxlength="20" required="required"/>
+                        </span>
 
-                    <label for="dataNascita" class="labelleft">Data di nascita:</label>
-                    <span>
-                        <input type="date" name="data" id="dataNascita" class="input" value="<VALOREDATA/>" required="required"/>
-                    </span>
+                        <label for="dataNascita" class="labelleft">Data di nascita:</label>
+                        <span>
+                            <input type="date" name="data" id="dataNascita" class="input" value="<VALOREDATA/>" required="required"/>
+                        </span>
 
-                    <label for="sesso" class="labelleft">Sesso:</label>
-                    <label for="maschio" class="inputsex">Maschio</label>                        
-                    <input type="radio" id="maschio" name="gender" value="M" SELECTEDM required="required"/>
-                    <label for="femmina" class="inputsex">Femmina</label>
-                    <input type="radio" id="femmina" name="gender" value="F" SELECTEDF/>
-                    <label for="altro" class="inputsex">Altro</label>
-                    <input type="radio" id="altro" name="gender" value="A" SELECTEDA/>
+                        <label for="provenienza" class="labelleft">Provenienza:</label>
+                        <span>
+                            <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="<VALOREPROVENIENZA/>" required="required"/>
+                        </span>
+                                           
+                        <input type="radio" id="maschio" name="gender" value="M" SELECTEDM required="required"/>
+                        <label for="maschio">Maschio</label>     
+
+                        
+                        <input type="radio" id="femmina" name="gender" value="F" SELECTEDF/>
+                        <label for="femmina">Femmina</label>
+
+                        
+                        <input type="radio" id="altro" name="gender" value="A" SELECTEDA/>
+                        <label for="altro">Altro</label>
+                        
+                        
+                    </fieldset>
+                    <fieldset>
+                        <legend>Dati per l'accesso</legend>
+                        <label for="username" class="labelleft" xml:lang="en">Username:</label>
+                        <span>
+                            <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALOREUSERNAME/>" required="required"/>
+                        </span>
+
+                        <label for="email" class="labelleft" xml:lang="en">Email:</label>
+                        <span>
+                            <input type="email" name="email" id="email" class="input" placeholder="Email" value="<VALOREEMAIL/>" required="required"/>
+                        </span>
+
+                        <label for="psw" class="labelleft" xml:lang="en">Password:</label>
+                        <span>
+                            <input type="password" name="psw" id="psw" class="input" placeholder="Password" required="required"/>
+                        </span>
+
+                        <label for="conf-psw" class="labelleft">Conferma <span xml:lang="en">password</span>:</label>
+                        <span>
+                            <input type="password" name="conf-psw" id="conf-psw" class="input" placeholder="Conferma password" required="required"/>
+                        </span>
+                    </fieldset>
                     
-                    <label for="provenienza" class="labelleft">Provenienza:</label>
-                    <span>
-                        <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="<VALOREPROVENIENZA/>" required="required"/>
-                    </span>
-                </fieldset>
-                <fieldset>
-                    <legend>Dati per l'accesso</legend>
-                    <label for="username" class="labelleft" xml:lang="en">Username:</label>
-                    <span>
-                        <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALOREUSERNAME/>" required="required"/>
-                    </span>
+                    <input type="submit" class="general-button round-button orange-button" value="Registrati"/>
+                    
+                </form>
 
-                    <label for="email" class="labelleft" xml:lang="en">Email:</label>
-                    <span>
-                        <input type="email" name="email" id="email" class="input" placeholder="Email" value="<VALOREEMAIL/>" required="required"/>
-                    </span>
+                <a href="login.php" >Annulla</a>
+                <a href="#menu" class="screenReaderOnly">Vai al menù</a>
+        </div>
+        
+        <div id="footer">
+            <img id="imgValidCode" src="../img/valid-xhtml10.png" alt=""/>
+            <img id="imgValidCSS" src="../img/vcss-blue.gif" alt=""/>
+            <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>
+        </div>
+    </body>
 
-                    <label for="psw" class="labelleft" xml:lang="en">Password:</label>
-                    <span>
-                        <input type="password" name="psw" id="psw" class="input" placeholder="Password" required="required"/>
-                    </span>
-
-                    <label for="conf-psw" class="labelleft">Conferma <span xml:lang="en">password</span>:</label>
-                    <span>
-                        <input type="password" name="conf-psw" id="conf-psw" class="input" placeholder="Conferma password" required="required"/>
-                    </span>
-                </fieldset>
-                <input type="submit" class="general-button round-button orange-button" value="Registrati"/>
-            </form>
-            <a href="login.php" >Annulla</a>
-
-            <a href="#menu" class="screenReaderOnly">Vai al menù</a>
-    </div>
-    
-    <div id="footer">
-        <img id="imgValidCode" src="../img/valid-xhtml10.png" alt=""/>
-        <img id="imgValidCSS" src="../img/vcss-blue.gif" alt=""/>
-        <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>
-    </div>
-</body>
+</html>

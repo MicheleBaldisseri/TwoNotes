@@ -491,16 +491,15 @@ SEZIONE REGISTRAZIONE
 .inputright{
     width: 60%;
 }
-.inputsex{
-    margin-left: 5%;
-}
 .formRegistrazione{
     padding-left: 2em;
     padding-right: 2em;
 }
+
 .formRegistrazione input[type="radio"] {
-    margin: 0.6em 0.6em 0em 0em;
+    margin-left: 45%;
 }
+
 /*
 ===================
 SEZIONE PROFILO
@@ -683,15 +682,6 @@ SEZIONE 404page
     }
     .doubleColumns{
         columns: 1;
-    }
-    .inputsex{
-        display: block;
-        text-align: center;
-        margin-left: 0;
-    }  
-    #formBase input[type="radio"]{
-        display: block;
-        margin-left: 50%;   
-    }       
+    }     
   }
 
