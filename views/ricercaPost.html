@@ -38,9 +38,11 @@
     <div id="indexContent">     
         <div id="search" class="round_div shadow-div">
             <form method="get" action="ricercaPost.php" title="Barra di ricerca">
-                <label for="search-input">Cerca post:</label>
-                <input name="contenutoRicerca" id="search-input" type="text" placeholder="Inserisci post da cercare..." value="<GETRICERCA/>"/>
-                <input type="submit" id="search-button" class="round-button general-button" value="Cerca"/>           
+                <div>
+                    <label for="search-input">Cerca post:</label>
+                    <input name="contenutoRicerca" id="search-input" type="text" placeholder="Inserisci post da cercare..." value="<GETRICERCA/>"/>
+                    <input type="submit" id="search-button" class="round-button general-button" value="Cerca"/>           
+                </div>
             </form>     
             <a href="newPost.php" id="create-post" class="noWrap">Crea <span xml:lang="en">Post</span></a>    
         </div>
