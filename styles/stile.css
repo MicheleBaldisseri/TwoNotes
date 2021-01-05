@@ -472,6 +472,11 @@ SEARCH BAR - Home Page
 #search input:hover{
     box-shadow: 0.2em 0.2em 0.2em 0.2em #ccc
 }
+#search div{
+    width: 90%;
+    display: inline;
+}
+
 /*
 =====================
 SEZIONE REGISTRAZIONE
