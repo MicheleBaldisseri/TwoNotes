@@ -496,11 +496,14 @@ SEZIONE REGISTRAZIONE
 .formRegistrazione{
     padding-left: 2em;
     padding-right: 2em;
-    display: inline;
 }
 
 .formRegistrazione input[type="radio"] {
     margin-left: 45%;
+}
+
+.formRegistrazione, #search form{
+    display: inline;
 }
 
 /*
