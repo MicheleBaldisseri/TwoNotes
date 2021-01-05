@@ -17,7 +17,7 @@
 </head>
 <body>
     <div id="header">
-        <a href="#formBase" class="screenReaderOnly">Vai al contenuto</a>
+        <a href="#formBase" class="screenReaderOnly">Vai alla modifica</a>
         <img src="../img/TwoNotes-4.svg"  alt="Logo TwoNotes con due note musicali che collegano le lettere o"/>
         <HEADERDESTRO/>
     </div>
@@ -38,7 +38,7 @@
 
     <div id="formBase" class="contenitoreCentrale allWidth round_div shadow-div smallReg">
             <h1>Modifica il tuo profilo</h1>
-            <form action="modificaProfiloAction.php" class="formRegistrazione" method="post" onsubmit="return validateForm();">
+            <form action="modificaProfiloAction.php" class="formRegistrazione" title="Form di modifica profilo" method="post" onsubmit="return validateForm();">
                 <ERRORIMODIFICAPROFILO/>
                 <fieldset>
                     <legend>Informazioni generali</legend>
@@ -98,7 +98,9 @@
                         <input type="password" name="conf-psw" id="conf-psw" class="input" placeholder="Conferma nuova password" >
                     </span>
                 </fieldset>
+                
                 <input type="submit" class="round-button general-button" value="Salva"/>
+                
             </form>    
             <a href="profilo.php?username=<VALOREUSERNAME/>" >Annulla</a>
 

@@ -16,7 +16,7 @@
 </head>
 <body>
     <div id="header">
-        <a href="#listaPost" class="screenReaderOnly">Vai al contenuto</a>
+        <a href="#searchResults" class="screenReaderOnly">Vai al contenuto</a>
         <img src="../img/TwoNotes-4.svg"  alt="Logo TwoNotes con due note musicali che collegano le lettere o"/>
         <HEADERDESTRO/>
     </div>
@@ -26,6 +26,8 @@
     </div>
 
     <div id="menu">
+        <a href="#search-input" class="screenReaderOnly">Vai alla barra di ricerca</a>
+        <a href="#create-post" class="screenReaderOnly">Vai a creazione <span xml:lang="en">post</span></a>
         <ul class="listaSenzaPunti">
             <li><a xml:lang="en" href="index.php">Home</a></li>
             <li><a href="aboutUs.php">Chi siamo</a></li>
@@ -35,11 +37,12 @@
 
     <div id="indexContent">     
         <div id="search" class="round_div shadow-div">
-            <form method="get" action="ricercaPost.php">
-                <input name="contenutoRicerca" type="text" placeholder="Inserisci post da cercare..." value="<GETRICERCA/>"/>
+            <form method="get" action="ricercaPost.php" title="Barra di ricerca">
+                <label for="search-input">Cerca post:</label>
+                <input name="contenutoRicerca" id="search-input" type="text" placeholder="Inserisci post da cercare..." value="<GETRICERCA/>"/>
                 <input type="submit" id="search-button" class="round-button general-button" value="Cerca"/>           
             </form>     
-            <a href="newPost.php" class="alignFormButton">Crea <span xml:lang="en">Post</span></a>    
+            <a href="newPost.php" id="create-post" class="noWrap">Crea <span xml:lang="en">Post</span></a>    
         </div>
       
         <p id="searchResults">Risultati della ricerca:</p>
@@ -51,6 +54,7 @@
         </ul>
 
         <NAVIGAZIONE/>
+        <a href="#menu" class="screenReaderOnly">Vai al menù</a> 
     </div>
     
     <div id="footer">

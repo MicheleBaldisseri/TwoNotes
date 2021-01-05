@@ -41,11 +41,12 @@
         <SUCCESS/>
 
         <div id="search" class="round_div shadow-div">   
-            <form method="get" action="ricercaPost.php">
+            <form id="searchForm" method="get" title="Barra di ricerca" action="ricercaPost.php">
+                <label for="search-input">Cerca post:</label>
                 <input name="contenutoRicerca" type="text" id="search-input" placeholder="Cerca..."/>
                 <input type="submit" id="search-button" class="round-button general-button" value="Cerca"/>           
             </form>     
-            <a href="newPost.php" id="create-post" class="alignFormButton noWrap">Crea Post</a>    
+            <a href="newPost.php" id="create-post" class="noWrap">Crea <span xml:lang="en">Post</span></a>    
         </div>
 
         <NAVIGAZIONE/>

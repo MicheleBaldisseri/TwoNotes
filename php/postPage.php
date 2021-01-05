@@ -46,7 +46,7 @@ $inserisciCommento = '<div id="newComment" class="sezione round_div shadow-div">
 		<li>Per inserire una abbreviazione usare: [abbr=&#60;abbreviazione estesa&#62;] &#60;abbreviazione&#62; [/abbr]</li>
 		<li>Inserire i precedenti consigli senza i simboli &#60; e &#62;</li>
 	</ul>
-	<form action="inserimentoCommento.php?idPost=<ID_POST/>" method="post" onsubmit="return validateForm();">
+	<form action="inserimentoCommento.php?idPost=<ID_POST/>" title="Nuovo Commento" method="post" onsubmit="return validateForm();">
 		<label for="postTextarea">Inserisci qui il tuo commento:</label> 
 		<span>
 			<textarea id="postTextarea" class="inputForm" name="contenuto" rows="5" cols="10" placeholder="Inserisci qui il tuo commento..." required="required"><VALORECOMMENTO/></textarea>

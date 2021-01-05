@@ -17,7 +17,7 @@
 </head>
 <body>
     <div id="header">
-        <a href="#listaPost" class="screenReaderOnly">Vai al contenuto</a>
+        <a href="#newPostForm" class="screenReaderOnly">Vai all'inserimento</a>
         <img src="../img/TwoNotes-4.svg"  alt="Logo TwoNotes con due note musicali che collegano le lettere o"/>
         <HEADERDESTRO/>
     </div>
@@ -49,7 +49,7 @@
             <li>Inserire i precedenti consigli senza i simboli &#60; e &#62;</li>
         </ul>
 
-        <form name="creazionePost" action="newPostAction.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm();">
+        <form name="creazionePost" action="newPostAction.php" title="Creazione post" method="POST" enctype="multipart/form-data" onsubmit="return validateForm();">
         <ERRORIPOST/>
             <label for="title">Titolo:</label>  
             <span>

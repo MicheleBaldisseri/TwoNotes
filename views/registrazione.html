@@ -18,7 +18,7 @@
     </head>
     <body>
         <div id="header">
-            <a href="#formBase" class="screenReaderOnly">Vai al contenuto</a>
+            <a href="#formBase" class="screenReaderOnly">Vai alla registrazione</a>
             <img src="../img/TwoNotes-4.svg"  alt="Logo TwoNotes con due note musicali che collegano le lettere o"/>
         </div>
 
@@ -38,7 +38,7 @@
 
         <div id="formBase" class="contenitoreCentrale allWidth round_div shadow-div">
                 <h1>Registrati a <span xml:lang="en">TwoNotes</span></h1>
-                <form action="registerAction.php" class="formRegistrazione" method="post" onsubmit="return validateForm();">
+                <form action="registerAction.php" class="formRegistrazione" title="Form di registrazione" method="post" onsubmit="return validateForm();">
                     <ERRORIREGISTRAZIONE/>
                     <fieldset>
                         <legend>Anagrafica</legend>
@@ -64,14 +64,11 @@
                         <input type="radio" id="maschio" name="gender" value="M" SELECTEDM required="required"/>
                         <label for="maschio">Maschio</label>     
 
-                        
                         <input type="radio" id="femmina" name="gender" value="F" SELECTEDF/>
                         <label for="femmina">Femmina</label>
-
                         
                         <input type="radio" id="altro" name="gender" value="A" SELECTEDA/>
-                        <label for="altro">Altro</label>
-                        
+                        <label for="altro">Altro</label>  
                         
                     </fieldset>
                     <fieldset>

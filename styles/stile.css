@@ -456,7 +456,7 @@ SEARCH BAR - Home Page
     margin: auto;
     /*height: 4em;*/
     padding: 0.5em 0.5em 0em 0.5em;
-    width: 72%;
+    width: 80%;
     margin-top: 1em;
 }
 #search input[type="text"]{
@@ -471,9 +471,6 @@ SEARCH BAR - Home Page
 }
 #search input:hover{
     box-shadow: 0.2em 0.2em 0.2em 0.2em #ccc
-}
-#search a{
-    margin-left: 2em;
 }
 /*
 =====================
@@ -563,6 +560,7 @@ SEZIONE Modifica PROFILO - Registrazione
 #search form{
     display: inline;
 }
+
 /*
 ==============
 SEZIONE FOOTER
@@ -670,7 +668,7 @@ SEZIONE 404page
   RESPONNSIVE
 ==============
 */
-@media only screen and (max-width: 1350px) {
+@media only screen and (max-width: 1400px) {
     #search{
         text-align: center;
     }

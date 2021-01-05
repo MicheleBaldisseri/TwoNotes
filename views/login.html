@@ -17,7 +17,7 @@
 </head>
 <body>
     <div id="header">
-        <a href="#listaPost" class="screenReaderOnly">Vai al contenuto</a>
+        <a href="#formLogin" class="screenReaderOnly">Accedi al tuo <span xml:lang="en">account</span></a>
         <img src="../img/TwoNotes-4.svg"  alt="Logo TwoNotes con due note musicali che collegano le lettere o"/>
     </div>
 
@@ -42,7 +42,7 @@
 
         <ERRORELOGIN/>
 
-        <form id="formLogin" action="loginAction.php" method="post" onsubmit="return validateForm();">
+        <form id="formLogin" action="loginAction.php" title="Login" method="post" onsubmit="return validateForm();">
             <label for="username" xml:lang="en">Username</label>
             <span>
                 <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALUEUSERNAME/>" required="required"/>
