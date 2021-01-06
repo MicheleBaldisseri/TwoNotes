@@ -138,7 +138,10 @@
 #formBase input[type="radio"]{
     margin-top: 1em;
 }
-
+#gender{
+    width: 80%;
+    margin: auto;
+}
 /*
 ==============
   Profilo

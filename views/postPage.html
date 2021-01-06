@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Post e commenti - TwoNotes</title>
+        <meta name="description" content="Pagina che visualizza il post scelto i relativi commenti"/>
+        <meta name="keywords" content="TwoNotes, post, commenti"/>
+        <meta name="author" content="Michele Baldisseri"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="../styles/print.css" media="print"/>
+        <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
+        <script src="../js/checkNewComment.js"></script>
+    </head>
+<!--
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
@@ -15,48 +30,49 @@
     <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
     <script type="text/javascript" src="../js/checkNewComment.js"></script>
 </head>
-<body>
-    <div id="header">
-        <a href="#singlePost" class="screenReaderOnly">Vai al contenuto</a>
-        <img src="../img/TwoNotes-4.svg"  alt="Logo TwoNotes con due note musicali che collegano le lettere o"/>
-        <HEADERDESTRO/>
-    </div>
+-->
+    <body>
+        <div id="header">
+            <a href="#singlePost" class="screenReaderOnly">Vai al contenuto</a>
+            <img src="../img/TwoNotes-4.svg"  alt="Logo TwoNotes con due note musicali che collegano le lettere o"/>
+            <HEADERDESTRO/>
+        </div>
 
-    <div id="percorso">
-        <p>Ti trovi in: <span id="breadcrumb-colore-parola">Singolo <span xml:lang="en">Post</span></span></p>
-    </div>
+        <div id="percorso">
+            <p>Ti trovi in: <span id="breadcrumb-colore-parola">Singolo <span xml:lang="en">Post</span></span></p>
+        </div>
 
-    <div id="menu">
-        <a href="#singlePost" class="screenReaderOnly">Vai al contenuto</a>
+        <div id="menu">
+            <a href="#singlePost" class="screenReaderOnly">Vai al contenuto</a>
 
-        <ul class="listaSenzaPunti">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="aboutUs.php">Chi siamo</a></li>
-            <li><a href="contatti.php">Contatti</a></li>
-        </ul>
-    </div>
+            <ul class="listaSenzaPunti">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="aboutUs.php">Chi siamo</a></li>
+                <li><a href="contatti.php">Contatti</a></li>
+            </ul>
+        </div>
 
-    <SUCCESS/>   
+        <SUCCESS/>   
 
-    <div id ="singlePost" class="sezione round_div shadow-div">
-        <DETTAGLIOPOST/>    
-        <h2>Commenti su questo <span xml:lang="en">post</span>:</h2>
-        <NAVIGAZIONE/>
-        <ul class="listaSenzaPunti">
-            <LISTACOMMENTI/>   
-        </ul>
-        <NAVIGAZIONE/>
-        <MESSAGGIOAUTENTICAZIONE/>
+        <div id ="singlePost" class="sezione round_div shadow-div">
+            <DETTAGLIOPOST/>    
+            <h2>Commenti su questo <span xml:lang="en">post</span>:</h2>
+            <NAVIGAZIONE/>
+            <ul class="listaSenzaPunti">
+                <LISTACOMMENTI/>   
+            </ul>
+            <NAVIGAZIONE/>
+            <MESSAGGIOAUTENTICAZIONE/>
 
-        <a href="#menu" class="screenReaderOnly">Vai al menù</a>  
-    </div>
+            <a href="#menu" class="screenReaderOnly">Vai al menù</a>  
+        </div>
 
-    <INSERIMENTOCOMMENTO/>
+        <INSERIMENTOCOMMENTO/>
 
-    <div id="footer">
-        <img id="imgValidCode" src="../img/valid-xhtml10.png" alt=""/>
-        <img id="imgValidCSS" src="../img/vcss-blue.gif" alt=""/>
-        <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>
-    </div>
-</body>
+        <div id="footer">
+            <img id="imgValidCode" src="../img/valid-xhtml10.png" alt=""/>
+            <img id="imgValidCSS" src="../img/vcss-blue.gif" alt=""/>
+            <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>
+        </div>
+    </body>
 </html>
