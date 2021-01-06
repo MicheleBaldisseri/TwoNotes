@@ -52,8 +52,8 @@ if(!empty($values['immagine'])){
 
 if (!preg_match("/^[\s\S]{2,30}$/", $values['titolo'])) 
         array_push($errors, '<a href="#title">Nel titolo sono ammessi da 2 a 30 caratteri</a>');
-if (!empty($values['immagine']) && !preg_match("/^[(a-z)(A-Z)(àèìòù)\s]{5,75}$/", $values['altImmagine'])) 
-        array_push($errors, '<a href="#altImmagine">Nella descrizione dell\'immagine sono ammessi da 5 fino a 75 caratteri (solo lettere)</a>');
+if (!empty($values['immagine']) && !preg_match("/^[\s\S]{5,75}$/", $values['altImmagine'])) 
+        array_push($errors, '<a href="#altImmagine">Nella descrizione dell\'immagine sono ammessi da 5 fino a 75 caratteri</a>');
 if (!preg_match("/^[\s\S]{5,1000}$/", $values['contenuto'])) 
         array_push($errors, '<a href="#content">Nel contenuto sono ammessi da 5 a 1000 caratteri</a>');
 
