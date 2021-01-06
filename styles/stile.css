@@ -497,15 +497,16 @@ SEZIONE REGISTRAZIONE
     padding-left: 2em;
     padding-right: 2em;
 }
-
 .formRegistrazione input[type="radio"] {
     margin-left: 45%;
 }
-
 .formRegistrazione, #search form{
     display: inline;
 }
-
+#formBase div{
+    width: 50%;
+    display: inline;
+}
 /*
 ===================
 SEZIONE PROFILO

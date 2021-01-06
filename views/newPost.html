@@ -50,29 +50,30 @@
         </ul>
 
         <form name="creazionePost" action="newPostAction.php" title="Creazione post" method="POST" enctype="multipart/form-data" onsubmit="return validateForm();">
-        <ERRORIPOST/>
-            <label for="title">Titolo:</label>  
-            <span>
-                <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="<VALORETITOLO/>" required="required" />
-            </span>
-                
-            <label for="myfile">Carica un'immagine:</label>     
-            <span>
-                <input type="file" id="myfile" name="myfile"/>
-            </span>
+            <ERRORIPOST/>
+            <div>
+                <label for="title">Titolo:</label>  
+                <span>
+                    <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="<VALORETITOLO/>" required="required" />
+                </span>
                     
-            
-            <label for="altImmagine">Descrizione Immagine:</label>      
-            <span>
-                <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" placeholder="Carica un'immagine per inserire la descrizione..."><VALOREALT/></textarea>
-            </span>
+                <label for="myfile">Carica un'immagine:</label>     
+                <span>
+                    <input type="file" id="myfile" name="myfile"/>
+                </span>      
                 
-            <label for="content">Contenuto:</label>   
-            <span>
-                <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..." required="required"><VALORECONTENUTO/></textarea>   
-            </span>
-        
-            <input type="submit" id="submit-btn" class="round-button general-button" value="Invia"/> 
+                <label for="altImmagine">Descrizione Immagine:</label>      
+                <span>
+                    <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" placeholder="Carica un'immagine per inserire la descrizione..."><VALOREALT/></textarea>
+                </span>
+                    
+                <label for="content">Contenuto:</label>   
+                <span>
+                    <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..." required="required"><VALORECONTENUTO/></textarea>   
+                </span>
+            
+                <input type="submit" id="submit-btn" class="round-button general-button" value="Invia"/> 
+            </div>
         </form>
 
         <a href="index.php" id="annulla">Annulla</a>   

@@ -1,6 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
-
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta charset="utf-8"/>
+      <title>Registrazione - TwoNotes</title>
+      <meta name="description" content="Pagina di registrazione al sito TwoNotes"/>
+      <meta name="keywords" content="registrazione, TwoNotes"/>
+      <meta name="author" content="Stefano Dal Poz"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
+      <link rel="stylesheet" type="text/css" href="../styles/print.css" media="print"/>
+      <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
+      <script src="../js/registrazione.js"></script>
+    </head>
+    <!--
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Registrazione - TwoNotes</title>
@@ -16,6 +28,7 @@
         <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
         <script type="text/javascript" src="../js/registrazione.js"></script>
     </head>
+    -->
     <body>
         <div id="header">
             <a href="#formBase" class="screenReaderOnly">Vai alla registrazione</a>
@@ -60,15 +73,18 @@
                         <span>
                             <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="<VALOREPROVENIENZA/>" required="required"/>
                         </span>
-                                           
-                        <input type="radio" id="maschio" name="gender" value="M" SELECTEDM required="required"/>
-                        <label for="maschio">Maschio</label>     
+                                 
+                        <fieldset>
+                            <legend>Sesso</legend>
+                            <input type="radio" id="maschio" name="gender" value="M" SELECTEDM required="required"/>
+                            <label for="maschio">Maschio</label>     
 
-                        <input type="radio" id="femmina" name="gender" value="F" SELECTEDF/>
-                        <label for="femmina">Femmina</label>
-                        
-                        <input type="radio" id="altro" name="gender" value="A" SELECTEDA/>
-                        <label for="altro">Altro</label>  
+                            <input type="radio" id="femmina" name="gender" value="F" SELECTEDF/>
+                            <label for="femmina">Femmina</label>
+                            
+                            <input type="radio" id="altro" name="gender" value="A" SELECTEDA/>
+                            <label for="altro">Altro</label>  
+                        </fieldset>
                         
                     </fieldset>
                     <fieldset>
@@ -93,9 +109,9 @@
                             <input type="password" name="conf-psw" id="conf-psw" class="input" placeholder="Conferma password" required="required"/>
                         </span>
                     </fieldset>
-                    
-                    <input type="submit" class="general-button round-button orange-button" value="Registrati"/>
-                    
+                    <div>
+                        <input type="submit" class="general-button round-button orange-button" value="Registrati"/>
+                    </div>
                 </form>
 
                 <a href="login.php" >Annulla</a>
