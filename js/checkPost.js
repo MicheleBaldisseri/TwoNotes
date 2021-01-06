@@ -6,12 +6,14 @@ var dettagli_form = {
     "content": [/^[\s\S]{5,1000}$/, "Sono ammessi da 5 a 1000 caratteri"],
 }
 
-function mostraErrore(input) {
+function mostraErrore(input,type) {
 
     var elemento = document.createElement("strong");
     elemento.className = "errori"; //classe degli errori
        
-    if(input.id == "myfile") //immagine non valida
+    if(type) 
+        elemento.appendChild(document.createTextNode("Spazi prima e dopo il contenuto non sono permessi")); 
+    else if(input.id == "myfile") //immagine non valida
         elemento.appendChild(document.createTextNode(dettagli_form[input.id]));    
     else //tutti gli altri casi
         elemento.appendChild(document.createTextNode(dettagli_form[input.id][1])); 
@@ -25,7 +27,11 @@ function validateCampo(input){
     var text = input.value;
     var regex= dettagli_form[input.id][0];
 
-    if(input.id == "myfile"){
+    if(/(^\s+|\s+$)/g.test(text)){ //ci sono spazi prima e dopo 
+        mostraErrore(input,true);
+        return false;
+    }
+    else if(input.id == "myfile"){
         if(document.getElementById("myfile").value != ""){ //se l'immagine è caricata
             
             //controllo dimensione
@@ -33,7 +39,7 @@ function validateCampo(input){
             var image = inputImage.files[0];
 
             if(image.size > 500000){ //maggiore 500kb
-                mostraErrore(input);
+                mostraErrore(input,false);
                 return false;
             }
 
@@ -50,7 +56,7 @@ function validateCampo(input){
             }
             //formato non consentito
             if(!isValidFile) {
-                mostraErrore(input);
+                mostraErrore(input,false);
                 return false;
             }
             //tutto ok
@@ -63,7 +69,7 @@ function validateCampo(input){
     else if(input.id == "altImmagine"){
         if(document.getElementById("myfile").value != ""){ //se l'immagine è caricata
             if(text.search(regex) != 0){
-                mostraErrore(input);
+                mostraErrore(input,false);
                 return false;
             }else{
                 return true;
@@ -73,14 +79,14 @@ function validateCampo(input){
             if(document.getElementById("altImmagine").value == "")
                 return true;
             else{
-                mostraErrore(input);
+                mostraErrore(input,false);
                 return false;
             } 
         }
     }
     else if(text.search(regex) != 0) {  //titolo e contenuto
         //-1 se non l'ha trovata altrimenti ritorna la posizione dove inizia
-        mostraErrore(input);
+        mostraErrore(input,false);
         return false;
     }else{
         return true;
