@@ -17,9 +17,9 @@ function mostraErrore(input) {
     elemento.className = "errori"; //classe degli errori
 
     if(input.id == "conf-psw" || input.id == "dataNascita") //conferma password
-        elemento.appendChild(document.createTextNode(dettagli_form[input.id]));    
+        elemento.innerHTML = dettagli_form[input.id];    
     else //tutti gli altri casi
-        elemento.appendChild(document.createTextNode(dettagli_form[input.id][1])); 
+        elemento.innerHTML = dettagli_form[input.id][1];  
 
     var p = input.parentNode; //span 
     p.appendChild(elemento);

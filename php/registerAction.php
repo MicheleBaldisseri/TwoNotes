@@ -23,15 +23,15 @@ $errors = array();
 $values = array();
 $error = true;
 
-$values['nome'] = isset($_POST['nome']) ? addslashes($_POST['nome']) : null;
-$values['cognome'] = isset($_POST['cognome']) ? addslashes($_POST['cognome']) : null;
-$values['dataNascita'] = isset($_POST['data']) ? addslashes($_POST['data']) : null;
-$values['email'] = isset($_POST['email']) ? addslashes($_POST['email']) : null;
-$values['sesso'] = isset($_POST['gender']) ? addslashes($_POST['gender']) : null;
-$values['provenienza'] = isset($_POST['provenienza']) ? addslashes($_POST['provenienza']) : null;
-$values['username'] = isset($_POST['username']) ? addslashes($_POST['username']) : null;
-$values['password'] = isset($_POST['psw']) ? addslashes($_POST['psw']) : null; 
-$values['confermaPassword'] = isset($_POST['conf-psw']) ? addslashes($_POST['conf-psw']) : null;
+$values['nome'] = isset($_POST['nome']) ? trim(addslashes($_POST['nome'])) : null;
+$values['cognome'] = isset($_POST['cognome']) ? trim(addslashes($_POST['cognome'])) : null;
+$values['dataNascita'] = isset($_POST['data']) ? trim(addslashes($_POST['data'])) : null;
+$values['email'] = isset($_POST['email']) ? trim(addslashes($_POST['email'])) : null;
+$values['sesso'] = isset($_POST['gender']) ? trim(addslashes($_POST['gender'])) : null;
+$values['provenienza'] = isset($_POST['provenienza']) ? trim(addslashes($_POST['provenienza'])) : null;
+$values['username'] = isset($_POST['username']) ? trim(addslashes($_POST['username'])) : null;
+$values['password'] = isset($_POST['psw']) ? trim(addslashes($_POST['psw'])) : null; 
+$values['confermaPassword'] = isset($_POST['conf-psw']) ? trim(addslashes($_POST['conf-psw'])) : null;
 
 if(empty($values['nome'])) array_push($errors, '<a href="#nome">Compila il campo Nome</a>');
 if(empty($values['cognome'])) array_push($errors, '<a href="#cognome">Compila il campo Cognome</a>');

@@ -9,7 +9,7 @@ $user = $manager->setupSession();
 $errors = array();
 $values = array();
 
-$values['contenuto'] = isset($_POST['contenuto']) ? strip_tags(addslashes($_POST['contenuto'])) : null;
+$values['contenuto'] = isset($_POST['contenuto']) ? trim(strip_tags(addslashes($_POST['contenuto']))) : null;
 $values['idPost'] = isset($_GET['idPost']) ? addslashes($_GET['idPost']) : null;
 $values['username'] = addslashes($user->getUsername());
 

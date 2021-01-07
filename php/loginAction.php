@@ -11,9 +11,9 @@ if(!isset($_POST['username']) || !isset($_POST['psw'])){
 }else{
     $errors = array();
 
-    if (!preg_match("/^[\.\w-]{2,20}$/", $_POST['username'])) 
+    if (!preg_match("/^[\.\w-]{2,20}$/", trim($_POST['username']))) 
         array_push($errors, '<a href="#username"><span xml:lang="en">Username</span> inserito non valido</a>');
-    if (!preg_match("/^[\w(#$%&=!)]{4,20}$/", $_POST['psw'])) 
+    if (!preg_match("/^[\w(#$%&=!)]{4,20}$/", trim($_POST['psw']))) 
         array_push($errors, '<a href="#psw"><span xml:lang="en">Password</span> inserita non valida</a>');
 
     if(count($errors)!=0){
@@ -23,7 +23,7 @@ if(!isset($_POST['username']) || !isset($_POST['psw'])){
         exit();
     }
     
-    $manager->login($_POST['username'],$_POST['psw']);
+    $manager->login(trim($_POST['username']),trim($_POST['psw']));
 
     if (!isset($_SESSION['username'])){
         header('Location: login.php');

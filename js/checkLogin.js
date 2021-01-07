@@ -10,7 +10,7 @@ function mostraErrore(input) {
     elemento.className = "errori"; //classe degli errori
     
 
-    elemento.appendChild(document.createTextNode(dettagli_form[input.id][1])); //errore
+    elemento.innerHTML = dettagli_form[input.id][1]; //errore
 
     var p = input.parentNode; //ovvero lo span aggiunto
     p.appendChild(elemento);

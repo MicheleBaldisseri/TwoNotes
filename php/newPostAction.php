@@ -21,10 +21,10 @@ if($user->getUsername()==null){
 $errors = array();
 $values = array();
 
-$values['titolo'] = isset($_POST['titolo']) ? strip_tags(addslashes($_POST['titolo'])) : null;
-$values['immagine'] = isset($_FILES['myfile']['name']) ? addslashes($_FILES['myfile']['name']) : null;
-$values['altImmagine'] = isset($_POST['altImmagine']) ? strip_tags(addslashes($_POST['altImmagine'])) : null;
-$values['contenuto'] = isset($_POST['contenuto']) ? strip_tags(addslashes($_POST['contenuto'])) : null;
+$values['titolo'] = isset($_POST['titolo']) ? trim(strip_tags(addslashes($_POST['titolo']))) : null;
+$values['immagine'] = isset($_FILES['myfile']['name']) ? trim(addslashes($_FILES['myfile']['name'])) : null;
+$values['altImmagine'] = isset($_POST['altImmagine']) ? trim(strip_tags(addslashes($_POST['altImmagine']))) : null;
+$values['contenuto'] = isset($_POST['contenuto']) ? trim(strip_tags(addslashes($_POST['contenuto']))) : null;
 $values['username'] = $user->getUsername();
 
 if(empty($values['titolo'])) array_push($errors, '<a href="#title">Compila il campo Titolo</a>');
