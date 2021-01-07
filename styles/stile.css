@@ -247,6 +247,12 @@ SEZIONE SINGOLO POST
 	margin-top: 1em;
     padding: 1em;
 }
+
+.tornaSu{
+    float: right;
+    margin: -1em 1em 0em 0em;
+}
+
 #newComment p{
     margin-top: 0em;
     font-size: 1.1em;

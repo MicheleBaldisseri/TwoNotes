@@ -255,9 +255,11 @@ class Manager{
                 <p class="infoPost"><a href="profilo.php?username='.stripslashes($comment['utente']).'">'.stripslashes($comment['utente'])
                 .'</a> '.$new_date.'</p>
                 <p>'.stripslashes($comment['contenuto']).'</p>';
-
-                if($user->isAdmin()) $string .= '<a class="adminLink" href="deleteComment.php?id='.$comment['commentoID'].'&idPost='.$comment['post'].'">Elimina il commento</a>';                         
-           $string .= ' </div>
+                
+                if($user->isAdmin()) $string .= '<a class="adminLink" href="deleteComment.php?id='.$comment['commentoID'].'&idPost='.$comment['post'].'">Elimina il commento</a>';
+                                 
+           $string .= '<a class="printHide tornaSu" href="#percorso">Torna su</a>
+            </div>
         </li>';
 
         return $string;
