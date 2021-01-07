@@ -9,7 +9,6 @@ function mostraErrore(input) {
     var elemento = document.createElement("strong");
     elemento.className = "errori"; //classe degli errori
     
-
     elemento.innerHTML = dettagli_form[input.id][1]; //errore
 
     var p = input.parentNode; //ovvero lo span aggiunto
