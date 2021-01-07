@@ -6,29 +6,61 @@ var dettagli_form = {
     "content": [/^[\s\S]{5,1000}$/, "Sono ammessi da 5 a 1000 caratteri"],
 }
 
+const countReg = (str) => {
+    const re = /\[abbr=([^\]]+)]/g;
+    return ((str || '').match(re) || []).length;
+}
+
+function substr_count(string,substring,start,length){
+    var c = 0;
+    if(start) 
+        string = string.substr(start); 
+    if(length) 
+        string = string.substr(0,length); 
+    for (var i=0;i<string.length;i++){
+        if(substring == string.substr(i,substring.length))
+            c++;
+    }
+    return c;
+}
+
 function mostraErrore(input,type) {
 
     var elemento = document.createElement("strong");
     elemento.className = "errori"; //classe degli errori
-       
-    if(type) 
-        elemento.appendChild(document.createTextNode("Spazi prima e dopo il contenuto non sono permessi")); 
-    else if(input.id == "myfile") //immagine non valida
-        elemento.appendChild(document.createTextNode(dettagli_form[input.id]));    
-    else //tutti gli altri casi
-        elemento.appendChild(document.createTextNode(dettagli_form[input.id][1])); 
+
+    switch (type) {
+        case 1:
+            elemento.appendChild(document.createTextNode("Contenuto non valido. Controlla che i tag d'aiuto siano corretti")); 
+            break;
+        case 2: //errore immagine caricata
+            elemento.appendChild(document.createTextNode(dettagli_form[input.id]));  
+            break;
+        case 3: //tutti gli altri casi
+            elemento.appendChild(document.createTextNode(dettagli_form[input.id][1]));  
+            break;
+    }
 
     var p = input.parentNode; //span 
     p.appendChild(elemento);
 }
 
 function validateCampo(input){
-
+    //elimino spazi prima e dopo
     var text = input.value.replace(/(^\s+|\s+$)/g, '');
+
     var regex= dettagli_form[input.id][0];
 
+    //controllo che tag di apertura e chiusura corrispondano
+    var abbr = substr_count(text,'[/abbr]',0,text.length) != countReg(text) ? false : true;
+    var en = substr_count(text,'[en]',0,text.length) != substr_count(text,'[/en]',0,text.length) ? false : true;
 
-    if(input.id == "myfile"){
+    
+    if(abbr == false || en == false) { //errore utilizzo tag
+        mostraErrore(input,1);
+        return false;
+    }
+    else if(input.id == "myfile"){ //immagine 
         if(document.getElementById("myfile").value != ""){ //se l'immagine è caricata
             
             //controllo dimensione
@@ -36,7 +68,7 @@ function validateCampo(input){
             var image = inputImage.files[0];
 
             if(image.size > 500000){ //maggiore 500kb
-                mostraErrore(input,false);
+                mostraErrore(input,2);
                 return false;
             }
 
@@ -53,7 +85,7 @@ function validateCampo(input){
             }
             //formato non consentito
             if(!isValidFile) {
-                mostraErrore(input,false);
+                mostraErrore(input,2);
                 return false;
             }
             //tutto ok
@@ -65,25 +97,25 @@ function validateCampo(input){
     }
     else if(input.id == "altImmagine"){
         if(document.getElementById("myfile").value != ""){ //se l'immagine è caricata
-            if(text.search(regex) != 0){
-                mostraErrore(input,false);
+            if(text.search(regex) != 0){ //controllo contenuto dell'alt
+                mostraErrore(input,3);
                 return false;
             }else{
                 return true;
             }
         }
-        else{
-            if(document.getElementById("altImmagine").value == "")
+        else{//immagine non caricata
+            if(document.getElementById("altImmagine").value == "") //se non è stato inserito Alt ok
                 return true;
             else{
-                mostraErrore(input,false);
+                mostraErrore(input,3); //Alt inserito -> errore perchè nessuna immagine
                 return false;
             } 
         }
     }
     else if(text.search(regex) != 0) {  //titolo e contenuto
         //-1 se non l'ha trovata altrimenti ritorna la posizione dove inizia
-        mostraErrore(input,false);
+        mostraErrore(input,3);
         return false;
     }else{
         return true;

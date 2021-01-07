@@ -1,7 +1,7 @@
 var dettagli_form = {
 
     "username": [ /^[\.\w-]{2,20}$/, '<span xml:lang="en">Username</span> inserito non valido'],
-    "psw": [/^[\w(#$%&=!)]{4,20}$/, '<span xml:lang="en">Password</span> inserita non valida']
+    "psw": [/^[\w(#$%&=!)]{5,20}$/, '<span xml:lang="en">Password</span> inserita non valida']
 }
 
 function mostraErrore(input) {
@@ -18,6 +18,7 @@ function mostraErrore(input) {
 
 function validateCampo(input){
     var regex= dettagli_form[input.id][0];
+    //elimino spazi prima e dopo
     var text = input.value.replace(/(^\s+|\s+$)/g, '');
 
     if(text.search(regex) != 0) {

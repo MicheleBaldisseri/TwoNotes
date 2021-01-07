@@ -8,10 +8,14 @@ function mostraErrore(input, type) {
     var elemento = document.createElement("strong");
     elemento.className = "errori"; //classe degli errori
        
-    if(type == 1)
-        elemento.appendChild(document.createTextNode("Sono ammessi da 2 a 500 caratteri")); 
-    else 
-        elemento.appendChild(document.createTextNode("Contenuto non valido. Controlla che i tag d'aiuto siano corretti")); 
+    switch (type) {
+        case 1:
+            elemento.appendChild(document.createTextNode("Contenuto non valido. Controlla che i tag d'aiuto siano corretti")); 
+            break;
+        case 2:
+            elemento.appendChild(document.createTextNode("Sono ammessi da 2 a 500 caratteri")); 
+            break;
+    }
 
     var p = input.parentNode; //span 
     p.appendChild(elemento);
@@ -31,21 +35,21 @@ function substr_count(string,substring,start,length){
 }
 
 function validateCampo(input){
-
+    //elimino spazi prima e dopo
     var text = input.value.replace(/(^\s+|\s+$)/g,'');
     var regex= /^[\s\S]{2,500}$/;
 
-    //controllo che numero [en] == [/en]
-    if(substr_count(text,'[en]',0,text.length)!=substr_count(text,'[/en]',0,text.length)) {
-        mostraErrore(input,2);
-        return false;
-    }
-    else if(substr_count(text,'[/abbr]',0,text.length)!=countReg(text)){
-        mostraErrore(input,2);
-        return false;
-    }
-    else if(text.search(regex) != 0) {  
+    //controllo che tag di apertura e chiusura corrispondano
+    var abbr = substr_count(text,'[/abbr]',0,text.length) != countReg(text) ? false : true;
+    var en = substr_count(text,'[en]',0,text.length) != substr_count(text,'[/en]',0,text.length) ? false : true;
+
+    
+    if(abbr == false || en == false) { //errore utilizzo tag
         mostraErrore(input,1);
+        return false;
+    }
+    else if(text.search(regex) != 0) {  //contenuto non valido
+        mostraErrore(input,2);
         return false;
     }
     else{

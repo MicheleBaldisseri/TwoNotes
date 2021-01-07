@@ -6,8 +6,8 @@ var dettagli_form = {
     "provenienza": [/^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/, "Sono ammesse solo lettere fino a 20 caratteri"],
     "username": [/^[\.\w-]{2,20}$/, "Sono ammessi numeri e lettere fino a 20 caratteri"],
     "email": [/[\S]{2,32}@[\w]{2,32}((?:\.[\w]+)+)?(\.(it|com|edu|gov|org|net|info)){1}/, 'Formato <span xml:lang="en">email</span> inserito non valido'],
-    "oldpsw": [/^[\w(#$%&=!)]{4,20}$/, "Sono ammessi numeri, lettere e i simboli #,$,%,&,=,! da 5 a 20 caratteri"],
-    "newpsw": [/^[\w(#$%&=!)]{4,20}$/, "Sono ammessi numeri, lettere e i simboli #,$,%,&,=,! da 5 a 20 caratteri"],
+    "oldpsw": [/^[\w(#$%&=!)]{5,20}$/, "Sono ammessi numeri, lettere e i simboli #,$,%,&,=,! da 5 a 20 caratteri"],
+    "newpsw": [/^[\w(#$%&=!)]{5,20}$/, "Sono ammessi numeri, lettere e i simboli #,$,%,&,=,! da 5 a 20 caratteri"],
     "conf-psw": 'Le <span xml:lang="en">password</span> non corrispondono'
 }
 
@@ -15,7 +15,6 @@ function mostraErrore(input) {
 
     var elemento = document.createElement("strong");
     elemento.className = "errori"; //classe degli errori
-   
 
     if(input.id == "conf-psw" || input.id == "dataNascita") //conferma password
         elemento.appendChild(document.createTextNode(dettagli_form[input.id]));    
@@ -27,7 +26,7 @@ function mostraErrore(input) {
 }
 
 function validateCampo(input){
-    
+    //elimino spazi prima e dopo
     var text = input.value.replace(/(^\s+|\s+$)/g, '');
 
     if(text != ""){
