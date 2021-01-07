@@ -144,6 +144,7 @@ class Manager{
         $lastid = null;
         if(!$this->dbconnection->query($select)){
             array_push($errors, "Errore nell'inserimento");
+            $_SESSION['postErrors'] = $errors;
         }else{
             $lastid = $this->dbconnection->getLastId();
         }
@@ -275,6 +276,7 @@ class Manager{
 
         if(!$this->dbconnection->query($select)){
             array_push($errors, "Errore nell'inserimento");
+            $_SESSION['commentErrors'] = $errors;
             $res = false;
         }
         $this->disconnect();

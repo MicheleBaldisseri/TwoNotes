@@ -32,14 +32,6 @@ if(empty($values['altImmagine']) && !empty($values['immagine'])) array_push($err
 if(!empty($values['altImmagine']) && empty($values['immagine'])) array_push($errors, '<a href="#altImmagine">Compila il campo Descrizione Immagine solo se un\'immagine è caricata</a>');
 if(empty($values['contenuto'])) array_push($errors, '<a href="#content">Compila il campo Contenuto</a>');
 
-$res = $manager->transformString($values['titolo']);
-if(!$res) array_push($errors, '<a href="#title">Errore con il titolo del <span xml:lang="en">post</span>, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
-else $values['titolo'] = $res;
-
-$res = $manager->transformString($values['contenuto']);
-if(!$res) array_push($errors, '<a href="#content">Errore con il contenuto del <span xml:lang="en">post</span>, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
-else $values['contenuto'] = $res;
-
 if(!empty($values['immagine'])){
     $file_tmp = $_FILES['myfile']['tmp_name'];
     $size = filesize($file_tmp);
@@ -57,6 +49,13 @@ if (!empty($values['immagine']) && !preg_match("/^[\s\S]{5,75}$/", $values['altI
 if (!preg_match("/^[\s\S]{5,1000}$/", $values['contenuto'])) 
         array_push($errors, '<a href="#content">Nel contenuto sono ammessi da 5 a 1000 caratteri</a>');
 
+$resTitolo = $manager->transformString($values['titolo']);
+if(!$resTitolo) array_push($errors, '<a href="#title">Errore con il titolo del <span xml:lang="en">post</span>, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
+
+
+$resContenuto = $manager->transformString($values['contenuto']);
+if(!$resContenuto) array_push($errors, '<a href="#content">Errore con il contenuto del <span xml:lang="en">post</span>, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
+
 
 if(count($errors)==0){
 
@@ -67,7 +66,12 @@ if(count($errors)==0){
         move_uploaded_file($_FILES["myfile"]["tmp_name"],$path);
         $values['immagine'] = $rnd.$values['immagine'];
     }
-    
+
+    $tempTitolo = $values['titolo'];
+    $tempContenuto = $values['contenuto'];
+    $values['titolo'] = $resTitolo;
+    $values['contenuto'] = $resContenuto;
+
     $res = $manager->insertPost($values);
 
     if($res){
@@ -75,8 +79,9 @@ if(count($errors)==0){
         $_SESSION['success'] = '<span xml:lang="en">Post</span> inserito con successo!';
         exit();
     }else{
+        $values['titolo'] = $tempTitolo;
+        $values['contenuto'] = $tempContenuto;
         $_SESSION['postValues'] = $values;
-        $_SESSION['postErrors'] = $errors;
     }
 
 }else{

@@ -23,14 +23,18 @@ if(empty($values['username'])){
     exit();
 }
 
-$res = $manager->transformString($values['contenuto']);
-if(!$res) array_push($errors, '<a href="#postTextarea">Errore con il contenuto del commento, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
-else $values['contenuto'] = $res;
-
 if (!preg_match("/^[\s\S]{1,500}$/", $values['contenuto'])) 
         array_push($errors, '<a href="#postTextarea">Nel commento sono ammessi da 1 a 500 caratteri </a>');
 
+$resContenuto = $manager->transformString($values['contenuto']);
+if(!$resContenuto) array_push($errors, '<a href="#postTextarea">Errore con il contenuto del commento, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
+
+
+
 if(count($errors)==0){
+    $temp = $values['contenuto'];
+    $values['contenuto'] = $resContenuto;
+
     $res = $manager->insertComment($values);
 
     if($res){
@@ -38,9 +42,8 @@ if(count($errors)==0){
         $_SESSION['success'] = "Commento inserito con successo!";
         exit();
     }else{
-        array_push($errors, "Errore di inserimento del commento");
+        $values['contenuto'] = $temp;
         $_SESSION['commentValues'] = $values;
-        $_SESSION['commentErrors'] = $errors;
     }
 
 }else{
