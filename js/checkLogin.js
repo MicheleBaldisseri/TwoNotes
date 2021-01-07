@@ -4,15 +4,13 @@ var dettagli_form = {
     "psw": [/^[\w(#$%&=!)]{4,20}$/, '<span xml:lang="en">Password</span> inserita non valida']
 }
 
-function mostraErrore(input,type) {
+function mostraErrore(input) {
 
     var elemento = document.createElement("strong");
     elemento.className = "errori"; //classe degli errori
     
-    if(type) 
-        elemento.appendChild(document.createTextNode("Spazi prima e dopo il contenuto non sono permessi")); 
-    else 
-        elemento.appendChild(document.createTextNode(dettagli_form[input.id][1])); //errore
+
+    elemento.appendChild(document.createTextNode(dettagli_form[input.id][1])); //errore
 
     var p = input.parentNode; //ovvero lo span aggiunto
     p.appendChild(elemento);
@@ -20,15 +18,11 @@ function mostraErrore(input,type) {
 
 function validateCampo(input){
     var regex= dettagli_form[input.id][0];
-    var text = input.value;
+    var text = input.value.replace(/(^\s+|\s+$)/g, '');
 
-    if(/(^\s+|\s+$)/g.test(text)){ //ci sono spazi prima e dopo 
-        mostraErrore(input,true);
-        return false;
-    }
-    else if(text.search(regex) != 0) {
+    if(text.search(regex) != 0) {
         //-1 se non l'ha trovata altrimenti ritorna la posizione dove inizia
-        mostraErrore(input,false);
+        mostraErrore(input);
         return false;
     }else{
         return true;

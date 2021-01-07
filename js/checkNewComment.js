@@ -1,3 +1,7 @@
+const countReg = (str) => {
+    const re = /\[abbr=([^\]]+)]/g;
+    return ((str || '').match(re) || []).length;
+}
 
 function mostraErrore(input, type) {
 
@@ -6,9 +10,7 @@ function mostraErrore(input, type) {
        
     if(type == 1)
         elemento.appendChild(document.createTextNode("Sono ammessi da 2 a 500 caratteri")); 
-    else if(type == 3)
-        elemento.appendChild(document.createTextNode("Spazi prima e dopo il contenuto non sono permessi")); 
-    else
+    else 
         elemento.appendChild(document.createTextNode("Contenuto non valido. Controlla che i tag d'aiuto siano corretti")); 
 
     var p = input.parentNode; //span 
@@ -30,7 +32,7 @@ function substr_count(string,substring,start,length){
 
 function validateCampo(input){
 
-    var text = input.value;
+    var text = input.value.replace(/(^\s+|\s+$)/g,'');
     var regex= /^[\s\S]{2,500}$/;
 
     //controllo che numero [en] == [/en]
@@ -38,8 +40,8 @@ function validateCampo(input){
         mostraErrore(input,2);
         return false;
     }
-    else if(/(^\s+|\s+$)/g.test(text)){ //ci sono spazi prima e dopo 
-        mostraErrore(input,3);
+    else if(substr_count(text,'[/abbr]',0,text.length)!=countReg(text)){
+        mostraErrore(input,2);
         return false;
     }
     else if(text.search(regex) != 0) {  

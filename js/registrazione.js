@@ -15,9 +15,7 @@ function mostraErrore(input,type) {
     var elemento = document.createElement("strong");
     elemento.className = "errori"; //classe degli errori
    
-    if(type) 
-        elemento.appendChild(document.createTextNode("Spazi prima e dopo il contenuto non sono permessi")); 
-    else if(input.id == "conf-psw" || input.id == "dataNascita") //conferma password
+    if(input.id == "conf-psw" || input.id == "dataNascita") //conferma password
         elemento.appendChild(document.createTextNode(dettagli_form[input.id]));    
     else //tutti gli altri casi
         elemento.appendChild(document.createTextNode(dettagli_form[input.id][1])); 
@@ -28,15 +26,11 @@ function mostraErrore(input,type) {
 
 function validateCampo(input){
     
-    var text = input.value;
+    var text = input.value.replace(/(^\s+|\s+$)/g, '');
 
-    if(/(^\s+|\s+$)/g.test(text)){ //ci sono spazi prima e dopo 
-        mostraErrore(input,true);
-        return false;
-    }
-    else if(input.id == "conf-psw"){ //check corrispondenza password
+    if(input.id == "conf-psw"){ //check corrispondenza password
         if(text != document.getElementById("psw").value){
-            mostraErrore(input,false);
+            mostraErrore(input);
             return false;
         }else{
             return true;
@@ -45,7 +39,7 @@ function validateCampo(input){
     else if(input.id == "dataNascita"){ //età minima per l'iscrizione
         dataInserita=new Date(text);
         if((Date.now() - dataInserita) / (31557600000) < 10) {
-            mostraErrore(input,false);
+            mostraErrore(input);
             return false
         }else{
             return true;
@@ -55,7 +49,7 @@ function validateCampo(input){
         var regex= dettagli_form[input.id][0];
         if(text.search(regex) != 0) {
             //-1 se non l'ha trovata altrimenti ritorna la posizione dove inizia
-            mostraErrore(input,false);
+            mostraErrore(input);
             return false;
         }else{
             return true;

@@ -24,14 +24,11 @@ function mostraErrore(input,type) {
 
 function validateCampo(input){
 
-    var text = input.value;
+    var text = input.value.replace(/(^\s+|\s+$)/g, '');
     var regex= dettagli_form[input.id][0];
 
-    if(/(^\s+|\s+$)/g.test(text)){ //ci sono spazi prima e dopo 
-        mostraErrore(input,true);
-        return false;
-    }
-    else if(input.id == "myfile"){
+
+    if(input.id == "myfile"){
         if(document.getElementById("myfile").value != ""){ //se l'immagine è caricata
             
             //controllo dimensione
@@ -90,7 +87,7 @@ function validateCampo(input){
         return false;
     }else{
         return true;
-    } 
+    }
 }
 
 function validateForm(){
