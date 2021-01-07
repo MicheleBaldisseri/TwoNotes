@@ -105,7 +105,7 @@ function validateCampo(input){
             }
         }
         else{//immagine non caricata
-            if(document.getElementById("altImmagine").value == "") //se non è stato inserito Alt ok
+            if(text == "") //se non è stato inserito Alt ok
                 return true;
             else{
                 mostraErrore(input,3); //Alt inserito -> errore perchè nessuna immagine
