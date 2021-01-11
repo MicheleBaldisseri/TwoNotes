@@ -255,11 +255,12 @@ SEZIONE SINGOLO POST
 .singleComment {
 	margin-top: 1em;
     padding: 1em;
+    padding-bottom: 2.5em;
 }
 
 .tornaSu{
     float: right;
-    margin: -1em 1em 0em 0em;
+    margin: 0.5em 1em 0em 0em;
 }
 
 #newComment p{
@@ -659,7 +660,7 @@ SEZIONE 404page
 .adminLink{
     display: block;
     float: right;
-    margin-top: -1em;
+    margin-top: 0.5em;
 }
 #success_div{
     text-align: center;
