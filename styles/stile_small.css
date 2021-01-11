@@ -52,6 +52,9 @@
     width: 85%;
     margin: auto;
 }
+.sezione p {
+    margin-bottom: 1.5em;
+}
 .sezione h1{
     font-size: 1.7em;
 }
