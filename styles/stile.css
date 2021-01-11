@@ -71,6 +71,15 @@ SEZIONE HOME
 #percorso span{
     color: rgb(255, 226, 98);
 }
+
+#percorso p span a{
+    color: rgb(255, 213, 98);
+}
+
+#percorso p span a:visited{
+    color: rgb(255, 116, 98);
+}
+
 /* Lista dei post*/
 .postContent{
     width: 85%;
@@ -671,6 +680,7 @@ SEZIONE 404page
     text-align: center;
     font-size: 1em;
     font-weight: bold;
+    margin: 2em 0em 2em 0em;
 }
 #phpErrors {
     margin: 0em 0em 1em 0em;

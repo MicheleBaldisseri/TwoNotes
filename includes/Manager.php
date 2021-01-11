@@ -49,7 +49,7 @@ class Manager{
                 $string .= $this->printPost($post);
             }
         }else{
-            $string = '<p>Nessun Risultato</p>';
+            $string = '<li class="errori">Nessun <span xml:lang="en">post</span> trovato!</li>';
         }
         return $string;
         
@@ -94,7 +94,7 @@ class Manager{
     }
 
     public function printNavigazione($currentPage,$pageTotalCount){
-        if($pageTotalCount==1) return '';
+        if($pageTotalCount<=1) return '';
         $navigazione = '<ul class="listaSenzaPunti navigazione">';
         if($currentPage > 1) {
             $navigazione .= "<li><a href='index.php?page=".($currentPage-1)."'> ← Pagina precedente</a></li>";
@@ -114,7 +114,7 @@ class Manager{
     }
 
     public function printNavigazioneRicerca($currentPage,$pageTotalCount,$search){
-        if($pageTotalCount==1) return '';
+        if($pageTotalCount<=1) return '';
         $navigazione = '<ul class="listaSenzaPunti navigazione">';
         if($currentPage > 1) {
             $navigazione .= "<li><a href='ricercaPost.php?page=".($currentPage-1)."&contenutoRicerca=".$search."'> ← Pagina precedente</a></li>";
