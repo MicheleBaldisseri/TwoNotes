@@ -36,7 +36,7 @@ if(isset($_SESSION['postErrors'])){
 
     unset($_SESSION['postErrors']);
 
-    $paginaHTML = str_replace('<VALORETITOLO/>',stripslashes($_SESSION['postValues']['titolo']),$paginaHTML);
+    $paginaHTML = str_replace('<VALORETITOLO/>',htmlspecialchars(stripslashes($_SESSION['postValues']['titolo'])),$paginaHTML);
     $paginaHTML = str_replace('<VALOREALT/>',stripslashes($_SESSION['postValues']['altImmagine']),$paginaHTML);
     $paginaHTML = str_replace('<VALORECONTENUTO/>',stripslashes($_SESSION['postValues']['contenuto']),$paginaHTML);
 }else{

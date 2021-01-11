@@ -66,14 +66,14 @@ class Manager{
                         <h1>' . stripslashes($post['titolo']) . '</h1>
                         <p class="contenutoPost">' . stripslashes($post['contenuto']) . '</p>';
                         if($post['immagine']!=null){
-                            $string .= '<img src="../upload/'.stripslashes($post['immagine']).'" alt="'.stripslashes($post['altImmagine']).'"/>';
+                            $string .= '<img src="../upload/'.stripslashes($post['immagine']).'" alt="'.htmlspecialchars($post['altImmagine']).'"/>';
                         }
                         
         $string .=      '<p class="infoPost">Pubblicato da 
                             <a href="profilo.php?username='. stripslashes($post['utente']) .'">' . stripslashes($post['utente']) . '</a>  
                             il '.$new_date.'
                         </p>
-                        <a class="goToPost" href="postPage.php?idPost='.$post['postID'].'">Vai al <span xml:lang="en">post</span></a>
+                        <a class="goToPost" href="postPage.php?idPost='.$post['postID'].'" title="'.htmlspecialchars($post['titolo']).'">Vai al <span xml:lang="en">post</span></a>
                         <a class="printHide" href="#percorso">Torna su</a> 
                     </div>              
                 </li>';
@@ -179,7 +179,7 @@ class Manager{
             $string = '<h1>'.stripslashes($post['titolo']).'</h1>
             <p class="contenutoPost">'.stripslashes($post['contenuto']).'</p>';
             if($post['immagine']!=null){
-                $string .= '<img src="../upload/'.stripslashes($post['immagine']).'" alt="'.stripslashes($post['altImmagine']).'"/>';
+                $string .= '<img src="../upload/'.stripslashes($post['immagine']).'" alt="'.htmlspecialchars($post['altImmagine']).'"/>';
             }    
             $string .= '<p class="infoPost">
                 Pubblicato da 

@@ -25,7 +25,6 @@ $paginaHTML = str_replace("<HEADERDESTRO/>", $stringHeader, $paginaHTML);
 
 $stringErrors = '';
 if(isset($_SESSION['modificaErrors'])){
-    //mostrare errori form
 
     $stringErrors = "<ul id='phpErrors' class='listaSenzaPunti'>";
     foreach($_SESSION['modificaErrors'] as $error){
