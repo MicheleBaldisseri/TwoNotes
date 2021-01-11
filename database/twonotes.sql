@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Gen 07, 2021 alle 16:21
+-- Creato il: Gen 11, 2021 alle 22:18
 -- Versione del server: 10.4.17-MariaDB
 -- Versione PHP: 8.0.0
 
@@ -45,7 +45,12 @@ INSERT INTO `commenti` (`commentoID`, `post`, `utente`, `dataOra`, `contenuto`) 
 (19, 27, 'user2', '2021-01-07 15:53:48', 'Woo fantastica!'),
 (20, 27, 'user', '2021-01-07 16:00:15', 'L\'ho ascoltata pure io, sinceramente non mi fa impazzire...'),
 (21, 28, 'user2', '2021-01-07 16:05:16', 'Noo! Avevo già preso i biglietti... Che delusione'),
-(22, 28, 'user3', '2021-01-07 16:07:34', 'Ma si sa il <abbr title=\"perchè\">pk</abbr>?');
+(22, 28, 'user3', '2021-01-07 16:07:34', 'Ma si sa il <abbr title=\"perchè\">pk</abbr>?'),
+(23, 26, 'user3', '2021-01-09 16:53:56', 'Mi è capitato di essere nella tua stessa situazione, ti consiglio di scorrere nella <span xml:lang=\"en\">home</span> di <span xml:lang=\"en\">YouTube</span>, si trovano sempre ottime nuove uscite!'),
+(24, 31, 'user2', '2021-01-09 18:17:00', 'Ciao! Per iniziare almeno un giradischi :-)'),
+(25, 31, 'user3', '2021-01-09 18:17:33', 'Certo certo, quello non manca!'),
+(26, 31, 'user2', '2021-01-10 17:00:48', 'Dipende che genere ti piace ovviamente!'),
+(27, 31, 'user2', '2021-01-10 17:01:32', 'Tutti i generi al giorno d’oggi hanno il formato vinile...');
 
 -- --------------------------------------------------------
 
@@ -74,7 +79,10 @@ INSERT INTO `post` (`postID`, `titolo`, `dataOra`, `immagine`, `altImmagine`, `c
 (17, 'Nuova canzone Timmy Trumpet ', '2020-12-19 20:50:32', '1608407432darlin_gabe-the-dog-fb.jpg', 'Cane felice', 'Si chiama \"Paul is dead\". La sto ascoltando in loop su Spotify. Che bomba! Che ne pensate?', 'user2'),
 (26, 'Blocco musicale!', '2021-01-06 16:18:58', '', '', 'Aiuto, ho un blocco musicale e un infinito bisogno di nuova musica!', 'user'),
 (27, 'Blinding Lights', '2021-01-07 15:53:22', '', '', 'Ragazzi ascoltate assolutamente questa canzone dei <span xml:lang=\"en\">The Weekend</span>! Bellissima!', 'user3'),
-(28, 'Home NEWS', '2021-01-07 16:04:23', '1610031863download.png', 'Scritta bianca [en]Home[/en] su sfondo rosso', 'Sono stati cancellati i concerti dell’Home Festival più attesi dell’edizione e i fan non ci vedono chiaro.\r\nVoi cosa ne pensate?', 'user');
+(28, 'Home NEWS', '2021-01-07 16:04:23', '1610031863download.png', 'Scritta bianca [en]Home[/en] su sfondo rosso', 'Sono stati cancellati i concerti dell’Home Festival più attesi dell’edizione e i fan non ci vedono chiaro.\r\nVoi cosa ne pensate?', 'user'),
+(29, 'Sempre meno!', '2021-01-09 17:07:01', '1610208421unnamed.gif', 'Immagine animata raffigurante un chitarrista metal', 'Non vedo l\'ora, manca sempre meno al concerto della mia <span xml:lang=\"en\">band</span>!!', 'user2'),
+(30, '<span xml:lang=\"en\">BEST RAP ALBUM</span>', '2021-01-09 17:28:29', '161020970961xUhLOdFXL._AC_SL1069_.jpg', 'Cover raffigurante il volto dell\'artista coperto dall\'ombra di un bambino', 'Lo ripeto: Marracash piace perché è bravo, e Persona indiscutibilmente uno dei dischi rap di maggior spessore usciti negli ultimi dieci anni.', 'user2'),
+(31, 'Acquisto di un vinile?', '2021-01-09 18:12:15', '', '', 'Sarei interessato ad immergermi nel mondo dei vinili, ma non so proprio da dove iniziare o da che album acquistare...\r\nVoi che suggerite?', 'user3');
 
 --
 -- Trigger `post`
@@ -150,13 +158,13 @@ ALTER TABLE `utenti`
 -- AUTO_INCREMENT per la tabella `commenti`
 --
 ALTER TABLE `commenti`
-  MODIFY `commentoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `commentoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT per la tabella `post`
 --
 ALTER TABLE `post`
-  MODIFY `postID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `postID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Limiti per le tabelle scaricate
