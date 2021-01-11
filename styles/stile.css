@@ -61,7 +61,7 @@ SEZIONE HOME
 }
 /* Breadcrumb */
 #percorso{
-    background-color: #005eac;
+    background-color: #004c8a;
 }
 #percorso p{
     padding: 0.5em;
@@ -69,15 +69,15 @@ SEZIONE HOME
     color: white;
 }
 #percorso span{
-    color: rgb(255, 226, 98);
+    color: rgb(255, 236, 152);
 }
 
 #percorso p span a{
-    color: rgb(255, 213, 98);
+    color: rgb(247, 204, 84);
 }
 
 #percorso p span a:visited{
-    color: rgb(255, 116, 98);
+    color: rgb(250, 77, 77);
 }
 
 /* Lista dei post*/
