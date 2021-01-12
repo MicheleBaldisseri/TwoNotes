@@ -12,95 +12,78 @@
         <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
         <script src="../js/checkPost.js"></script>
     </head>
-<!--
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Nuovo post - TwoNotes</title>
-    <meta name="title" content="Nuovo post - TwoNotes"/>
-    <meta name="description" content="Creazione di un nuovo post per TwoNotes"/>
-    <meta name="keywords" content="post, TwoNotes"/>
-    <meta name="author" content="Michele Baldisseri"/>
-    <meta name="language" content="italian it"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../styles/print.css" media="print"/>
-    <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
-    <script type="text/javascript" src="../js/checkPost.js"></script>
-</head>
--->
-<body>
-    <div id="header">
-        <a href="#newPostForm" class="screenReaderOnly">Vai all'inserimento</a>
-        <img src="../img/TwoNotes-4.svg"  alt="Logo TwoNotes con due note musicali che collegano le lettere o"/>
-        <HEADERDESTRO/>
-    </div>
+    <body>
+        <div id="header">
+            <a href="#newPostForm" class="screenReaderOnly">Vai all'inserimento</a>
+            <h1><span>Two Notes</span></h1>
+            <HEADERDESTRO/>
+        </div>
 
-    <div id="percorso">
-        <p>Ti trovi in: <span id="breadcrumb-colore-parola"><a xml:lang="en" href="index.php">Home</a> > Creazione nuovo <span xml:lang="en">Post</span></span></p>
-    </div>
+        <div id="percorso">
+            <p>Ti trovi in: <span id="breadcrumb-colore-parola"><a xml:lang="en" href="index.php">Home</a> &gt; Creazione nuovo <span xml:lang="en">Post</span></span></p>
+        </div>
 
-    <div id="menu">
-        <a href="#newPostForm" class="screenReaderOnly">Vai all'inserimento</a>
+        <div id="menu">
+            <a href="#newPostForm" class="screenReaderOnly">Vai all'inserimento</a>
 
-        <ul class="listaSenzaPunti">
-            <li><a xml:lang="en" href="index.php">Home</a></li>
-            <li><a href="aboutUs.php">Chi siamo</a></li>
-            <li><a href="contatti.php">Contatti</a></li>
-        </ul>
-    </div>
+            <ul class="listaSenzaPunti">
+                <li><a xml:lang="en" href="index.php">Home</a></li>
+                <li><a href="aboutUs.php">Chi siamo</a></li>
+                <li><a href="contatti.php">Contatti</a></li>
+            </ul>
+        </div>
 
-    <div id="newPostForm" class="sezione round_div shadow-div">
-        <h1>Creazione <span xml:lang="en">Post</span></h1>
-        <p>Compila i seguenti campi per creare il tuo <span xml:lang="en">post</span>. Ricorda che contenuti 
-            offensivi o che violano le regole verranno eliminati dai nostri amministratori.
-        </p>
-        <p>I formati consentiti per le foto sono .gif /.jpeg /.png/.jpg mentre la dimensione massima è 500 KB. Solo inserendo un'immagine si potrà aggiurgene una descrizione.</p>       
-        <p>Consigli utili per titolo e contenuto:</p>
-        <ul>
-            <li>Per inserire una parola in lingua inglese usare il comando: [en] &#60;testo in inglese&#62; [/en]</li>
-            <li>Per inserire una abbreviazione usare: [abbr=&#60;abbreviazione estesa&#62;] &#60;abbreviazione&#62; [/abbr]</li>
-            <li>Inserire i precedenti consigli senza i simboli &#60; e &#62;</li>
-        </ul>
+        <div id="newPostForm" class="sezione round_div shadow-div">
+            <h1>Creazione <span xml:lang="en">Post</span></h1>
+            <p>Compila i seguenti campi per creare il tuo <span xml:lang="en">post</span>. Ricorda che contenuti 
+                offensivi o che violano le regole verranno eliminati dai nostri amministratori.
+            </p>
+            <p>I formati consentiti per le foto sono .gif /.jpeg /.png/.jpg mentre la dimensione massima è 500 KB. Solo inserendo un'immagine si potrà aggiurgene una descrizione.</p>       
+            <p>Consigli utili per titolo e contenuto:</p>
+            <ul>
+                <li>Per inserire una parola in lingua inglese usare il comando: [en] &#60;testo in inglese&#62; [/en]</li>
+                <li>Per inserire una abbreviazione usare: [abbr=&#60;abbreviazione estesa&#62;] &#60;abbreviazione&#62; [/abbr]</li>
+                <li>Inserire i precedenti consigli senza i simboli &#60; e &#62;</li>
+            </ul>
 
-        <form name="creazionePost" action="newPostAction.php" title="Creazione post" method="POST" enctype="multipart/form-data" onsubmit="return validateForm();">
             <ERRORIPOST/>
-            <div>
-                <label for="title">Titolo:</label>  
-                <span>
-                    <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="<VALORETITOLO/>" required="required" />
-                </span>
-                    
-                <label for="myfile">Carica un'immagine:</label>     
-                <span>
-                    <input type="file" id="myfile" name="myfile"/>
-                </span>      
-                
-                <label for="altImmagine">Descrizione Immagine:</label>      
-                <span>
-                    <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" placeholder="Carica un'immagine per inserire la descrizione..."><VALOREALT/></textarea>
-                </span>
-                    
-                <label for="content">Contenuto:</label>   
-                <span>
-                    <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..." required="required"><VALORECONTENUTO/></textarea>   
-                </span>
-            
-                <input type="submit" id="submit-btn" class="round-button general-button" value="Invia"/> 
-            </div>
-        </form>
 
-        <a href="index.php" id="annulla">Annulla</a>   
+            <form name="creazionePost" action="newPostAction.php" title="Creazione post" method="POST" enctype="multipart/form-data" onsubmit="return validateForm();">
+                <div>
+                    <label for="title">Titolo:</label>  
+                    <span>
+                        <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="<VALORETITOLO/>" required="required" />
+                    </span>
+                        
+                    <label for="myfile">Carica un'immagine:</label>     
+                    <span>
+                        <input type="file" id="myfile" name="myfile"/>
+                    </span>      
+                    
+                    <label for="altImmagine">Descrizione Immagine:</label>      
+                    <span>
+                        <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" placeholder="Carica un'immagine per inserire la descrizione..."><VALOREALT/></textarea>
+                    </span>
+                        
+                    <label for="content">Contenuto:</label>   
+                    <span>
+                        <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..." required="required"><VALORECONTENUTO/></textarea>   
+                    </span>
+                
+                    <input type="submit" id="submit-btn" class="round-button general-button" value="Invia"/> 
+                </div>
+            </form>
+
+            <a href="index.php" id="annulla">Annulla</a>   
+            
+            <a href="#menu" class="screenReaderOnly">Vai al menù</a>
+        </div>
         
-        <a href="#menu" class="screenReaderOnly">Vai al menù</a>
-    </div>
-    
-    <div id="footer">
-        <img id="imgValidCode" src="../img/valid-xhtml10.png" alt=""/>
-        <img id="imgValidCSS" src="../img/vcss-blue.gif" alt=""/>
-        <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>
-    </div>
-</body>
+        <div id="footer">
+            <img id="imgValidCode" src="../img/valid-xhtml10.png" alt=""/>
+            <img id="imgValidCSS" src="../img/vcss-blue.gif" alt=""/>
+            <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>
+        </div>
+    </body>
 </html>

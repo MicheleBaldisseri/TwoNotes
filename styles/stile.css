@@ -345,18 +345,13 @@ SEZIONE HEADER
     margin-top: 0.7em;
     float: right;
 }
-#header img{
-    width:6.25em;
-    margin-left: 0.8em;
-    padding-left: 4%;
-}
 #header h1{
+    float: left;
     background-image: url("../img/TwoNotes-4.svg");
     background-repeat: no-repeat;
     width: 4em;
     height: 1.6em;
-    margin-left: 0.8em;
-    padding-left: 4%;
+    margin-left: 5.5%;
 }
 #header span{
     display: block;
@@ -676,7 +671,7 @@ SEZIONE 404page
 }
 #success_div{
     text-align: center;
-    width: fit-content;
+    width: 40%;
     margin: 1em auto 1em auto;
 }
 #success_div p{

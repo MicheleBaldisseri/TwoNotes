@@ -1,72 +1,70 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta charset="utf-8"/>
+      <title>Login - TwoNotes</title>
+      <meta name="description" content="Pagina di login al sito TwoNotes"/>
+      <meta name="keywords" content="login, TwoNotes"/>
+      <meta name="author" content="Stefano Dal Poz"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
+      <link rel="stylesheet" type="text/css" href="../styles/print.css" media="print"/>
+      <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
+      <script type="text/javascript" src="../js/checkLogin.js"></script>
+    </head>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Login - TwoNotes</title>
-    <meta name="title" content="Login - TwoNotes"/>
-    <meta name="description" content="Pagina di login al sito TwoNotes"/>
-    <meta name="keywords" content="login, TwoNotes"/>
-    <meta name="author" content="Stefano Dal Poz"/>
-    <meta name="language" content="italian it"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../styles/print.css" media="print"/>
-    <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
-    <script type="text/javascript" src="../js/checkLogin.js"></script>
-</head>
-<body>
-    <div id="header">
-        <a href="#formLogin" class="screenReaderOnly">Accedi al tuo <span xml:lang="en">account</span></a>
-        <h1><span>Two Notes</span></h1>
-    </div>
+    <body>
+        <div id="header">
+            <a href="#formLogin" class="screenReaderOnly">Accedi al tuo <span xml:lang="en">account</span></a>
+            <h1><span>Two Notes</span></h1>
+        </div>
 
-    <div id="percorso">
-        <p>Ti trovi in: <span id="breadcrumb-colore-parola" xml:lang="en"><a href="index.php">Home</a> > Login</span></p>
-    </div>
+        <div id="percorso">
+            <p>Ti trovi in: <span id="breadcrumb-colore-parola" xml:lang="en"><a href="index.php">Home</a> &gt; Login</span></p>
+        </div>
 
-    <div id="menu">
-        <a href="#formLogin" class="screenReaderOnly">Accedi al tuo <span xml:lang="en">account</span></a>
-        <a href="#button_register" class="screenReaderOnly">Registrati</a>
+        <div id="menu">
+            <a href="#formLogin" class="screenReaderOnly">Accedi al tuo <span xml:lang="en">account</span></a>
+            <a href="#button_register" class="screenReaderOnly">Registrati</a>
 
-        <ul class="listaSenzaPunti">
-            <li><a xml:lang="en" href="index.php">Home</a></li>
-            <li><a href="aboutUs.php">Chi siamo</a></li>
-            <li><a href="contatti.php">Contatti</a></li>
-        </ul>
-    </div>
-    <div class="contenitoreCentrale round_div shadow-div login">
-        <h1>Benvenuto nel <span xml:lang="en">social</span> musicale</h1>
-        <img src="../img/TwoNotes-4.svg" alt=""/>
-        <h2>ACCEDI</h2>
+            <ul class="listaSenzaPunti">
+                <li><a xml:lang="en" href="index.php">Home</a></li>
+                <li><a href="aboutUs.php">Chi siamo</a></li>
+                <li><a href="contatti.php">Contatti</a></li>
+            </ul>
+        </div>
+        <div class="contenitoreCentrale round_div shadow-div login">
+            <h1>Benvenuto nel <span xml:lang="en">social</span> musicale</h1>
+            <img src="../img/TwoNotes-4.svg" alt=""/>
+            <h2>ACCEDI</h2>
 
-        <ERRORELOGIN/>
+            <ERRORELOGIN/>
 
-        <form id="formLogin" action="loginAction.php" title="Login" method="post" onsubmit="return validateForm();">
-            <div>
-                <label for="username" xml:lang="en">Username</label>
-                <span>
-                    <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALUEUSERNAME/>" required="required"/>
-                </span>
-                
-                <label for="psw" xml:lang="en">Password</label>
-                <span>
-                    <input type="password" name="psw" id="psw" class="input" placeholder="Password" required="required"/>
-                </span>
-                
-                <input type="submit" class="round-button general-button orange-button" value="Accedi"/>
-            </div>
-        </form>
+            <form id="formLogin" action="loginAction.php" title="Login" method="post" onsubmit="return validateForm();">
+                <div>
+                    <label for="username" xml:lang="en">Username</label>
+                    <span>
+                        <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALUEUSERNAME/>" required="required"/>
+                    </span>
+                    
+                    <label for="psw" xml:lang="en">Password</label>
+                    <span>
+                        <input type="password" name="psw" id="psw" class="input" placeholder="Password" required="required"/>
+                    </span>
+                    
+                    <input type="submit" class="round-button general-button orange-button" value="Accedi"/>
+                </div>
+            </form>
 
-        <h2>NON HAI UN ACCOUNT?</h2>
-        <a href="registrazione.php" id="button_register">Registrati</a>
-        
-        <a href="#menu" class="screenReaderOnly">Vai al menù</a>
-    </div>
-    <div id="footer">
-        <img id="imgValidCode" src="../img/valid-xhtml10.png" alt=""/>
-        <img id="imgValidCSS" src="../img/vcss-blue.gif" alt=""/>
-        <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>
-    </div>
-</body>
+            <h2>NON HAI UN ACCOUNT?</h2>
+            <a href="registrazione.php" id="button_register">Registrati</a>
+            
+            <a href="#menu" class="screenReaderOnly">Vai al menù</a>
+        </div>
+        <div id="footer">
+            <img id="imgValidCode" src="../img/valid-xhtml10.png" alt=""/>
+            <img id="imgValidCSS" src="../img/vcss-blue.gif" alt=""/>
+            <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>
+        </div>
+    </body>
 </html>
