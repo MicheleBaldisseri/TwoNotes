@@ -350,7 +350,19 @@ SEZIONE HEADER
     margin-left: 0.8em;
     padding-left: 4%;
 }
-
+#header h1{
+    background-image: url("../img/TwoNotes-4.svg");
+    background-repeat: no-repeat;
+    width: 4em;
+    height: 1.6em;
+    margin-left: 0.8em;
+    padding-left: 4%;
+}
+#header span{
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
 #header ul li{
     display: inline;
     font-weight: bold;
