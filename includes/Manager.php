@@ -49,7 +49,7 @@ class Manager{
                 $string .= $this->printPost($post);
             }
         }else{
-            $string = '<li class="errori">Nessun <span xml:lang="en">post</span> trovato!</li>';
+            $string = '<li class="errori extraMargin">Nessun <span xml:lang="en">post</span> trovato!</li>';
         }
         return $string;
         
