@@ -534,7 +534,16 @@ SEZIONE REGISTRAZIONE
 }
 #gender{
     margin-left: 35%;
-    width: 40%;
+    width: 48%;
+}
+
+#gender input{
+    clear: left;
+    float: left;
+}
+
+#gender label{
+    float: left;
 }
 /*
 ===================
@@ -722,10 +731,6 @@ SEZIONE 404page
     }     
     .formRegistrazione input[type="radio"] {
         margin-left: 33%;
-    }
-    #gender{
-        margin-left: 35%;
-        width: 35%;
     }
   }
 
