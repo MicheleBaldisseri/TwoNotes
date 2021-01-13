@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Gen 11, 2021 alle 23:38
+-- Creato il: Gen 13, 2021 alle 14:15
 -- Versione del server: 10.4.17-MariaDB
 -- Versione PHP: 8.0.0
 
@@ -68,7 +68,16 @@ INSERT INTO `commenti` (`commentoID`, `post`, `utente`, `dataOra`, `contenuto`) 
 (45, 40, 'user2', '2021-01-09 18:17:00', 'Ciao! Per iniziare almeno un giradischi :-)'),
 (46, 40, 'user3', '2021-01-09 18:17:33', 'Certo certo, quello non manca!'),
 (47, 40, 'user2', '2021-01-10 17:00:48', 'Dipende che genere ti piace ovviamente!'),
-(48, 40, 'user2', '2021-01-10 17:01:32', 'Tutti i generi al giorno d’oggi hanno il formato vinile...');
+(48, 40, 'user2', '2021-01-10 17:01:32', 'Tutti i generi al giorno d’oggi hanno il formato vinile...'),
+(49, 35, 'user3', '2021-01-13 13:01:41', 'Grande Ed, inimitabile!'),
+(50, 35, 'user2', '2021-01-13 13:06:09', 'Ti consiglio Shawn Mendes, Bruno Mars e John Legend!'),
+(51, 32, 'user3', '2021-01-13 13:09:45', 'Per dire... Io ascolto <span xml:lang=\"en\">GreenDay</span>, <span xml:lang=\"en\">Sum41</span>.\r\nSicuramente ora ascolterò di più gli <span xml:lang=\"en\">AC/DC</span>!!'),
+(52, 31, 'user3', '2021-01-13 13:11:17', 'Ora mi è balzato in mente! di Katy Perry ascoltavo molto <span xml:lang=\"en\">Teenage Dream</span>, buttaci un occhio!'),
+(53, 29, 'user3', '2021-01-13 13:20:46', 'Rimarrà un mistero...'),
+(54, 30, 'user3', '2021-01-13 13:21:57', '<span xml:lang=\"en\">Disturbia</span> di Rihanna!'),
+(55, 30, 'user3', '2021-01-13 13:27:30', 'Poi ti consiglio lo stesso un po\' di canzoni in voga ultimamente, come <span xml:lang=\"en\">Holiday</span>, oppure se ti piace la <span xml:lang=\"en\">trap</span> prova con Sfera Ebbasta che va molto ultimamente!'),
+(56, 39, 'user3', '2021-01-13 13:28:14', 'Concordo!'),
+(57, 36, 'user4', '2021-01-13 13:29:15', 'Per rilassarmi intendo starmene tranquillo sul divano, ma sicuramente non facendo attività fisica');
 
 -- --------------------------------------------------------
 
@@ -186,7 +195,7 @@ ALTER TABLE `utenti`
 -- AUTO_INCREMENT per la tabella `commenti`
 --
 ALTER TABLE `commenti`
-  MODIFY `commentoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `commentoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT per la tabella `post`
