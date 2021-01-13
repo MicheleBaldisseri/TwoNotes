@@ -5,9 +5,9 @@ var dettagli_form = {
     "dataNascita": "Sei troppo giovane, devi avere almeno 10 anni",
     "provenienza": [/^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/, "Sono ammesse solo lettere, da 2 a 20 caratteri"],
     "username": [/^[\.\w-]{2,20}$/, "Sono ammessi numeri e lettere e i simboli . e - , da 2 a 20 caratteri"],
-    "email": [/[\S]{2,32}@[\w]{2,32}((?:\.[\w]+)+)?(\.(it|com|edu|gov|org|net|info)){1}/, 'Formato <span xml:lang="en">email</span> inserito non valido'],
+    "email": [/[\S]{2,32}@[\w]{2,32}((?:\.[\w]+)+)?(\.(it|com|edu|gov|org|net|info)){1}/, 'Formato <span xml:lang="en" lang="en">email</span> inserito non valido'],
     "psw": [/^[\w(#$%&=!)]{5,20}$/, "Sono ammessi numeri, lettere e i simboli #,$,%,&,=,! da 5 a 20 caratteri"],
-    "conf-psw": 'Le <span xml:lang="en">password</span> non corrispondono'
+    "conf-psw": 'Le <span xml:lang="en" lang="en">password</span> non corrispondono'
 }
 
 function mostraErrore(input,type) {

@@ -49,7 +49,7 @@ class Manager{
                 $string .= $this->printPost($post);
             }
         }else{
-            $string = '<li class="errori extraMargin">Nessun <span xml:lang="en">post</span> trovato!</li>';
+            $string = '<li class="errori extraMargin">Nessun <span xml:lang="en" lang="en">post</span> trovato!</li>';
         }
         return $string;
         
@@ -73,7 +73,7 @@ class Manager{
                             <a href="profilo.php?username='. stripslashes($post['utente']) .'">' . stripslashes($post['utente']) . '</a>  
                             il '.$new_date.'
                         </p>
-                        <a class="goToPost" href="postPage.php?idPost='.$post['postID'].'" title="'.htmlspecialchars($post['titolo']).'">Vai al <span xml:lang="en">post</span></a>
+                        <a class="goToPost" href="postPage.php?idPost='.$post['postID'].'" title="'.htmlspecialchars($post['titolo']).'">Vai al <span xml:lang="en" lang="en">post</span></a>
                         <a class="printHide" href="#percorso">Torna su</a> 
                     </div>              
                 </li>';
@@ -187,10 +187,10 @@ class Manager{
                 il '.$new_date.'
             </p>';
 
-            if($user->isAdmin()) $string .= '<a class="adminLink" href="deletePost.php?id='.$post['postID'].'">Elimina il <span xml:lang="en">post</span></a>';
+            if($user->isAdmin()) $string .= '<a class="adminLink" href="deletePost.php?id='.$post['postID'].'">Elimina il <span xml:lang="en" lang="en">post</span></a>';
             
         }else{
-            $string = 'Non è stato trovato il <span xml:lang="en">post</span>, ci scusiamo.';
+            $string = 'Non è stato trovato il <span xml:lang="en" lang="en">post</span>, ci scusiamo.';
         }
         return $string;
     }
@@ -345,12 +345,12 @@ class Manager{
                 $user->setSessionVar();
             }else{
                 unset($_SESSION['username']);
-                array_push($errors, '<a href="#psw"><span xml:lang="en">Password</span> errata</a>');
+                array_push($errors, '<a href="#psw"><span xml:lang="en" lang="en">Password</span> errata</a>');
                 $_SESSION['loginError'] = $errors;
             }
         }else{
             unset($_SESSION['username']);
-            array_push($errors, '<a href="#username"><span xml:lang="en">Username</span> non esistente</a>');
+            array_push($errors, '<a href="#username"><span xml:lang="en" lang="en">Username</span> non esistente</a>');
             $_SESSION['loginError'] = $errors;
         }
     }
@@ -367,7 +367,7 @@ class Manager{
         $query->fetch_all(MYSQLI_ASSOC);
 
         if ($query->num_rows > 0) {
-            array_push($errors, '<a href="#username"><span xml:lang="en">Username</span> già utilizzato</a>');
+            array_push($errors, '<a href="#username"><span xml:lang="en" lang="en">Username</span> già utilizzato</a>');
         }
 
         $this->connect();
@@ -379,7 +379,7 @@ class Manager{
         $query->fetch_all(MYSQLI_ASSOC);
 
         if ($query->num_rows > 0) {
-            array_push($errors, '<a href="#email"><span xml:lang="en">Email</span> già utilizzata</a>');
+            array_push($errors, '<a href="#email"><span xml:lang="en" lang="en">Email</span> già utilizzata</a>');
         }
 
         if(count($errors)==0){
@@ -434,7 +434,7 @@ class Manager{
         $query->fetch_all(MYSQLI_ASSOC);
 
         if ($query->num_rows > 0) {
-            array_push($errors, '<a href="#username"><span xml:lang="en">Username</span> già utilizzato</a>');
+            array_push($errors, '<a href="#username"><span xml:lang="en" lang="en">Username</span> già utilizzato</a>');
         }
 
         $this->connect();
@@ -446,7 +446,7 @@ class Manager{
         $query->fetch_all(MYSQLI_ASSOC);
 
         if ($query->num_rows > 0) {
-            array_push($errors, '<a href="#email"><span xml:lang="en">Email</span> già utilizzata</a>');
+            array_push($errors, '<a href="#email"><span xml:lang="en" lang="en">Email</span> già utilizzata</a>');
         }
 
         if(count($errors)==0){
@@ -476,7 +476,7 @@ class Manager{
         if(substr_count($string,'[en]')!=substr_count($string,'[/en]')) return false;
         if(substr_count($string,'[/abbr]')!=preg_match_all('/\[abbr=([^\]]+)]/',$string)) return false;
 
-        $string = str_replace('[en]','<span xml:lang="en">',$string);
+        $string = str_replace('[en]','<span xml:lang="en" lang="en">',$string);
         $string = str_replace('[/en]','</span>',$string);
         $string = str_replace('[/abbr]','</abbr>',$string);
         $string = preg_replace('/\[abbr=([^\]]+)]/','<abbr title="\1">',$string);

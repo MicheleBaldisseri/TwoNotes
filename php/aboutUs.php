@@ -14,14 +14,14 @@ if($user->getUsername()!=null){
 	<div>
 		<ul>
 			<li>Benvenuto <a href="profilo.php?username='.stripslashes($user->getUsername()).'">'. stripslashes($user->getNome()) .'</a>!</li>
-			<li><a href="logout.php" xml:lang="en">Logout</a></li>
+			<li><a href="logout.php" xml:lang="en" lang="en">Logout</a></li>
 		</ul>
 	</div>';
 }else{
 	$stringHeader = '
 	<div>
 		<ul>
-			<li><a href="login.php" xml:lang="en">Login</a> oppure</li>
+			<li><a href="login.php" xml:lang="en" lang="en">Login</a> oppure</li>
 			<li><a href="registrazione.php">Registrati</a></li>
 		</ul>
 	</div>';
