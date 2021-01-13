@@ -20,9 +20,9 @@ if($user->getUsername()!=null){
 		<ul>
             ';
             if($_GET['username'] == stripslashes($user->getUsername())){
-                $stringHeader .= '<li>Benvenuto '. stripslashes($user->getNome()) .'!<li>';
+                $stringHeader .= '<li>Benvenuto '. stripslashes($user->getNome()) .'!</li>';
             }else{
-                $stringHeader .= '<li>Benvenuto <a href="profilo.php?username='.stripslashes($user->getUsername()).'">'. stripslashes($user->getNome()) .'</a>!<li>';
+                $stringHeader .= '<li>Benvenuto <a href="profilo.php?username='.stripslashes($user->getUsername()).'">'. stripslashes($user->getNome()) .'</a>!</li>';
             }
             $stringHeader .= '<li><a href="logout.php" xml:lang="en">Logout</a></li>
             </ul>
