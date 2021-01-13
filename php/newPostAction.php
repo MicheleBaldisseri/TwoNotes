@@ -50,11 +50,11 @@ if (!preg_match("/^[\s\S]{5,1000}$/", $values['contenuto']))
         array_push($errors, '<a href="#content">Nel contenuto sono ammessi da 5 a 1000 caratteri</a>');
 
 $resTitolo = $manager->transformString($values['titolo']);
-if(!$resTitolo) array_push($errors, '<a href="#title">Errore con il titolo del <span xml:lang="en">post</span>, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
+if(!$resTitolo) array_push($errors, '<a href="#title">Errore con il titolo del <span xml:lang="en" lang="en">post</span>, controlla i <span xml:lang="en" lang="en">tag</span> di aiuto inseriti</a>');
 
 
 $resContenuto = $manager->transformString($values['contenuto']);
-if(!$resContenuto) array_push($errors, '<a href="#content">Errore con il contenuto del <span xml:lang="en">post</span>, controlla i <span xml:lang="en">tag</span> di aiuto inseriti</a>');
+if(!$resContenuto) array_push($errors, '<a href="#content">Errore con il contenuto del <span xml:lang="en" lang="en">post</span>, controlla i <span xml:lang="en" lang="en">tag</span> di aiuto inseriti</a>');
 
 
 if(count($errors)==0){
@@ -76,7 +76,7 @@ if(count($errors)==0){
 
     if($res){
         header("Location: postPage.php?idPost=".stripslashes($res));
-        $_SESSION['success'] = '<span xml:lang="en">Post</span> inserito con successo!';
+        $_SESSION['success'] = '<span xml:lang="en" lang="en">Post</span> inserito con successo!';
         exit();
     }else{
         $values['titolo'] = $tempTitolo;

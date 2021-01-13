@@ -12,13 +12,13 @@ if($user->getUsername()!=null){
 	<div>
 		<ul>
 			<li>Benvenuto <a href="profilo.php?username='.stripslashes($user->getUsername()).'">'. stripslashes($user->getNome()) .'</a>!</li>
-			<li><a href="logout.php" xml:lang="en">Logout</a></li>
+			<li><a href="logout.php" xml:lang="en" lang="en">Logout</a></li>
 		</ul>
 	</div>';
 }else{
     unset($_SESSION['loginError']);
     $errors = array();
-    array_push($errors,'Devi autenticarti prima di scrivere un nuovo <span xml:lang="en">post</span>!');
+    array_push($errors,'Devi autenticarti prima di scrivere un nuovo <span xml:lang="en" lang="en">post</span>!');
     $_SESSION['loginError'] = $errors;
     header("Location: login.php");
     exit();

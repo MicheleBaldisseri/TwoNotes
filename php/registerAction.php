@@ -36,16 +36,16 @@ $values['confermaPassword'] = isset($_POST['conf-psw']) ? trim(addslashes($_POST
 if(empty($values['nome'])) array_push($errors, '<a href="#nome">Compila il campo Nome</a>');
 if(empty($values['cognome'])) array_push($errors, '<a href="#cognome">Compila il campo Cognome</a>');
 if(empty($values['dataNascita'])) array_push($errors, '<a href="#dataNascita">Compila il campo Data di nascita</a>');
-if(empty($values['email'])) array_push($errors, '<a href="#email">Compila il campo <span xml:lang="en">Email</span></a>');
+if(empty($values['email'])) array_push($errors, '<a href="#email">Compila il campo <span xml:lang="en" lang="en">Email</span></a>');
 if(empty($values['sesso'])) array_push($errors, '<a href="#maschio">Compila il campo Sesso</a>');
 if(empty($values['provenienza'])) array_push($errors, '<a href="#provenienza">Compila il campo Provenienza</a>');
-if(empty($values['username'])) array_push($errors, '<a href="#username">Compila il campo <span xml:lang="en">Username</span></a>');
-if(empty($values['password'])) array_push($errors, '<a href="#psw">Compila il campo <span xml:lang="en">Password</span></a>');
-if(empty($values['confermaPassword'])) array_push($errors, '<a href="#conf-psw">Compila il campo Conferma <span xml:lang="en">Password</span></a>');
+if(empty($values['username'])) array_push($errors, '<a href="#username">Compila il campo <span xml:lang="en" lang="en">Username</span></a>');
+if(empty($values['password'])) array_push($errors, '<a href="#psw">Compila il campo <span xml:lang="en" lang="en">Password</span></a>');
+if(empty($values['confermaPassword'])) array_push($errors, '<a href="#conf-psw">Compila il campo Conferma <span xml:lang="en" lang="en">Password</span></a>');
 
 if(count($errors)==0){
     if(!filter_var($values['email'], FILTER_VALIDATE_EMAIL)){
-        array_push($errors, '<a href="#email"><span xml:lang="en">Email</span> non valida</a>');
+        array_push($errors, '<a href="#email"><span xml:lang="en" lang="en">Email</span> non valida</a>');
     }
     if(!checkValidDate($values['dataNascita'])){
         array_push($errors, '<a href="#dataNascita">Formato della data di nascita non valida. Formato corretto: gg/mm/yyyy</a>');
@@ -54,7 +54,7 @@ if(count($errors)==0){
             array_push($errors, '<a href="#dataNascita">Sei troppo giovane, devi avere almeno 10 anni</a>');
         }
     }
-    if($values['password']!=$values['confermaPassword'])array_push($errors, '<a href="#conf-psw">Le <span xml:lang="en">password</span> non corrispondono</a>');
+    if($values['password']!=$values['confermaPassword'])array_push($errors, '<a href="#conf-psw">Le <span xml:lang="en" lang="en">password</span> non corrispondono</a>');
 
     if (!preg_match("/^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/", $values['nome'])) 
         array_push($errors, '<a href="#nome">Per il campo Nome sono ammesse solo lettere, da 2 a 20 caratteri</a>');
@@ -63,11 +63,11 @@ if(count($errors)==0){
     if (!preg_match("/^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/", $values['provenienza'])) 
         array_push($errors, '<a href="#provenienza">Per il campo Provenienza sono ammesse solo lettere, da 2 a 20 caratteri</a>');
     if (!preg_match("/^[\.\w-]{2,20}$/", $values['username'])) 
-        array_push($errors, '<a href="#username">Per il campo <span xml:lang="en">Username</span> sono ammessi numeri, lettere e i simboli . e - , da 2 a 20 caratteri</a>');
+        array_push($errors, '<a href="#username">Per il campo <span xml:lang="en" lang="en">Username</span> sono ammessi numeri, lettere e i simboli . e - , da 2 a 20 caratteri</a>');
     if (!preg_match("/[\S]{2,32}@[\w]{2,32}((?:\.[\w]+)+)?(\.(it|com|edu|gov|org|net|info)){1}/", $values['email'])) 
-        array_push($errors, '<a href="#email">Formato <span xml:lang="en">email</span> inserito non valido</a>');
+        array_push($errors, '<a href="#email">Formato <span xml:lang="en" lang="en">email</span> inserito non valido</a>');
     if (!preg_match("/^[\w(#$%&=!)]{4,20}$/", $values['password'])) 
-        array_push($errors, '<a href="#psw">Per il campo <span xml:lang="en">Password</span> sono ammessi numeri, lettere e i simboli #,$,%,&,=,! da 5 a 20 caratteri</a>');
+        array_push($errors, '<a href="#psw">Per il campo <span xml:lang="en" lang="en">Password</span> sono ammessi numeri, lettere e i simboli #,$,%,&,=,! da 5 a 20 caratteri</a>');
 
     if(count($errors)==0){
         if($manager->register($values)){
