@@ -52,7 +52,7 @@ $inserisciCommento = '<div id="newComment" class="sezione round_div shadow-div">
 			<span>
 				<textarea id="postTextarea" class="inputForm" name="contenuto" rows="5" cols="10" placeholder="Inserisci qui il tuo commento..." required="required"><VALORECOMMENTO/></textarea>
 			</span>
-			<input type="submit" class="round-button general-button" value="Invia"></input>
+			<input type="submit" class="round-button general-button" value="Invia" />
 		</div>
 	</form>
 </div>';

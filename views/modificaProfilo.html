@@ -16,14 +16,14 @@
     <body>
         <div id="header">
             <a href="#formBase" class="screenReaderOnly">Vai alla modifica</a>
-            <h1><span xml:lang="en">Two Notes</span></h1>
+            <h1><span xml:lang="en" lang="en">Two Notes</span></h1>
             <HEADERDESTRO/>
         </div>
 
         <div id="percorso">
             <p>Ti trovi in: 
                 <span id="breadcrumb-colore-parola">
-                    <a xml:lang="en" href="index.php">Home</a> 
+                    <a xml:lang="en" lang="en" href="index.php">Home</a> 
                     &gt; 
                     <a href="profilo.php?username=<VALOREUSERNAME/>">Profilo</a> 
                     &gt; Modifica Profilo
@@ -35,7 +35,7 @@
             <a href="#formBase" class="screenReaderOnly">Vai alla modifica</a>
 
             <ul class="listaSenzaPunti">
-                <li><a xml:lang="en" href="index.php">Home</a></li>
+                <li><a xml:lang="en" lang="en" href="index.php">Home</a></li>
                 <li><a href="aboutUs.php">Chi siamo</a></li>
                 <li><a href="contatti.php">Contatti</a></li>
             </ul>
@@ -49,34 +49,34 @@
                         <legend>Informazioni generali</legend>
                         <label for="nome" class="labelleft">Nome:</label>
                         <span>
-                            <input type="text" name="nome" id="nome" class="input" placeholder="Nome" value="<VALORENOME/>" maxlength="20" required="required">
+                            <input type="text" name="nome" id="nome" class="input" placeholder="Nome" value="<VALORENOME/>" maxlength="20" required="required"/>
                         </span>
 
                         <label for="cognome" class="labelleft">Cognome:</label>
                         <span>
-                            <input type="text" name="cognome" id="cognome" class="input" placeholder="Cognome" value="<VALORECOGNOME/>" maxlength="20" required="required">
+                            <input type="text" name="cognome" id="cognome" class="input" placeholder="Cognome" value="<VALORECOGNOME/>" maxlength="20" required="required" />
                         </span>
                                             
                         <label for="dataNascita" class="labelleft">Data di nascita:</label>
                         <span>
-                            <input type="date" name="data" id="dataNascita" class="input" value="<VALOREDATA/>" required="required">
+                            <input type="date" name="data" id="dataNascita" class="input" value="<VALOREDATA/>" required="required" />
                         </span>
 
                         <label for="provenienza" class="labelleft">Provenienza:</label>
                         <span>
-                            <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="<VALOREPROVENIENZA/>" required="required">
+                            <input type="text" name="provenienza" id="provenienza" class="input" placeholder="Provenienza" value="<VALOREPROVENIENZA/>" required="required" />
                         </span>
 
                         <fieldset id="gender">
                             <legend>Sesso</legend>
 
-                            <input type="radio" id="maschio" name="gender" value="M" SELECTEDM required="required">
+                            <input type="radio" id="maschio" name="gender" value="M" SELECTEDM required="required" />
                             <label for="maschio">Maschio</label>                        
                             
-                            <input type="radio" id="femmina" name="gender" value="F" SELECTEDF>
+                            <input type="radio" id="femmina" name="gender" value="F" SELECTEDF />
                             <label for="femmina">Femmina</label>
                             
-                            <input type="radio" id="altro" name="gender" value="A" SELECTEDA>
+                            <input type="radio" id="altro" name="gender" value="A" SELECTEDA />
                             <label for="altro">Altro</label>
                         </fieldset>
                         
@@ -84,29 +84,29 @@
                     <fieldset>
                         <legend>Account</legend>
 
-                        <label for="username" class="labelleft" xml:lang="en">Username:</label>
+                        <label for="username" class="labelleft" xml:lang="en" lang="en">Username:</label>
                         <span>
-                            <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALOREUSERNAME/>" required="required">
+                            <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALOREUSERNAME/>" required="required"/>
                         </span>
                         
-                        <label for="email" class="labelleft" xml:lang="en">Email:</label>
+                        <label for="email" class="labelleft" xml:lang="en" lang="en">Email:</label>
                         <span>
-                            <input type="email" name="email" id="email" class="input" placeholder="Email" value="<VALOREEMAIL/>" required="required">
+                            <input type="email" name="email" id="email" class="input" placeholder="Email" value="<VALOREEMAIL/>" required="required"/>
                         </span>
 
-                        <label for="oldpsw" class="labelleft">Vecchia <span xml:lang="en">password</span>:</label>
+                        <label for="oldpsw" class="labelleft">Vecchia <span xml:lang="en" lang="en">password</span>:</label>
                         <span>
-                            <input type="password" name="oldpsw" id="oldpsw" class="input" placeholder="Vecchia password" required="required">
+                            <input type="password" name="oldpsw" id="oldpsw" class="input" placeholder="Vecchia password" required="required"/>
                         </span>
 
-                        <label for="newpsw" class="labelleft">Nuova <span xml:lang="en">password</span>:</label>
+                        <label for="newpsw" class="labelleft">Nuova <span xml:lang="en" lang="en">password</span>:</label>
                         <span>
-                            <input type="password" name="newpsw" id="newpsw" class="input" placeholder="Nuova password" >
+                            <input type="password" name="newpsw" id="newpsw" class="input" placeholder="Nuova password" />
                         </span>
 
-                        <label for="conf-psw" class="labelleft">Conferma nuova <span xml:lang="en">password</span>:</label>
+                        <label for="conf-psw" class="labelleft">Conferma nuova <span xml:lang="en" lang="en">password</span>:</label>
                         <span>
-                            <input type="password" name="conf-psw" id="conf-psw" class="input" placeholder="Conferma nuova password" >
+                            <input type="password" name="conf-psw" id="conf-psw" class="input" placeholder="Conferma nuova password" />
                         </span>
                     </fieldset>
                     <div>
@@ -121,7 +121,7 @@
         <div id="footer">
             <img id="imgValidCode" src="../img/valid-xhtml10.png" alt=""/>
             <img id="imgValidCSS" src="../img/vcss-blue.gif" alt=""/>
-            <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>
+            <p>Sito creato per un progetto di Tecnologie <span xml:lang="en" lang="en">Web</span> all'Università di Padova - <span xml:lang="en" lang="en">All rights reserved</span> ©.</p>
         </div>
     </body>
 </html>

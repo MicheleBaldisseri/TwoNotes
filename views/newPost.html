@@ -16,27 +16,27 @@
     <body>
         <div id="header">
             <a href="#newPostForm" class="screenReaderOnly">Vai all'inserimento</a>
-            <h1><span xml:lang="en">Two Notes</span></h1>
+            <h1><span xml:lang="en" lang="en">Two Notes</span></h1>
             <HEADERDESTRO/>
         </div>
 
         <div id="percorso">
-            <p>Ti trovi in: <span id="breadcrumb-colore-parola"><a xml:lang="en" href="index.php">Home</a> &gt; Creazione nuovo <span xml:lang="en">Post</span></span></p>
+            <p>Ti trovi in: <span id="breadcrumb-colore-parola"><a xml:lang="en" lang="en" href="index.php">Home</a> &gt; Creazione nuovo <span xml:lang="en" lang="en">Post</span></span></p>
         </div>
 
         <div id="menu">
             <a href="#newPostForm" class="screenReaderOnly">Vai all'inserimento</a>
 
             <ul class="listaSenzaPunti">
-                <li><a xml:lang="en" href="index.php">Home</a></li>
+                <li><a xml:lang="en" lang="en" href="index.php">Home</a></li>
                 <li><a href="aboutUs.php">Chi siamo</a></li>
                 <li><a href="contatti.php">Contatti</a></li>
             </ul>
         </div>
 
         <div id="newPostForm" class="sezione round_div shadow-div">
-            <h1>Creazione <span xml:lang="en">Post</span></h1>
-            <p>Compila i seguenti campi per creare il tuo <span xml:lang="en">post</span>. Ricorda che contenuti 
+            <h1>Creazione <span xml:lang="en" lang="en">Post</span></h1>
+            <p>Compila i seguenti campi per creare il tuo <span xml:lang="en" lang="en">post</span>. Ricorda che contenuti 
                 offensivi o che violano le regole verranno eliminati dai nostri amministratori.
             </p>
             <p>I formati consentiti per le foto sono .gif /.jpeg /.png/.jpg mentre la dimensione massima è 500 KB. Solo inserendo un'immagine si potrà aggiurgene una descrizione.</p>       
@@ -49,7 +49,7 @@
 
             <ERRORIPOST/>
 
-            <form name="creazionePost" action="newPostAction.php" title="Creazione post" method="POST" enctype="multipart/form-data" onsubmit="return validateForm();">
+            <form name="creazionePost" action="newPostAction.php" title="Creazione post" method="post" enctype="multipart/form-data" onsubmit="return validateForm();">
                 <div>
                     <label for="title">Titolo:</label>  
                     <span>
@@ -83,7 +83,7 @@
         <div id="footer">
             <img id="imgValidCode" src="../img/valid-xhtml10.png" alt=""/>
             <img id="imgValidCSS" src="../img/vcss-blue.gif" alt=""/>
-            <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>
+            <p>Sito creato per un progetto di Tecnologie <span lang="en" xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en" lang="en">All rights reserved</span> ©.</p>
         </div>
     </body>
 </html>
