@@ -569,6 +569,9 @@ SEZIONE PROFILO
 #profile li{
     margin-bottom: 2em;
 }
+#profile ul{
+    margin-bottom: 1em;
+}
 /*
 ===================
 SEZIONE Modifica PROFILO - Registrazione

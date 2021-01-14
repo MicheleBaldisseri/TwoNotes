@@ -33,7 +33,6 @@ $values['cognome'] = isset($_POST['cognome']) ? trim(addslashes($_POST['cognome'
 $values['dataNascita'] = isset($_POST['data']) ? trim(addslashes($_POST['data'])) : null;
 $values['email'] = isset($_POST['email']) ? trim(addslashes($_POST['email'])) : null;
 $values['sesso'] = isset($_POST['gender']) ? trim(addslashes($_POST['gender'])) : null;
-$values['provenienza'] = isset($_POST['provenienza']) ? trim(addslashes($_POST['provenienza'])) : null;
 $values['username'] = isset($_POST['username']) ? trim(addslashes($_POST['username'])) : null;
 $values['oldPassword'] = isset($_POST['oldpsw']) ? trim(addslashes($_POST['oldpsw'])) : null;
 $values['newPassword'] = isset($_POST['newpsw']) ? trim(addslashes($_POST['newpsw'])) : null; 
@@ -44,7 +43,6 @@ if(empty($values['cognome'])) array_push($errors, '<a href="#cognome">Compila il
 if(empty($values['dataNascita'])) array_push($errors, '<a href="#dataNascita">Compila il campo Data di nascita</a>');
 if(empty($values['email'])) array_push($errors, '<a href="#email">Compila il campo <span xml:lang="en" lang="en">Email</span></a>');
 if(empty($values['sesso'])) array_push($errors, '<a href="#maschio">Compila il campo Sesso</a>');
-if(empty($values['provenienza'])) array_push($errors, '<a href="#provenienza">Compila il campo Provenienza</a>');
 if(empty($values['username'])) array_push($errors, '<a href="#username">Compila il campo <span xml:lang="en" lang="en">Username</span></a>');
 if(empty($values['oldPassword'])) array_push($errors, '<a href="#psw">Compila il campo Vecchia <span xml:lang="en" lang="en">password</span></a>');
 if(empty($values['confermaPassword']) && !empty($values['newPassword'])) array_push($errors, '<a href="#conf-psw">Compila il campo Conferma nuova <span xml:lang="en" lang="en">password</span></a>');
@@ -67,14 +65,12 @@ if(count($errors)==0){
         array_push($errors, '<a href="#nome">Per il campo Nome sono ammesse solo lettere, da 2 a 20 caratteri</a>');
     if (!preg_match("/^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/", $values['cognome'])) 
         array_push($errors, '<a href="#cognome">Per il campo Cognome sono ammesse solo lettere, da 2 a 20 caratteri</a>');
-    if (!preg_match("/^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/", $values['provenienza'])) 
-        array_push($errors, '<a href="#provenienza">Per il campo Provenienza sono ammesse solo lettere, da 2 a 20 caratteri</a>');
     if (!preg_match("/^[\.\w-]{2,20}$/", $values['username'])) 
         array_push($errors, '<a href="#username">Per il campo <span xml:lang="en" lang="en">Username</span> sono ammessi numeri, lettere e i simboli . e - , da 2 a 20 caratteri</a>');
     if (!preg_match("/[\S]{2,32}@[\w]{2,32}((?:\.[\w]+)+)?(\.(it|com|edu|gov|org|net|info)){1}/", $values['email'])) 
         array_push($errors, '<a href="#email">Formato <span xml:lang="en" lang="en">email</span> inserito non valido</a>');
     if ($values['newPassword']!=null && !preg_match("/^[\w(#$%&=!)]{4,20}$/", $values['newPassword'])) 
-        array_push($errors, '<a href="#newpsw">Per il campo Nuova <span xml:lang="en" lang="en">Password</span> sono ammessi numeri, lettere e i simboli #,$,%,&,=,! da 5 a 20 caratteri</a>');
+        array_push($errors, '<a href="#newpsw">Per il campo Nuova <span xml:lang="en" lang="en">Password</span> sono ammessi numeri, lettere e i simboli #,$,%,&,=,! da 4 a 20 caratteri</a>');
 
     if(count($errors)==0){
         if($manager->modificaProfilo($values,addslashes($user->getUsername()))){

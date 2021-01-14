@@ -389,7 +389,7 @@ class Manager{
                 ('".$values['username']."','".md5($values['password'])."',
                 '".$values['nome']."','".$values['cognome']."',
                 '".$values['dataNascita']."','".$values['email']."',
-                '".$values['sesso']."','".$values['provenienza']."',0)";
+                '".$values['sesso']."',0)";
 
             if(!$this->dbconnection->query($select)){
                 array_push($errors, "Errore nella registrazione");
@@ -471,6 +471,8 @@ class Manager{
         return false;
         
     }
+
+    //ALTRO ------------------------------------------------------------------------------------------
 
     public function transformString($string){
         if(substr_count($string,'[en]')!=substr_count($string,'[/en]')) return false;
