@@ -25,17 +25,8 @@ a{
 }
 .screenReaderOnly{
     position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 0;
     height: 0;
     overflow: hidden;
-}
-.screenReaderOnly:focus{
-    height: auto;
-    position: static;
-    width: auto;
-    margin-left: 2em;
 }
 /*
 ===================

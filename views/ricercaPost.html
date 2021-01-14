@@ -1,68 +1,68 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Ricerca post - TwoNotes</title>
-    <meta name="title" content="Ricerca post - TwoNotes"/>
-    <meta name="description" content="Sito realizzato per un progetto per il corso di Tecnologie Web basato su un social di musica"/>
-    <meta name="keywords" content="TwoNotes, post, ricerca"/>
-    <meta name="author" content="Giulio Zanatta"/>
-    <meta name="language" content="italian it"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../styles/print.css" media="print"/>
-    <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
-</head>
-<body>
-    <div id="header">
-        <a href="#searchResults" class="screenReaderOnly">Vai al contenuto</a>
-        <h1><span xml:lang="en">Two Notes</span></h1>
-        <HEADERDESTRO/>
-    </div>
-
-    <div id="percorso">
-        <p>Ti trovi in: <span id="breadcrumb-colore-parola"> <a xml:lang="en" href="index.php">Home</a> &gt; Ricerca <span xml:lang="en">post</span></span></p>
-    </div>
-
-    <div id="menu">
-        <a href="#search-input" class="screenReaderOnly">Vai alla barra di ricerca</a>
-        <a href="#create-post" class="screenReaderOnly">Vai a creazione <span xml:lang="en">post</span></a>
-        <ul class="listaSenzaPunti">
-            <li><a xml:lang="en" href="index.php">Home</a></li>
-            <li><a href="aboutUs.php">Chi siamo</a></li>
-            <li><a href="contatti.php">Contatti</a></li>
-        </ul>
-    </div>
-
-    <div id="indexContent">     
-        <div id="search" class="round_div shadow-div">
-            <form method="get" action="ricercaPost.php" title="Barra di ricerca">
-                <div>
-                    <label for="search-input">Cerca post:</label>
-                    <input name="contenutoRicerca" id="search-input" type="text" value="<GETRICERCA/>"/>
-                    <input type="submit" id="search-button" class="round-button general-button" value="Cerca"/>           
-                </div>
-            </form>     
-            <a href="newPost.php" id="create-post" class="noWrap">Crea <span xml:lang="en">Post</span></a>    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Ricerca post - TwoNotes</title>
+        <meta name="title" content="Ricerca post - TwoNotes"/>
+        <meta name="description" content="Sito realizzato per un progetto per il corso di Tecnologie Web basato su un social di musica"/>
+        <meta name="keywords" content="TwoNotes, post, ricerca"/>
+        <meta name="author" content="Giulio Zanatta"/>
+        <meta name="language" content="italian it"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="../styles/stile.css" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="../styles/print.css" media="print"/>
+        <link rel="stylesheet" type="text/css" href="../styles/stile_small.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
+    </head>
+    <body>
+        <div id="header">
+            <a href="#searchResults" class="screenReaderOnly">Vai al contenuto</a>
+            <h1><span xml:lang="en">Two Notes</span></h1>
+            <HEADERDESTRO/>
         </div>
-      
-        <p id="searchResults">Risultati della ricerca:</p>
 
-        <NAVIGAZIONE/>
+        <div id="percorso">
+            <p>Ti trovi in: <span id="breadcrumb-colore-parola"> <a xml:lang="en" href="index.php">Home</a> &gt; Ricerca <span xml:lang="en">post</span></span></p>
+        </div>
 
-        <ul class="listaSenzaPunti">
-            <LISTAPOST/>
-        </ul>
+        <div id="menu">
+            <a href="#search-input" class="screenReaderOnly">Vai alla barra di ricerca</a>
+            <a href="#create-post" class="screenReaderOnly">Vai a creazione <span xml:lang="en">post</span></a>
+            <ul class="listaSenzaPunti">
+                <li><a xml:lang="en" href="index.php">Home</a></li>
+                <li><a href="aboutUs.php">Chi siamo</a></li>
+                <li><a href="contatti.php">Contatti</a></li>
+            </ul>
+        </div>
 
-        <NAVIGAZIONE/>
-        <a href="#menu" class="screenReaderOnly">Vai al menù</a> 
-    </div>
-    
-    <div id="footer">
-        <img id="imgValidCode" src="../img/valid-xhtml10.png" alt=""/>
-        <img id="imgValidCSS" src="../img/vcss-blue.gif" alt=""/>
-        <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>
-    </div>
-</body>
+        <div id="indexContent">     
+            <div id="search" class="round_div shadow-div">
+                <form method="get" action="ricercaPost.php" title="Barra di ricerca">
+                    <div>
+                        <label for="search-input">Cerca post:</label>
+                        <input name="contenutoRicerca" id="search-input" type="text" value="<GETRICERCA/>"/>
+                        <input type="submit" id="search-button" class="round-button general-button" value="Cerca"/>           
+                    </div>
+                </form>     
+                <a href="newPost.php" id="create-post" class="noWrap">Crea <span xml:lang="en">Post</span></a>    
+            </div>
+        
+            <p id="searchResults">Risultati della ricerca:</p>
+
+            <NAVIGAZIONE/>
+
+            <ul class="listaSenzaPunti">
+                <LISTAPOST/>
+            </ul>
+
+            <NAVIGAZIONE/>
+            <a href="#menu" class="screenReaderOnly">Vai al menù</a> 
+        </div>
+        
+        <div id="footer">
+            <img id="imgValidCode" src="../img/valid-xhtml10.png" alt="Badge di validazione HTML1.0"/>
+            <img id="imgValidCSS" src="../img/vcss-blue.gif" alt="Badge di validazione CSS"/>
+            <p>Sito creato per un progetto di Tecnologie <span xml:lang="en">Web</span> all'Università di Padova - <span xml:lang="en">All rights reserved</span> ©.</p>
+        </div>
+    </body>
 </html>
