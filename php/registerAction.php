@@ -46,7 +46,7 @@ if(count($errors)==0){
         array_push($errors, '<a href="#email"><span xml:lang="en" lang="en">Email</span> non valida</a>');
     }
     if(!checkValidDate($values['dataNascita'])){
-        array_push($errors, '<a href="#dataNascita">Formato della data di nascita non valida. Formato corretto: gg/mm/yyyy</a>');
+        array_push($errors, '<a href="#dataNascita">Formato della data di nascita non valida. Formato corretto: yyyy-mm-dd</a>');
     }else{
         if(checkFutureDate($values['dataNascita'])){
             array_push($errors, '<a href="#dataNascita">Sei troppo giovane, devi avere almeno 10 anni</a>');

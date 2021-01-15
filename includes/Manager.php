@@ -74,7 +74,7 @@ class Manager{
                             il '.$new_date.'
                         </p>
                         <a class="goToPost" href="postPage.php?idPost='.$post['postID'].'" title="'.htmlspecialchars($post['titolo']).'">Vai al <span xml:lang="en" lang="en">post</span></a>
-                        <a class="printHide" href="#percorso">Torna su</a> 
+                        <a class="printHide" href="#header">Torna su</a> 
                     </div>              
                 </li>';
         return $string;
@@ -259,7 +259,7 @@ class Manager{
                 
                 if($user->isAdmin()) $string .= '<a class="adminLink" href="deleteComment.php?id='.$comment['commentoID'].'&idPost='.$comment['post'].'">Elimina il commento</a>';
                                  
-           $string .= '<a class="printHide tornaSu" href="#percorso">Torna su</a>
+           $string .= '<a class="printHide tornaSu" href="#header">Torna su</a>
             </div>
         </li>';
 
