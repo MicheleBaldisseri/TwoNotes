@@ -2,7 +2,7 @@ var dettagli_form = {
 
     "nome": [ /^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/, "Sono ammesse solo lettere, da 2 a 20 caratteri"],
     "cognome": [ /^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/, "Sono ammesse solo lettere, da 2 a 20 caratteri"],
-    "dataNascita": "Sei troppo giovane, devi avere almeno 10 anni",
+    "dataNascita": [ /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/ ,"La data deve essere nel formato yyyy-mm-dd", "Sei troppo giovane, devi avere almeno 10 anni"],
     "provenienza": [/^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/, "Sono ammesse solo lettere, da 2 a 20 caratteri"],
     "username": [/^[\.\w-]{2,20}$/, "Sono ammessi numeri e lettere e i simboli . e - , da 2 a 20 caratteri"],
     "email": [/[\S]{2,32}@[\w]{2,32}((?:\.[\w]+)+)?(\.(it|com|edu|gov|org|net|info)){1}/, 'Formato <span xml:lang="en" lang="en">email</span> inserito non valido'],
@@ -14,8 +14,14 @@ function mostraErrore(input,type) {
 
     var elemento = document.createElement("strong");
     elemento.className = "errori"; //classe degli errori
-   
-    if(input.id == "conf-psw" || input.id == "dataNascita") //conferma password
+
+    if(input.id == "dataNascita"){
+        if(type)
+            elemento.innerHTML = dettagli_form[input.id][1];        
+        else 
+            elemento.innerHTML = dettagli_form[input.id][2];    
+    }
+    else if(input.id == "conf-psw")
         elemento.innerHTML = dettagli_form[input.id];    
     else //tutti gli altri casi
         elemento.innerHTML = dettagli_form[input.id][1];  
@@ -30,16 +36,23 @@ function validateCampo(input){
 
     if(input.id == "conf-psw"){ //check corrispondenza password
         if(text != document.getElementById("psw").value){
-            mostraErrore(input);
+            mostraErrore(input,false);
             return false;
         }else{
             return true;
         }
     }
-    else if(input.id == "dataNascita"){ //età minima per l'iscrizione
+    else if(input.id == "dataNascita"){ 
+        //formato data
+        if(text.search(regex) != 0) {
+            mostraErrore(input,true);
+            return false;
+        }
+
+        //età minima per l'iscrizione
         dataInserita=new Date(text);
         if((Date.now() - dataInserita) / (31557600000) < 10) {
-            mostraErrore(input);
+            mostraErrore(input,false);
             return false
         }else{
             return true;
@@ -49,7 +62,7 @@ function validateCampo(input){
         var regex= dettagli_form[input.id][0];
         if(text.search(regex) != 0) {
             //-1 se non l'ha trovata altrimenti ritorna la posizione dove inizia
-            mostraErrore(input);
+            mostraErrore(input,false);
             return false;
         }else{
             return true;
