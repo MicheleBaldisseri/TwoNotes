@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 18, 2021 at 06:37 PM
--- Server version: 5.7.31
--- PHP Version: 7.3.21
+-- Creato il: Gen 18, 2021 alle 21:56
+-- Versione del server: 5.7.31
+-- Versione PHP: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `commenti`
+-- Struttura della tabella `commenti`
 --
 
 DROP TABLE IF EXISTS `commenti`;
@@ -37,10 +37,10 @@ CREATE TABLE IF NOT EXISTS `commenti` (
   PRIMARY KEY (`commentoID`),
   KEY `post` (`post`),
   KEY `utente` (`utente`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `commenti`
+-- Dump dei dati per la tabella `commenti`
 --
 
 INSERT INTO `commenti` (`commentoID`, `post`, `utente`, `dataOra`, `contenuto`) VALUES
@@ -80,12 +80,18 @@ INSERT INTO `commenti` (`commentoID`, `post`, `utente`, `dataOra`, `contenuto`) 
 (54, 30, 'user3', '2021-01-13 13:21:57', '<span xml:lang=\"en\">Disturbia</span> di Rihanna!'),
 (55, 30, 'user3', '2021-01-13 13:27:30', 'Poi ti consiglio lo stesso un po\' di canzoni in voga ultimamente, come <span xml:lang=\"en\">Holiday</span>, oppure se ti piace la <span xml:lang=\"en\">trap</span> prova con Sfera Ebbasta che va molto ultimamente!'),
 (56, 39, 'user3', '2021-01-13 13:28:14', 'Concordo!'),
-(57, 36, 'user4', '2021-01-13 13:29:15', 'Per rilassarmi intendo starmene tranquillo sul divano, ma sicuramente non facendo attività fisica');
+(57, 36, 'user4', '2021-01-13 13:29:15', 'Per rilassarmi intendo starmene tranquillo sul divano, ma sicuramente non facendo attività fisica'),
+(58, 36, 'user', '2021-01-18 22:45:09', 'Anch\'io ti consiglio di cercare qualcosa su <span xml:lang=\"en\" lang=\"en\">Spotify</span>, ci sono un sacco di <span xml:lang=\"en\" lang=\"en\">playlists</span> sempre aggiornate con le ultime uscite :)'),
+(59, 36, 'user', '2021-01-18 22:46:57', 'Comunque se qualcuno ha qualcosa in particolare da consigliare, ben venga... seguo!'),
+(60, 35, 'user', '2021-01-18 22:47:51', 'Ah mi spiace, ascolto solo <span xml:lang=\"en\" lang=\"en\">Dubstep</span> ultimamente... non so nemmeno chi sia questo cantante ahah'),
+(61, 36, 'user3', '2021-01-18 22:49:45', 'So che sono passati un pò di giorni, ma mentre programmavo ho scoperto \"<span xml:lang=\"en\" lang=\"en\">Lofi Hip Hop radio</span>\" su <span xml:lang=\"en\" lang=\"en\">Youtube</span>!'),
+(62, 36, 'user3', '2021-01-18 22:50:07', 'Se trovo ancora qualcosa vi aggiorno! :*'),
+(63, 35, 'user3', '2021-01-18 22:51:26', 'Che ne dici di passare a qualcosa di più movimentato però? Io sto cambiando un pò idea dopo la sua ultima canzone di ieri ahah');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `post`
+-- Struttura della tabella `post`
 --
 
 DROP TABLE IF EXISTS `post`;
@@ -102,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `post` (
 ) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `post`
+-- Dump dei dati per la tabella `post`
 --
 
 INSERT INTO `post` (`postID`, `titolo`, `dataOra`, `immagine`, `altImmagine`, `contenuto`, `utente`) VALUES
@@ -127,7 +133,7 @@ INSERT INTO `post` (`postID`, `titolo`, `dataOra`, `immagine`, `altImmagine`, `c
 (41, 'Qualcuno sa dirmi cosa è <abbr title=\"Attacco Decadimento Sostegno Rilascio\">ADSR</abbr>?', '2021-01-11 22:37:28', '', '', 'Ho una lezione di musica domani e devo assolutamente saperlo.\r\nSto impazzendo, aiutatemi <span xml:lang=\"en\" lang=\"en\">please</span>!', 'user');
 
 --
--- Triggers `post`
+-- Trigger `post`
 --
 DROP TRIGGER IF EXISTS `trig`;
 DELIMITER $$
@@ -143,7 +149,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `utenti`
+-- Struttura della tabella `utenti`
 --
 
 DROP TABLE IF EXISTS `utenti`;
@@ -160,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `utenti` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `utenti`
+-- Dump dei dati per la tabella `utenti`
 --
 
 INSERT INTO `utenti` (`username`, `password`, `nome`, `cognome`, `dataNascita`, `email`, `sesso`, `isAdmin`) VALUES
@@ -171,18 +177,18 @@ INSERT INTO `utenti` (`username`, `password`, `nome`, `cognome`, `dataNascita`, 
 ('user4', '3f02ebe3d7929b091e3d8ccfde2f3bc6', 'Stefano', 'Dal Poz', '1997-10-06', 'dalpoz01@gmail.com', 'M', b'0');
 
 --
--- Constraints for dumped tables
+-- Limiti per le tabelle scaricate
 --
 
 --
--- Constraints for table `commenti`
+-- Limiti per la tabella `commenti`
 --
 ALTER TABLE `commenti`
   ADD CONSTRAINT `commenti_ibfk_1` FOREIGN KEY (`post`) REFERENCES `post` (`postID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `commenti_ibfk_2` FOREIGN KEY (`utente`) REFERENCES `utenti` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `post`
+-- Limiti per la tabella `post`
 --
 ALTER TABLE `post`
   ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`utente`) REFERENCES `utenti` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
