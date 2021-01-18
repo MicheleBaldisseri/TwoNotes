@@ -604,6 +604,8 @@ SEZIONE FOOTER
 #imgValidCode{
     float: left;
     margin-left: 1em;
+    width: 88px;
+    height: 31px;
 }
 #imgValidCSS{
     float: right;
