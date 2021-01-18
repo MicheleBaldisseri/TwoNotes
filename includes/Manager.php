@@ -95,41 +95,52 @@ class Manager{
 
     public function printNavigazione($currentPage,$pageTotalCount){
         if($pageTotalCount<=1) return '';
-        $navigazione = '<ul class="listaSenzaPunti navigazione">';
+        $navigazione = '<div class="navigazione">';
+
+        if($currentPage > 1) 
+            $navigazione .= "<a href='index.php?page=1'> Torna alla prima pagina</a>";
+        
+        $navigazione .= '<ul class="listaSenzaPunti">';
         if($currentPage > 1) {
-            $navigazione .= "<li><a href='index.php?page=".($currentPage-1)."'> ← Pagina precedente</a></li>";
+            $navigazione .= "<li><a href='index.php?page=".($currentPage-1)."' title=\"Vai alla pagina precedente\">← Precedente</a></li>";
         }else{
-	        $navigazione .= "<li> ← Pagina precedente </li>";
+	        $navigazione .= "<li>← Precedente</li>";
         }
 
         $navigazione .= "<li> ".$currentPage."/".$pageTotalCount." </li>";
 
         if($currentPage < $pageTotalCount) {
-            $navigazione .= "<li><a href='index.php?page=".($currentPage+1)."'> Pagina successiva → </a></li>";
+            $navigazione .= "<li><a href='index.php?page=".($currentPage+1)."' title=\"Vai alla pagina successiva\">Successiva →</a></li>";
         }else{
-	        $navigazione .= "<li> Pagina successiva → </li>";
+	        $navigazione .= "<li>Successiva →</li>";
         }
-        $navigazione .= '</ul>';
+        $navigazione .= '</ul></div>';
         return $navigazione;
     }
 
     public function printNavigazioneRicerca($currentPage,$pageTotalCount,$search){
         if($pageTotalCount<=1) return '';
-        $navigazione = '<ul class="listaSenzaPunti navigazione">';
+
+        $navigazione = '<div class="navigazione">';
+
+        if($currentPage > 1) 
+            $navigazione .= "<a href='ricercaPost.php?page=1&contenutoRicerca=".$search."'> Torna alla prima pagina</a>";
+
+        $navigazione .= '<ul class="listaSenzaPunti">';
         if($currentPage > 1) {
-            $navigazione .= "<li><a href='ricercaPost.php?page=".($currentPage-1)."&contenutoRicerca=".$search."'> ← Pagina precedente</a></li>";
+            $navigazione .= "<li><a href='ricercaPost.php?page=".($currentPage-1)."&contenutoRicerca=".$search."' title=\"Vai alla pagina precedente\">← Precedente</a></li>";
         }else{
-	        $navigazione .= "<li> ← Pagina precedente </li>";
+	        $navigazione .= "<li>← Precedente</li>";
         }
 
         $navigazione .= "<li> ".$currentPage."/".$pageTotalCount." </li>";
 
         if($currentPage < $pageTotalCount) {
-            $navigazione .= "<li><a href='ricercaPost.php?page=".($currentPage+1)."&contenutoRicerca=".$search."'> Pagina successiva → </a></li>";
+            $navigazione .= "<li><a href='ricercaPost.php?page=".($currentPage+1)."&contenutoRicerca=".$search."' title=\"Vai alla pagina successiva\">Successiva →</a></li>";
         }else{
-	        $navigazione .= "<li> Pagina successiva → </li>";
+	        $navigazione .= "<li>Successiva →</li>";
         }
-        $navigazione .= '</ul>';
+        $navigazione .= '</ul></div>';
         return $navigazione;
     }
 
@@ -307,22 +318,30 @@ class Manager{
 
     public function printNavigazioneCommenti($currentPage,$pageTotalCount,$post){
         if($pageTotalCount<=1) return '';
-        $navigazione = '<ul class="listaSenzaPunti navigazione">';
+
+        $navigazione = '<div class="navigazione">';
+
+        if($currentPage > 1) 
+            $navigazione .= "<a href='postPage.php?page=1&idPost=".$post."'> Torna alla prima pagina</a>";
+
+
+        $navigazione .= '<ul class="listaSenzaPunti">';
         if($currentPage > 1) {
-            $navigazione .= "<li><a href='postPage.php?page=".($currentPage-1)."&idPost=".$post."'> ← Pagina precedente</a></li>";
+            $navigazione .= "<li><a href='postPage.php?page=".($currentPage-1)."&idPost=".$post."' title=\"Vai alla pagina precedente\">← Precedente</a></li>";
         }else{
-	        $navigazione .= "<li> ← Pagina precedente </li>";
+	        $navigazione .= "<li>← Precedente</li>";
         }
 
         $navigazione .= "<li> ".$currentPage."/".$pageTotalCount." </li>";
 
         if($currentPage < $pageTotalCount) {
-            $navigazione .= "<li><a href='postPage.php?page=".($currentPage+1)."&idPost=".$post."'> Pagina successiva → </a></li>";
+            $navigazione .= "<li><a href='postPage.php?page=".($currentPage+1)."&idPost=".$post."' title=\"Vai alla pagina successiva\">Successiva →</a></li>";
         }else{
-	        $navigazione .= "<li> Pagina successiva → </li>";
+	        $navigazione .= "<li>Successiva →</li>";
         }
-        $navigazione .= '</ul>';
+        $navigazione .= '</ul></div>';
         return $navigazione;
+
     }
 
 

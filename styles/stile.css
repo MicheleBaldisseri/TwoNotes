@@ -61,12 +61,17 @@ h3{
     cursor: pointer;
 }
 .navigazione{
-    margin-top: 1.5em;
     text-align: center;
+    margin-top: 1.5em;
 }
-.navigazione li{
+
+.navigazione ul{
+    margin-top: 0.3em;
+}
+
+.navigazione ul li{
     display: inline;
-    padding: 1em;
+    padding: 0.5em;
 }
 /*
 ============
