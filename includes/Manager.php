@@ -63,7 +63,7 @@ class Manager{
 		$string =
                 '<li>
                     <div class="postContent round_div shadow-div textAlignCenter">
-                        <h1>' . stripslashes($post['titolo']) . '</h1>
+                        <h2>' . stripslashes($post['titolo']) . '</h2>
                         <p class="contenutoPost">' . stripslashes($post['contenuto']) . '</p>';
                         if($post['immagine']!=null){
                             $string .= '<img src="../upload/'.stripslashes($post['immagine']).'" alt="'.htmlspecialchars($post['altImmagine']).'"/>';
@@ -176,7 +176,7 @@ class Manager{
             $timestamp = strtotime($post['dataOra']);
 	        $new_date = date("d/m/Y H:i:s", $timestamp);
 
-            $string = '<h1>'.stripslashes($post['titolo']).'</h1>
+            $string = '<h2>'.stripslashes($post['titolo']).'</h2>
             <p class="contenutoPost">'.stripslashes($post['contenuto']).'</p>';
             if($post['immagine']!=null){
                 $string .= '<img src="../upload/'.stripslashes($post['immagine']).'" alt="'.htmlspecialchars($post['altImmagine']).'"/>';

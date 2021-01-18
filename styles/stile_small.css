@@ -49,13 +49,14 @@
     width: 12em;
 }
 .sezione{
-    width: 85%;
+    width: 90%;
     margin: auto;
+    padding: 0.5em;
 }
 .sezione p {
-    margin-bottom: 1.5em;
+    margin: 0.5em;
 }
-.sezione h1{
+.sezione h2{
     font-size: 1.7em;
 }
 .contenitoreCentrale{
@@ -74,11 +75,14 @@
 ==============
 */
 #singlePost{
-    width: 85%;
+    width: 90%;
     margin-bottom: 1em;
 }
 #singlePost img{
     width: 50%;
+}
+#singlePost h3{
+    margin-top: 2em;
 }
 /*
 ==============
@@ -100,8 +104,9 @@
 */
 #formBase{
     text-align: center;
+    width: 85%;
 }
-#formBase h1{
+#formBase h2{
     font-size: 1.5em;
 }
 #formBase fieldset{
@@ -166,10 +171,10 @@
 #profile li{
     margin: 0.8em 0 0.8em 0;
 }
-#profile h1{
+#profile h2{
     margin: 0;
 }
-#profile h2,#profile p{
+#profile h3,#profile p{
     display: block;
     margin: 0;
     padding: 0;
@@ -182,13 +187,14 @@
 .login{
     padding-bottom: 1.5em;
 }
-.login h1{
+.login h2{
     display: none;
 }
 .login img{
     display: none;
 }
-.login h2{
+.login h3{
+    margin-top: 0;
     padding: 0em;
     padding-bottom: 0.5em;
     padding-top: 0.5em;

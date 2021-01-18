@@ -23,6 +23,9 @@ textarea{
 a{
     font-weight: bold;
 }
+h3{
+    color: #1040a7;
+}
 .screenReaderOnly{
     position: absolute;
     height: 0;
@@ -79,7 +82,7 @@ SEZIONE HOME
     padding: 1em;
     overflow-wrap: break-word;
 }
-.postContent h1{
+.postContent h2{
     font-size: 1.5em;
     padding: 0.2em;
     border-bottom: 0.2em solid rgb(131, 121, 121);
@@ -146,21 +149,6 @@ SEZIONE HOME
 .round_div{
     border-radius: 0.5em 0.5em 0.5em 0.5em;
 }
-/*
-===================
-SEZIONE CONTENITORE
-===================
-*/
-.contenitoreCentrale{
-    width: auto;
-    height: auto;
-    margin-top: 1em;
-    margin-left: 25%;
-    margin-right: 1.5%;
-}
-.contenitoreCentrale h1,h2{
-    color: #1040a7;
-}
 .allWidth{
     padding: 1em 0 1em 0;
     height: auto;
@@ -177,6 +165,7 @@ SEZIONE CONTENITORE
     display: inline;
     padding: 1em;
 }
+
 /*
 ===================
 SEZIONE ABOUT US
@@ -207,12 +196,12 @@ SEZIONE CONTATTI
     width: 60%;
     margin-top: 1em;
 }
-.sezione h1{
+.sezione h2{
     text-align: center;
     font-size: 2em;
     color: #09501a;
 }
-.sezione h2{
+.sezione h3{
     margin-top: 1.2em;
     font-size: 1.3em;
 }
@@ -364,7 +353,7 @@ SEZIONE LOGIN PAGE
     padding-bottom: 2em;
 }
 
-.login h1{
+.login h2{
     float: left;
     padding: 4em 0 1em 0;
     width: 55%;
@@ -377,7 +366,7 @@ SEZIONE LOGIN PAGE
     margin-left: 4%;
     height: 100%;
 }
-.login h2{
+.login h3{
     text-align: center;
     margin-right: auto;
     margin-left: auto;
@@ -511,7 +500,6 @@ SEZIONE REGISTRAZIONE
     padding-left: 2em;
     padding-right: 2em;
 }
-
 .formRegistrazione input[type="radio"] {
     margin-left: 35%;
 }
@@ -544,14 +532,14 @@ SEZIONE PROFILO
 #profile{
     min-height: 21em;
 }
-#profile h2 , #profile p{
+#profile h3 , #profile p{
     display: inline;
     font-size: 1.3em;
 }
 #profile p{
     margin-left: 1.2em;
 }
-#profile h1{
+#profile h2{
     margin: 0.5em 0em 1em 0em;
 }
 #profile a{
@@ -639,7 +627,7 @@ SEZIONE 404page
     margin: auto;
     width: 80%;
 }
-#error404 h1{
+#error404 h2{
     color: #613bb9;
     font-size: 2em;
     margin-bottom: 1em;
@@ -671,7 +659,7 @@ SEZIONE 404page
 }
 #success_div{
     text-align: center;
-    width: 40%;
+    width: fit-content;
     margin: 1em auto 1em auto;
 }
 #success_div p{
@@ -713,9 +701,6 @@ SEZIONE 404page
     }
     #search input[type="text"]{
       width: 90%;
-    }
-    .contenitoreCentrale{
-        width: 70%;
     }
     .doubleColumns{
         columns: 1;
