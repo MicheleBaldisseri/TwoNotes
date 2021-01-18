@@ -126,7 +126,7 @@
 
 #formBase input[type="submit"]{
     margin-top: 1em;
-    width: 40%;
+    width: fit-content;
 }
 #formBase input[type="submit"],
 #annulla{
