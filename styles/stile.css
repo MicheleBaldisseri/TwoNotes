@@ -1,7 +1,7 @@
 /*
-===================
+================
 SEZIONE GENERALE
-===================
+================
 */
 * {
     padding: 0em;
@@ -31,16 +31,57 @@ h3{
     height: 0;
     overflow: hidden;
 }
+.listaSenzaPunti{
+    list-style-type: none;
+}
+.doubleColumns{
+    columns: 2;
+}
+.right{
+    float: right;
+}
+.left{
+    float: left;
+}
+.textAlignCenter{
+    text-align: center;
+}
+.shadow-div{
+    box-shadow: 0.1em 0.1em 1em 0.1em #ccc;
+}
+.round_div{
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+.allWidth{
+    padding: 1em 0 1em 0;
+    height: auto;
+    display: block;
+}
+.general-button{
+    cursor: pointer;
+}
+.navigazione{
+    margin-top: 1.5em;
+    text-align: center;
+}
+.navigazione li{
+    display: inline;
+    padding: 1em;
+}
 /*
-===================
+============
 SEZIONE HOME
-===================
+============
 */
 #indexContent{
     width: 55%;
     margin-left: 30%;
 }
-/* Menu a sinistra */
+/*
+===============
+MENU A SINISTRA
+===============
+*/
 #menu{
     float: left;
     width: 20%;
@@ -53,7 +94,11 @@ SEZIONE HOME
     text-align: center; 
     font-weight: bold;
 }
-/* Breadcrumb */
+/* 
+==========
+BREADCRUMB
+==========
+*/
 #percorso{
     background-color: #004c8a;
 }
@@ -73,8 +118,11 @@ SEZIONE HOME
 #percorso p span a:visited{
     color: rgb(250, 77, 77);
 }
-
-/* Lista dei post*/
+/*
+==============
+LISTA DEI POST
+==============
+*/
 .postContent{
     width: 85%;
     margin: auto;
@@ -128,48 +176,11 @@ SEZIONE HOME
     GENERALI
 ===================
 */
-.listaSenzaPunti{
-    list-style-type: none;
-}
-.doubleColumns{
-    columns: 2;
-}
-.right{
-    float: right;
-}
-.left{
-    float: left;
-}
-.textAlignCenter{
-    text-align: center;
-}
-.shadow-div{
-    box-shadow: 0.1em 0.1em 1em 0.1em #ccc;
-}
-.round_div{
-    border-radius: 0.5em 0.5em 0.5em 0.5em;
-}
-.allWidth{
-    padding: 1em 0 1em 0;
-    height: auto;
-    display: block;
-}
-.general-button{
-    cursor: pointer;
-}
-.navigazione{
-    margin-top: 1.5em;
-    text-align: center;
-}
-.navigazione li{
-    display: inline;
-    padding: 1em;
-}
 
 /*
-===================
+================
 SEZIONE ABOUT US
-===================
+================
 */
 #content_aboutUs{
     text-align: center;
@@ -186,9 +197,9 @@ SEZIONE ABOUT US
     margin: auto;  
 }
 /*
-===================
+================
 SEZIONE CONTATTI
-===================
+================
 */
 .sezione{
     margin-left: 25%;
@@ -218,9 +229,9 @@ SEZIONE CONTATTI
     width: 35%;
 }
 /*
-===================
+====================
 SEZIONE SINGOLO POST
-===================
+====================
 */
 #singlePost{
     overflow-wrap: break-word;
@@ -237,12 +248,10 @@ SEZIONE SINGOLO POST
     padding: 1em;
     padding-bottom: 2.5em;
 }
-
 .tornaSu{
     float: right;
     margin: 0.5em 1em 0em 0em;
 }
-
 #newComment p{
     margin-top: 0em;
     font-size: 1.1em;
@@ -268,9 +277,9 @@ SEZIONE SINGOLO POST
     margin-top: 1.5em;
 }
 /*
-===================
+==================
 SEZIONE NUOVO POST
-===================
+==================
 */
 #newPostForm label{
     display: block;
@@ -292,17 +301,18 @@ SEZIONE NUOVO POST
     margin-right: 5%;
     float: right;
 }
-
 #newPostForm{
     overflow: hidden;
 }
-
 #annulla{
     float: left;
     margin-top: 1em;
 }
-
-/*text area contenuto*/
+/*
+===================
+TEXT AREA CONTENUTO
+===================
+*/
 .inputForm{
     width: 90%;
     padding: 0.75em 1.25em;
@@ -312,9 +322,9 @@ SEZIONE NUOVO POST
     border-radius: 0.25em; 
 }
 /*
-===================
+==============
 SEZIONE HEADER
-===================
+==============
 */
 #header{
     padding: 1.0em;
@@ -344,9 +354,9 @@ SEZIONE HEADER
     margin: 0.4em 0.4em 0.4em 0;
 }
 /*
-===================
+==================
 SEZIONE LOGIN PAGE
-===================
+==================
 */
 .login{
     padding: 1em;
@@ -449,7 +459,6 @@ SEZIONE BOTTONI
     padding-top: 1em;
     padding-bottom: 1em;
 }
-
 /* 
 ======================
 SEARCH BAR - Home Page 
@@ -479,7 +488,6 @@ SEARCH BAR - Home Page
     width: 90%;
     display: inline;
 }
-
 /*
 =====================
 SEZIONE REGISTRAZIONE
@@ -503,7 +511,6 @@ SEZIONE REGISTRAZIONE
 .formRegistrazione input[type="radio"] {
     margin-left: 35%;
 }
-
 .formRegistrazione, #search form{
     display: inline;
 }
@@ -515,19 +522,17 @@ SEZIONE REGISTRAZIONE
     margin-left: 35%;
     width: 48%;
 }
-
 #gender input{
     clear: left;
     float: left;
 }
-
 #gender label{
     float: left;
 }
 /*
-===================
+===============
 SEZIONE PROFILO
-===================
+===============
 */
 #profile{
     min-height: 21em;
@@ -552,9 +557,9 @@ SEZIONE PROFILO
     margin-bottom: 1em;
 }
 /*
-===================
+========================================
 SEZIONE Modifica PROFILO - Registrazione
-===================
+========================================
 */
 #formBase{
     padding: 1em;
@@ -581,12 +586,9 @@ SEZIONE Modifica PROFILO - Registrazione
     margin-bottom: 0.5em;
     margin-top: 0.5em;
 }
-
 #formBase button{
     background-color: #005fac9f;
 }
-
-
 /*
 ==============
 SEZIONE FOOTER
@@ -611,14 +613,13 @@ SEZIONE FOOTER
     float: right;
     margin-right: 0.6em;
 }
-
 #footer p{
     margin: 1em 0em 1em 0em;
 }
 /*
-==============
-SEZIONE 404page
-==============
+===============
+SEZIONE 404PAGE
+===============
 */
 #error404{
     width: 60%;
@@ -643,19 +644,14 @@ SEZIONE 404page
     margin-top: 1em;
     margin-bottom: 1.5em;
 }
-/*
-==============
-SEZIONE 404page
-==============
-*/
 #error404 #stopSign{
     width: 30%;
     margin-bottom: 1em;
 }
 /*
-==============
+==========================
  ERRORI - SUCCESSO - ADMIN
-==============
+==========================
 */
 .adminLink{
     display: block;
@@ -697,7 +693,7 @@ SEZIONE 404page
 }
 /*
 ==============
-  RESPONNSIVE
+  RESPONSIVE
 ==============
 */
 @media only screen and (max-width: 1400px) {

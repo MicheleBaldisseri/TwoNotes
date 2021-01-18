@@ -37,9 +37,9 @@ p, input[type="submit"]{
     border-bottom: 0.1em solid black;
 }
 /*
-==============
-INDEX
-==============
+=============
+SEZIONE INDEX
+=============
 */
 #search, .printHide, .goToPost{
     display: none;
@@ -58,9 +58,9 @@ INDEX
     display: inline;
 }
 /*
-==============
-SINGLE POST
-==============
+===================
+SEZIONE SINGLE POST
+===================
 */
 #singlePost img{
     width: 20%;
@@ -69,25 +69,25 @@ SINGLE POST
     display: none;
 }
 /*
-==============
-LOGIN
-==============
+=============
+SEZIONE LOGIN
+=============
 */
 .contenitoreCentrale img{
     display: none;
 }
 /*
-==============
-ABOUT US
-==============
+================
+SEZIONE ABOUT US
+================
 */
 #content_aboutUs img{
     display: none;
 }
 /*
-==============
-CONTATTI
-==============
+================
+SEZIONE CONTATTI
+================
 */
 #content img{
     display: none;
@@ -97,17 +97,17 @@ CONTATTI
     font-weight: bold;
 }
 /*
-==============
-PROFILO
-==============
+===============
+SEZIONE PROFILO
+===============
 */
 .sezione a{
     display: none;
 }
 /*
-==============
-NEW POST
-==============
+================
+SEZIONE NEW POST
+================
 */
 #newPostForm label,#newPostForm input{
     display: block;
@@ -121,9 +121,9 @@ NEW POST
     display: none;
 }
 /*
-==============
-REGISTRAZIONE
-==============
+=====================
+SEZIONE REGISTRAZIONE
+=====================
 */
 #formBase a{
     display: none;
