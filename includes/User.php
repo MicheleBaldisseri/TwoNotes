@@ -32,7 +32,6 @@ class User {
         $this->dataNascita = $res['dataNascita'];
         $this->email = $res['email'];
         $this->sesso = $res['sesso'];
-        $this->provenienza = $res['provenienza'];  
         $this->admin = $res['isAdmin'];
         $this->password = $res['password'];
 
@@ -68,10 +67,6 @@ class User {
 
     public function getSesso() {
 		return $this->sesso;
-    }
-
-    public function getProvenienza() {
-		return $this->provenienza;
     }
     
     public function isAdmin(){

@@ -58,7 +58,6 @@ if($userProfile!=null){
 	$paginaHTML = str_replace("<DATANASCITA/>", $new_date, $paginaHTML);
 	$paginaHTML = str_replace("<SESSO/>", $userProfile->getSesso(), $paginaHTML);
 	$paginaHTML = str_replace("<USERNAME/>", stripslashes($userProfile->getUsername()), $paginaHTML);
-	$paginaHTML = str_replace("<PROVENIENZA/>", stripslashes($userProfile->getProvenienza()), $paginaHTML);
 	$paginaHTML = str_replace("<RUOLO/>", ($userProfile->isAdmin() ? 'Admin' : 'Utente'), $paginaHTML);
 
 }else{

@@ -43,7 +43,6 @@ if($user->getUsername()!=null){
 	$paginaHTML = str_replace("<VALOREEMAIL/>", stripslashes($user->getEmail()), $paginaHTML);
 	$paginaHTML = str_replace("<VALOREDATA/>", stripslashes($user->getDataNascita()), $paginaHTML);
 	$paginaHTML = str_replace("<VALOREUSERNAME/>", stripslashes($user->getUsername()), $paginaHTML);
-	$paginaHTML = str_replace("<VALOREPROVENIENZA/>", stripslashes($user->getProvenienza()), $paginaHTML);
 
 	$sesso = $user->getSesso();
 	if($sesso == 'M') $paginaHTML = str_replace('SELECTEDM','checked="checked"',$paginaHTML);

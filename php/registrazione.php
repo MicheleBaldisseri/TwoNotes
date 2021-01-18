@@ -25,7 +25,6 @@ if(isset($_SESSION['registerErrors'])){
     $paginaHTML = str_replace('<VALORENOME/>',stripslashes($_SESSION['registerValues']['nome']),$paginaHTML);
     $paginaHTML = str_replace('<VALORECOGNOME/>',stripslashes($_SESSION['registerValues']['cognome']),$paginaHTML);
     $paginaHTML = str_replace('<VALOREEMAIL/>',stripslashes($_SESSION['registerValues']['email']),$paginaHTML);
-    $paginaHTML = str_replace('<VALOREPROVENIENZA/>',stripslashes($_SESSION['registerValues']['provenienza']),$paginaHTML);
     $paginaHTML = str_replace('<VALOREUSERNAME/>',stripslashes($_SESSION['registerValues']['username']),$paginaHTML);
     $paginaHTML = str_replace('<VALOREDATA/>',stripslashes($_SESSION['registerValues']['dataNascita']),$paginaHTML);
 
@@ -34,7 +33,6 @@ if(isset($_SESSION['registerErrors'])){
     $paginaHTML = str_replace('<VALORENOME/>','',$paginaHTML);
     $paginaHTML = str_replace('<VALORECOGNOME/>','',$paginaHTML);
     $paginaHTML = str_replace('<VALOREEMAIL/>','',$paginaHTML);
-    $paginaHTML = str_replace('<VALOREPROVENIENZA/>','',$paginaHTML);
     $paginaHTML = str_replace('<VALOREUSERNAME/>','',$paginaHTML);
     $paginaHTML = str_replace('<VALOREDATA/>','',$paginaHTML);
 }
