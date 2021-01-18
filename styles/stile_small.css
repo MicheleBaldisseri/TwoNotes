@@ -1,7 +1,7 @@
 /*
-==============
-    Home
-==============
+============
+SEZIONE HOME
+============
 */
 #header ul li{
     display: block;
@@ -38,9 +38,9 @@
     font-size: 12px;
 }
 /*
-==============
-    Generale
-==============
+================
+SEZIONE GENERALE
+================
 */
 .screenReaderOnly:focus{
     display: block;
@@ -70,9 +70,9 @@
     display: none;
 }
 /*
-==============
-    Singolo Post
-==============
+====================
+SEZIONE SINGOLO POST
+====================
 */
 #singlePost{
     width: 90%;
@@ -85,22 +85,21 @@
     margin-top: 2em;
 }
 /*
-==============
-    Nuovo Post
-==============
+==================
+SEZIONE NUOVO POST
+==================
 */
 #newPostForm p{
     text-align: center;
 }
-
 .inputForm{
     padding: 0em;
     width: 90%;
 }
 /*
-==============
-  Registrazione
-==============
+=====================
+SEZIONE REGISTRAZIONE
+=====================
 */
 #formBase{
     text-align: center;
@@ -128,7 +127,6 @@
 .labelleft{
     padding: 0.5em 0 0.2em 0;
 }
-
 #formBase input[type="submit"]{
     margin-top: 1em;
     width: fit-content;
@@ -138,11 +136,10 @@
     display: inline;
 }
 /*
-==============
-  Modifica profilo - Registrazione
-==============
+======================================
+SEZIONE MODIFICA PROFILO-REGISTRAZIONE
+======================================
 */
-
 #formBase input[type="radio"]{
     margin-top: 1em;
 }
@@ -150,19 +147,17 @@
     width: 80%;
     margin: auto;
 }
-
 #gender input{
     clear: none;
     float: none;
 }
-
 #gender label{
     float: none;
 }
 /*
-==============
-  Profilo
-==============
+===============
+SEZIONE PROFILO
+===============
 */
 #profile{
     text-align: center;
@@ -180,9 +175,9 @@
     padding: 0;
 }
 /*
-==============
-  Login
-==============
+=============
+SEZIONE LOGIN
+=============
 */
 .login{
     padding-bottom: 1.5em;
