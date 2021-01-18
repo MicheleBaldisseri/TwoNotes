@@ -43,6 +43,7 @@ function validateCampo(input){
     }
     else if(input.id == "dataNascita"){ 
         //formato data
+        var regex= dettagli_form[input.id][0];
         if(text.search(regex) != 0) {
             mostraErrore(input,true);
             return false;

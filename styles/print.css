@@ -21,7 +21,7 @@ h2{
 p, input[type="submit"]{
     margin: 0.5em 0 0.5em 0;
 }
-#menu, #header, .adminLink, .screenReaderOnly{
+#menu, #header, .adminLink, .screenReaderOnly, #footer{
     display: none;
 }
 #percorso{
@@ -31,10 +31,6 @@ p, input[type="submit"]{
 }
 #breadcrumb-colore-parola{
     font-weight: bold;
-}
-#footer{
-    border-top: 0.1em solid black;
-    border-bottom: 0.1em solid black;
 }
 /*
 =============
@@ -50,13 +46,16 @@ SEZIONE INDEX
 .postContent img{
     width: 20%;
 }
+
 .navigazione{
     margin-bottom: 0.5em;
     text-align: center;
 }
-.navigazione li{
-    display: inline;
+.navigazione li:first-child,
+.navigazione li:last-child{
+    display: none;
 }
+
 /*
 ===================
 SEZIONE SINGLE POST
@@ -64,6 +63,12 @@ SEZIONE SINGLE POST
 */
 #singlePost img{
     width: 20%;
+}
+#singlePost h3{
+    font-size: 0.9em;
+}
+.singleComment{
+    border-bottom: 0.1em dotted black;
 }
 #newComment{
     display: none;

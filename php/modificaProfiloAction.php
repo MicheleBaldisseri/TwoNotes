@@ -59,7 +59,7 @@ if(count($errors)==0){
         }
     }
     if($values['newPassword']!=$values['confermaPassword'])array_push($errors, '<a href="#conf-psw">Le <span xml:lang="en" lang="en">password</span> non corrispondono</a>');
-    if(!$user->isPasswordCorrect($values['oldPassword']))array_push($errors, '<a href="#psw">La <span xml:lang="en" lang="en">password</span> corrente non è corretta</a>');
+    if(!$user->isPasswordCorrect($values['oldPassword']))array_push($errors, '<a href="#oldpsw">La <span xml:lang="en" lang="en">password</span> corrente non è corretta</a>');
 
     if (!preg_match("/^(([(a-z)(A-Z)(àèìòù)]+[,.]?[\s]?|[a-zA-Z]+['-]?)+){2,20}$/", $values['nome'])) 
         array_push($errors, '<a href="#nome">Per il campo Nome sono ammesse solo lettere, da 2 a 20 caratteri</a>');
