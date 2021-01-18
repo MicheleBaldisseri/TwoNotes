@@ -42,8 +42,8 @@ if(!empty($values['immagine'])){
     if (!in_array($ext, $supported_image)) array_push($errors, '<a href="#myfile">Estensione immagine non valida</a>');
 }
 
-if (!preg_match("/^[\s\S]{2,30}$/", $values['titolo'])) 
-        array_push($errors, '<a href="#title">Nel titolo sono ammessi da 2 a 30 caratteri</a>');
+if (!preg_match("/^[\s\S]{2,100}$/", $values['titolo'])) 
+        array_push($errors, '<a href="#title">Nel titolo sono ammessi da 2 a 100 caratteri</a>');
 if (!empty($values['immagine']) && !preg_match("/^[\s\S]{5,75}$/", $values['altImmagine'])) 
         array_push($errors, '<a href="#altImmagine">Nella descrizione dell\'immagine sono ammessi da 5 fino a 75 caratteri</a>');
 if (!preg_match("/^[\s\S]{5,1000}$/", $values['contenuto'])) 
