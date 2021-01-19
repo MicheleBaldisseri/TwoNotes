@@ -7,11 +7,11 @@ SEZIONE GENERALE
     padding: 0em;
     margin: 0em;
 }
-html {
+html{
     width: 100%;
     background-color: #69b2ee;
 }
-body {
+body{
     margin: auto;
     max-width: 1400px;
     background-color: white;
@@ -64,11 +64,9 @@ h3{
     text-align: center;
     margin-top: 1.5em;
 }
-
 .navigazione ul{
     margin-top: 0.3em;
 }
-
 .navigazione ul li{
     display: inline;
     padding: 0.5em;
@@ -115,11 +113,9 @@ BREADCRUMB
 #percorso span{
     color: rgb(255, 236, 152);
 }
-
 #percorso p span a{
     color: rgb(247, 204, 84);
 }
-
 #percorso p span a:visited{
     color: rgb(250, 77, 77);
 }
@@ -176,12 +172,6 @@ LISTA DEI POST
 #searchResults{
     text-align: center;
 }
-/*
-===================
-    GENERALI
-===================
-*/
-
 /*
 ================
 SEZIONE ABOUT US
@@ -248,7 +238,7 @@ SEZIONE SINGOLO POST
     width: 95%;
     margin-top: 1em;
 }
-.singleComment {
+.singleComment{
 	margin-top: 1em;
     padding: 1em;
     padding-bottom: 2.5em;
@@ -270,7 +260,7 @@ SEZIONE SINGOLO POST
 #newComment li{
     margin-bottom: 0.5em;
 }
-#newComment {
+#newComment{
     padding-bottom: 0;
 }
 #newComment label{
@@ -367,7 +357,6 @@ SEZIONE LOGIN PAGE
     padding: 1em;
     padding-bottom: 2em;
 }
-
 .login h2{
     float: left;
     padding: 4em 0 1em 0;
@@ -513,7 +502,7 @@ SEZIONE REGISTRAZIONE
     padding-left: 2em;
     padding-right: 2em;
 }
-.formRegistrazione input[type="radio"] {
+.formRegistrazione input[type="radio"]{
     margin-left: 35%;
 }
 .formRegistrazione, #search form{
@@ -599,7 +588,7 @@ SEZIONE Modifica PROFILO - Registrazione
 SEZIONE FOOTER
 ==============
 */
-#footer {
+#footer{
     margin-top: 2em;
     color:white;
     text-align: center;
@@ -687,7 +676,7 @@ SEZIONE 404PAGE
 .extraMargin{
     margin-bottom: 4em;
 }
-#phpErrors {
+#phpErrors{
     margin: 0em 0em 1em 0em;
     text-align: center;
     color: #a32929;
