@@ -7,11 +7,11 @@ html{
 	font-family: Georgia, "Times New Roman", serif; 
 	margin: auto;
 }
-h1{
+h2{
     font-size: 1.1em;
     margin-bottom: 0.5em;
 }
-h2{
+h3{
     font-size: 1em;
     margin: 0.5em 0 0.5em 0;
 }
@@ -46,7 +46,9 @@ SEZIONE INDEX
 .postContent img{
     width: 20%;
 }
-
+.navigazione a{
+    display: none;
+}
 .navigazione{
     margin-bottom: 0.5em;
     text-align: center;
@@ -78,15 +80,7 @@ SEZIONE SINGLE POST
 SEZIONE LOGIN
 =============
 */
-.contenitoreCentrale img{
-    display: none;
-}
-/*
-================
-SEZIONE ABOUT US
-================
-*/
-#content_aboutUs img{
+.sezione img{
     display: none;
 }
 /*
@@ -94,7 +88,7 @@ SEZIONE ABOUT US
 SEZIONE CONTATTI
 ================
 */
-#content img{
+.image{
     display: none;
 }
 #content em{
