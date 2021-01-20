@@ -63,9 +63,6 @@ SEZIONE GENERALE
 .doubleColumns{
     columns: 1;
 }
-#content img{
-    display: none;
-}
 /*
 ====================
 SEZIONE SINGOLO POST
@@ -179,10 +176,7 @@ SEZIONE LOGIN
 .login{
     padding-bottom: 1.5em;
 }
-.login h2{
-    display: none;
-}
-.login img{
+.login h2, .login img{
     display: none;
 }
 .login h3{

@@ -71,6 +71,10 @@ h3{
     display: inline;
     padding: 0.5em;
 }
+.image{
+    margin: 1em auto 0em;
+    width: 60%;
+}
 /*
 ============
 SEZIONE HOME
@@ -183,13 +187,8 @@ SEZIONE ABOUT US
 #content_aboutUs p {
     font-size: 1.2em;
 }
-#content_aboutUs img{
-    display: block;
-    max-width: 30em;
-    max-height: 30em;
-    width: 70%;
-    height: 80%;
-    margin: auto;  
+#AU_img{
+    content:url("../img/people_dance.png");
 }
 /*
 ================
@@ -222,6 +221,10 @@ SEZIONE CONTATTI
     margin: auto;
     margin-top: 1.5em;
     width: 35%;
+}
+#contatti_img{
+    content:url("../img/Support.png");
+    width: 40%;
 }
 /*
 ====================
@@ -612,35 +615,31 @@ SEZIONE FOOTER
 }
 /*
 ===============
-SEZIONE 404PAGE
+SEZIONE PAGINE ERRORI
 ===============
 */
-#error404{
-    width: 60%;
-    margin-left: 20%;
-    padding: 2em;
-    margin-top: 1.5em;
+#errorPage{
+    margin: 1.5em auto 1em;
+}
+#error404_img{
+    content:url("../img/404errore.png");
     margin-bottom: 1.5em;
 }
-#error404 img{
-    display: block;
-    margin: auto;
-    width: 80%;
+#errorPage_img{
+    content:url("../img/stop.svg");
+    width: 30%;
+    margin-bottom: 1.5em;
 }
-#error404 h2{
+#errorPage h2{
     color: #613bb9;
     font-size: 2em;
     margin-bottom: 1em;
 }
-#error404 p{
+#errorPage p{
     font-size: 1.1em;
     font-weight: bold;
     margin-top: 1em;
     margin-bottom: 1.5em;
-}
-#error404 #stopSign{
-    width: 30%;
-    margin-bottom: 1em;
 }
 /*
 ==========================
