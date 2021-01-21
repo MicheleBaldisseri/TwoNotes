@@ -7,11 +7,11 @@ SEZIONE GENERALE
     padding: 0em;
     margin: 0em;
 }
-html {
+html{
     width: 100%;
     background-color: #69b2ee;
 }
-body {
+body{
     margin: auto;
     max-width: 1400px;
     background-color: white;
@@ -64,14 +64,16 @@ h3{
     text-align: center;
     margin-top: 1.5em;
 }
-
 .navigazione ul{
     margin-top: 0.3em;
 }
-
 .navigazione ul li{
     display: inline;
     padding: 0.5em;
+}
+.image{
+    margin: 1em auto 0em;
+    width: 60%;
 }
 /*
 ============
@@ -105,7 +107,7 @@ BREADCRUMB
 ==========
 */
 #percorso{
-    background-color: #004c8a;
+    background-color: #003B6B;
 }
 #percorso p{
     padding: 0.5em;
@@ -113,15 +115,13 @@ BREADCRUMB
     color: white;
 }
 #percorso span{
-    color: rgb(255, 236, 152);
+    color: rgb(252, 236, 165);
 }
-
 #percorso p span a{
-    color: rgb(247, 204, 84);
+    color: rgb(252, 236, 165);
 }
-
 #percorso p span a:visited{
-    color: rgb(250, 77, 77);
+    color: #FFC300;
 }
 /*
 ==============
@@ -177,12 +177,6 @@ LISTA DEI POST
     text-align: center;
 }
 /*
-===================
-    GENERALI
-===================
-*/
-
-/*
 ================
 SEZIONE ABOUT US
 ================
@@ -193,13 +187,11 @@ SEZIONE ABOUT US
 #content_aboutUs p {
     font-size: 1.2em;
 }
-#content_aboutUs img{
-    display: block;
-    max-width: 30em;
-    max-height: 30em;
-    width: 70%;
-    height: 80%;
-    margin: auto;  
+#AU_img{
+    background: url("../img/people_dance.png") no-repeat top center;
+    height: 14em;
+    width: 20em;
+    background-size: cover;
 }
 /*
 ================
@@ -233,6 +225,12 @@ SEZIONE CONTATTI
     margin-top: 1.5em;
     width: 35%;
 }
+#contatti_img{
+    background: url("../img/Support.png") no-repeat top center;
+    height: 20em;
+    width: 20em;
+    background-size: cover;
+}
 /*
 ====================
 SEZIONE SINGOLO POST
@@ -248,7 +246,7 @@ SEZIONE SINGOLO POST
     width: 95%;
     margin-top: 1em;
 }
-.singleComment {
+.singleComment{
 	margin-top: 1em;
     padding: 1em;
     padding-bottom: 2.5em;
@@ -270,7 +268,7 @@ SEZIONE SINGOLO POST
 #newComment li{
     margin-bottom: 0.5em;
 }
-#newComment {
+#newComment{
     padding-bottom: 0;
 }
 #newComment label{
@@ -363,63 +361,64 @@ SEZIONE HEADER
 SEZIONE LOGIN PAGE
 ==================
 */
-.login{
-    padding: 1em;
-    padding-bottom: 2em;
+#login{
+    overflow: hidden;
+}
+#login > div{
+    width: 50%;
+    text-align: center;
+}
+#loginLeft{
+    float: left;
+    margin: 6em 0 6em 0;
 }
 
-.login h2{
-    float: left;
-    padding: 4em 0 1em 0;
-    width: 55%;
-    text-align: center;
+#loginRight{
+    float: right;
+    margin: 1em 0 1em 0;
 }
-.login img{
-    float: left;
-    width: 50%;
-    margin-top: 5%;
-    margin-left: 4%;
-    height: 100%;
+
+#loginRight form{
+    padding: 0 1em 1em 1em;
 }
-.login h3{
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    font-weight: bold;
-    padding: 1em 0 1em 0;
-}
-.login form{
-    width: 45%;
-    margin-left: 55%;
-}
-.login input[type="text"],
-.login input[type="password"]{
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    width: 75%;
+
+#loginRight label{
     padding: 0.6em;
-    margin-bottom: 1%;
-    margin-top: 3%;
+    font-weight: bold;
+    font-size: 1.3em;
 }
-.login input[type="submit"]{
+
+#loginRight input{
+    margin: 0.6em auto 0.6em auto;
+    padding: 0.3em;
     display: block;
-    margin-right: auto;
-    margin-left: auto;
+    width: 90%;
+}
+
+#loginRight input[type="submit"]{
+    margin-top: 2em;
     width: 35%;
     min-width: fit-content;
 }
-.login a{
-    margin-bottom: 2em;
-}
-#formLogin label{
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
+
+#loginRight h3{
+    margin-top: 0;
     font-size: 1.5em;
-    font-weight: bold;
+    margin-bottom: 1em;
 }
+
+#loginRight a{
+    margin: auto;
+    width: fit-content;
+}
+
+#loginLeft div {
+    background: url('../img/TwoNotes-4.svg') no-repeat;
+    height: 7em;
+    width: 11em;
+    margin: 1.5em auto 0em auto;
+}
+
 /*
 ==================
 SEZIONE BOTTONI
@@ -440,16 +439,9 @@ SEZIONE BOTTONI
     border-radius: 0.3em 0.3em 0.3em 0.3em;
     border: 0.1em solid rgb(148, 148, 148);
 }
-#button_register{
-    text-align: center;
-    display: block;
-    margin-right: 13%;
-    margin-left: 68%;
-    max-width: 35%;
-    min-width: fit-content;
-}
+
 .orange-button{
-    background-color: #ff4b2bc4;
+    background-color: #f7644a;
     color: black;
 }
 .round-button{
@@ -513,7 +505,7 @@ SEZIONE REGISTRAZIONE
     padding-left: 2em;
     padding-right: 2em;
 }
-.formRegistrazione input[type="radio"] {
+.formRegistrazione input[type="radio"]{
     margin-left: 35%;
 }
 .formRegistrazione, #search form{
@@ -599,7 +591,7 @@ SEZIONE Modifica PROFILO - Registrazione
 SEZIONE FOOTER
 ==============
 */
-#footer {
+#footer{
     margin-top: 2em;
     color:white;
     text-align: center;
@@ -623,35 +615,31 @@ SEZIONE FOOTER
 }
 /*
 ===============
-SEZIONE 404PAGE
+SEZIONE PAGINE ERRORI
 ===============
 */
-#error404{
-    width: 60%;
-    margin-left: 20%;
-    padding: 2em;
-    margin-top: 1.5em;
+#errorPage{
+    margin: 1.5em auto 1em;
+}
+#error404_img{
+    content:url("../img/404errore.png");
     margin-bottom: 1.5em;
 }
-#error404 img{
-    display: block;
-    margin: auto;
-    width: 80%;
+#errorPage_img{
+    content:url("../img/stop.svg");
+    width: 30%;
+    margin-bottom: 1.5em;
 }
-#error404 h2{
+#errorPage h2{
     color: #613bb9;
     font-size: 2em;
     margin-bottom: 1em;
 }
-#error404 p{
+#errorPage p{
     font-size: 1.1em;
     font-weight: bold;
     margin-top: 1em;
     margin-bottom: 1.5em;
-}
-#error404 #stopSign{
-    width: 30%;
-    margin-bottom: 1em;
 }
 /*
 ==========================
@@ -687,7 +675,7 @@ SEZIONE 404PAGE
 .extraMargin{
     margin-bottom: 4em;
 }
-#phpErrors {
+#phpErrors{
     margin: 0em 0em 1em 0em;
     text-align: center;
     color: #a32929;

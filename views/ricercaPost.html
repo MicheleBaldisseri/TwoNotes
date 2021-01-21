@@ -16,7 +16,7 @@
     </head>
     <body>
         <div id="header">
-            <a href="#searchResults" class="screenReaderOnly">Vai al contenuto</a>
+            <a href="#searchResults" class="screenReaderOnly" tabindex="-1">Vai al contenuto</a>
             <h1><span xml:lang="en">Two Notes</span></h1>
             <HEADERDESTRO/>
         </div>
@@ -26,8 +26,8 @@
         </div>
 
         <div id="menu">
-            <a href="#search-input" class="screenReaderOnly">Vai alla barra di ricerca</a>
-            <a href="#create-post" class="screenReaderOnly">Vai a creazione <span xml:lang="en">post</span></a>
+            <a href="#search-input" class="screenReaderOnly" tabindex="-1">Vai alla barra di ricerca</a>
+            <a href="#create-post" class="screenReaderOnly" tabindex="-1">Vai a creazione <span xml:lang="en">post</span></a>
             <ul class="listaSenzaPunti">
                 <li><a xml:lang="en" href="index.php">Home</a></li>
                 <li><a href="aboutUs.php">Chi siamo</a></li>
@@ -51,12 +51,12 @@
 
             <NAVIGAZIONE/>
 
-            <ul class="listaSenzaPunti">
+            <ul id="listaPost" class="listaSenzaPunti">
                 <LISTAPOST/>
             </ul>
 
             <NAVIGAZIONE/>
-            <a href="#menu" class="screenReaderOnly">Vai al menù</a> 
+            <a href="#menu" class="screenReaderOnly" tabindex="-1">Vai al menù</a> 
         </div>
         
         <div id="footer">
