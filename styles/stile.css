@@ -379,7 +379,7 @@ SEZIONE LOGIN PAGE
 }
 
 #loginRight form{
-    padding: 1em;
+    padding: 0 1em 1em 1em;
 }
 
 #loginRight label{
