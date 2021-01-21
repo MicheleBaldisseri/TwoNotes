@@ -15,7 +15,7 @@
 
     <body>
         <div id="header">
-            <a href="#newPostForm" class="screenReaderOnly">Vai all'inserimento</a>
+            <a href="#newPostForm" class="screenReaderOnly" tabindex="-1">Vai all'inserimento</a>
             <h1><span xml:lang="en" lang="en">Two Notes</span></h1>
             <HEADERDESTRO/>
         </div>
@@ -25,7 +25,7 @@
         </div>
 
         <div id="menu">
-            <a href="#newPostForm" class="screenReaderOnly">Vai all'inserimento</a>
+            <a href="#newPostForm" class="screenReaderOnly" tabindex="-1">Vai all'inserimento</a>
 
             <ul class="listaSenzaPunti">
                 <li><a xml:lang="en" lang="en" href="index.php">Home</a></li>
@@ -53,31 +53,31 @@
                 <div>
                     <label for="title">Titolo:</label>  
                     <span>
-                        <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="<VALORETITOLO/>" required="required" />
+                        <input class="inputForm" type="text" name="titolo" id="title" placeholder="Inserisci un titolo..." value="<VALORETITOLO/>" required="required" tabindex="1"/>
                     </span>
                         
                     <label for="myfile">Carica un'immagine:</label>     
                     <span>
-                        <input type="file" id="myfile" name="myfile"/>
+                        <input type="file" id="myfile" name="myfile" tabindex="2"/>
                     </span>      
                     
                     <label for="altImmagine">Descrizione Immagine:</label>      
                     <span>
-                        <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" placeholder="Carica un'immagine per inserire la descrizione..."><VALOREALT/></textarea>
+                        <textarea class="inputForm" name="altImmagine" rows="5" cols="10" id="altImmagine" placeholder="Carica un'immagine per inserire la descrizione..." tabindex="3"><VALOREALT/></textarea>
                     </span>
                         
                     <label for="content">Contenuto:</label>   
                     <span>
-                        <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..." required="required"><VALORECONTENUTO/></textarea>   
+                        <textarea class="inputForm" name="contenuto" rows="5" cols="10" id="content" placeholder="Inserisci il contenuto del post..." required="required" tabindex="4"><VALORECONTENUTO/></textarea>   
                     </span>
                 
-                    <input type="submit" id="submit-btn" class="round-button general-button" value="Invia"/> 
+                    <input type="submit" id="submit-btn" class="round-button general-button" value="Invia" tabindex="5"/> 
                 </div>
             </form>
 
-            <a href="index.php" id="annulla">Annulla</a>   
+            <a href="index.php" id="annulla" tabindex="6">Annulla</a>   
             
-            <a href="#menu" class="screenReaderOnly">Vai al menù</a>
+            <a href="#menu" class="screenReaderOnly" tabindex="-1">Vai al menù</a>
         </div>
         
         <div id="footer">
