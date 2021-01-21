@@ -107,7 +107,7 @@ BREADCRUMB
 ==========
 */
 #percorso{
-    background-color: #004c8a;
+    background-color: #003B6B;
 }
 #percorso p{
     padding: 0.5em;
@@ -115,13 +115,13 @@ BREADCRUMB
     color: white;
 }
 #percorso span{
-    color: rgb(255, 236, 152);
+    color: rgb(252, 236, 165);
 }
 #percorso p span a{
-    color: rgb(247, 204, 84);
+    color: rgb(252, 236, 165);
 }
 #percorso p span a:visited{
-    color: rgb(250, 77, 77);
+    color: #FFC300;
 }
 /*
 ==============
