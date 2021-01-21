@@ -22,7 +22,7 @@ if($user->getUsername()!=null){
             if($_GET['username'] == stripslashes($user->getUsername())){
                 $stringHeader .= '<li>Benvenuto '. stripslashes($user->getNome()) .'!</li>';
             }else{
-                $stringHeader .= '<li>Benvenuto <a href="profilo.php?username='.stripslashes($user->getUsername()).'">'. stripslashes($user->getNome()) .'</a>!</li>';
+                $stringHeader .= '<li>Benvenuto <a href="profilo.php?username='.stripslashes($user->getUsername()).'" title="Vai al tuo profilo">'. stripslashes($user->getNome()) .'</a>!</li>';
             }
             $stringHeader .= '<li><a href="logout.php" xml:lang="en" lang="en">Logout</a></li>
             </ul>
@@ -70,7 +70,7 @@ if($userProfile!=null){
 
 $buttonModifica = '';
 if($_GET['username'] == stripslashes($user->getUsername())){
-	$buttonModifica = '<a href="modificaProfilo.php">Modifica</a>';
+	$buttonModifica = '<a href="modificaProfilo.php">Modifica Profilo</a>';
 }
 $paginaHTML = str_replace("<LINKMODIFICA/>", $buttonModifica, $paginaHTML);
 

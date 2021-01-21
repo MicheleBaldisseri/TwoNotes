@@ -13,7 +13,7 @@ if($user->getUsername()!=null){
 	$stringHeader = '
 	<div>
 		<ul>
-			<li>Benvenuto <a href="profilo.php?username='.stripslashes($user->getUsername()).'">'. stripslashes($user->getNome()) .'</a>!</li>
+			<li>Benvenuto <a href="profilo.php?username='.stripslashes($user->getUsername()).'" title="Vai al tuo profilo">'. stripslashes($user->getNome()) .'</a>!</li>
 			<li><a href="logout.php" xml:lang="en" lang="en">Logout</a></li>
 		</ul>
 	</div>';
