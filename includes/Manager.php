@@ -124,11 +124,11 @@ class Manager{
         $navigazione = '<div class="navigazione">';
 
         if($currentPage > 1) 
-            $navigazione .= "<a href='ricercaPost.php?page=1&contenutoRicerca=".$search."'> Torna alla prima pagina</a>";
+            $navigazione .= "<a href='ricercaPost.php?page=1&amp;contenutoRicerca=".$search."'> Torna alla prima pagina</a>";
 
         $navigazione .= '<ul class="listaSenzaPunti">';
         if($currentPage > 1) {
-            $navigazione .= "<li><a href='ricercaPost.php?page=".($currentPage-1)."&contenutoRicerca=".$search."' title=\"Vai alla pagina precedente\">← Precedente</a></li>";
+            $navigazione .= "<li><a href='ricercaPost.php?page=".($currentPage-1)."&amp;contenutoRicerca=".$search."' title=\"Vai alla pagina precedente\">← Precedente</a></li>";
         }else{
 	        $navigazione .= "<li>← Precedente</li>";
         }
@@ -136,7 +136,7 @@ class Manager{
         $navigazione .= "<li> ".$currentPage."/".$pageTotalCount." </li>";
 
         if($currentPage < $pageTotalCount) {
-            $navigazione .= "<li><a href='ricercaPost.php?page=".($currentPage+1)."&contenutoRicerca=".$search."' title=\"Vai alla pagina successiva\">Successiva →</a></li>";
+            $navigazione .= "<li><a href='ricercaPost.php?page=".($currentPage+1)."&amp;contenutoRicerca=".$search."' title=\"Vai alla pagina successiva\">Successiva →</a></li>";
         }else{
 	        $navigazione .= "<li>Successiva →</li>";
         }
@@ -268,7 +268,7 @@ class Manager{
                 .'</a> '.$new_date.'</p>
                 <p>'.stripslashes($comment['contenuto']).'</p>';
                 
-                if($user->isAdmin()) $string .= '<a class="adminLink" href="deleteComment.php?id='.$comment['commentoID'].'&idPost='.$comment['post'].'">Elimina il commento</a>';
+                if($user->isAdmin()) $string .= '<a class="adminLink" href="deleteComment.php?id='.$comment['commentoID'].'&amp;idPost='.$comment['post'].'">Elimina il commento</a>';
                                  
            $string .= '<a class="printHide tornaSu" href="#header">Torna su</a>
             </div>
@@ -322,12 +322,12 @@ class Manager{
         $navigazione = '<div class="navigazione">';
 
         if($currentPage > 1) 
-            $navigazione .= "<a href='postPage.php?page=1&idPost=".$post."'> Torna alla prima pagina</a>";
+            $navigazione .= "<a href='postPage.php?page=1&amp;idPost=".$post."'> Torna alla prima pagina</a>";
 
 
         $navigazione .= '<ul class="listaSenzaPunti">';
         if($currentPage > 1) {
-            $navigazione .= "<li><a href='postPage.php?page=".($currentPage-1)."&idPost=".$post."' title=\"Vai alla pagina precedente\">← Precedente</a></li>";
+            $navigazione .= "<li><a href='postPage.php?page=".($currentPage-1)."&amp;idPost=".$post."' title=\"Vai alla pagina precedente\">← Precedente</a></li>";
         }else{
 	        $navigazione .= "<li>← Precedente</li>";
         }
@@ -335,7 +335,7 @@ class Manager{
         $navigazione .= "<li> ".$currentPage."/".$pageTotalCount." </li>";
 
         if($currentPage < $pageTotalCount) {
-            $navigazione .= "<li><a href='postPage.php?page=".($currentPage+1)."&idPost=".$post."' title=\"Vai alla pagina successiva\">Successiva →</a></li>";
+            $navigazione .= "<li><a href='postPage.php?page=".($currentPage+1)."&amp;idPost=".$post."' title=\"Vai alla pagina successiva\">Successiva →</a></li>";
         }else{
 	        $navigazione .= "<li>Successiva →</li>";
         }
