@@ -188,7 +188,10 @@ SEZIONE ABOUT US
     font-size: 1.2em;
 }
 #AU_img{
-    content:url("../img/people_dance.png");
+    background: url("../img/people_dance.png") no-repeat top center;
+    height: 14em;
+    width: 20em;
+    background-size: cover;
 }
 /*
 ================
@@ -223,8 +226,10 @@ SEZIONE CONTATTI
     width: 35%;
 }
 #contatti_img{
-    content:url("../img/Support.png");
-    width: 40%;
+    background: url("../img/Support.png") no-repeat top center;
+    height: 20em;
+    width: 20em;
+    background-size: cover;
 }
 /*
 ====================
