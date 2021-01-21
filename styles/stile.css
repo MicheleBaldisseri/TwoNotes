@@ -404,11 +404,12 @@ SEZIONE LOGIN PAGE
 #loginRight h3{
     margin-top: 0;
     font-size: 1.5em;
+    margin-bottom: 1em;
 }
 
 #loginRight a{
-    margin-top: 1em;
-    display: block;
+    margin: auto;
+    width: fit-content;
 }
 
 #loginLeft div {
@@ -440,7 +441,7 @@ SEZIONE BOTTONI
 }
 
 .orange-button{
-    background-color: #ff4b2bc4;
+    background-color: #f7644a;
     color: black;
 }
 .round-button{
