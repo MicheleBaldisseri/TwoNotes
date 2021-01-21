@@ -361,62 +361,63 @@ SEZIONE HEADER
 SEZIONE LOGIN PAGE
 ==================
 */
-.login{
-    padding: 1em;
-    padding-bottom: 2em;
+#login{
+    overflow: hidden;
 }
-.login h2{
-    float: left;
-    padding: 4em 0 1em 0;
-    width: 55%;
-    text-align: center;
-}
-.login img{
-    float: left;
+#login > div{
     width: 50%;
-    margin-top: 5%;
-    margin-left: 4%;
-    height: 100%;
-}
-.login h3{
     text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    font-weight: bold;
-    padding: 1em 0 1em 0;
 }
-.login form{
-    width: 45%;
-    margin-left: 55%;
+#loginLeft{
+    float: left;
+    margin: 6em 0 6em 0;
 }
-.login input[type="text"],
-.login input[type="password"]{
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    width: 75%;
+
+#loginRight{
+    float: right;
+    margin: 1em 0 1em 0;
+}
+
+#loginRight form{
+    padding: 1em;
+}
+
+#loginRight label{
     padding: 0.6em;
-    margin-bottom: 1%;
-    margin-top: 3%;
+    font-weight: bold;
+    font-size: 1.3em;
 }
-.login input[type="submit"]{
+
+#loginRight input{
+    margin: 0.6em auto 0.6em auto;
+    padding: 0.3em;
     display: block;
-    margin-right: auto;
-    margin-left: auto;
+    width: 90%;
+}
+
+#loginRight input[type="submit"]{
+    margin-top: 2em;
     width: 35%;
     min-width: fit-content;
 }
-.login a{
-    margin-bottom: 2em;
-}
-#formLogin label{
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
+
+#loginRight h3{
+    margin-top: 0;
     font-size: 1.5em;
-    font-weight: bold;
 }
+
+#loginRight a{
+    margin-top: 1em;
+    display: block;
+}
+
+#loginLeft div {
+    background: url('../img/TwoNotes-4.svg') no-repeat;
+    height: 7em;
+    width: 11em;
+    margin: 1.5em auto 0em auto;
+}
+
 /*
 ==================
 SEZIONE BOTTONI
@@ -437,14 +438,7 @@ SEZIONE BOTTONI
     border-radius: 0.3em 0.3em 0.3em 0.3em;
     border: 0.1em solid rgb(148, 148, 148);
 }
-#button_register{
-    text-align: center;
-    display: block;
-    margin-right: 13%;
-    margin-left: 68%;
-    max-width: 35%;
-    min-width: fit-content;
-}
+
 .orange-button{
     background-color: #ff4b2bc4;
     color: black;

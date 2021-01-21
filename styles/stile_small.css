@@ -194,48 +194,21 @@ SEZIONE PROFILO
 SEZIONE LOGIN
 =============
 */
-.login{
-    padding-bottom: 1.5em;
-}
-.login h2, .login img{
-    display: none;
-}
-.login h3{
-    margin-top: 0;
-    padding: 0em;
-    padding-bottom: 0.5em;
-    padding-top: 0.5em;
-    font-size: 1.3em;
-}
-.login form{
+#login > div{
+    float: none;
     width: 100%;
-    margin-left: 0%;
-}
-.login input[type="text"],
-.login input[type="password"]{
-    width: 90%;
-    padding: 0.2em;
-    margin-bottom: 5%;
-    margin-top: 3%;
-}
-.login input[type="submit"]{
-    margin-bottom: 0.2em;
-}
-.login input[type="button"]{
-    margin-top: -0.3em;
-}
-#button_register{
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 0em;
-    margin-bottom: 0em;
-}
-#formLogin label{
-    font-size: 1.2em;
 }
 
-@media only screen and (max-width: 319px) {
+#loginLeft{
+    margin: 1em 0 0 0;
+}
+
+#loginLeft div{
+    display: none;
+}
+
+
+@media only screen and (max-width: 320px) {
     #header h1{
         width: 3em;
         height: 1.3em;

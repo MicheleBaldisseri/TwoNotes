@@ -33,31 +33,33 @@
                 <li><a href="contatti.php">Contatti</a></li>
             </ul>
         </div>
-        <div class="sezione round_div shadow-div login">
-            <h2>Benvenuto nel <span xml:lang="en" lang="en">social</span> musicale</h2>
-            <img src="../img/TwoNotes-4.svg" alt=""/>
-            <h3>Accedi</h3>
+        <div id="login" class="sezione round_div shadow-div">
+            <div id="loginLeft">
+                <h2>Benvenuto nel <span xml:lang="en" lang="en">social</span> musicale</h2>
+                <div></div>
+            </div>
+            <div id="loginRight">
+                <h3>Accedi</h3>
+                <ERRORELOGIN/>
+                <form id="formLogin" action="loginAction.php" title="Login" method="post" onsubmit="return validateForm();">
+                    <div>
+                        <label for="username" xml:lang="en" lang="en">Username</label>
+                        <span>
+                            <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALUEUSERNAME/>" required="required" tabindex="1"/>
+                        </span>
+                        
+                        <label for="psw" xml:lang="en" lang="en">Password</label>
+                        <span>
+                            <input type="password" name="psw" id="psw" class="input" placeholder="Password" required="required" tabindex="2"/>
+                        </span>
+                        
+                        <input type="submit" class="round-button general-button orange-button" value="Accedi" tabindex="3"/>
+                    </div>
+                </form>
 
-            <ERRORELOGIN/>
-
-            <form id="formLogin" action="loginAction.php" title="Login" method="post" onsubmit="return validateForm();">
-                <div>
-                    <label for="username" xml:lang="en" lang="en">Username</label>
-                    <span>
-                        <input type="text" name="username" id="username" class="input" placeholder="Username" value="<VALUEUSERNAME/>" required="required" tabindex="1"/>
-                    </span>
-                    
-                    <label for="psw" xml:lang="en" lang="en">Password</label>
-                    <span>
-                        <input type="password" name="psw" id="psw" class="input" placeholder="Password" required="required" tabindex="2"/>
-                    </span>
-                    
-                    <input type="submit" class="round-button general-button orange-button" value="Accedi" tabindex="3"/>
-                </div>
-            </form>
-
-            <h3>Non hai un account?</h3>
-            <a href="registrazione.php" id="button_register" tabindex="4">Registrati</a>
+                <h3>Non hai un account?</h3>
+                <a href="registrazione.php" id="button_register" tabindex="4">Registrati</a>
+            </div>
             
             <a href="#menu" class="screenReaderOnly" tabindex="-1">Vai al menù</a>
         </div>
