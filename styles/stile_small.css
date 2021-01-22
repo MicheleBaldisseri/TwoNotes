@@ -59,6 +59,11 @@ SEZIONE GENERALE
     height: 10em;
     width: 14em;
 }
+
+#success_div{
+    max-width: 90%;
+    margin: 1em auto 1em auto;
+}
  
 .screenReaderOnly:focus{
     display: block;

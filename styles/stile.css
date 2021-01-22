@@ -652,11 +652,12 @@ SEZIONE PAGINE ERRORI
     margin-top: 0.5em;
 }
 #success_div{
-    text-align: center;
     width: fit-content;
-    margin: 1em auto 1em auto;
+    max-width: 55%;
+    margin: 1em 0 1em 30%;
 }
 #success_div p{
+    text-align: center;
     display: block;
     padding: 0.8em;
     color: #128a40;
