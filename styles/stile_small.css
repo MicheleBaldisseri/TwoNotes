@@ -46,6 +46,9 @@ SEZIONE HOME
 SEZIONE GENERALE
 ================
 */
+#success_div{
+    width: 90%;
+}
 #percorso p{
     font-size: 1em;
 }
