@@ -9,7 +9,7 @@ $user = $manager->setupSession();
 $errors = array();
 $values = array();
 
-$values['contenuto'] = isset($_POST['contenuto']) ? trim(strip_tags(addslashes($_POST['contenuto']))) : null;
+$values['contenuto'] = isset($_POST['contenuto']) ? trim(addslashes($_POST['contenuto'])) : null;
 $values['idPost'] = isset($_GET['idPost']) ? addslashes($_GET['idPost']) : null;
 $values['username'] = addslashes($user->getUsername());
 
@@ -25,6 +25,10 @@ if(empty($values['username'])){
 
 if (!preg_match("/^[\s\S]{1,500}$/", $values['contenuto'])) 
         array_push($errors, '<a href="#postTextarea">Nel commento sono ammessi da 1 a 500 caratteri </a>');
+
+if($manager->isEmptyWithoutTags($values['contenuto'])) array_push($errors, '<a href="#content">Il contenuto risulta vuoto senza i tag di aiuto, inserisci almeno un carattere </a>');
+
+$values['contenuto'] = htmlspecialchars($values['contenuto']);
 
 $resContenuto = $manager->transformString($values['contenuto']);
 if(!$resContenuto) array_push($errors, '<a href="#postTextarea">Errore con il contenuto del commento, controlla i <span xml:lang="en" lang="en">tag</span> di aiuto inseriti</a>');
@@ -51,7 +55,7 @@ if(count($errors)==0){
     $_SESSION['commentErrors'] = $errors;
 }
 
-header("Location: postPage.php?idPost=".$_GET['idPost']);
+header("Location: postPage.php?idPost=".$_GET['idPost']."#phpErrors");
 exit();
 
 ?>

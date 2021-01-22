@@ -21,10 +21,10 @@ if($user->getUsername()==null){
 $errors = array();
 $values = array();
 
-$values['titolo'] = isset($_POST['titolo']) ? trim(strip_tags(addslashes($_POST['titolo']))) : null;
+$values['titolo'] = isset($_POST['titolo']) ? trim(addslashes($_POST['titolo'])) : null;
 $values['immagine'] = isset($_FILES['myfile']['name']) ? trim(addslashes($_FILES['myfile']['name'])) : null;
 $values['altImmagine'] = isset($_POST['altImmagine']) ? trim(strip_tags(addslashes($_POST['altImmagine']))) : null;
-$values['contenuto'] = isset($_POST['contenuto']) ? trim(strip_tags(addslashes($_POST['contenuto']))) : null;
+$values['contenuto'] = isset($_POST['contenuto']) ? trim(addslashes($_POST['contenuto'])) : null;
 $values['username'] = $user->getUsername();
 
 if(empty($values['titolo'])) array_push($errors, '<a href="#title">Compila il campo Titolo</a>');
@@ -49,13 +49,17 @@ if (!empty($values['immagine']) && !preg_match("/^[\s\S]{5,75}$/", $values['altI
 if (!preg_match("/^[\s\S]{5,1000}$/", $values['contenuto'])) 
         array_push($errors, '<a href="#content">Nel contenuto sono ammessi da 5 a 1000 caratteri</a>');
 
+if($manager->isEmptyWithoutTags($values['titolo'])) array_push($errors, '<a href="#title">Il titolo risulta vuoto senza i tag di aiuto, inserisci almeno un carattere</a>');
+if($manager->isEmptyWithoutTags($values['contenuto'])) array_push($errors, '<a href="#content">Il contenuto risulta vuoto senza i tag di aiuto, inserisci almeno un carattere </a>');
+
+$values['titolo'] = htmlspecialchars($values['titolo']);
+$values['contenuto'] = htmlspecialchars($values['contenuto']);
+
 $resTitolo = $manager->transformString($values['titolo']);
 if(!$resTitolo) array_push($errors, '<a href="#title">Errore con il titolo del <span xml:lang="en" lang="en">post</span>, controlla i <span xml:lang="en" lang="en">tag</span> di aiuto inseriti</a>');
 
-
 $resContenuto = $manager->transformString($values['contenuto']);
 if(!$resContenuto) array_push($errors, '<a href="#content">Errore con il contenuto del <span xml:lang="en" lang="en">post</span>, controlla i <span xml:lang="en" lang="en">tag</span> di aiuto inseriti</a>');
-
 
 if(count($errors)==0){
 

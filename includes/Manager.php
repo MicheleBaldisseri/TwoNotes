@@ -504,6 +504,17 @@ class Manager{
 
         return $string;
     }
+
+    public function isEmptyWithoutTags($string){
+        $string = str_replace('[en]','',$string);
+        $string = str_replace('[/en]','',$string);
+        $string = str_replace('[/abbr]','',$string);
+        $string = preg_replace('/\[abbr=([^\]]+)]/','',$string);
+
+        $string = trim($string);
+        if($string=='') return true;
+        return false;
+    }
 }
 
 ?>
