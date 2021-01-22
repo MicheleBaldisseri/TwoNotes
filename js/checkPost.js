@@ -6,7 +6,7 @@ var dettagli_form = {
     "content": [/^[\s\S]{5,1000}$/, "Sono ammessi da 5 a 1000 caratteri"],
 }
 
-const countReg = (str) => {
+const countReg = function(str) {
     const re = /\[abbr=([^\]]+)]/g;
     return ((str || '').match(re) || []).length;
 }

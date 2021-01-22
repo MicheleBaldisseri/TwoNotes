@@ -1,4 +1,4 @@
-const countReg = (str) => {
+const countReg = function(str) {
     const re = /\[abbr=([^\]]+)]/g;
     return ((str || '').match(re) || []).length;
 }
