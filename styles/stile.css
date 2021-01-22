@@ -394,23 +394,52 @@ SEZIONE LOGIN PAGE
     display: block;
     width: 90%;
 }
-
-#loginRight input[type="submit"]{
-    margin-top: 2em;
-    width: 35%;
-    min-width: fit-content;
+@supports(min-width: fit-content){
+    #loginRight input[type="submit"]{
+        margin-top: 2em;
+        width: 35%;
+        min-width: fit-content;
+    } 
 }
-
+@supports(min-width: -moz-fit-content){
+    #loginRight input[type="submit"]{
+        margin-top: 2em;
+        width: 35%;
+        min-width: -moz-fit-content;
+    } 
+}
+@supports(min-width: -webkit-fill-available){
+    #loginRight input[type="submit"]{
+        margin-top: 2em;
+        width: 35%;
+        min-width: -webkit-fill-available;
+    } 
+}
 #loginRight h3{
     margin-top: 0;
     font-size: 1.5em;
     margin-bottom: 1em;
 }
 
-#loginRight a{
-    margin: auto;
-    width: fit-content;
+@supports(width: fit-content){
+    #loginRight a{
+        margin: auto;
+        width: fit-content;
+    }
 }
+@supports(width: -moz-fit-content){
+    #loginRight a{
+        margin: auto;
+        width: -moz-fit-content;
+    }
+}
+@supports(width: -webkit-fill-available){
+    #loginRight a{
+        margin: auto;
+        width: -webkit-fill-available;
+    }
+}
+
 
 #loginLeft div {
     background: url('../img/TwoNotes-4.svg') no-repeat;
@@ -651,10 +680,26 @@ SEZIONE PAGINE ERRORI
     float: right;
     margin-top: 0.5em;
 }
-#success_div{
-    width: fit-content;
-    max-width: 55%;
-    margin: 1em 0 1em 30%;
+@supports(width: fit-content){
+    #success_div{
+        width: fit-content;
+        max-width: 55%;
+        margin: 1em 0 1em 30%;
+    }
+}
+@supports(width: -moz-fit-content){
+    #success_div{
+        width: -moz-fit-content;
+        max-width: 55%;
+        margin: 1em 0 1em 30%;
+    }
+}
+@supports(width: -webkit-fill-available){
+    #success_div{
+        width: -webkit-fill-available;
+        max-width: 55%;
+        margin: 1em 0 1em 30%;
+    }
 }
 #success_div p{
     text-align: center;

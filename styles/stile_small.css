@@ -150,10 +150,25 @@ SEZIONE REGISTRAZIONE
 .labelleft{
     padding: 0.5em 0 0.2em 0;
 }
-#formBase input[type="submit"]{
-    margin-top: 1em;
-    width: fit-content;
+@supports(width: fit-content){
+    #formBase input[type="submit"]{
+        margin-top: 1em;
+        width: fit-content;
+    }
 }
+@supports(width: -moz-fit-content){
+    #formBase input[type="submit"]{
+        margin-top: 1em;
+        width: -moz-fit-content;
+    }
+}
+@supports(width: -webkit-fill-available){
+    #formBase input[type="submit"]{
+        margin-top: 1em;
+        width: -webkit-fill-available;
+    }
+}
+
 #formBase input[type="submit"],
 #annulla{
     display: inline;
