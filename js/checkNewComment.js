@@ -15,6 +15,9 @@ function mostraErrore(input, type) {
         case 2:
             elemento.appendChild(document.createTextNode("Sono ammessi da 2 a 500 caratteri")); 
             break;
+        case 3:
+            elemento.appendChild(document.createTextNode("Tag d'aiuto senza contenuto, inserire almeno un carattere")); 
+            break;
     }
 
     var p = input.parentNode; //span 
@@ -39,14 +42,34 @@ function validateCampo(input){
     var text = input.value.replace(/(^\s+|\s+$)/g,'');
     var regex= /^[\s\S]{2,500}$/;
 
-    //controllo che tag di apertura e chiusura corrispondano
-    var abbr = substr_count(text,'[/abbr]',0,text.length) != countReg(text) ? false : true;
-    var en = substr_count(text,'[en]',0,text.length) != substr_count(text,'[/en]',0,text.length) ? false : true;
-
+    //presenza di tag d'aiuto
+    var tags = (substr_count(text,'[en]',0,text.length) > 0) || 
+               (substr_count(text,'[abbr=',0,text.length) > 0) ||
+               (substr_count(text,'[/abbr]',0,text.length) > 0) ||
+               (substr_count(text,'[/en]',0,text.length) > 0) ? true : false;
     
-    if(abbr == false || en == false) { //errore utilizzo tag
-        mostraErrore(input,1);
-        return false;
+    if(tags){ //sono presenti tag d'aiuto
+
+        //controllo che tag di apertura e chiusura corrispondano
+        var abbr = substr_count(text,'[/abbr]',0,text.length) != countReg(text) ? false : true;
+        var en = substr_count(text,'[en]',0,text.length) != substr_count(text,'[/en]',0,text.length) ? false : true;
+
+        if(abbr == false || en == false) { //errore utilizzo tag
+            mostraErrore(input,1);
+            return false;
+        }
+        else{ //tag inseriti correttamente ma vuoti e assenza di altro testo -> evitare inserimento di campi vuoti
+            text = text.replace('[en]','');
+            text = text.replace('[/en]','');
+            text = text.replace(/\[abbr=([^\]]+)]/g,'');
+            text = text.replace('[/abbr]','');
+            text = text.replace(/(^\s+|\s+$)/g,'');
+
+            if(text == ''){
+                mostraErrore(input,3);
+                return false;
+            }
+        }
     }
     else if(text.search(regex) != 0) {  //contenuto non valido
         mostraErrore(input,2);

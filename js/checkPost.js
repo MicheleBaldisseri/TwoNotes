@@ -39,6 +39,9 @@ function mostraErrore(input,type) {
         case 3: //tutti gli altri casi
             elemento.appendChild(document.createTextNode(dettagli_form[input.id][1]));  
             break;
+        case 4:
+            elemento.appendChild(document.createTextNode("Tag d'aiuto senza contenuto, inserire almeno un carattere")); 
+            break;
     }
 
     var p = input.parentNode; //span 
@@ -49,16 +52,34 @@ function validateCampo(input){
     //elimino spazi prima e dopo
     var text = input.value.replace(/(^\s+|\s+$)/g, '');
 
-    var regex= dettagli_form[input.id][0];
-
-    //controllo che tag di apertura e chiusura corrispondano
-    var abbr = substr_count(text,'[/abbr]',0,text.length) != countReg(text) ? false : true;
-    var en = substr_count(text,'[en]',0,text.length) != substr_count(text,'[/en]',0,text.length) ? false : true;
-
+    //presenza di tag d'aiuto
+    var tags = (substr_count(text,'[en]',0,text.length) > 0) || 
+               (substr_count(text,'[abbr=',0,text.length) > 0) ||
+               (substr_count(text,'[/abbr]',0,text.length) > 0) ||
+               (substr_count(text,'[/en]',0,text.length) > 0) ? true : false;
     
-    if(abbr == false || en == false) { //errore utilizzo tag
-        mostraErrore(input,1);
-        return false;
+    if(tags){ //sono presenti tag d'aiuto
+
+        //controllo che tag di apertura e chiusura corrispondano
+        var abbr = substr_count(text,'[/abbr]',0,text.length) != countReg(text) ? false : true;
+        var en = substr_count(text,'[en]',0,text.length) != substr_count(text,'[/en]',0,text.length) ? false : true;
+
+        if(abbr == false || en == false) { //errore utilizzo tag
+            mostraErrore(input,1);
+            return false;
+        }
+        else{ //tag inseriti correttamente ma vuoti e assenza di altro testo -> evitare inserimento di campi vuoti
+            text = text.replace('[en]','');
+            text = text.replace('[/en]','');
+            text = text.replace(/\[abbr=([^\]]+)]/g,'');
+            text = text.replace('[/abbr]','');
+            text = text.replace(/(^\s+|\s+$)/g,'');
+
+            if(text == ''){
+                mostraErrore(input,4);
+                return false;
+            }
+        }
     }
     else if(input.id == "myfile"){ //immagine 
         if(document.getElementById("myfile").value != ""){ //se l'immagine è caricata
@@ -97,6 +118,7 @@ function validateCampo(input){
     }
     else if(input.id == "altImmagine"){
         if(document.getElementById("myfile").value != ""){ //se l'immagine è caricata
+            var regex= dettagli_form[input.id][0];
             if(text.search(regex) != 0){ //controllo contenuto dell'alt
                 mostraErrore(input,3);
                 return false;
@@ -113,7 +135,7 @@ function validateCampo(input){
             } 
         }
     }
-    else if(text.search(regex) != 0) {  //titolo e contenuto
+    else if(text.search(dettagli_form[input.id][0]) != 0) {  //titolo e contenuto
         //-1 se non l'ha trovata altrimenti ritorna la posizione dove inizia
         mostraErrore(input,3);
         return false;
