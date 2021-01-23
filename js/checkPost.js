@@ -7,7 +7,7 @@ var dettagli_form = {
 }
 
 const countReg = function(str) {
-    const re = /\[abbr=([^\]]+)]/g;
+    const re = /\[abbr=([^\]]*)]/g;
     return ((str || '').match(re) || []).length;
 }
 
@@ -71,7 +71,7 @@ function validateCampo(input){
         else{ //tag inseriti correttamente ma vuoti e assenza di altro testo -> evitare inserimento di campi vuoti
             text = text.replace('[en]','');
             text = text.replace('[/en]','');
-            text = text.replace(/\[abbr=([^\]]+)]/g,'');
+            text = text.replace(/\[abbr=([^\]]*)]/g,'');
             text = text.replace('[/abbr]','');
             text = text.replace(/(^\s+|\s+$)/g,'');
 

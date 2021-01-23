@@ -495,12 +495,12 @@ class Manager{
 
     public function transformString($string){
         if(substr_count($string,'[en]')!=substr_count($string,'[/en]')) return false;
-        if(substr_count($string,'[/abbr]')!=preg_match_all('/\[abbr=([^\]]+)]/',$string)) return false;
+        if(substr_count($string,'[/abbr]')!=preg_match_all('/\[abbr=([^\]]*)]/',$string)) return false;
 
         $string = str_replace('[en]','<span xml:lang="en" lang="en">',$string);
         $string = str_replace('[/en]','</span>',$string);
         $string = str_replace('[/abbr]','</abbr>',$string);
-        $string = preg_replace('/\[abbr=([^\]]+)]/','<abbr title="\1">',$string);
+        $string = preg_replace('/\[abbr=([^\]]*)]/','<abbr title="\1">',$string);
 
         return $string;
     }
@@ -509,7 +509,7 @@ class Manager{
         $string = str_replace('[en]','',$string);
         $string = str_replace('[/en]','',$string);
         $string = str_replace('[/abbr]','',$string);
-        $string = preg_replace('/\[abbr=([^\]]+)]/','',$string);
+        $string = preg_replace('/\[abbr=([^\]]*)]/','',$string);
 
         $string = trim($string);
         if($string=='') return true;
