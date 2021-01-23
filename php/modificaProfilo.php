@@ -33,31 +33,50 @@ if(isset($_SESSION['modificaErrors'])){
     $stringErrors .= "</ul> ";
 
 	unset($_SESSION['modificaErrors']);
-}
-$paginaHTML = str_replace('<ERRORIMODIFICAPROFILO/>',$stringErrors,$paginaHTML);
 
-if($user->getUsername()!=null){
+	$paginaHTML = str_replace("<VALORENOME/>", stripslashes($_SESSION['modificaValues']['nome']), $paginaHTML);
+	$paginaHTML = str_replace("<VALORECOGNOME/>", stripslashes($_SESSION['modificaValues']['cognome']), $paginaHTML);
+	$paginaHTML = str_replace("<VALOREEMAIL/>", stripslashes($_SESSION['modificaValues']['email']), $paginaHTML);
+	$paginaHTML = str_replace("<VALOREDATA/>", stripslashes($_SESSION['modificaValues']['dataNascita']), $paginaHTML);
+	$paginaHTML = str_replace("<VALOREUSERNAME/>", stripslashes($_SESSION['modificaValues']['username']), $paginaHTML);
 
-	$paginaHTML = str_replace("<VALORENOME/>", stripslashes($user->getNome()), $paginaHTML);
-	$paginaHTML = str_replace("<VALORECOGNOME/>", stripslashes($user->getCognome()), $paginaHTML);
-	$paginaHTML = str_replace("<VALOREEMAIL/>", stripslashes($user->getEmail()), $paginaHTML);
-	$paginaHTML = str_replace("<VALOREDATA/>", stripslashes($user->getDataNascita()), $paginaHTML);
-	$paginaHTML = str_replace("<VALOREUSERNAME/>", stripslashes($user->getUsername()), $paginaHTML);
-
-	$sesso = $user->getSesso();
-	if($sesso == 'M') $paginaHTML = str_replace('SELECTEDM','checked="checked"',$paginaHTML);
+	$sesso = trim($_SESSION['modificaValues']['sesso']);
+	if($sesso == 'M') $paginaHTML = str_replace('SELECTEDM','checked="checked"',$paginaHTML);	
 	else $paginaHTML = str_replace('SELECTEDM','',$paginaHTML);
-
+	
 	if($sesso == 'F') $paginaHTML = str_replace('SELECTEDF','checked="checked"',$paginaHTML);
 	else $paginaHTML = str_replace('SELECTEDF','',$paginaHTML);
 
 	if($sesso == 'A') $paginaHTML = str_replace('SELECTEDA','checked="checked"',$paginaHTML);
 	else $paginaHTML = str_replace('SELECTEDA','',$paginaHTML);
-	
+
+	unset($_SESSION['modificaValues']);
+
 }else{
-	header("Location: errorPage.php");
-	exit();	
+	if($user->getUsername()!=null){
+
+		$paginaHTML = str_replace("<VALORENOME/>", stripslashes($user->getNome()), $paginaHTML);
+		$paginaHTML = str_replace("<VALORECOGNOME/>", stripslashes($user->getCognome()), $paginaHTML);
+		$paginaHTML = str_replace("<VALOREEMAIL/>", stripslashes($user->getEmail()), $paginaHTML);
+		$paginaHTML = str_replace("<VALOREDATA/>", stripslashes($user->getDataNascita()), $paginaHTML);
+		$paginaHTML = str_replace("<VALOREUSERNAME/>", stripslashes($user->getUsername()), $paginaHTML);
+	
+		$sesso = $user->getSesso();
+		if($sesso == 'M') $paginaHTML = str_replace('SELECTEDM','checked="checked"',$paginaHTML);
+		else $paginaHTML = str_replace('SELECTEDM','',$paginaHTML);
+	
+		if($sesso == 'F') $paginaHTML = str_replace('SELECTEDF','checked="checked"',$paginaHTML);
+		else $paginaHTML = str_replace('SELECTEDF','',$paginaHTML);
+	
+		if($sesso == 'A') $paginaHTML = str_replace('SELECTEDA','checked="checked"',$paginaHTML);
+		else $paginaHTML = str_replace('SELECTEDA','',$paginaHTML);
+		
+	}else{
+		header("Location: errorPage.php");
+		exit();	
+	}
 }
+$paginaHTML = str_replace('<ERRORIMODIFICAPROFILO/>',$stringErrors,$paginaHTML);
 
 echo $paginaHTML;
 

@@ -73,7 +73,7 @@ class Manager{
                             <a href="profilo.php?username='. stripslashes($post['utente']) .'">' . stripslashes($post['utente']) . '</a>  
                             il '.$new_date.'
                         </p>
-                        <a class="goToPost" href="postPage.php?idPost='.$post['postID'].'" title="'.htmlspecialchars($post['titolo']).'">Vai al <span xml:lang="en" lang="en">post</span></a>
+                        <a class="goToPost" href="postPage.php?idPost='.$post['postID'].'" title="Vai al post intitolato: '.htmlspecialchars($this->removeTags($post['titolo'])).'">Vai al <span xml:lang="en" lang="en">post</span></a>
                         <a class="printHide" href="#header">Torna su</a> 
                     </div>              
                 </li>';
@@ -515,6 +515,15 @@ class Manager{
         if($string=='') return true;
         return false;
     }
+    
+    public function removeTags($string){
+        $string = str_replace('<span xml:lang="en" lang="en">','',$string);
+        $string = str_replace('</span>','',$string);
+        $string = str_replace('</abbr>','',$string);
+        $string = preg_replace('/<abbr title=([^\>]*)>/','',$string);
+        return $string;
+    }
+    
 }
 
 ?>
