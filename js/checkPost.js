@@ -80,6 +80,8 @@ function validateCampo(input){
                 return false;
             }
         }
+
+        return true;
     }
     else if(input.id == "myfile"){ //immagine 
         if(document.getElementById("myfile").value != ""){ //se l'immagine è caricata

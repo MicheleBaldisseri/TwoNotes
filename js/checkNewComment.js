@@ -70,6 +70,8 @@ function validateCampo(input){
                 return false;
             }
         }
+
+        return true;
     }
     else if(text.search(regex) != 0) {  //contenuto non valido
         mostraErrore(input,2);
