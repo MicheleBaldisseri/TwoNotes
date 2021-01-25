@@ -83,6 +83,10 @@ SEZIONE CONTATTI
 .image{
     display: none;
 }
+.showItem{
+    display: contents;
+    text-decoration: none;
+}
 #content em{
     white-space: nowrap;
     font-weight: bold;
