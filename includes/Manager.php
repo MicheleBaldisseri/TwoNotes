@@ -70,7 +70,7 @@ class Manager{
                         }
                         
         $string .=      '<p class="infoPost">Pubblicato da 
-                            <a href="profilo.php?username='. stripslashes($post['utente']) .'">' . stripslashes($post['utente']) . '</a>  
+                            <a class="showItem" href="profilo.php?username='. stripslashes($post['utente']) .'" title="Vai al profilo di '. stripslashes($post['utente']).'">' . stripslashes($post['utente']) . '</a>  
                             il '.$new_date.'
                         </p>
                         <a class="goToPost" href="postPage.php?idPost='.$post['postID'].'" title="Vai al post intitolato: '.htmlspecialchars($this->removeTags($post['titolo'])).'">Vai al <span xml:lang="en" lang="en">post</span></a>
@@ -194,7 +194,7 @@ class Manager{
             }    
             $string .= '<p class="infoPost">
                 Pubblicato da 
-                <a href="profilo.php?username='.stripslashes($post['utente']).'">'.stripslashes($post['utente']).'</a> 
+                <a class="showItem" href="profilo.php?username='.stripslashes($post['utente']).'" title="Vai al profilo di '. stripslashes($post['utente']).'">'.stripslashes($post['utente']).'</a> 
                 il '.$new_date.'
             </p>';
 
@@ -264,7 +264,7 @@ class Manager{
 
         $string = '<li>
             <div class="singleComment shadow-div round_div">
-                <p class="infoPost"><a href="profilo.php?username='.stripslashes($comment['utente']).'">'.stripslashes($comment['utente'])
+                <p class="infoPost"><a class="showItem" href="profilo.php?username='.stripslashes($comment['utente']).'" title="Vai al profilo di '. stripslashes($comment['utente']).'">'.stripslashes($comment['utente'])
                 .'</a> '.$new_date.'</p>
                 <p>'.stripslashes($comment['contenuto']).'</p>';
                 

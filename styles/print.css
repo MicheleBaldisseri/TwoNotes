@@ -75,6 +75,11 @@ SEZIONE SINGLE POST
 #newComment{
     display: none;
 }
+
+#singlePost .showItem {
+    display: contents;
+    text-decoration: none;
+}
 /*
 ================
 SEZIONE CONTATTI
