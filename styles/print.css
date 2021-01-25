@@ -32,6 +32,10 @@ p, input[type="submit"]{
 #breadcrumb-colore-parola{
     font-weight: bold;
 }
+.showItem{
+    display: contents;
+    text-decoration: none;
+}
 /*
 =============
 SEZIONE INDEX
@@ -88,7 +92,7 @@ SEZIONE CONTATTI
 .image{
     display: none;
 }
-.showItem{
+#showEmail{
     display: contents;
     text-decoration: none;
 }
